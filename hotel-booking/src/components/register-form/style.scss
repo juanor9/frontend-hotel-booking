@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;0,800;1,700;1,800&display=swap");
+$light-gray: rgba(206, 212, 218, 255);
+$red: rgba(239, 63, 63, 255);
+* {
+  font-family: "Nunito", sans-serif;
+  box-sizing: border-box;
+}
+.register-form {
+  padding: 1em;
+  text-align: left;
+  &__header {
+    text-transform: uppercase;
+  }
+  &__section {
+    margin-top: 1em;
+  }
+  &__social-media-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  &__list-item {
+    width: 47%;
+  }
+  &__social-media-button {
+    background-color: white;
+    border: none;
+    box-shadow: 2px 2px 5px 0px $light-gray;
+    color: #1471fd;
+    padding: 1em;
+    width: 100%;
+  }
+  &__social-media-button::before {
+    content: "";
+    display: inline-block;
+    background-color: aqua;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1em;
+    padding: 0 5px 0 0;
+    vertical-align: -50%;
+  }
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+  }
+  &__input {
+    border: solid 1px $light-gray;
+    padding: 0.5em 1em;
+  }
+  &__create-button {
+    background-color: $red;
+    border: 0;
+    color: white;
+    padding: 0.5em;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  &__login-button {
+    background: rgba(0, 0, 0, 0);
+    border: solid 1px $red;
+    color: $red;
+    padding: 0.5em;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  &__divider {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__divider p {
+    display: inline-block;
+    background-color: white;
+    padding: 0.3em 1em;
+  }
+  &__divider-line {
+    background-color: $light-gray;
+    display: inline-block;
+    height: 1px;
+    width: 12em;
+  }
+}
