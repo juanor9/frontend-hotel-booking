@@ -9,12 +9,12 @@ function RegisterForm() {
         <p>Sign Up With</p>
         <ul className="register-form__social-media-list">
           <li className="register-form__list-item">
-            <button className="register-form__social-media-button">
+            <button className="register-form__social-media-button register-form__facebook">
               Facebook
             </button>
           </li>
           <li className="register-form__list-item">
-            <button className="register-form__social-media-button">
+            <button className="register-form__social-media-button register-form__google">
               Google
             </button>
           </li>

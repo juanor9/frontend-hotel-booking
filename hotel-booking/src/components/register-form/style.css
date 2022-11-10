@@ -33,15 +33,29 @@
   padding: 1em;
   width: 100%;
 }
-.register-form__social-media-button::before {
+.register-form__facebook::before {
   content: "";
   display: inline-block;
-  background-color: aqua;
-  width: 1.5rem;
-  height: 1.5rem;
+  background-image: url("../../../public/facebook-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
   margin-right: 1em;
   padding: 0 5px 0 0;
-  vertical-align: -50%;
+  vertical-align: -10%;
+}
+.register-form__google::before {
+  content: "";
+  display: inline-block;
+  background-image: url("../../../public/google-logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1em;
+  padding: 0 5px 0 0;
+  vertical-align: -10%;
 }
 .register-form__input-group {
   display: flex;
