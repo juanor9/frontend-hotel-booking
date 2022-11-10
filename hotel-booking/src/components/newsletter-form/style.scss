@@ -33,12 +33,49 @@ $red: rgba(239, 63, 63, 255);
   &__input-email::placeholder {
     color: $light-grey;
   }
-  &__button-subscribe{
+  &__button-subscribe {
     background-color: $red;
     border: 0;
     padding: 1em 2em;
     border-radius: 2em;
     color: white;
     font-weight: 800;
+  }
+  &__header-flag{
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__caption {
+      width: 50%;
+      text-align: left;
+    }
+    &__header-flag{
+      text-align: center;
+      display: inline-block;
+      background-color: $red;
+      border-radius: 5em;
+      color: white;
+      font-size: .5em;
+      padding: .2em 2em;
+      text-transform: uppercase;
+    margin-right: 2em;
+    }
+    &__header{
+      text-align: right;
+    }
+    &__divider{
+      width: 1px;
+      height: 2em;
+      background-color: $red;
+      margin: 0 2em;
+    }
+    &__form {
+      width: 50%;
+    }
   }
 }

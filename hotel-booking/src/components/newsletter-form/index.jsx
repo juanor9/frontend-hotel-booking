@@ -4,13 +4,14 @@ import "./style.css";
 function NewsletterForm() {
   return (
     <section id="newsletter-form" className="newsletter-form">
-      <div>
-        <h1 className="newsletter-form__header">Suscribe Our News</h1>
+      <div className="newsletter-form__caption">
+        <h1 className="newsletter-form__header"><span className="newsletter-form__header-flag">Our News</span>Suscribe Our News</h1>
         <p className="newsletter-form__paragraph">
           Suscribe and recieve our newsletters to follow the news about our
           fresh and fantastic products.
         </p>
       </div>
+    <div className="newsletter-form__divider"></div>
       <form action="" className="newsletter-form__form">
         <input
           type="email"
