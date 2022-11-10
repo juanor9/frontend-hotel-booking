@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;0,800;1,700;1,800&display=swap");
+$light-grey: rgba(190, 190, 190, 255);
+$red: rgba(239, 63, 63, 255);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}
+.newsletter-form {
+  text-align: left;
+  &__header {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 1em;
+  }
+  &__paragraph {
+    color: $light-grey;
+  }
+  &__form {
+    box-shadow: 2px 2px 7px 0px $light-grey;
+    border-radius: 0.5em;
+    padding: 1em;
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  &__input-email {
+    border: 0;
+  }
+  &__input-email::placeholder {
+    color: $light-grey;
+  }
+  &__button-subscribe{
+    background-color: $red;
+    border: 0;
+    padding: 1em 2em;
+    border-radius: 2em;
+    color: white;
+    font-weight: 800;
+  }
+}
