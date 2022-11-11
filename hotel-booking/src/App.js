@@ -1,12 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
-import NewsletterForm from "./components/newsletter-form/index"
 
 function App() {
   return (
-    
     <div className="App">
-      <NewsletterForm/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
