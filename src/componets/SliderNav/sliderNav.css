@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700;1,800&display=swap");
+
+.slider__nav {
+  font-family: "Nunito", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  max-width: 300px;
+  max-height: 125px;
+  background-color: #1b1b1b19;
+  color: #ffffff;
+}
+
+.slider__title {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.slider__ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  margin-top: -20px;
+  padding-bottom: 20px;
+  list-style: none;
+  font-size: 15px;
+}
+
+.slider__ul li{
+  justify-content: space-between;
+}
+
+.slider__span {
+  padding-top: 10px;
+}
+
+li {
+  padding-top: 10px;
+}
+
+li a{
+  position: static;
+  color: white;
+  text-decoration: none;
+  padding-top: 10px;
+}
+
+li:hover {
+  color: rgba(255, 255, 255, 0.71);
+}
+
+@media (min-width: 1440px) {
+  .slider__nav {
+    min-width: 350px;
+    height: 120px;
+  }
+
+  .slider__title {
+    font-weight: 700;
+    font-size: 18px;
+  }
+}
