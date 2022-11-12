@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import NewsletterForm from './componets/newsletter-form/index';
 
 const App = () => (
   <div className="App">
+    <NewsletterForm />
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
