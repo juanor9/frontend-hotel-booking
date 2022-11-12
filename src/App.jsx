@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import RegisterForm from './componets/register-form/index';
 
 const App = () => (
   <div className="App">
+    <RegisterForm />
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
