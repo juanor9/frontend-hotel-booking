@@ -1,0 +1,60 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  width: 350px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  padding: 1em;
+}
+
+.card__activeBookings, .card__completedBookings {
+  display: flex;
+  padding: 1em;
+  margin-top: 1em;
+  background-color: rgb(240,240,240);;
+  font-size: 11px;
+  border: 3px solid rgb(19, 128, 128);
+  border-radius: 15px;
+
+}
+
+.card__activeBookings:hover {
+  background-color: rgb(166, 247, 247);
+}
+
+.card__img {
+  width: 35%;
+  height: 35%;
+}
+
+.card__description {
+  margin-left: 2em;
+}
+
+.card__description--gray {
+  color: gray;
+  margin-top: 0.5em;
+}
+
+.card__titleCompleted, .card__titleActive {
+  margin-top: 2em;
+}
+
+@media(min-width:1440px){
+  .card {
+    width: 500px;
+  }
+
+  .card__img {
+    width: 30%;
+    height: 30%;
+  }
+
+  .card__activeBookings, .card__completedBookings{
+    font-size: 15px;
+  }
+}
