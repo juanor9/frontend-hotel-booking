@@ -2,9 +2,6 @@ import './style.css';
 import hotel from './hotel.json';
 import RoomCard from '../room-card/index';
 
-// eslint-disable-next-line no-console
-console.log(hotel.rooms);
-
 const HotelRooms = () => (
   <section id="hotel-rooms" className="hotel-rooms">
     <nav>

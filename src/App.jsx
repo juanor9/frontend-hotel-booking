@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import HotelRooms from './componets/hotel-rooms/index';
 
 const App = () => (
   <div className="App">
+    <HotelRooms />
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
