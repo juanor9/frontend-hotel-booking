@@ -1,10 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
-import RoomCard from './componets/room-card/index';
 
 const App = () => (
   <div className="App">
-    <RoomCard />
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
