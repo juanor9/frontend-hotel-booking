@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;0,800;1,700;1,800&display=swap");
+
+$red: rgba(239, 63, 63, 255);
+$light-grey: rgb(247, 247, 247);
+$dark-grey: rgb(180, 180, 180);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  text-align: left;}
+
+.hotel-rooms {
+  &__nav-list{
+    display: flex;
+    list-style: none;
+    justify-content:left;
+    border-bottom: solid 1em $light-grey;
+    padding: .2em;
+    flex-wrap: wrap;
+  }
+  &__nav-item{
+    padding: .5em  1em;
+    &--active{
+      color: $red;
+      border-bottom: solid 2px $red;
+    }
+  }
+  &__list {
+    padding: 1.2em;
+    &-divider {
+      border-top: 1px solid $light-grey;
+      margin: 1em 0;
+    }
+  }
+}
