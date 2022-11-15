@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;0,800;1,700;1,800&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.hotel-filter__nav {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  font-weight: 800;
+  justify-content: space-between;
+  padding: 0.5em 1em;
+}
+.hotel-filter__kind {
+  display: flex;
+  list-style: none;
+}
+.hotel-filter__kind-item {
+  background-color: #f0f0f0;
+  margin-right: 1em;
+  padding: 0.5em 1em;
+}
+.hotel-filter__kind-item--active {
+  background-color: rgb(239, 63, 63);
+  color: white;
+}
+.hotel-filter__lastest {
+  align-items: center;
+  display: flex;
+  list-style: none;
+}
+.hotel-filter__lastest-sub::before {
+  background-image: url("./lastest-icon.png");
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  display: inline-block;
+  height: 1.1em;
+  margin-right: .3em;
+  width: 1em;
+}
+.hotel-filter__lastest-item {
+  color: rgb(239, 63, 63);
+  letter-spacing: -0.3em;
+  padding: 0.5em 0.5em;
+}

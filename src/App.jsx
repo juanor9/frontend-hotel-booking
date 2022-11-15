@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import HotelFilter from './componets/hotel-filter';
 
 const App = () => (
   <div className="App">
+    <HotelFilter />
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
       <p>
