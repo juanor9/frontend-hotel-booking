@@ -1,6 +1,9 @@
+import PropTypes from 'prop-types';
 import './styles.css';
 
-const UserInfo = () => (
+const UserInfo = ({
+  name, birthday, gender, address, city, zip, email, phone, password,
+}) => (
   <div className="card">
     <section className="card__title">
       <h2>Profile</h2>
@@ -16,12 +19,12 @@ const UserInfo = () => (
         <h4 className="card__infoRequestedForm">Zip</h4>
       </div>
       <div className="card__infoUser">
-        <p className="card__infoUserData">Mark Enderess</p>
-        <p className="card__infoUserData">25/12/1990</p>
-        <p className="card__infoUserData">Female</p>
-        <p className="card__infoUserData">549 Sulphur Springs Road</p>
-        <p className="card__infoUserData">Downers Grove, IL</p>
-        <p className="card__infoUserData">60515</p>
+        <p className="card__infoUserData">{name}</p>
+        <p className="card__infoUserData">{birthday}</p>
+        <p className="card__infoUserData">{gender}</p>
+        <p className="card__infoUserData">{address}</p>
+        <p className="card__infoUserData">{city}</p>
+        <p className="card__infoUserData">{zip}</p>
       </div>
     </section>
     <h2 className="card__loginTitle">Login Details</h2>
@@ -32,9 +35,9 @@ const UserInfo = () => (
         <h4 className="card__loginInfoRequested">Password</h4>
       </div>
       <div className="card__loginUser">
-        <p className="card__loginUserData">mark.enderess@mail.com</p>
-        <p className="card__loginUserData">+91 123 - 456 - 7890</p>
-        <p className="card__loginUserData">************</p>
+        <p className="card__loginUserData">{email}</p>
+        <p className="card__loginUserData">{phone}</p>
+        <p className="card__loginUserData">{password}</p>
       </div>
       <div className="card__loginEdit">
         <button type="submit" className="card__loginEditButton">Edit</button>
@@ -44,5 +47,17 @@ const UserInfo = () => (
     </section>
   </div>
 );
+
+UserInfo.propTypes = {
+  name: PropTypes.string.isRequired,
+  birthday: PropTypes.string.isRequired,
+  gender: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  zip: PropTypes.number.isRequired,
+  email: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired,
+};
 
 export default UserInfo;

@@ -1,22 +1,8 @@
-import logo from './logo.svg';
-import './App.css';
+import UserInfo from './componets/UserInfo/UserInfo';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <UserInfo name="Mark Enderess" birthday="25/12/1990" gender="Female" address="549 Sulphur Springs Road" city="Downers Grove, IL" zip={60515} email="mark.enderess@mail.com" phone="+91 123 - 456 - 7890" password="************" />
   </div>
 );
 
