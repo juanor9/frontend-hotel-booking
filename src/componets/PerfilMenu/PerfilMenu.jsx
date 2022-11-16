@@ -1,16 +1,18 @@
+import PropTypes from 'prop-types';
 import './styles.css';
-import PerfilImage from './images/perfilImage.jpg';
-import EditIcon from './images/iconEdit.png';
+import IconEdit from './images/iconEdit.png';
 
-const PerfilMenu = () => (
+const PerfilMenu = ({
+  name, phone, email, imagePerfil,
+}) => (
   <div className="card">
     <section className="card__figures">
-      <img className="card__imgPerfil" alt="perfilImage" src={PerfilImage} />
-      <img className="card__iconEdit" alt="editIcon" src={EditIcon} />
+      <img className="card__imgPerfil" alt="perfilImage" src={imagePerfil} />
+      <img className="card__iconEdit" alt="editIcon" src={IconEdit} />
     </section>
-    <h2 className="card__name">Mark Enderess</h2>
-    <p className="card__phone">+91 123 - 456 - 7890</p>
-    <p className="card__email">mark.enderess@mail.com</p>
+    <h2 className="card__name">{name}</h2>
+    <p className="card__phone">{phone}</p>
+    <p className="card__email">{email}</p>
     <section className="card__bar">
       <p className="card__barOptions">Profile</p>
       <p className="card__barOptions">Bookings</p>
@@ -18,5 +20,12 @@ const PerfilMenu = () => (
     </section>
   </div>
 );
+
+PerfilMenu.propTypes = {
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  imagePerfil: PropTypes.isRequired,
+};
 
 export default PerfilMenu;

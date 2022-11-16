@@ -1,22 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import PerfilMenu from './componets/PerfilMenu/PerfilMenu';
+import ImgPerfil from './componets/PerfilMenu/images/perfilImage.jpg';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <PerfilMenu name="Mark Enderess" phone="+91 123 - 456 - 7890" email="mark.enderess@mail.com" imagePerfil={ImgPerfil} />
   </div>
 );
 
