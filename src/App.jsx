@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import NewsletterForm from './componets/newsletter-form/index';
+import NewsletterForm from './componets/NewsletterForm/NewsletterForm';
 
 const App = () => (
   <div className="App">
