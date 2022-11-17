@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import RegisterForm from './componets/register-form/index';
+import RegisterForm from './componets/RegisterForm/RegisterForm';
 
 const App = () => (
   <div className="App">
