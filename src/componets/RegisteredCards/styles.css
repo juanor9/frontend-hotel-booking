@@ -5,47 +5,22 @@
 }
 
 .card {
-  width: 350px;
-  font-size: 15px;
-  font-family: 'Nunito', sans-serif;
-  padding: 1em;
-  position: relative;
-}
-
-.card__button {
-  margin-top: 2em;
-  padding: 0.5em 1em 0.5em 1em;
-  color: rgb(5, 160, 160);
-  background-color: rgb(240,240,240);
-  border: 0;
-  font-weight: 700;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translate(-20px, 40px);
-}
-
-.card__button:hover {
-  background-color: rgb(5, 160, 160);
-  color: white;
-}
-
-.card__option {
   display: flex;
   flex-direction: column;
   padding: 1em;
   margin-top: 2em;
   background-color: rgb(240,240,240);;
   font-size: 11px;
+  font-family: 'Nunito', sans-serif;
   border-radius: 15px;
   width: 290px;
 }
 
-.card__option:hover {
+.card:hover {
   border: 2px solid rgb(19, 128, 128);
 }
 
-.card__optionCard {
+.card__option {
   display: flex;
   flex-direction: row;
 }
@@ -63,12 +38,8 @@
   margin-top: 0.5em;
 }
 
-@media (min-width:1440px) {
+@media (min-width:768px) {
   .card {
-    width: 500px;
-  }
-
-  .card__option {
     width: 390px;
     font-size: 15px;
   }

@@ -1,19 +1,21 @@
+import PropTypes from 'prop-types';
 import './styles.css';
-import MasterCard from './images/mastercard.png';
 
-const RegisteredCards = () => (
-  <div className="card">
-    <h2>Cards & Payments Methods</h2>
-    <section className="card__option">
-      <div className="card__optionCard">
-        <input type="checkbox" />
-        <img alt="mastercard" src={MasterCard} className="card__img" />
-        <p className="card__optionNumber">**** **** **** 1128</p>
-      </div>
-      <div className="card__optionCompany"><p>MasterCard</p></div>
-    </section>
-    <button className="card__button" type="submit">Edit</button>
-  </div>
+const RegisteredCards = ({ cardLogo, cardNumber, cardCompany }) => (
+  <section className="card">
+    <div className="card__option">
+      <input type="checkbox" />
+      <img alt="mastercard" src={cardLogo} className="card__img" />
+      <p className="card__optionNumber">{cardNumber}</p>
+    </div>
+    <div className="card__optionCompany"><p>{cardCompany}</p></div>
+  </section>
 );
+
+RegisteredCards.propTypes = {
+  cardLogo: PropTypes.isRequired,
+  cardNumber: PropTypes.string.isRequired,
+  cardCompany: PropTypes.string.isRequired,
+};
 
 export default RegisteredCards;
