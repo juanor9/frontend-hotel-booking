@@ -10,6 +10,7 @@ import BookingConfirmationForm from './componets/BookingConfirmationForm/Booking
 import PerfilMenu from './componets/PerfilMenu/PerfilMenu';
 import ImgPerfil from './componets/PerfilMenu/images/perfilImage.jpg';
 import UserInfo from './componets/UserInfo/UserInfo';
+import RegisterForm from './componets/RegisterForm/RegisterForm';
 
 const App = () => (
   <div className="App">
@@ -21,6 +22,7 @@ const App = () => (
     <BookingConfirmationForm />
     <PerfilMenu name="Mark Enderess" phone="+91 123 - 456 - 7890" email="mark.enderess@mail.com" imagePerfil={ImgPerfil} />
     <UserInfo name="Mark Enderess" birthday="25/12/1990" gender="Female" address="549 Sulphur Springs Road" city="Downers Grove, IL" zip={60515} email="mark.enderess@mail.com" phone="+91 123 - 456 - 7890" password="************" />
+    <RegisterForm />
   </div>
 );
 
