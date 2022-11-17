@@ -1,24 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import './componets/NavigationBar/NavigationBar.css';
+import NavigationBar from './componets/NavigationBar/NavigationBar';
+import OfferCard from './componets/OfferCard/OfferCard';
+import OfferImg from './componets/OfferCard/images/offerFood.jpg';
+import SuccessfulPayment from './componets/SuccessfulPayment/SuccessfulPayment';
 import NewsletterForm from './componets/NewsletterForm/NewsletterForm';
 
 const App = () => (
   <div className="App">
+    <SuccessfulPayment />
+    <OfferCard title="Food Order" text="Complimantary Breakfast. Use Code RICAFOOD" image={OfferImg} />
+    <NavigationBar />
     <NewsletterForm />
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
   </div>
 );
 
