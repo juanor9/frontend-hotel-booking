@@ -11,7 +11,7 @@
   padding: 1em;
 }
 
-.card__activeBookings, .card__completedBookings {
+.card__Bookings {
   display: flex;
   padding: 1em;
   margin-top: 1em;
@@ -20,10 +20,6 @@
   border: 3px solid rgb(19, 128, 128);
   border-radius: 15px;
 
-}
-
-.card__activeBookings:hover {
-  background-color: rgb(166, 247, 247);
 }
 
 .card__img {
@@ -40,11 +36,7 @@
   margin-top: 0.5em;
 }
 
-.card__titleCompleted, .card__titleActive {
-  margin-top: 2em;
-}
-
-@media(min-width:1440px){
+@media(min-width:768px){
   .card {
     width: 500px;
   }
@@ -54,7 +46,7 @@
     height: 30%;
   }
 
-  .card__activeBookings, .card__completedBookings{
+  .card__Bookings {
     font-size: 15px;
   }
 }

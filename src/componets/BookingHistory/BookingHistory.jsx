@@ -1,29 +1,27 @@
+import PropTypes from 'prop-types';
 import './styles.css';
-import hotelMiami from './images/hotelMiami.jpg';
-import hotelBremen from './images/hotelBremen.jpg';
 
-const BookingHistory = () => (
+const BookingHistory = ({
+  hotelImg, name, checkIn, checkOut, price,
+}) => (
   <div className="card">
-    <h2>Bookings</h2>
-    <h3 className="card__titleActive">Active</h3>
-    <section className="card__activeBookings">
-      <img className="card__img" alt="hotel" src={hotelMiami} />
+    <section className="card__Bookings">
+      <img className="card__img" alt="hotel" src={hotelImg} />
       <section className="card__description">
-        <h3>The W South</h3>
-        <p className="card__description--gray">25/11/2022 - 27/11/2022</p>
-        <p className="card__description--gray">$2300</p>
-      </section>
-    </section>
-    <h3 className="card__titleCompleted">Completed</h3>
-    <section className="card__completedBookings">
-      <img className="card__img" alt="hotel" src={hotelBremen} />
-      <section className="card__description">
-        <h3>Radisson</h3>
-        <p className="card__description--gray">03/05/2022 - 06/05/2022</p>
-        <p className="card__description--gray">$1500</p>
+        <h3>{name}</h3>
+        <p className="card__description--gray">{checkIn} - {checkOut}</p>
+        <p className="card__description--gray">${price}</p>
       </section>
     </section>
   </div>
 );
+
+BookingHistory.propTypes = {
+  hotelImg: PropTypes.isRequired,
+  name: PropTypes.string.isRequired,
+  checkIn: PropTypes.string.isRequired,
+  checkOut: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+};
 
 export default BookingHistory;
