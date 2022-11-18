@@ -1,3 +1,4 @@
+import './componets/NewsList/StylesNews.css';
 import './componets/NavigationBar/NavigationBar.css';
 import NavigationBar from './componets/NavigationBar/NavigationBar';
 import OfferCard from './componets/OfferCard/OfferCard';
@@ -13,6 +14,9 @@ import UserInfo from './componets/UserInfo/UserInfo';
 import RegisterForm from './componets/RegisterForm/RegisterForm';
 import RegisteredCards from './componets/RegisteredCards/RegisteredCards';
 import MasterCard from './componets/RegisteredCards/images/mastercard.png';
+import BookingHistory from './componets/BookingHistory/BookingHistory';
+import HotelMiami from './componets/BookingHistory/images/hotelMiami.jpg';
+import NewsList from './componets/NewsList/NewsList';
 import HotelRooms from './componets/hotel-rooms/index';
 
 const App = () => (
@@ -28,6 +32,9 @@ const App = () => (
     <RegisterForm />
     <RegisteredCards cardLogo={MasterCard} cardNumber="**** **** **** 1128" cardCompany="MasterCard" />
     <HotelRooms />
+    <NewsList />
+    <BookingHistory />
+    <HotelMiami />
   </div>
 );
 
