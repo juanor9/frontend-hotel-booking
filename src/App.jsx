@@ -17,24 +17,24 @@ import MasterCard from './componets/RegisteredCards/images/mastercard.png';
 import BookingHistory from './componets/BookingHistory/BookingHistory';
 import HotelMiami from './componets/BookingHistory/images/hotelMiami.jpg';
 import NewsList from './componets/NewsList/NewsList';
+import HotelRooms from './componets/hotel-rooms/index';
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <NewsList />
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit <code>src/App.js</code> and save to reload.
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <SuccessfulPayment />
+    <OfferCard title="Food Order" text="Complimantary Breakfast. Use Code RICAFOOD" image={OfferImg} />
+    <NavigationBar />
+    <NewsletterForm />
+    <HotelCard hotelImg={HotelImg} name="The W South" place="Miami" text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo distinctio, deserunt similique magnam ipsa commodi ea." reviews={26412} price={1300} finalPrice={1245} feature1="Swimming" feature2="Parking" />
+    <BookingConfirmationForm />
+    <PerfilMenu name="Mark Enderess" phone="+91 123 - 456 - 7890" email="mark.enderess@mail.com" imagePerfil={ImgPerfil} />
+    <UserInfo name="Mark Enderess" birthday="25/12/1990" gender="Female" address="549 Sulphur Springs Road" city="Downers Grove, IL" zip={60515} email="mark.enderess@mail.com" phone="+91 123 - 456 - 7890" password="************" />
+    <RegisterForm />
+    <RegisteredCards cardLogo={MasterCard} cardNumber="**** **** **** 1128" cardCompany="MasterCard" />
+    <HotelRooms />
+    <NewsList />
+    <BookingHistory />
+    <HotelMiami />
   </div>
 );
 

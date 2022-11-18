@@ -1,0 +1,59 @@
+{
+  "name": "Sea View Hotel",
+  "rooms": [
+    {
+      "id": 1,
+      "name": "Deluxe room",
+      "image": "deluxe.jpeg",
+      "amenities": {
+        "beds": "King/Twin",
+        "couch": true,
+        "poolView": false,
+        "shower": true,
+        "tv": "LCD TV"
+      },
+      "inclusion": ["Wi-Fi", "Breakfast", "Non-Refoundable"],
+      "price" : 1250,
+      "offer" : {
+        "active" : true,
+        "offerPrice" : 1000
+      }
+    },
+    {
+      "id": 2,
+      "name": "Suite room",
+      "image": "suite.jpeg",
+      "amenities": {
+        "beds": "King/Twin",
+        "couch": false,
+        "poolView": true,
+        "shower": true,
+        "tv": "LCD TV"
+      },
+      "inclusion": ["Wi-Fi", "Breakfast", "Free Cancelation"],
+      "price" : 1350,
+      "offer" : {
+        "active" : true,
+        "offerPrice" : 1100
+      }
+    },
+    {
+      "id": 3,
+      "name": "Royal room",
+      "image": "royal.jpg",
+      "amenities": {
+        "beds": "King/Twin",
+        "couch": true,
+        "poolView": true,
+        "shower": true,
+        "tv": "LCD TV"
+      },
+      "inclusion": ["Wi-Fi", "Breakfast", "Dinner", "Lunch"],
+      "price" : 1950,
+      "offer" : {
+        "active" : false,
+        "offerPrice" : 1800
+      }
+    }
+  ]
+}
