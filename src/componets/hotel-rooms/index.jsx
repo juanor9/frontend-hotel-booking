@@ -1,6 +1,6 @@
 import './style.css';
 import hotel from './hotel.json';
-import RoomCard from '../room-card/index';
+import RoomCard from '../RoomCard/RoomCard';
 
 const HotelRooms = () => (
   <section id="hotel-rooms" className="hotel-rooms">
