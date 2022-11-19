@@ -1,5 +1,8 @@
 {
   "name": "Sea View Hotel",
+  "rating": 4,
+  "adress" : "Mina Road, Bur Dubai, Dubai, United Arab Emirates",
+  "features": ["Free Wi-fi", "Free Breakfast"],
   "rooms": [
     {
       "id": 1,
