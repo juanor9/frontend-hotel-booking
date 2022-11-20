@@ -1,0 +1,41 @@
+.card__container{
+  background-color: #F9F9F9;
+  color: black;
+}
+.card__nav{
+  background-color: rgba(128, 128, 128, 0.484);
+}
+
+.card__filter{
+  background: hsla(305, 60%, 83%, 1);
+
+background: linear-gradient(90deg, hsla(305, 60%, 83%, 1) 54%, hsla(321, 90%, 70%, 1) 95%);
+
+background: -moz-linear-gradient(90deg, hsla(305, 60%, 83%, 1) 54%, hsla(321, 90%, 70%, 1) 95%);
+
+background: -webkit-linear-gradient(90deg, hsla(305, 60%, 83%, 1) 54%, hsla(321, 90%, 70%, 1) 95%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EDB8E9", endColorstr="#F76CC6", GradientType=1 );
+padding: 30px;
+}
+
+.title__nav{
+  text-align: center;
+  margin-bottom: 15PX;
+}
+
+.card__ofert{
+  padding: 30px;
+  text-align: center;
+}
+
+.card__destination{
+  display: flex;
+  width: 40px;
+}
+
+.title__article{
+  color: black;
+  text-align: center;
+  margin-bottom: 10px;
+}
