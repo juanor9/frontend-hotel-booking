@@ -1,16 +1,11 @@
 import React from 'react';
+import './StylesGrid.css';
 
 const HotelsGrid = () => (
   <section className="hotel__card">
     <div className="hotel__grid">
       <div className="component__card">
-        here is a component
-      </div>
-      <div className="component__card">
-        here is a component
-      </div>
-      <div className="component__card">
-        here is a component
+        <p>HERE IS A COMPONENT</p>
       </div>
     </div>
     <div className="butons_card">
