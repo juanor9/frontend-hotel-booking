@@ -1,17 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700;1,800&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: 'Nunito', sans-serif;
-  font-size: 15px;
-}
-
 .card__filter {
   background-color: #FFFFFF;
+  font-weight: 800;
   padding: 30px;
   height: 70px;
-  font-weight: 800;
   width: 90%;
 }
 
@@ -21,16 +12,16 @@
 }
 
 .icon__filter {
-  display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+  display: grid;
 }
 
 hr {
-  height: 1px;
-  margin-top: 15px;
-  margin-bottom: 15px;
   background-color: #1B1B1B;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  height: 1px;
 }
 
 .icon__filter ion-icon {
@@ -48,13 +39,13 @@ hr {
   display: none;
 }
 
-@media (min-width: 1440px) {
+@media (min-width: 768px) {
   .card__descktop {
-    width: 90%;
-    display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: center;
+    display: grid;
+    width: 90%;
   }
 
   .select__filter {
@@ -70,8 +61,8 @@ hr {
   }
 
   .card__btn {
-    height: 30px;
     padding: 5px 15px;
+    height: 30px;
     margin: 10px;
     border: none;
   }
@@ -86,9 +77,9 @@ hr {
   }
 
   .select__filter_descktop ion-icon {
-    font-size: 25px;
-    margin-right: 7px;
     vertical-align: middle;
+    margin-right: 7px;
+    font-size: 25px;
   }
 
   .select__filter_descktop span {

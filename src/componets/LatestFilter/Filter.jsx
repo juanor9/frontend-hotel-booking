@@ -1,4 +1,5 @@
 import React from 'react';
+import './StylesFilter.css';
 
 const Filter = () => (
   <div className="card__filter">
