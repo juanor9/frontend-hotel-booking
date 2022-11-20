@@ -6,8 +6,10 @@ import HotelsList from '../../assets/hotelsList.json';
 
 const Hotels = () => (
   <div>
-    <nav>
+    <nav className="page_navbar">
       <NavigationBar />
+    </nav>
+    <nav>
       <HotelFilter />
     </nav>
     <section className="page__hotelsList">
