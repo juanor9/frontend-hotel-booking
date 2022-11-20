@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700;1,800&display=swap');
-
 footer {
+  padding-top: 20px;
   font-family: 'Nunito', sans-serif;
   background-color: #000000;
   font-weight: 700;
@@ -15,7 +14,14 @@ footer {
   color: gray;
 }
 
-.card__footer--1 .card__link{
+.card__footer--5{
+  flex-direction: column;
+  display: flex;
+  height: 300px;
+  width: 100%;
+}
+
+.card__footer--1 .card__link {
   line-height: 1px;
 }
 
@@ -24,9 +30,9 @@ footer {
   margin-top: -15px;
 }
 
-.card__paragraph{
-  line-height: 20px;
+.card__paragraph {
   padding-bottom: 20px;
+  line-height: 20px;
 }
 
 .card__logo {
@@ -35,8 +41,8 @@ footer {
   display: flex;
 }
 
-.card__link{
-  margin-bottom: -15px;
+.card__link {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
 }
@@ -54,6 +60,7 @@ footer {
   opacity: 0.4;
   width: 47px;
 }
+
 ion-icon {
   vertical-align: middle;
   margin-bottom: 7px;
@@ -90,11 +97,9 @@ ion-icon {
 }
 
 .card__new {
-  background-color: gray;
   justify-content: center;
   align-items: center;
   margin-top: 12px;
-  max-width: 450px;
   height: 100px;
   width: 100%;
 }
@@ -124,9 +129,9 @@ ion-icon {
 
 .social__text ion-icon {
   border-radius: 15px;
-  font-weight: 800;
-  margin-top: -5px;
   color: #F13F4B;
+  font-weight: 800;
+  margin-top: 5px;
 }
 
 .box__red {
@@ -143,6 +148,45 @@ ion-icon {
   top: 30%;
 }
 
+.card__news{
+  background-color: black;
+  align-items: flex-start;
+  margin-bottom: 3px;
+  color: gray;
+  display: flex;
+  width: 100%;
+}
+
+.card__image{
+  width: 40%;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+}
+
+.card__title{
+  justify-content: left;
+  margin-bottom: -5px;
+  color: white;
+  margin-top: 0;
+  display: flex;
+}
+
+.card__body{
+  display: flex;
+}
+
+.card__text{
+  margin-right: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: left;
+  font-size: 15px;
+  width: 60%;
+}
+
 @media (min-width: 768px) {
   footer {
     justify-content: space-around;
@@ -151,19 +195,19 @@ ion-icon {
     display: flex;
   }
 
-  .card__footer{
+  .card__footer {
     font-size: 13px;
   }
 
-  .card__link{
+  .card__link {
     font-size: 13px;
   }
 
-  ion-icon{
+  ion-icon {
     font-size: 13px;
   }
 
-  .card__paragraph{
+  .card__paragraph {
     padding-bottom: 1px;
   }
 
@@ -174,28 +218,28 @@ ion-icon {
   }
 
   .card__footer--2 {
-    flex-basis: 17%;
+    flex-basis: 14%;
     order: 4;
   }
 
   .card__footer--3 {
-    flex-basis: 9%;
+    flex-basis: 12%;
     order: 2;
   }
 
   .card__footer--4 {
-    flex-basis: 16%;
+    flex-basis: 20%;
     order: 3;
   }
 
-  .card__footer--4 iframe{
+  .card__footer--4 iframe {
     margin-top: 20px;
     max-width: 400px;
     height: 120px;
   }
 
   .card__footer--5 {
-    flex-basis: 17%;
+    flex-basis: 26%;
     order: 5;
   }
 
@@ -219,22 +263,49 @@ ion-icon {
     height: 50px;
   }
 
-  .social__text{
+  .social__text {
     margin-top: 18px;
   }
 
-  .social__text ion-icon{
-    margin-bottom: -4px;
+  .social__text ion-icon {
+    margin-bottom: 4px;
     font-size: 19px;
   }
 
   .box__red {
-    left:88%;
     color: white;
     font-size: 15px;
+    left: 88%;
     top: 30%;
   }
+
   .card__map {
     height: 195px;
+  }
+
+  .card__text{
+    margin-top: 5px;
+    padding-right: 5;
+    font-size: 0.7em;
+    line-height: 14px;
+  }
+
+  .card__news{
+    max-height: 130px;
+  }
+
+  .card__news img{
+    max-height: 130px;
+  }
+
+  .card__title{
+    margin-bottom: 3px;
+  }
+
+  @media (min-width: 1000px) {
+    .card__text{
+      font-size: 0.9em;
+      line-height: 16px;
+    }
   }
 }

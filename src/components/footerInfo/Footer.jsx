@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import './styles.css';
 
-const Footer = ({ address, phoneNumber, email }) => (
+const Footer = () => (
   <footer>
     <div className="card__footer card__footer--1">
       <div className="title__footer title__desktop">
@@ -13,9 +13,9 @@ const Footer = ({ address, phoneNumber, email }) => (
       <p className="card__paragraph">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloribus doloribus...
       </p>
-      <p className="card__link"><ion-icon name="location-outline" /><a href="/">{address}</a></p>
-      <p className="card__link"><ion-icon name="call-outline" /><a href="/">{phoneNumber}</a></p>
-      <p className="card__link"><ion-icon name="mail-outline" /><a href="/">{email}</a></p>
+      <p className="card__link"><ion-icon name="location-outline" /><a href="/">A-32, Albany,Newyork</a></p>
+      <p className="card__link"><ion-icon name="call-outline" /><a href="/">518 - 457 - 5181</a></p>
+      <p className="card__link"><ion-icon name="mail-outline" /><a href="/">Contact@Gmail.com</a></p>
     </div>
     <div className="card__footer card__footer--2">
       <div className="title__footer">
@@ -49,7 +49,7 @@ const Footer = ({ address, phoneNumber, email }) => (
         <iframe
           title="uniqueTitle"
           id="gmap_canvas"
-          src="https://maps.google.com/maps?q=medellin&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+          src="https://maps.google.com/maps?q=Nuevayork&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
           frameBorder="0"
           scrolling="no"
           marginHeight="0"
@@ -62,7 +62,32 @@ const Footer = ({ address, phoneNumber, email }) => (
         <h3>New Topics</h3>
       </div>
       <div className="card__new">
-        HERE GOES THE NEWS COMPONENT
+        <article className="card__news">
+          <div className="card__image">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.hIom1U0HTOfsRfQ8X2cz0wHaFj&pid=Api&P=0" alt="news img" />
+          </div>
+          <div className="card__text">
+            <h3 className="card__title">
+              Recent News
+            </h3>
+            <p>
+              Lorem ipsumwww dolor sit ...
+            </p>
+          </div>
+        </article>
+        <article className="card__news">
+          <div className="card__image">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.rGEJ7N_qyxyK6NVyOK0deAHaFq&pid=Api&P=0" alt="news img" />
+          </div>
+          <div className="card__text">
+            <h3 className="card__title">
+              Recent News
+            </h3>
+            <p>
+              Lorem ipsumwww dolor sit ...
+            </p>
+          </div>
+        </article>
       </div>
     </div>
     <div className="social__media card__footer--6">
@@ -81,11 +106,5 @@ const Footer = ({ address, phoneNumber, email }) => (
     </div>
   </footer>
 );
-
-Footer.propTypes = {
-  address: PropTypes.string.isRequired,
-  phoneNumber: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-};
 
 export default Footer;
