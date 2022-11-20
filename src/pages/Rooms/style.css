@@ -1,0 +1,16 @@
+.hotel-details{
+  background-color: rgb(240, 240, 240);
+  min-height: 100vh;
+}
+.hotel-details__header{
+  background-color: white;
+  color: black;
+}
+.text__logo{
+  color: black;
+}
+.hotel-details__main-container{
+  display: flex;
+  padding: 0 7em;
+  gap: 1em
+}
