@@ -5,6 +5,10 @@
   position: relative;
   font-size: 15px;
   text-decoration: none;
+  background-color: white;
+}
+.card__figures{
+  z-index: 1;
 }
 
 .figures__icon {

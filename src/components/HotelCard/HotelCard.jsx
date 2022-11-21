@@ -6,9 +6,9 @@ import MapPoint from '../../assets/mapPoint.png';
 import Star from '../../assets/star.png';
 
 const HotelCard = ({
-  hotelImg, name, place, text, reviews, price, finalPrice, feature1, feature2,
+  hotelImg, name, place, text, reviews, price, finalPrice, feature1, feature2, id,
 }) => (
-  <Link to="/hotel/:id" className="cardHotel">
+  <Link to={`/hotel/${id}`} className="cardHotel">
     <section className="card__figures">
       <img className="figures__hotel" alt="hotel" src={hotelImg} />
       <img className="figures__icon" alt="icon" src={HeartIcon} />
@@ -51,6 +51,7 @@ HotelCard.propTypes = {
   finalPrice: PropTypes.number.isRequired,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default HotelCard;
