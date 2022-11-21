@@ -3,6 +3,10 @@
   "rating": 4,
   "address" : "Mina Road, Bur Dubai, Dubai, United Arab Emirates",
   "features": ["Free Wi-fi", "Free Breakfast"],
+  "contact":{
+    "phone": "123 254 121",
+    "email": "contact@hotel.com"
+  },
   "rooms": [
     {
       "id": 1,
