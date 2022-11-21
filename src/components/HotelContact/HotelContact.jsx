@@ -1,5 +1,7 @@
 import './style.css';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationPin, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 const HotelContact = (props) => {
   const {
@@ -14,15 +16,15 @@ const HotelContact = (props) => {
     <section id="hotel-contact" className="hotel-contact">
       <h3 className="hotel-contact__header">Contact Info</h3>
       <div className="hotel-contact__contact-details">
-        <p className="hotel-contact__address">{address}</p>
-        <p className="hotel-contact__phone">{phone}</p>
-        <p className="hotel-contact__email">{email}</p>
+        <p className="hotel-contact__address"><FontAwesomeIcon icon={faLocationPin} key="location" /> {address}</p>
+        <p className="hotel-contact__phone"><FontAwesomeIcon icon={faPhone} key="phone" /> {phone}</p>
+        <p className="hotel-contact__email"><FontAwesomeIcon icon={faEnvelope} key="email" /> {email}</p>
         <ul className="hotel-contact__social-media">
-          <li className="hotel-contact__social-media-item">{socialMedia}</li>
+          <li>{socialMedia.facebook}</li>
         </ul>
         <hr className="hotel-contact__divider" />
-        <p className="hotel-contact__checkin">{checkin}</p>
-        <p className="hotel-contact__checkout">{checkout}</p>
+        <p className="hotel-contact__checkin">Check-in: {checkin}</p>
+        <p className="hotel-contact__checkout">Check-out: {checkout}</p>
       </div>
 
     </section>
@@ -32,7 +34,9 @@ HotelContact.propTypes = {
   address: PropTypes.string,
   phone: PropTypes.string,
   email: PropTypes.string,
-  socialMedia: PropTypes.arrayOf(PropTypes.string),
+  socialMedia: PropTypes.shape({
+    facebook: PropTypes.string,
+  }),
   checkin: PropTypes.string,
   checkout: PropTypes.string,
 };
@@ -40,7 +44,7 @@ HotelContact.defaultProps = {
   address: 'No address available',
   phone: 'No phone number available',
   email: 'No e-mail available',
-  socialMedia: [''],
+  socialMedia: {},
   checkin: 'No check-in hour available',
   checkout: 'No check-out hour available',
 };

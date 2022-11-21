@@ -1,0 +1,8 @@
+.hotel-contact{
+  background-color: white;
+  padding: .5em 1em;
+}
+.hotel-contact__header{
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}

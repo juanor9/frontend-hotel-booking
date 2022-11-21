@@ -9,6 +9,9 @@
         "phone": "123 254 121",
         "email": "contact@hotel.com"
       },
+      "socialMedia": {
+        "facebook": "link to facebook"
+      },
       "features": ["Free Wi-fi", "Free Breakfast"],
       "checkin": "2:00 p. m",
       "checkout": "12:00 p. m",
