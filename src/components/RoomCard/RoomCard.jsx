@@ -1,5 +1,14 @@
 import PropTypes from 'prop-types';
 import './style.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faBed,
+  faShower,
+  faPersonSwimming as faPool,
+  faTv,
+  faCouch,
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 
 const RoomCard = (props) => {
   const {
@@ -15,13 +24,14 @@ const RoomCard = (props) => {
     offer,
     offerPrice,
   } = props;
+  let i = 0;
   return (
     <section id="room-card" className="room-card">
       <h3 className="room-card__header">{name}</h3>
       <div className="room-card__info">
         <article className="room-card__img">
           <picture className="room-card__pic">
-            <img src={img} alt="" />
+            <img src={`../${img}`} alt="" />
           </picture>
         </article>
         <article className="room-card__amenities">
@@ -29,31 +39,31 @@ const RoomCard = (props) => {
           <ul className="room-card__info-list">
             {bed ? (
               <li className="room-card__list-item">
-                <span className="room-card__list-icon--bed" />{' '}
+                <FontAwesomeIcon icon={faBed} key={`${name} bed`} /> {' '}
                 <span className="room-card__list-icon">{bed}</span>
               </li>
             ) : null}
             {pool === true ? (
               <li className="room-card__list-item">
-                <span className="room-card__list-icon--pool" />{' '}
+                <FontAwesomeIcon icon={faPool} key={`${name} pool view`} />
                 <span className="room-card__list-icon">Pool view</span>
               </li>
             ) : null}
             {shower === true ? (
               <li className="room-card__list-item">
-                <span className="room-card__list-icon--shower" />{' '}
+                <FontAwesomeIcon icon={faShower} key={`${name} shower`} />
                 <span className="room-card__list-icon">Shower</span>
               </li>
             ) : null}
             {tv ? (
               <li className="room-card__list-item">
-                <span className="room-card__list-icon--tv" />{' '}
+                <FontAwesomeIcon icon={faTv} key={`${name} tv`} />
                 <span className="room-card__list-icon">{tv}</span>
               </li>
             ) : null}
             {couch === true ? (
               <li className="room-card__list-item">
-                <span className="room-card__list-icon--couch" />{' '}
+                <FontAwesomeIcon icon={faCouch} key={`${name} couch`} />
                 <span className="room-card__list-icon">Couch</span>
               </li>
             ) : null}
@@ -62,12 +72,15 @@ const RoomCard = (props) => {
         <article className="room-card__inclusion">
           <h4>Inclusion</h4>
           <ul className="room-card__info-list">
-            {inclusion.map((e) => (
-              <li className="room-card__list-item">
-                <span className="room-card__list-icon--check" />{' '}
-                <span className="room-card__list-icon">{e}</span>
-              </li>
-            ))}
+            {inclusion.map((e) => {
+              i += 1;
+              return (
+                <li className="room-card__list-item">
+                  <FontAwesomeIcon icon={faCheck} key={`check${i}`} />{' '}
+                  <span className="room-card__list-icon">{e}</span>
+                </li>
+              );
+            })}
           </ul>
         </article>
       </div>

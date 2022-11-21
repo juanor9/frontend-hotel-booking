@@ -8,7 +8,7 @@ const Footer = () => (
       </div>
       <div className="card__logo">
         <img src="https://tse1.mm.bing.net/th?id=OIP.tuFnivBxU22mvFYtoj83gQHaFj&pid=Api&rs=1&c=1&qlt=95&w=155&h=116" alt="logo" />
-        <span className="text__logo">RICA</span>
+        <span className="footer-text__logo">RICA</span>
       </div>
       <p className="card__paragraph">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloribus doloribus...
