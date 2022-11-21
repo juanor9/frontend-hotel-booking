@@ -8,7 +8,7 @@ import Star from '../../assets/star.png';
 const HotelCard = ({
   hotelImg, name, place, text, reviews, price, finalPrice, feature1, feature2,
 }) => (
-  <Link to="/rooms" className="card">
+  <Link to="/hotel/:id" className="cardHotel">
     <section className="card__figures">
       <img className="figures__hotel" alt="hotel" src={hotelImg} />
       <img className="figures__icon" alt="icon" src={HeartIcon} />

@@ -1,6 +1,7 @@
 .weather {
   text-align: left;
   padding: 1em;
+  background-color: white;
 }
 .weather__header {
   margin-bottom: 1em;

@@ -32,7 +32,6 @@
 .text__logo {
   margin-left: 10px;
   font-weight: 800;
-  color: #FFFFFF;
 }
 
 .navigation__menu {
@@ -60,7 +59,6 @@
 }
 
 ion-icon {
-  color: #FFFFFF;
   font-size: 18px;
   font-weight: 800;
 }

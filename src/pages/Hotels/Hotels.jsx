@@ -3,7 +3,7 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import HotelCard from '../../components/HotelCard/HotelCard';
 import Filter from '../../components/LatestFilter/Filter';
-import Footer from '../../components/FooterInfo/Footer';
+import Footer from '../../components/Footer/Footer';
 import HotelsGrid from '../../components/HotelGrid/HotelsGrid';
 import HotelsList from '../../assets/hotelsList.json';
 
