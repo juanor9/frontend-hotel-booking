@@ -1,12 +1,14 @@
-import SliderNav from './componets/SliderNav/SliderNav';
-import './componets/SliderNav/sliderNav.css';
+import { Routes, Route } from 'react-router-dom';
+import Hotels from './pages/Hotels/Hotels';
+import Rooms from './pages/Rooms/Rooms';
+import Home from './pages/Home/Home';
 
 const App = () => (
-  <div className="App">
-    <header className="App-header">
-      <SliderNav />
-    </header>
-  </div>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/hotels" element={<Hotels />} />
+    <Route path="/hotel/:id" element={<Rooms />} />
+  </Routes>
 );
 
 export default App;
