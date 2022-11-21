@@ -1,0 +1,110 @@
+[
+  {
+    "hotelImg": "hotelBremen.jpg",
+    "name": "Radisson",
+    "place": "Bremen",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 26457,
+    "price": 1300,
+    "finalPrice": 1245,
+    "feature1": "Breakfast",
+    "feature2": "Spa",
+    "id": 1
+  },
+  {
+    "hotelImg": "hotelCancun.jpg",
+    "name": "Aqua",
+    "place": "Cancun",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 28401,
+    "price": 2500,
+    "finalPrice": 2245,
+    "feature1": "Swimming",
+    "feature2": "Pet Allowed",
+    "id": 2
+  },
+  {
+    "hotelImg": "hotelCartagena.jpg",
+    "name": "Karibana",
+    "place": "Cartagena",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 22056,
+    "price": 1000,
+    "finalPrice": 980,
+    "feature1": "Swimming",
+    "feature2": "Parking",
+    "id": 3
+  },
+  {
+    "hotelImg": "hotelFairbanks.jpg",
+    "name": "Woods",
+    "place": "Fairbanks",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 10067,
+    "price": 1200,
+    "finalPrice": 1100,
+    "feature1": "Bar",
+    "feature2": "Parking",
+    "id": 4
+  },
+  {
+    "hotelImg": "hotelMetsovo.jpg",
+    "name": "Anax",
+    "place": "Metsovo",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 14090,
+    "price": 1360,
+    "finalPrice": 1280,
+    "feature1": "Breakfast",
+    "feature2": "Parking",
+    "id": 5
+  },
+  {
+    "hotelImg": "hotelMiami.jpg",
+    "name": "The W South",
+    "place": "Miami",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 21130,
+    "price": 2600,
+    "finalPrice": 2450,
+    "feature1": "Swimming",
+    "feature2": "Parking",
+    "id": 6
+  },
+  {
+    "hotelImg": "hotelPucon.jpg",
+    "name": "Monte Verde",
+    "place": "Pucon",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 11543,
+    "price": 1890,
+    "finalPrice": 1400,
+    "feature1": "Swimming",
+    "feature2": "Air Conditioned",
+    "id": 7
+  },
+  {
+    "hotelImg": "hotelVitoria.jpg",
+    "name": "Porto",
+    "place": "Vitoria",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 8842,
+    "price": 1000,
+    "finalPrice": 860,
+    "feature1": "Swimming",
+    "feature2": "Parking",
+    "id": 8
+  },
+  {
+    "hotelImg": "hotelZermatt.jpg",
+    "name": "Kulm",
+    "place": "Zermatt",
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa facilis soluta quod hic ad nesciunt, sint sapiente earum assumenda cum recusandae saepe dolorum cupiditate doloribus nam.",
+    "reviews": 12250,
+    "price": 1700,
+    "finalPrice": 1570,
+    "feature1": "Breakfast",
+    "feature2": "Airport Shuttle",
+    "id": 9
+  }
+]

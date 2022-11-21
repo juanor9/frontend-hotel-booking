@@ -1,10 +1,12 @@
-
 .navigation__card {
   display: flex;
   height: 55px;
   justify-content: space-around;
   align-items: center;
   background-color: #1b1b1b00;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .navigation__logo {

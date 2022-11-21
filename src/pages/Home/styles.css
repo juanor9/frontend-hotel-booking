@@ -12,7 +12,7 @@
   width: 100%;
 }
 
-.card__filter{
+.card__filterHome{
 background-image: url("https://tse3.mm.bing.net/th?id=OIP.gGeEdbMNaWxhtyfWkcgYCQHaCs&pid=Api&P=0");
 background-repeat: no-repeat;
 background-size: cover;
@@ -54,7 +54,7 @@ width: 100%;
   width: 100%;
 }
 
-.card__descktop{
+.card__descktopHome{
   justify-content: center;
   display: flex;
   padding: 15px;

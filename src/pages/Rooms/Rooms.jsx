@@ -6,7 +6,7 @@ import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import BookingForm from '../../components/BookingForm/BookingForm';
 import Weather from '../../components/Weather/Weather';
-import Footer from '../../components/FooterInfo/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const Rooms = () => {
   const { id } = useParams();

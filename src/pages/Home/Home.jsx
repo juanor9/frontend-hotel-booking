@@ -1,4 +1,4 @@
-import Footer from '../../components/footerInfo/Footer';
+import Footer from '../../components/Footer/Footer';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import Explainer from '../../components/Explainer/Explainer';
@@ -12,7 +12,7 @@ const Home = () => (
     <nav className="card__nav">
       <NavigationBar />
     </nav>
-    <header className="card__filter">
+    <header className="card__filterHome">
       <h2 className="title__nav">
         BOOK ROOMS, HOMES & APTS
       </h2>
@@ -25,7 +25,7 @@ const Home = () => (
       {
         window.innerWidth > 768
           ? (
-            <div className="card__descktop">{
+            <div className="card__descktopHome">{
               data.map((e) => (
                 <OfferCard
                   key={e.id}
@@ -54,7 +54,7 @@ const Home = () => (
       {
         window.innerWidth > 768
           ? (
-            <div className="card__descktop">{
+            <div className="card__descktopHome">{
               data.map((e) => (
                 <OfferCard
                   key={e.id}
