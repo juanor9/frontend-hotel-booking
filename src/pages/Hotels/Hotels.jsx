@@ -33,6 +33,7 @@ const Hotels = () => (
               feature1={hotel.feature1}
               feature2={hotel.feature2}
               key={hotel.id}
+              id={hotel.id}
             />
           ))
         }

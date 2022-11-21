@@ -7,7 +7,7 @@
   display: block;
   justify-content: center;
   align-items: center;
-  margin-left: 0.8em;
+  background-color: rgb(240, 240, 240);
 }
 
 .page__hotelsList {
@@ -17,4 +17,10 @@
   gap: 30px;
   flex-wrap: wrap;
   justify-content: center;
+}
+@media (min-width: 768px) {
+  .page__footer{
+    padding: 0 7rem;
+  }
+
 }
