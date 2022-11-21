@@ -3,12 +3,12 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import Explainer from '../../components/Explainer/Explainer';
 import OfferCard from '../../components/OfferCard/OfferCard';
-import ReadArticles from '../../components/ReadArticles/ReadArticles';
+import data from '../../assets/offer.json';
 import imgOffer from '../../assets/offerFood.jpg';
 import './styles.css';
 
 const Home = () => (
-  <div className="card__container">
+  <div className="card__container grid">
     <nav className="card__nav">
       <NavigationBar />
     </nav>
@@ -22,30 +22,66 @@ const Home = () => (
       <h2 className="title__article">
         Top Offers
       </h2>
-      <OfferCard
-        title="Food order"
-        text="reteret reter"
-        image={imgOffer}
-      />
+      {
+        window.innerWidth > 768
+          ? (
+            <div className="card__descktop">{
+              data.map((e) => (
+                <OfferCard
+                  key={e.id}
+                  title={e.title}
+                  text={e.text}
+                  image={imgOffer}
+                />
+              ))
+            }
+            </div>
+          ) : (
+            <div className="card__mobile">
+              <OfferCard
+                title="Hotel Booking"
+                text="Avail hot deals on hotel"
+                image={imgOffer}
+              />
+            </div>
+          )
+      }
     </article>
     <h2 className="title__article">
-      Top Offers
+      Most Popular Destination
     </h2>
-    <OfferCard
-      title="Food order"
-      text="reteret reter"
-      image="https://tse4.mm.bing.net/th?id=OIP.YvrLKP2jhEQqlcV0AtI2ngHaFc&pid=Api&P=0"
-    />
-    <Explainer />
-    <ReadArticles
-      image="https://tse4.mm.bing.net/th?id=OIP.YvrLKP2jhEQqlcV0AtI2ngHaFc&pid=Api&P=0"
-      day="02"
-      month="Ene"
-      postBy="Julia Holmes"
-      text="lorem imsun in dolor"
-      headline="lorem impsun lorem impsun "
-    />
-    <Footer />
+    <article className="card__ofert">
+      {
+        window.innerWidth > 768
+          ? (
+            <div className="card__descktop">{
+              data.map((e) => (
+                <OfferCard
+                  key={e.id}
+                  title={e.title}
+                  text={e.text}
+                  image="https://tse1.mm.bing.net/th?id=OIP.8ScCX1fIM6a75Vhi4aEAzAHaE0&pid=Api&P=0"
+                />
+              ))
+            }
+            </div>
+          ) : (
+            <div className="card__mobile">
+              <OfferCard
+                title="Hotel Booking"
+                text="Avail hot deals on hotel"
+                image="https://tse1.mm.bing.net/th?id=OIP.8ScCX1fIM6a75Vhi4aEAzAHaE0&pid=Api&P=0"
+              />
+            </div>
+          )
+      }
+    </article>
+    <section className="card__explainer">
+      <Explainer />
+    </section>
+    <footer className="card__footer">
+      <Footer />
+    </footer>
   </div>
 );
 

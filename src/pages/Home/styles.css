@@ -1,22 +1,23 @@
 .card__container{
   background-color: #F9F9F9;
+  flex-direction: column;
+  align-items: center;
   color: black;
+  display: flex;
+  width: 100%;
 }
+
 .card__nav{
-  background-color: rgba(128, 128, 128, 0.484);
+  background-color: black;
+  width: 100%;
 }
 
 .card__filter{
-  background: hsla(305, 60%, 83%, 1);
-
-background: linear-gradient(90deg, hsla(305, 60%, 83%, 1) 54%, hsla(321, 90%, 70%, 1) 95%);
-
-background: -moz-linear-gradient(90deg, hsla(305, 60%, 83%, 1) 54%, hsla(321, 90%, 70%, 1) 95%);
-
-background: -webkit-linear-gradient(90deg, hsla(305, 60%, 83%, 1) 54%, hsla(321, 90%, 70%, 1) 95%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#EDB8E9", endColorstr="#F76CC6", GradientType=1 );
+background-image: url("https://tse3.mm.bing.net/th?id=OIP.gGeEdbMNaWxhtyfWkcgYCQHaCs&pid=Api&P=0");
+background-repeat: no-repeat;
+background-size: cover;
 padding: 30px;
+width: 100%;
 }
 
 .title__nav{
@@ -24,8 +25,43 @@ padding: 30px;
   margin-bottom: 15PX;
 }
 
-.card__ofert{
-  padding: 30px;
+.card{
+  background-color: #f9f9f900;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: none;
+  max-width: 600px;
+  display: flex;
+  margin: 10px;
+  height: 100%;
+  padding: 0;
+}
+
+.card__title{
+  margin-top: 12px;
+  font-size: 15px;
+  color: gray;
+}
+
+.card__text{
+  text-align: center;
+  font-size: 12px;
+  margin-top: 8px;
+  width: 100%;
+}
+.card__ofert .card__img{
+  border-radius: 15px;
+  width: 100%;
+}
+
+.card__descktop{
+  justify-content: center;
+  display: flex;
+  padding: 15px;
+  margin: 10px;
+}
+
+.card__mobile{
   text-align: center;
 }
 
@@ -35,7 +71,46 @@ padding: 30px;
 }
 
 .title__article{
-  color: black;
-  text-align: center;
   margin-bottom: 10px;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+  color: black;
+}
+
+.card__articles p{
+  color: gray;
+}
+
+.card__paragraph{
+  color: gray;
+  margin-top: 0;
+}
+
+.card__text p{
+  text-align: left;
+  font-size: 0.6em;
+  color: gray;
+}
+
+.card__text .card__title{
+  margin-top: -5px;
+}
+
+.card__explainer{
+  width: 100%;
+}
+
+.card__footer{
+  width: 100%;
+}
+
+@media(min-width: 768px){
+  .card__text p{
+    font-size: 0.7em;
+  }
+
+  .card__ofert{
+    width: 100%;
+  }
 }
