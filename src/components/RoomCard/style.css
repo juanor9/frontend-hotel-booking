@@ -1,4 +1,4 @@
-* {
+.room-card {
   text-align: left;
 }
 
@@ -45,56 +45,6 @@
   display: flex;
   justify-content: left;
   align-items: center;
-}
-.room-card__list-icon--bed {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.5em;
-  background-image: url("../../assets/bed.png");
-}
-.room-card__list-icon--pool {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.5em;
-  background-image: url("../../assets/pool.png");
-}
-.room-card__list-icon--shower {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.5em;
-  background-image: url("../../assets/shower.png");
-}
-.room-card__list-icon--tv {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.5em;
-  background-image: url("../../assets/tv.png");
-}
-.room-card__list-icon--couch {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-right: 0.5em;
-  background-image: url("../../assets/couch.png");
 }
 .room-card__list-icon--check {
   display: inline-block;

@@ -1,15 +1,11 @@
-* {
-  color: #FFFFFF;
-  font-size: 15px;
-  font-weight: 700;
-}
-
 .navigation__card {
   display: flex;
   height: 55px;
   justify-content: space-around;
   align-items: center;
-  background-color: #1b1b1b00;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .navigation__logo {
@@ -35,7 +31,6 @@
 .text__logo {
   margin-left: 10px;
   font-weight: 800;
-  color: #FFFFFF;
 }
 
 .navigation__menu {
@@ -63,7 +58,6 @@
 }
 
 ion-icon {
-  color: #FFFFFF;
   font-size: 18px;
   font-weight: 800;
 }

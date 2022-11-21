@@ -1,23 +1,20 @@
-.card {
+.booking-form {
   display: flex;
   flex-direction: column;
   padding: 2em;
-  width: 300px;
   background-color: white;
 }
 
-.card__mapouter{
+.booking-for__mapouter{
   position:relative;
   text-align:right;
-  height:200px;
-  width:300px;
+  width:100%;
 }
 
-.card__gmap_canvas {
+.booking-for__gmap_canvas {
   overflow:hidden;
   background:none!important;
-  height:200px;
-  width:300px;
+  width: 100%;
 }
 
 .card__line {

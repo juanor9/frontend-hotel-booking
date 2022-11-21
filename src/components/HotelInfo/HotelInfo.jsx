@@ -11,19 +11,28 @@ const HotelInfo = (props) => {
     address,
     features,
   } = props;
+  let i = 0;
   return (
     <section id="hotel-info" className="hotel-info">
       <div className="hotel-info__header">
         <h2 className="hotel-info__name">{name}</h2>
         <p className="hotel-info__rating">
-          {[...Array(rating)].map(() => <FontAwesomeIcon icon={faFullStar} />)}
-          {[...Array(5 - rating)].map(() => <FontAwesomeIcon icon={faEmptyStar} />)}
+          {
+          [...Array(rating)].map(() => {
+            i += 1;
+            return (<FontAwesomeIcon icon={faFullStar} key={`star${i}`} />);
+          })
+}
+          {[...Array(5 - rating)].map(() => {
+            i += 1;
+            return (<FontAwesomeIcon icon={faEmptyStar} key={`empty-star${i}`} />);
+          })}
         </p>
         <button className="hotel-info__header-button" type="button">
-          <FontAwesomeIcon icon={faShareFromSquare} /> Share
+          <FontAwesomeIcon icon={faShareFromSquare} key="share" /> Share
         </button>
         <button className="hotel-info__header-button" type="button">
-          <FontAwesomeIcon icon={faHeart} /> Save
+          <FontAwesomeIcon icon={faHeart} key="save" /> Save
         </button>
       </div>
       <p className="hotel-info__address">{address}</p>
