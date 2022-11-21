@@ -7,8 +7,8 @@ const Footer = () => (
         <h3>Contact Us</h3>
       </div>
       <div className="card__logo">
-        <img src="https://tse1.mm.bing.net/th?id=OIP.tuFnivBxU22mvFYtoj83gQHaFj&pid=Api&rs=1&c=1&qlt=95&w=155&h=116" alt="logo" />
-        <span className="footer-text__logo">RICA</span>
+        <img className="card__img" src="https://tse1.mm.bing.net/th?id=OIP.tuFnivBxU22mvFYtoj83gQHaFj&pid=Api&rs=1&c=1&qlt=95&w=155&h=116" alt="logo" />
+        <span className="text__logo">RICA</span>
       </div>
       <p className="card__paragraph">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique doloribus doloribus...
@@ -64,7 +64,7 @@ const Footer = () => (
       <div className="card__new">
         <article className="card__news">
           <div className="card__image">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.hIom1U0HTOfsRfQ8X2cz0wHaFj&pid=Api&P=0" alt="news img" />
+            <img className="card__img" src="https://tse4.mm.bing.net/th?id=OIP.hIom1U0HTOfsRfQ8X2cz0wHaFj&pid=Api&P=0" alt="news img" />
           </div>
           <div className="card__text">
             <h3 className="card__title">
@@ -77,7 +77,7 @@ const Footer = () => (
         </article>
         <article className="card__news">
           <div className="card__image">
-            <img src="https://tse4.mm.bing.net/th?id=OIP.rGEJ7N_qyxyK6NVyOK0deAHaFq&pid=Api&P=0" alt="news img" />
+            <img className="card__img" src="https://tse4.mm.bing.net/th?id=OIP.rGEJ7N_qyxyK6NVyOK0deAHaFq&pid=Api&P=0" alt="news img" />
           </div>
           <div className="card__text">
             <h3 className="card__title">

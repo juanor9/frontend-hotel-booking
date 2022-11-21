@@ -1,25 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,700;1,800&display=swap');
-
-section {
-  background-color: rgb(230, 229, 229);
+.hotel__card {
   font-family: 'Nunito', sans-serif;
   flex-direction: column;
   align-items: center;
   display: flex;
-}
-
-.component__card {
-  box-shadow: -2px 1px 63px -44px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: -2px 1px 63px -44px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: -2px 1px 63px -44px rgba(0, 0, 0, 0.6);
-  background-color: rgb(103, 103, 103);
-  justify-content: center;
-  align-items: center;
-  max-width: 300px;
-  display: flex;
-  height: 320px;
-  margin: 15px;
-  width: 95%;
 }
 
 .butons_card {
@@ -28,13 +11,6 @@ section {
   margin-top: 40px;
 }
 
-.hotel__grid{
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  width: 96%;
-}
 .butons_card button {
   box-shadow: -2px 1px 63px -7px rgba(0, 0, 0, 0.6);
   -webkit-box-shadow: -2px 1px 63px -7px rgba(0, 0, 0, 0.6);
@@ -57,16 +33,9 @@ section {
 }
 
 @media(min-width: 768px){
-  section {
+  .hotel__card {
     justify-content: space-between;
     display: flex;
-  }
-
-  .hotel__grid {
-    grid-template-columns: auto auto auto;
-    margin-right: 22px;
-    display: grid;
-    margin: 22px;
   }
 
   .component__card{
@@ -82,24 +51,11 @@ section {
 }
 
 @media (min-width: 1440px) {
-  section {
+  .hotel__card {
     justify-content: center;
     display: flex;
   }
 
-  .component__card{
-    justify-content: center;
-    min-width: 230px;
-    height: 290px;
-  }
-
-  .hotel__grid {
-    grid-template-columns: auto auto auto;
-    margin-right: 22px;
-    display: grid;
-    margin: 22px;
-  }
-  
   .butons_card button {
     width: 40px;
     height: 40px;
