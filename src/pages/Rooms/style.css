@@ -1,0 +1,45 @@
+.hotel-details {
+  background-color: rgb(240, 240, 240);
+  min-height: 100vh;
+}
+.hotel-details__main-container{
+  display: flex;
+  flex-direction: column;
+  padding: 0 .5em;
+  gap: 1em 1em;
+}
+.hotel-details__header {
+  background-color: white;
+  color: black;
+}
+.text__logo {
+  color: black;
+}
+.hotel-details__hotel-info{
+  padding: 1em .5em;
+}
+.hotel-details__rooms{
+  background-color: white;
+}
+.hotel-details__aside{
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;}
+
+@media (min-width: 768px) {
+  .hotel-details__main-container {
+    display: flex;
+    gap: 1em 1em;
+    padding: 0 7em;
+  }
+  .hotel-details__hotel-info{
+    padding: 1em 7em;
+  }
+  .hotel-details__footer{
+    padding: 0 7rem;
+  }
+  .hotel-details__main-container{
+    flex-direction: row;
+    justify-content:stretch;
+  }
+}

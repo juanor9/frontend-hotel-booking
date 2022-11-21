@@ -1,5 +1,8 @@
 import './style.css';
-import sun from '../../assets/sol.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faSun,
+} from '@fortawesome/free-regular-svg-icons';
 
 const Weather = () => {
   function days(date, amountOfDays) {
@@ -21,9 +24,7 @@ const Weather = () => {
           {daysWeather.map((element) => (
             <li key={element.id} className="weather__list-element">
               <span className="weather__list-date">{element}</span>{' '}
-              <figure className="weather__icon">
-                <img src={sun} alt="" />
-              </figure>
+              <FontAwesomeIcon icon={faSun} key={`${element} sun`} />
             </li>
           ))}
         </ul>

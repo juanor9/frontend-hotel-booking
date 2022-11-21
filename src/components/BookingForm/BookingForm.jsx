@@ -1,5 +1,8 @@
 import './styles.css';
-import check from '../../assets/checkGreen.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 
 const BookingForm = () => (
   <div className="card">
@@ -15,11 +18,11 @@ const BookingForm = () => (
       <section className="textTop__features">
         <h3 className="features__title">Deluxe Rate</h3>
         <div className="features__body">
-          <img alt="check" src={check} />
+          <FontAwesomeIcon icon={faCheck} key="check-1" />
           <p className="features__text">Room Only</p>
         </div>
         <div className="features__body">
-          <img alt="check" src={check} />
+          <FontAwesomeIcon icon={faCheck} key="check-2" />
           <p className="features__text">Non Refundable</p>
         </div>
       </section>
