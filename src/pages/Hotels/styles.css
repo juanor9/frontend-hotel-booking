@@ -1,8 +1,20 @@
-.page__navbar {
-  background-color: black;
+.page {
+  width: 100%;
+  position: relative;
+}
+
+.page__body {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.8em;
 }
 
 .page__hotelsList {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  margin-top: 3em;
+  margin-bottom: 1em;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }

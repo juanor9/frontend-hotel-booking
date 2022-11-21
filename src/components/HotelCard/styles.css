@@ -4,6 +4,7 @@
   flex-direction: column;
   position: relative;
   font-size: 15px;
+  text-decoration: none;
 }
 
 .figures__icon {
@@ -25,7 +26,7 @@
   width: 100%;
 }
 
-.card__title {
+.card__titleHotel {
   margin-top: 0;
   margin-left: 1em;
 }
@@ -42,7 +43,7 @@
   margin-bottom: 0;
 }
 
-.card__text, .card__bottom {
+.card__textHotel, .card__bottom {
   margin-left: 1em;
 }
 
@@ -87,11 +88,7 @@
 }
 
 @media (min-width:768px){
-  .card {
-    width: 400px;
-  }
-
-  .card__title, .card__bottom {
+  .card__titleHotel, .card__bottom {
     display: flex;
   }
 
