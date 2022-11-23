@@ -1,0 +1,20 @@
+.offerview__card{
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 380px;
+  display: flex;
+}
+
+.offerview__component{
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 15px;
+  display: flex;
+  width: 100vw;
+}
+.offerview__title{
+  margin-bottom: -10px;
+  margin-top: 10px;
+}

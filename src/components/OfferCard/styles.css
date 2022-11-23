@@ -8,6 +8,7 @@
 .card__img {
   border-radius: 20px;
   width: 100%;
+  object-fit: cover;
 }
 
 .card__title {
