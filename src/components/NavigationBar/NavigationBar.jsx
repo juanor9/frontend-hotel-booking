@@ -1,4 +1,5 @@
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => (
   <nav className="navigation__card">
@@ -20,10 +21,10 @@ const NavigationBar = () => (
     <div className="navigation__menu">
       <ul>
         <li>
-          <a href="/">HOME</a>
+          <Link to="/">HOME</Link>
         </li>
         <li>
-          <a href="/">HOTEL</a>
+          <Link to="/hotels">HOTEL</Link>
         </li>
         <li>
           <a href="/">PAGES</a>

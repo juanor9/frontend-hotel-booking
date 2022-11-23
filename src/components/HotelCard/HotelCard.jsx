@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.css';
 import HeartIcon from '../../assets/iconHeart.png';
@@ -5,18 +6,18 @@ import MapPoint from '../../assets/mapPoint.png';
 import Star from '../../assets/star.png';
 
 const HotelCard = ({
-  hotelImg, name, place, text, reviews, price, finalPrice, feature1, feature2,
+  hotelImg, name, place, text, reviews, price, finalPrice, feature1, feature2, id,
 }) => (
-  <div className="card">
+  <Link to={`/hotel/${id}`} className="cardHotel">
     <section className="card__figures">
       <img className="figures__hotel" alt="hotel" src={hotelImg} />
       <img className="figures__icon" alt="icon" src={HeartIcon} />
     </section>
-    <section className="card__title">
+    <section className="card__titleHotel">
       <h3 className="title__name">{name}</h3>
       <p className="title__place"><img alt="map point" src={MapPoint} />{place}</p>
     </section>
-    <section className="card__text">
+    <section className="card__textHotel">
       <p className="text__body">{text}</p>
       <p className="text__starsRaiting">
         <img alt="stars raiting" src={Star} />
@@ -37,7 +38,7 @@ const HotelCard = ({
         <div className="features__detail">{feature2}</div>
       </div>
     </section>
-  </div>
+  </Link>
 );
 
 HotelCard.propTypes = {
@@ -50,6 +51,7 @@ HotelCard.propTypes = {
   finalPrice: PropTypes.number.isRequired,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default HotelCard;

@@ -1,25 +1,34 @@
 import './styles.css';
-import check from '../../assets/checkGreen.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faCheck,
+} from '@fortawesome/free-solid-svg-icons';
 
 const BookingForm = () => (
-  <div className="card">
-    <div className="card__mapouter">
-      <div className="card__gmap_canvas">
-        <iframe title="uniqueTitle" width="300" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=miami&t=&z=13&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" />
-        <a href="https://www.whatismyip-address.com">Address</a>
-        <br />
-        <a href="https://www.embedgooglemap.net">google iframe</a>
+  <div className="booking-form">
+    <div className="booking-form__mapouter">
+      <div className="booking-form__gmap_canvas">
+        <iframe
+          title="uniqueTitle"
+          width="100%"
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?q=miami&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          frameBorder="0"
+          scrolling="no"
+          marginHeight="0"
+          marginWidth="0"
+        />
       </div>
     </div>
     <section className="card__textTop">
       <section className="textTop__features">
         <h3 className="features__title">Deluxe Rate</h3>
         <div className="features__body">
-          <img alt="check" src={check} />
+          <FontAwesomeIcon icon={faCheck} key="check-1" />
           <p className="features__text">Room Only</p>
         </div>
         <div className="features__body">
-          <img alt="check" src={check} />
+          <FontAwesomeIcon icon={faCheck} key="check-2" />
           <p className="features__text">Non Refundable</p>
         </div>
       </section>

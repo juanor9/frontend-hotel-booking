@@ -18,25 +18,25 @@ const Explainer = () => (
     <article className="explainer__card-container">
       <div className="explainer__card explainer__card--up">
         <picture className="explainer__card-img">
-          <img src={explore} alt="" />
+          <img className="explainerImg" src={explore} alt="" />
         </picture>{' '}
         <p>Explore</p>
       </div>
       <div className="explainer__card explainer__card--down">
         <picture className="explainer__card-img">
-          <img src={quote} alt="" />
+          <img className="explainerImg" src={quote} alt="" />
         </picture>{' '}
         <p>Get Quotes</p>
       </div>
       <div className="explainer__card explainer__card--up">
         <picture className="explainer__card-img">
-          <img src={customize} alt="" />
+          <img className="explainerImg" src={customize} alt="" />
         </picture>{' '}
         <p>Customize</p>
       </div>
       <div className="explainer__card explainer__card--down">
         <picture className="explainer__card-img">
-          <img src={enjoy} alt="" />
+          <img className="explainerImg" src={enjoy} alt="" />
         </picture>{' '}
         <p>Book & Enjoy</p>
       </div>
