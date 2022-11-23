@@ -1,32 +1,48 @@
 import './style.css';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationPin, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLocationPin,
+  faPhone,
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 const HotelContact = (props) => {
   const {
-    address,
-    phone,
-    email,
-    socialMedia,
-    checkin,
-    checkout,
+    address, phone, email, socialMedia, checkin, checkout,
   } = props;
   return (
     <section id="hotel-contact" className="hotel-contact">
       <h3 className="hotel-contact__header">Contact Info</h3>
       <div className="hotel-contact__contact-details">
-        <p className="hotel-contact__address"><FontAwesomeIcon icon={faLocationPin} key="location" /> {address}</p>
-        <p className="hotel-contact__phone"><FontAwesomeIcon icon={faPhone} key="phone" /> {phone}</p>
-        <p className="hotel-contact__email"><FontAwesomeIcon icon={faEnvelope} key="email" /> {email}</p>
+        <p className="hotel-contact__address">
+          {' '}
+          <FontAwesomeIcon icon={faLocationPin} key="location" />
+          {address}
+        </p>
+        <p className="hotel-contact__phone">
+          <FontAwesomeIcon icon={faPhone} key="phone" /> {phone}
+        </p>
+        <p className="hotel-contact__email">
+          <FontAwesomeIcon icon={faEnvelope} key="email" /> {email}
+        </p>
         <ul className="hotel-contact__social-media">
-          <li>{socialMedia.facebook}</li>
+          {socialMedia.facebook ? (
+            <li>
+              <a
+                href={socialMedia.facebook}
+                className="hotel-contact__social-media-link"
+              >
+                <FontAwesomeIcon icon={faFacebookF} key="Facebook link" />
+              </a>
+            </li>
+          ) : null}
         </ul>
         <hr className="hotel-contact__divider" />
         <p className="hotel-contact__checkin">Check-in: {checkin}</p>
         <p className="hotel-contact__checkout">Check-out: {checkout}</p>
       </div>
-
     </section>
   );
 };

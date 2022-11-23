@@ -3,6 +3,34 @@
   padding: .5em 1em;
 }
 .hotel-contact__header{
-  text-transform: uppercase;
+  color: black;
   margin-bottom: 1em;
+  text-transform: uppercase;
+}
+.hotel-contact{
+  color: gray;
+}
+.hotel-contact__checkin, .hotel-contact__checkout{
+  color: black;
+  font-weight: 800;
+}
+.hotel-contact__social-media-link{
+  align-items: center;
+  background-color: rgb(239, 63, 63);;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  height: 2em;
+  justify-content: center;
+  width: 2em;
+}
+.hotel-contact__address, .hotel-contact__phone, .hotel-contact__email{
+  margin-bottom: 1em;
+}
+.hotel-contact__social-media{
+  margin-bottom: 1em;
+}
+.hotel-contact__divider{
+  border-top: 1px solid rgb(247, 247, 247);
+  margin: 1em 0;
 }
