@@ -1,0 +1,49 @@
+.card {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 330px;
+}
+
+.card__button {
+  padding: 1em 2em 1em 2em;
+  color: white;
+  background-color: red;
+  border: 0;
+  font-weight: bold;
+}
+
+.card__img {
+  width: 100%;
+}
+
+.card__title {
+  font-weight: 800;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.card__text {
+  color: gray;
+  font-size: 15px;
+}
+
+@media(min-width:768px){
+  .card {
+    width: 700px;
+    text-align: center;
+  }
+
+  .card__img {
+    width: 40%;
+  }
+
+  .card__title {
+    font-size: 22px;
+  }
+
+  .card__text {
+    width: 90%;
+    margin-left: 1em;
+  }
+}

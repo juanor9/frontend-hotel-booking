@@ -1,0 +1,89 @@
+.card__filter {
+  background-color: #FFFFFF;
+  font-weight: 800;
+  padding: 30px;
+  height: 70px;
+}
+
+.select__filter ion-icon {
+  vertical-align: middle;
+  margin-left: 8px;
+}
+
+.icon__filter {
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+  display: grid;
+}
+
+hr {
+  background-color: #1B1B1B;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  height: 1px;
+}
+
+.icon__filter ion-icon {
+  font-weight: bold;
+  margin-left: 6px;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.icon__text {
+  margin-right: 10px;
+}
+
+.card__descktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .card__descktop {
+    grid-template-columns: auto auto;
+    justify-content: space-around;
+    align-items: center;
+    display: grid;
+  }
+
+  .select__filter {
+    display: none;
+  }
+
+  .icon__filter {
+    display: none;
+  }
+
+  hr {
+    display: none;
+  }
+
+  .card__btn {
+    padding: 5px 15px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+  }
+
+  .card__btn:hover {
+    color: #F13F4B;
+  }
+
+  .card__btn:focus {
+    background-color: #F13F4B;
+    color: #FFFFFF;
+  }
+
+  .select__filter_descktop ion-icon {
+    vertical-align: middle;
+    margin-right: 7px;
+    font-size: 25px;
+  }
+
+  .select__filter_descktop span {
+    color: #F13F4B;
+    font-size: 16px;
+    font-weight: 1000;
+    margin-left: 10px;
+  }
+}
