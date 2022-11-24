@@ -1,10 +1,10 @@
-.card {
+.booking-history {
   width: 350px;
   font-size: 15px;
   padding: 1em;
 }
 
-.card__Bookings {
+.booking-history__bookings {
   display: flex;
   padding: 1em;
   margin-top: 1em;
@@ -15,31 +15,31 @@
 
 }
 
-.card__img {
+.booking-history__img {
   width: 35%;
   height: 35%;
 }
 
-.card__description {
+.booking-history__description {
   margin-left: 2em;
 }
 
-.card__description--gray {
+.booking-history__description--gray {
   color: gray;
   margin-top: 0.5em;
 }
 
 @media(min-width:768px){
-  .card {
+  .booking-history {
     width: 500px;
   }
 
-  .card__img {
+  .booking-history__img {
     width: 30%;
     height: 30%;
   }
 
-  .card__Bookings {
+  .booking-history__bookings {
     font-size: 15px;
   }
 }
