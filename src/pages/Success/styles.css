@@ -1,0 +1,21 @@
+.card__hotel__success{
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 0;
+}
+
+.card__success__navbar{
+  width: 100%;
+}
+
+.card__succes__successfp{
+  justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+.card__success__footer{
+  width: 100%;
+}
