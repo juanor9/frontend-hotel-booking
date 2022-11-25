@@ -5,7 +5,16 @@
       "name": "Sea View Hotel",
       "rating": 4,
       "address": "Mina Road, Bur Dubai, Dubai, United Arab Emirates",
+      "contact":{
+        "phone": "123 254 121",
+        "email": "contact@hotel.com"
+      },
+      "socialMedia": {
+        "facebook": "link to facebook"
+      },
       "features": ["Free Wi-fi", "Free Breakfast"],
+      "checkin": "2:00 p. m",
+      "checkout": "12:00 p. m",
       "rooms": [
         {
           "id": 1,
@@ -68,7 +77,13 @@
       "name": "Mövenpick Hotel Apartments Al Mamzar Dubai",
       "rating": 4,
       "address": "Corner Cairo Road 46 Street, Al Mamzar, Dubai, United Arab Emirates",
+      "contact":{
+        "phone": "123 254 121",
+        "email": "contact@hotel.com"
+      },
       "features": ["Free Wi-fi", "Free Breakfast"],
+      "checkin": "2:00 p. m",
+      "checkout": "12:00 p. m",
       "rooms": [
         {
           "id": 1,
@@ -131,7 +146,13 @@
       "name": "Omega Hotel Dubai",
       "rating": 4,
       "address": "Al Mankhool Road Bur Dubai, Burj Dubái, Dubai, United Arab Emirates",
+      "contact":{
+        "phone": "123 254 121",
+        "email": "contact@hotel.com"
+      },
       "features": ["Free Wi-fi", "Free Breakfast"],
+      "checkin": "2:00 p. m",
+      "checkout": "12:00 p. m",
       "rooms": [
         {
           "id": 1,
@@ -195,6 +216,8 @@
       "rating": 4,
       "address": "Al Asayel Street, Business Bay, Dubai, United Arab Emirates",
       "features": ["Free Wi-fi", "Free Breakfast"],
+      "checkin": "2:00 p. m",
+      "checkout": "12:00 p. m",
       "rooms": [
         {
           "id": 1,
@@ -257,7 +280,13 @@
       "name": "Al Raya Hotel Apartments",
       "rating": 4,
       "address": "Mankhool Area, Kuwait St., Burj Dubái,, Dubai, United Arab Emirates",
+      "contact":{
+        "phone": "123 254 121",
+        "email": "contact@hotel.com"
+      },
       "features": ["Free Wi-fi", "Free Breakfast"],
+      "checkin": "2:00 p. m",
+      "checkout": "12:00 p. m",
       "rooms": [
         {
           "id": 1,
@@ -320,7 +349,13 @@
       "name": "Trinity Holiday Homes",
       "rating": 4,
       "address": "Sheikh Zayed Road 21 Century Tower, Flat number 1605, Dubai, United Arab Emirates",
+      "contact":{
+        "phone": "123 254 121",
+        "email": "contact@hotel.com"
+      },
       "features": ["Free Wi-fi", "Free Breakfast"],
+      "checkin": "2:00 p. m",
+      "checkout": "12:00 p. m",
       "rooms": [
         {
           "id": 1,
