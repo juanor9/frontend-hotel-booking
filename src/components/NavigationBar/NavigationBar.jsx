@@ -5,7 +5,7 @@ import logo from '../../assets/logo-rica.png';
 const NavigationBar = () => (
   <nav className="navigation__card">
     <div className="navigation__logo">
-      <img src={logo} alt="logo" />
+      <img className="navigation__logo-img" src={logo} alt="logo" />
       <span className="nav__text-logo">RICA</span>
     </div>
     <div className="navigation__icons-cont">
@@ -34,13 +34,13 @@ const NavigationBar = () => (
     </div>
     <div className="navigation__selects">
       <div className="navigation__options">
-        <select name="currency">
+        <select className="navigation__sel-option" name="currency">
           <option value="usd">USD</option>
           <option value="cop">COP</option>
         </select>
       </div>
       <div className="navigation__options">
-        <select name="languaje">
+        <select className="navigation__sel-option" name="languaje">
           <option value="spanish">SPA</option>
           <option value="english">ENG</option>
         </select>

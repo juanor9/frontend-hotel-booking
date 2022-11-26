@@ -4,6 +4,7 @@ footer {
   font-weight: 700;
   text-align: left;
   height: 100%;
+  width: 100%;
 }
 
 .footer__card {
@@ -19,13 +20,6 @@ footer {
   align-items: center;
   display: flex;
   margin-top: -17px;
-}
-
-.footer--card--5{
-  flex-direction: column;
-  display: flex;
-  height: 300px;
-  width: 100%;
 }
 
 .footer__card-title {
@@ -192,17 +186,17 @@ ion-icon {
   }
 
   .footer__card--2 {
-    flex-basis: 14%;
+    flex-basis: 13%;
     order: 4;
   }
 
   .footer__card--3 {
-    flex-basis: 12%;
+    flex-basis: 11%;
     order: 2;
   }
 
   .footer__card--4 {
-    flex-basis: 20%;
+    flex-basis: 19%;
     order: 3;
   }
 
@@ -213,7 +207,7 @@ ion-icon {
   }
 
   .footer__card--5 {
-    flex-basis: 26%;
+    flex-basis: 24%;
     order: 5;
   }
 

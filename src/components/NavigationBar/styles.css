@@ -21,7 +21,7 @@
   height: 55px;
 }
 
-.navigation__logo img {
+.navigation__logo-img {
   border-radius: 13px;
   height: 35px;
   width: 35px;
@@ -49,9 +49,9 @@
   width: 25px;
 }
 
- .navigation__icon ion-icon {
-   font-weight: 800;
-   margin-left: 2px;
+.navigation__icon ion-icon {
+  font-weight: 800;
+  margin-left: 2px;
   font-size: 18px;
   margin: 0 auto;
   color: black;
@@ -66,20 +66,20 @@
     display: none;
   }
 
-  .navigation__menu-li{
+  .navigation__menu-li {
     display: inline-block;
     text-decoration: none;
     list-style: none;
     margin: 10px;
   }
 
-  .navigation__text{
+  .navigation__text {
     text-decoration: none;
     list-style: none;
     color: black;
   }
 
-  .navigation__menu:hover{
+  .navigation__menu:hover {
     color: #1b1b1b5a;
   }
 
@@ -88,7 +88,7 @@
     display: flex;
   }
 
-  select {
+  .navigation__sel-option {
     background-color: #1b1b1b0c;
     outline: none;
     border: none;
@@ -112,7 +112,7 @@
     height: 24px;
   }
 
-  .navigation__text-icon ion-icon{
+  .navigation__text-icon ion-icon {
     color: black;
     font-size: 1px;
     height: 24px;
