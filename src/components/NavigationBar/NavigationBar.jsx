@@ -1,33 +1,34 @@
 import './styles.css';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo-rica.png';
 
 const NavigationBar = () => (
   <nav className="navigation__card">
     <div className="navigation__logo">
-      <img src="https://2.bp.blogspot.com/-8zwkuaHGY1c/UTP8Y5t8c3I/AAAAAAABsHE/bFbMgPUiMKM/s1600/rosa-amarilla-im%C3%A1genes-bonitas-fotos-gratis-muy-lindas-para-compartir-en-facebook-.jpg" alt="logo" />
-      <span className="text__logo">RICA</span>
+      <img src={logo} alt="logo" />
+      <span className="nav__text-logo">RICA</span>
     </div>
-    <div className="navigation__icons">
-      <div className="icon">
-        <ion-icon name="menu-outline" />
+    <div className="navigation__icons-cont">
+      <div className="navigation__icon">
+        <Link to="/"><ion-icon name="menu-outline" /></Link>
       </div>
-      <div className="icon">
-        <ion-icon name="person-outline" />
+      <div className="navigation__icon">
+        <Link to="/"><ion-icon name="person-outline" /></Link>
       </div>
-      <div className="icon">
-        <ion-icon name="settings-outline" />
+      <div className="navigation__icon">
+        <Link to="/"><ion-icon name="settings-outline" /></Link>
       </div>
     </div>
     <div className="navigation__menu">
       <ul>
-        <li>
-          <Link to="/">HOME</Link>
+        <li className="navigation__menu-li">
+          <Link className="navigation__text" to="/">HOME</Link>
         </li>
-        <li>
-          <Link to="/hotels">HOTEL</Link>
+        <li className="navigation__menu-li">
+          <Link className="navigation__text" to="/hotels">HOTEL</Link>
         </li>
-        <li>
-          <a href="/">PAGES</a>
+        <li className="navigation__menu-li">
+          <Link className="navigation__text" to="/">PAGES</Link>
         </li>
       </ul>
     </div>
@@ -45,7 +46,7 @@ const NavigationBar = () => (
         </select>
       </div>
       <div className="navigation__option">
-        <ion-icon name="person-outline" />
+        <Link className="navigation__text-icon" to="/"><ion-icon name="person-outline" /></Link>
       </div>
     </div>
   </nav>
