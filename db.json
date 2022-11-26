@@ -1,5 +1,18 @@
 {
-  "users": [],
+  "users": [
+    {
+      "name": "Maria",
+      "email": "maria@lo.com",
+      "password": "test",
+      "id": 1
+    },
+    {
+      "name": "Nestor",
+      "email": "nestor@lo.com",
+      "password": "test2",
+      "id": 2
+    }
+  ],
   "hotels": [
     {
       "name": "the w",
