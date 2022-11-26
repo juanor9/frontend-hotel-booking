@@ -1,33 +1,31 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
+import useForm from '../../hooks/useForm';
+import createUser from '../../services/users';
 import './style.css';
 
 const RegisterForm = () => {
-  // const [username, setUsername] = useState('');
+  const { form, handleChange } = useForm({});
 
-  const [form, setForm] = useState({});
-
-  const handleChangeForm = ({ target }) => {
-    const { name, value } = target;
-
-    setForm({
-      ...form, [name]: value,
-    });
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const data = {
-      form,
-    };
+    try {
+      await createUser(form);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
-    console.log(form);
+  const handleClick = () => {
+    document.getElementById('register-form__form').reset();
   };
   return (
     <section id="register-form" className="register-form">
       <h2 className="register-form__header">Sign up</h2>
-      <article id="social-media-sign-up" className="register-form__section">
+      <article
+        id="social-media-sign-up"
+        className="register-form__section"
+      >
         <p>Sign Up With</p>
         <ul className="register-form__social-media-list">
           <li className="register-form__list-item">
@@ -54,7 +52,11 @@ const RegisterForm = () => {
         <span className="register-form__divider-line" />
       </div>
       <article id="sign-up-form" className="register-form__section">
-        <form action="" onSubmit={handleSubmit}>
+        <form
+          action=""
+          onSubmit={handleSubmit}
+          id="register-form__form"
+        >
           <label htmlFor="name" className="register-form__input-group">
             Full Name
             <input
@@ -63,7 +65,7 @@ const RegisterForm = () => {
               name="name"
               id="name"
               placeholder="Enter your name"
-              onChange={handleChangeForm}
+              onChange={handleChange}
             />
           </label>
 
@@ -75,6 +77,7 @@ const RegisterForm = () => {
               name="email"
               id="email"
               placeholder="Enter email address"
+              onChange={handleChange}
             />
           </label>
 
@@ -86,12 +89,14 @@ const RegisterForm = () => {
               name="password"
               id="password"
               placeholder="Password"
+              onChange={handleChange}
             />
           </label>
 
           <button
             type="submit"
             className="register-form__create-button"
+            onClick={handleClick}
           >
             Create account
           </button>
@@ -103,7 +108,10 @@ const RegisterForm = () => {
         <span className="register-form__divider-line" />
       </div>
       <article id="login" className="register-form__section">
-        <button type="button" className="register-form__login-button">
+        <button
+          type="button"
+          className="register-form__login-button"
+        >
           Login
         </button>
       </article>
