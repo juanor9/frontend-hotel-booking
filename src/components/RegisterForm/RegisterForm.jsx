@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import useForm from '../../hooks/useForm';
 import createUser from '../../services/users';
 import './style.css';
