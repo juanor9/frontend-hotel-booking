@@ -3,6 +3,7 @@ import Hotels from './pages/Hotels/Hotels';
 import Rooms from './pages/Rooms/Rooms';
 import Home from './pages/Home/Home';
 import UserRegistration from './pages/UserRegistration/UserRegistration';
+import HotelsRegistration from './pages/HotelsRegistration/HotelsRegistration';
 
 const App = () => (
   <Routes>
@@ -10,6 +11,7 @@ const App = () => (
     <Route path="/hotels" element={<Hotels />} />
     <Route path="/hotel/:id" element={<Rooms />} />
     <Route path="/register" element={<UserRegistration />} />
+    <Route path="/hotelsRegistration" element={<HotelsRegistration />} />
   </Routes>
 );
 

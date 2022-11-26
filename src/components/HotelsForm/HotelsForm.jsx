@@ -30,7 +30,7 @@ const HotelsForm = () => {
       <p className="hotelsForm__properties">Description:</p>
       <textarea rows="5" type="text" name="description" onChange={handleChange} />
       <p className="hotelsForm__properties">Price:</p>
-      <input type="number" name="price" />
+      <input type="number" name="price" onChange={handleChange} />
       <p className="hotelsForm__properties">Offer Price:</p>
       <input type="number" name="offerPrice" onChange={handleChange} />
       <p className="hotelsForm__properties">Feature 1:</p>
