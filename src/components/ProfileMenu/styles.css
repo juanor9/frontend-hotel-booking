@@ -1,4 +1,4 @@
-.card {
+.profile-menu {
   width: 350px;
   justify-content: center;
   align-items: center;
@@ -7,11 +7,11 @@
   font-size: 15px;
 }
 
-.card__figures {
+.profile-menu__figures {
   position: relative;
 }
 
-.card__imgPerfil {
+.profile-menu__pic {
   border-radius: 60em;
   width: 150px;
   height: 150px;
@@ -20,29 +20,33 @@
   margin-top: 2em;
 }
 
-.card__iconEdit {
+.profile-menu__edit-container {
+  display: inline-block;
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 2;
-  transform: translate(-90px);
+  transform: translate(-8em);
+  background-color: white;
+  padding: .5em;
+  border-radius: 50%;
 }
 
-.card__name, .card__phone {
+.profile-menu__name, .profile-menu__phone {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.card__email, .card__phone {
+.profile-menu__email, .profile-menu__phone {
   color: gray;
 }
 
-.card__email {
+.profile-menu__email {
   margin-top: 0;
   margin-bottom: 2em;
 }
 
-.card__name {
+.profile-menu__name {
   font-weight: 900;
 }
 
@@ -59,7 +63,7 @@
 }
 
 @media (min-width:768px){
-  .card {
+  .profile-menu {
     width: 300px;
   }
 
@@ -73,11 +77,11 @@
     margin: 1em 0 0.5em 1em;
   }
 
-  .card__name {
+  .profile-menu__name {
     font-size: 25px;
   }
 
-  .card__phone, .card__email {
+  .profile-menu__phone, .profile-menu__email {
     font-size: 20px;
   }
 }
