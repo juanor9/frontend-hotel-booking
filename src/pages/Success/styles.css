@@ -1,4 +1,4 @@
-.card__hotel__success{
+.hotel__success{
   flex-direction: column;
   align-items: center;
   display: flex;
@@ -6,16 +6,16 @@
   padding: 0;
 }
 
-.card__success__navbar{
+.success__navbar{
   width: 100%;
 }
 
-.card__succes__successfp{
+.success__successfp{
   justify-content: center;
   display: flex;
   width: 100%;
 }
 
-.card__success__footer{
+.success__footer{
   width: 100%;
 }

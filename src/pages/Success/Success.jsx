@@ -4,14 +4,14 @@ import Footer from '../../components/Footer/Footer';
 import './styles.css';
 
 const Success = () => (
-  <div className="card__hotel__success">
-    <header className="card__success__navbar">
+  <div className="hotel__success">
+    <header className="success__navbar">
       <NavigationBar />
     </header>
-    <section className="card__succes__successfp">
+    <section className="success__successfp">
       <SuccessfulPyment />
     </section>
-    <footer className="card__success__footer">
+    <footer className="success__footer">
       <Footer />
     </footer>
   </div>
