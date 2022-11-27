@@ -1,48 +1,50 @@
-.card {
+.success-component {
   align-items: center;
   justify-content: center;
   text-align: center;
   width: 330px;
 }
 
-.card__button {
+.success-component__button {
   padding: 1em 2em 1em 2em;
   color: white;
-  background-color: red;
+  background-color: #F13F4B;
+  margin-top: 15px;
+  margin-bottom: 15px;
   border: 0;
   font-weight: bold;
 }
 
-.card__img {
+.success-component__img {
   width: 100%;
 }
 
-.card__title {
+.success-component__title {
   font-weight: 800;
   margin-top: 0;
   font-size: 18px;
 }
 
-.card__text {
+.success-component__text {
   color: gray;
   font-size: 15px;
 }
 
 @media(min-width:768px){
-  .card {
+  .success-component {
     width: 700px;
     text-align: center;
   }
 
-  .card__img {
+  .success-component__img {
     width: 40%;
   }
 
-  .card__title {
+  .success-component__title {
     font-size: 22px;
   }
 
-  .card__text {
+  .success-component__text {
     width: 90%;
     margin-left: 1em;
   }
