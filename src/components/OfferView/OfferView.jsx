@@ -1,5 +1,6 @@
 import './styles.css';
 import OfferCard from '../OfferCard/OfferCard';
+import OfferFoodImage from '../../assets/offerFood.jpg';
 import data from '../../assets/offer.json';
 
 const OfferView = () => (
@@ -8,9 +9,9 @@ const OfferView = () => (
       <h2>top offerts</h2>
     </div>
     <div className="offerview__component">
-      <article className="card__ofert">
+      <article>
         {
-          window.innerWidth > 768 && data.length
+          window.innerWidth > 768
             ? (
               <div className="card__descktopHome">{
                 data.map((e) => (
@@ -18,17 +19,17 @@ const OfferView = () => (
                     key={e.id}
                     title={e.title}
                     text={e.text}
-                    image="https://tse3.mm.bing.net/th?id=OIP.U4ndtPvDvEr8DaJZxoFT0AHaFb&pid=Api&P=0"
+                    image={OfferFoodImage}
                   />
                 ))
               }
               </div>
             ) : (
-              <div className="card__mobile">
+              <div>
                 <OfferCard
                   title="Hotel Booking"
                   text="Avail hot deals on hotel"
-                  image="https://tse3.mm.bing.net/th?id=OIP.U4ndtPvDvEr8DaJZxoFT0AHaFb&pid=Api&P=0"
+                  image={OfferFoodImage}
                 />
               </div>
             )

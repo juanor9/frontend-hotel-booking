@@ -3,7 +3,6 @@
   text-align: center;
   font-size: 15px;
   margin: 0 auto;
-  margin: -20px;
   width: 100%;
 }
 
@@ -11,8 +10,8 @@
   border-radius: 20px;
   object-fit: cover;
   margin-top: 15px;
-  height: 40vh;
-  width: 60%;
+  height: 30vh;
+  width: 85%;
 }
 
 .popular__title {

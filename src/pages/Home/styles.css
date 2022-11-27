@@ -1,18 +1,19 @@
-.card__container{
+.home__container{
   background-color: #F9F9F9;
   flex-direction: column;
   color: black;
   display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  max-width: 2000px;
   width: 100%;
 }
 
-.card__nav{
+.home__nav{
   width: 100%;
 }
 
-.card__filterHome{
+.card__filter-home{
 background-image: url("https://tse3.mm.bing.net/th?id=OIP.gGeEdbMNaWxhtyfWkcgYCQHaCs&pid=Api&P=0");
 background-repeat: no-repeat;
 background-size: cover;
@@ -20,60 +21,20 @@ padding: 30px;
 width: 100%;
 }
 
-.title__nav{
+.title__nav-home{
   text-align: center;
   margin-bottom: 15px;
   margin-top: 3em;
-}
-
-.card{
-  background-color: #f9f9f900;
-  flex-direction: column;
-  text-align: center;
-  box-shadow: none;
-  max-width: 600px;
-  display: flex;
-  margin: 10px;
-  height: 100%;
-  padding: 0;
-}
-
-.card__title{
-  margin-top: 12px;
-  font-size: 15px;
-  color: gray;
-}
-
-.card__text{
-  text-align: center;
-  font-size: 12px;
-  margin-top: 8px;
-  width: 100%;
-}
-.card__ofert .card__img{
-  border-radius: 15px;
-  width: 100%;
-}
-
-.card__descktopHome{
-  justify-content: center;
-  display: flex;
-  padding: 15px;
-  margin: 10px;
-  height: 100%;
-  width: 100%;
+  color: white;
+  font-size: 17px;
 }
 
 .card__mobile{
   text-align: center;
-}
-
-.card__destination{
   display: flex;
-  width: 40px;
 }
 
-.title__article{
+.popular-destination__title{
   margin-bottom: 10px;
   text-align: center;
   margin-top: 40px;
@@ -82,43 +43,51 @@ width: 100%;
   color: black;
 }
 
-.card__articles p{
-  color: gray;
-}
-
-.card__paragraph{
-  color: gray;
-  margin-top: 0;
-}
-
-.card__text p{
-  text-align: left;
-  font-size: 0.6em;
-  color: gray;
-}
-
-.card__text .card__title{
-  margin-top: -5px;
-}
-
-.card__explainer{
+.explainer__component{
+  padding: 10px;
   width: 100%;
   margin-top: 35px;
 }
 
-.card__footer{
+.newsletter-form__component{
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.footer__component{
   width: 100%;
 }
 
+.read-article__descktop{
+  display: none;
+}
+.card__descktopHome{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  margin: 10px;
+  height: 100%;
+  max-width: 100%;
+}
 @media(min-width: 768px){
-  .card__text p{
-    font-size: 0.7em;
+  .popular-destination__title{
+    margin-top: 10px;
   }
 
-  .card__ofert{
+  .offer-view__component{
     width: 100%;
   }
-  .title__article{
-    margin-top: 10px;
+
+  .read-article__descktop{
+    display: block;
+  }
+
+  .read-article__component{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
   }
 }
