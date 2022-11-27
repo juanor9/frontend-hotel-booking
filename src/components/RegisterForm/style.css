@@ -1,6 +1,9 @@
 .register-form {
   padding: 1em;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
 }
 .register-form__header {
   text-transform: uppercase;
