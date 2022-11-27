@@ -13,3 +13,25 @@ const createHotel = async (hotel) => {
 };
 
 export default createHotel;
+
+export async function deleteHotel(id) {
+  const options = {
+    method: 'DELETE',
+  };
+  const res = await fetch(`http://localhost:8080/api/hotels${id}`, options);
+  const result = await res.json();
+  return result;
+}
+
+export async function updateHotel(id) {
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(),
+  };
+  const res = await fetch(`http://localhost:8080/api/hotels${id}`, options);
+  const result = await res.json();
+  return result;
+}
