@@ -1,4 +1,4 @@
-const createHotel = async (hotel) => {
+export const createHotel = async (hotel) => {
   const options = {
     method: 'POST',
     headers: {
@@ -12,4 +12,8 @@ const createHotel = async (hotel) => {
   return result;
 };
 
-export default createHotel;
+export const getHotels = async () => {
+  const res = await fetch('http://localhost:8080/hotels');
+  const result = await res.json();
+  return result;
+};

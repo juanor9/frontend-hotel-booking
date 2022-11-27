@@ -1,6 +1,7 @@
 import './styles.css';
+import { Link } from 'react-router-dom';
+import { createHotel } from '../../services/hotels';
 import useForm from '../../hooks/useForm';
-import createHotel from '../../services/hotels';
 
 const HotelsForm = () => {
   const { form, handleChange } = useForm({});
@@ -61,6 +62,7 @@ const HotelsForm = () => {
       </select>
       <div className="hotelsForm__buttonEnv">
         <button className="hotelsForm__button" type="submit" onClick={handleClick}>Create</button>
+        <Link to="/hotels-managment"><button className="hotelsForm__button" type="submit">List Hotels</button></Link>
       </div>
     </form>
   );

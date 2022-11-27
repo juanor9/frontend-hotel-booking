@@ -15,15 +15,26 @@
   ],
   "hotels": [
     {
-      "image": "C:\\fakepath\\hotelVitoria.jpg",
-      "name": "Victorias Deluxe",
-      "city": "Victoria",
-      "description": "This hotel has a large pool and comfortable rooms with a great view.",
-      "offerPrice": "2700",
-      "feature2": "Room Service",
-      "feature1": "Free Wifi",
-      "price": "3000",
+      "image": "hotelBremen.jpg",
+      "name": "Radisson",
+      "city": "Bremen",
+      "description": "This hotel is in downtown with a lot of entertainment and restaurants near. ",
+      "price": "1200",
+      "offerPrice": "1000",
+      "feature1": "Breakfast",
+      "feature2": "Free Wifi",
       "id": 1
+    },
+    {
+      "image": "hotelCartagena.jpg",
+      "name": "Karibana",
+      "city": "Cartagena",
+      "description": "This hotel has a pool and is near the most popular beaches.",
+      "price": "1300",
+      "offerPrice": "1250",
+      "feature1": "Pool",
+      "feature2": "Breakfast",
+      "id": 2
     }
   ]
 }
