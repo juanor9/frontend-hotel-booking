@@ -1,73 +1,29 @@
 {
-  "users": [],
-  "hotels": [
+  "users": [
     {
-      "name": "the w",
-      "city": "miami",
-      "description": "adsdfdgkldgdskwkjednwe",
-      "offerPrice": "1300",
-      "feature1": "Swimming",
-      "feature2": "Parking",
+      "name": "Maria",
+      "email": "maria@lo.com",
+      "password": "test",
       "id": 1
     },
     {
-      "name": "Russsian",
-      "city": "Italia",
-      "description": "addkgrtiiriiissis",
-      "offerPrice": "990",
-      "feature1": "Spa",
-      "feature2": "Restaurant",
-      "image": "C:\\fakepath\\hotelBremen.jpg",
+      "name": "Nestor",
+      "email": "nestor@lo.com",
+      "password": "test2",
       "id": 2
-    },
+    }
+  ],
+  "hotels": [
     {
-      "image": "C:\\fakepath\\hotelPucon.jpg",
-      "name": "River",
-      "city": "Pucon",
-      "description": "ddfsss edkweeeeeeeeeee askaaaaaaaa asssssssssssssssd esdc.",
-      "offerPrice": "2000",
-      "feature1": "Bar",
-      "feature2": "Pet Friendly",
-      "id": 3
-    },
-    {
-      "description": "DFGFKTGFSASSS ASDNFK",
-      "name": "sdfffff",
-      "city": "AAFGGH",
-      "offerPrice": "1000",
-      "feature1": "Pool",
-      "feature2": "Spa",
       "image": "C:\\fakepath\\hotelVitoria.jpg",
-      "id": 4
-    },
-    {
-      "image": "C:\\fakepath\\hotelFairbanks.jpg",
-      "name": "The snow palace",
-      "city": "Fairbanks",
-      "description": "This hotel is the best.",
-      "offerPrice": "1800",
+      "name": "Victorias Deluxe",
+      "city": "Victoria",
+      "description": "This hotel has a large pool and comfortable rooms with a great view.",
+      "offerPrice": "2700",
+      "feature2": "Room Service",
       "feature1": "Free Wifi",
-      "feature2": "Breakfast",
-      "id": 5
-    },
-    {
-      "name": "The Acc",
-      "image": "C:\\fakepath\\hotelCancun.jpg",
-      "city": "Cancun",
-      "description": "This hotel is nice and near to the beach.",
-      "offerPrice": "1850",
-      "feature2": "Air Conditioning",
-      "id": 6
-    },
-    {
-      "image": "C:\\fakepath\\hotelZermatt.jpg",
-      "name": "The high Z",
-      "city": "Zermatt",
-      "description": "From this hotel you could see a wonderful landscape.",
-      "offerPrice": "800",
-      "feature1": "Pet Friendly",
-      "feature2": "Bar",
-      "id": 7
+      "price": "3000",
+      "id": 1
     }
   ]
 }

@@ -1,12 +1,13 @@
 footer {
-  padding-top: 20px;
-  font-family: 'Nunito', sans-serif;
   background-color: #000000;
+  padding-top: 20px;
   font-weight: 700;
   text-align: left;
+  height: 100%;
+  width: 100%;
 }
 
-.card__footer {
+.footer__card {
   line-height: 30px;
   max-width: 4500px;
   font-size: 15px;
@@ -14,51 +15,36 @@ footer {
   color: gray;
 }
 
-.card__footer--5{
-  flex-direction: column;
+.footer__logo {
+  border-radius: 15px;
+  align-items: center;
   display: flex;
-  height: 300px;
-  width: 100%;
+  margin-top: -17px;
 }
 
-.card__footer--1 .card__link {
-  line-height: 1px;
-}
-
-.title__footer {
+.footer__card-title {
   color: #FFFFFF;
   margin-top: -15px;
+  margin-bottom: 10px;
 }
 
-.card__paragraph {
+.footer__card--paragraph {
   padding-bottom: 20px;
   line-height: 20px;
 }
 
-.card__logo {
-  border-radius: 15px;
-  align-items: center;
+.footer__card--link {
   display: flex;
-}
-
-.card__link {
   margin-bottom: 10px;
   font-weight: 700;
   font-size: 14px;
 }
 
-.footer-text__logo {
-  color: #FFFFFF;
+.footer__text--logo {
   margin-left: 12px;
+  color: #FFFFFF;
   font-weight: 800;
   font-size: 26px;
-}
-
-.card__logo img {
-  border-radius: 15px;
-  height: 45px;
-  opacity: 0.4;
-  width: 47px;
 }
 
 ion-icon {
@@ -70,18 +56,18 @@ ion-icon {
   color: gray;
 }
 
-.card__footer a {
+.footer__link {
   text-decoration: none;
   line-height: 25px;
   color: gray;
   display: flex;
 }
 
-.card__footer p a {
+.footer__social-text-link{
   display: inline;
 }
 
-.card__footer .card__map {
+.footer__card--container-map {
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -90,51 +76,52 @@ ion-icon {
   margin: 0 auto;
 }
 
-.card__map iframe {
+.footer__card--container-map iframe {
   justify-content: center;
   height: 100%;
   width: 100%;
 }
 
-.card__new {
+.footer__card--news-cont {
   justify-content: center;
+  padding-bottom: -100px;
   align-items: center;
   margin-top: 12px;
-  height: 100px;
   width: 100%;
 }
 
-.social__media {
+.footer__social-media {
   background-color: #1f1c1c;
   justify-content: center;
-  padding-bottom: 15px;
+  align-items: center;
+  margin-bottom: 1px;
   position: relative;
   display: grid;
-  height: 70px;
+  height: 75px;
 }
 
-.social__icon {
+.footer__social-icon {
   padding-top: 12px;
   text-align: center;
 }
 
-.social__icon ion-icon {
+.footer__social-icon ion-icon {
   color: gray;
 }
 
-.social__text {
+.footer__social-text {
   color: gray;
   font-size: 15px;
 }
 
-.social__text ion-icon {
+.footer__social-text ion-icon {
   border-radius: 15px;
   color: #F13F4B;
   font-weight: 800;
   margin-top: 5px;
 }
 
-.box__red {
+.footer__box-red {
   background-color: #F13F4B;
   transform: rotate(-12deg);
   text-align: center;
@@ -148,7 +135,7 @@ ion-icon {
   top: 30%;
 }
 
-.card__news{
+.footer__card--news{
   background-color: black;
   align-items: flex-start;
   margin-bottom: 3px;
@@ -157,34 +144,12 @@ ion-icon {
   width: 100%;
 }
 
-.card__image{
-  width: 40%;
-}
-
-.card__img{
-  width: 100%;
-  height: 100%;
-}
-
-.card__title{
-  justify-content: left;
-  margin-bottom: -5px;
-  color: white;
-  margin-top: 0;
-  display: flex;
-}
-
-.card__body{
-  display: flex;
-}
-
-.card__text{
-  margin-right: 15px;
-  padding-right: 10px;
-  padding-left: 10px;
-  text-align: left;
-  font-size: 15px;
-  width: 60%;
+.footer__card--img{
+  border-radius: 15px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+  height: 45px;
+  width: 47px;
 }
 
 @media (min-width: 768px) {
@@ -195,117 +160,98 @@ ion-icon {
     display: flex;
   }
 
-  .card__footer {
+  .footer__card {
     font-size: 13px;
   }
 
-  .card__link {
+  .footer__card--link {
     font-size: 13px;
+    align-items: center;
+    line-height: 1px;
+    margin-bottom: -13px;
   }
 
   ion-icon {
     font-size: 13px;
   }
 
-  .card__paragraph {
+  .footer__card--paragraph {
     padding-bottom: 1px;
   }
 
-  .card__footer--1 {
+  .footer__card--1 {
     padding-top: 40px;
     flex-basis: 26%;
     order: 1;
   }
 
-  .card__footer--2 {
-    flex-basis: 14%;
+  .footer__card--2 {
+    flex-basis: 13%;
     order: 4;
   }
 
-  .card__footer--3 {
-    flex-basis: 12%;
+  .footer__card--3 {
+    flex-basis: 11%;
     order: 2;
   }
 
-  .card__footer--4 {
-    flex-basis: 20%;
+  .footer__card--4 {
+    flex-basis: 19%;
     order: 3;
   }
 
-  .card__footer--4 iframe {
+  .footer__card--4 iframe {
     margin-top: 20px;
     max-width: 400px;
     height: 120px;
   }
 
-  .card__footer--5 {
-    flex-basis: 26%;
+  .footer__card--5 {
+    flex-basis: 24%;
     order: 5;
   }
 
-  .card__footer--6 {
+  .footer__card--6 {
     flex-basis: 100%;
     order: 6;
   }
 
-  .title__desktop {
+  .footer__card-title--desktop {
     display: none;
   }
 
-  .title__footer {
+  .footer__card-title {
     padding-top: 35px;
   }
 
-  .social__media {
+  .footer__social-media {
     justify-content: space-around;
     align-items: center;
     display: flex;
     height: 50px;
   }
 
-  .social__text {
+  .footer__social-text {
     margin-top: 18px;
   }
 
-  .social__text ion-icon {
+  .footer__social-text ion-icon {
     margin-bottom: 4px;
     font-size: 19px;
   }
 
-  .box__red {
+  .footer__box-red {
     color: white;
     font-size: 15px;
     left: 88%;
     top: 30%;
   }
 
-  .card__map {
+  .footer__card--container-map {
     height: 195px;
   }
 
-  .card__text{
-    margin-top: 5px;
-    padding-right: 5;
-    font-size: 0.7em;
-    line-height: 14px;
-  }
-
-  .card__news{
+  .footer__card--news{
     max-height: 130px;
-  }
-
-  .card__news img{
-    max-height: 130px;
-  }
-
-  .card__title{
-    margin-bottom: 3px;
-  }
-
-  @media (min-width: 1000px) {
-    .card__text{
-      font-size: 0.9em;
-      line-height: 16px;
-    }
   }
 }
