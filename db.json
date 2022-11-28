@@ -15,14 +15,14 @@
   ],
   "hotels": [
     {
-      "image": "C:\\fakepath\\hotelVitoria.jpg",
-      "name": "Victorias Deluxe",
-      "city": "Victoria",
-      "description": "This hotel has a large pool and comfortable rooms with a great view.",
-      "offerPrice": "2700",
-      "feature2": "Room Service",
-      "feature1": "Free Wifi",
-      "price": "3000",
+      "hotelImg": "hotelPucon.jpg",
+      "name": "River Blue",
+      "place": "Pucon",
+      "text": "sdnjfnvjefv sxndwjfner",
+      "price": "1500",
+      "finalPrice": "800",
+      "feature1": "Pool",
+      "feature2": "Bar",
       "id": 1
     }
   ]
