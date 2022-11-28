@@ -15,26 +15,15 @@
   ],
   "hotels": [
     {
-      "image": "hotelBremen.jpg",
-      "name": "Radisson",
-      "city": "Bremen",
-      "description": "This hotel is in downtown with a lot of entertainment and restaurants near. ",
-      "price": "1200",
-      "offerPrice": "1000",
-      "feature1": "Breakfast",
-      "feature2": "Free Wifi",
-      "id": 1
-    },
-    {
-      "image": "hotelCartagena.jpg",
-      "name": "Karibana",
-      "city": "Cartagena",
-      "description": "This hotel has a pool and is near the most popular beaches.",
-      "price": "1300",
-      "offerPrice": "1250",
-      "feature1": "Pool",
+      "hotelImg": "hotelFairbanks.jpg",
+      "name": "The Star",
+      "place": "Fairbanks",
+      "text": "adshj dfffffffffff ukmthgvdcrhj thbvvvvvvvvvvvvvvvvvvvvvvvvv dvfsvferthb gb.",
+      "price": "1450",
+      "finalPrice": "1300",
+      "feature1": "Airport Shuttle",
       "feature2": "Breakfast",
-      "id": 2
+      "id": 3
     }
   ]
 }
