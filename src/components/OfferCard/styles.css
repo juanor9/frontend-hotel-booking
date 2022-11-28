@@ -1,32 +1,29 @@
-.card {
+.top-offer__card {
+  margin: 22px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: 15px;
-}
-
-.card__img {
-  border-radius: 20px;
   width: 100%;
+  margin: 0 auto;
 }
 
-.card__title {
+.offer__img {
+  border-radius: 20px;
+  width: 96%;
+  object-fit: cover;
+  padding: 12px;
+}
+
+.offer__title {
   margin-bottom: 0;
   font-weight: 800;
 
 }
 
-.card__text {
+.offer__text {
   margin-top: 0;
   color: gray;
-}
-
-@media (min-width:768px){
-  .card {
-    width: 240px;
-  }
-
-  .card__img {
-    height: 200px;
-  }
 }
