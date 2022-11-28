@@ -15,15 +15,15 @@
   ],
   "hotels": [
     {
-      "hotelImg": "hotelFairbanks.jpg",
-      "name": "The Star",
-      "place": "Fairbanks",
-      "text": "adshj dfffffffffff ukmthgvdcrhj thbvvvvvvvvvvvvvvvvvvvvvvvvv dvfsvferthb gb.",
-      "price": "1450",
-      "finalPrice": "1300",
-      "feature1": "Airport Shuttle",
-      "feature2": "Breakfast",
-      "id": 3
+      "hotelImg": "hotelPucon.jpg",
+      "name": "River Blue",
+      "place": "Pucon",
+      "text": "sdnjfnvjefv sxndwjfner",
+      "price": "1500",
+      "finalPrice": "800",
+      "feature1": "Pool",
+      "feature2": "Bar",
+      "id": 1
     }
   ]
 }

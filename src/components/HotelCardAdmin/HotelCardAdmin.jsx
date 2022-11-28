@@ -60,31 +60,32 @@ const HotelCardAdmin = ({
         <FontAwesomeIcon className="cardHotelAdmin__icon" icon={faPenToSquare} onClick={handleShow} />
         <FontAwesomeIcon className="cardHotelAdmin__icon" icon={faTrashCan} onClick={handleClickDelete} />
       </section>
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>
-            Edit Hotel
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <HotelsFormEdit
-            name={name}
-            place={place}
-            text={text}
-            price={price}
-            finalPrice={finalPrice}
-            feature1={feature1}
-            feature2={feature2}
-            id={id}
-            key={id}
-          />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={handleClose}>
-            Close Window
-          </Button>
-        </Modal.Footer>
-      </Modal>
+      <section className="cardHotelAdmin__modal">
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>
+              Edit Hotel
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <HotelsFormEdit
+              name={name}
+              place={place}
+              text={text}
+              price={price}
+              finalPrice={finalPrice}
+              feature1={feature1}
+              feature2={feature2}
+              id={id}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="danger" onClick={handleClose}>
+              Close Window
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </section>
     </section>
   );
 };

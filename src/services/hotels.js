@@ -28,7 +28,7 @@ export const deleteHotel = async (id) => {
   return result;
 };
 
-export const updateHotel = async (hotel) => {
+export const updateHotel = async (hotel, id) => {
   const options = {
     method: 'PATCH',
     headers: {
@@ -37,7 +37,7 @@ export const updateHotel = async (hotel) => {
     body: JSON.stringify(hotel),
   };
 
-  const res = await fetch(`http://localhost:8080/hotels/${hotel.id}`, options);
+  const res = await fetch(`http://localhost:8080/hotels/${id}`, options);
   const result = await res.json();
   return result;
 };

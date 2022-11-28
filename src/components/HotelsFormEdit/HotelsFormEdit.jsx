@@ -12,7 +12,9 @@ const HotelsFormEdit = ({
     event.preventDefault();
 
     try {
-      await updateHotel(form);
+      await updateHotel(form, id);
+      // eslint-disable-next-line no-restricted-globals
+      location.reload();
     } catch (error) {
       throw new Error(error);
     }
@@ -23,7 +25,7 @@ const HotelsFormEdit = ({
       <p className="hotelsForm__properties">Image: </p>
       <input type="file" name="hotelImg" onChange={handleChange} defaultValue={hotelImg} />
       <p className="hotelsForm__properties">Name: </p>
-      <input type="text" name={name} onChange={handleChange} />
+      <input type="text" name="name" onChange={handleChange} defaultValue={name} />
       <p className="hotelsForm__properties">City:</p>
       <input type="text" name="place" onChange={handleChange} defaultValue={place} />
       <p className="hotelsForm__properties">Description:</p>
