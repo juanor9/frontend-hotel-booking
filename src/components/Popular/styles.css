@@ -1,0 +1,38 @@
+.card__popular {
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.popular__img {
+  border-radius: 20px;
+  object-fit: cover;
+  margin-top: 15px;
+  height: 30vh;
+  width: 85%;
+}
+
+.popular__title {
+  margin-bottom: 0;
+  font-weight: 800;
+  margin-top: 22px;
+}
+
+.popular__text {
+  margin-top: 0;
+  color: gray;
+}
+
+@media (min-width:768px){
+  .card__popular{
+    margin-bottom: 1
+    2px;
+    margin: -20px;
+  }
+
+  .popular__img {
+    height: 200px;
+  }
+}

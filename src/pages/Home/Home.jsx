@@ -2,61 +2,37 @@ import Footer from '../../components/Footer/Footer';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import Explainer from '../../components/Explainer/Explainer';
-import OfferCard from '../../components/OfferCard/OfferCard';
 import data from '../../assets/offer.json';
-import imgOffer from '../../assets/offerFood.jpg';
+import OfferView from '../../components/OfferView/OfferView';
+import Popular from '../../components/Popular/Popular';
+import NewsletterForm from '../../components/NewsletterForm/NewsletterForm';
+import ReadArticles from '../../components/ReadArticles/ReadArticles';
 import './styles.css';
 
 const Home = () => (
-  <div className="card__container grid">
-    <nav className="card__nav">
+  <div className="home__container">
+    <nav className="home__nav">
       <NavigationBar />
     </nav>
-    <header className="card__filterHome">
-      <h2 className="title__nav">
+    <header className="card__filter-home">
+      <h2 className="title__nav-home">
         BOOK ROOMS, HOMES & APTS
       </h2>
       <HotelFilter />
     </header>
-    <article className="card__ofert">
-      <h2 className="title__article">
-        Top Offers
-      </h2>
-      {
-        window.innerWidth > 768
-          ? (
-            <div className="card__descktopHome">{
-              data.map((e) => (
-                <OfferCard
-                  key={e.id}
-                  title={e.title}
-                  text={e.text}
-                  image={imgOffer}
-                />
-              ))
-            }
-            </div>
-          ) : (
-            <div className="card__mobile">
-              <OfferCard
-                title="Hotel Booking"
-                text="Avail hot deals on hotel"
-                image={imgOffer}
-              />
-            </div>
-          )
-      }
-    </article>
-    <h2 className="title__article">
+    <section className="offer-view__component">
+      <OfferView />
+    </section>
+    <h2 className="popular-destination__title">
       Most Popular Destination
     </h2>
-    <article className="card__ofert">
+    <article>
       {
         window.innerWidth > 768
           ? (
             <div className="card__descktopHome">{
               data.map((e) => (
-                <OfferCard
+                <Popular
                   key={e.id}
                   title={e.title}
                   text={e.text}
@@ -67,7 +43,12 @@ const Home = () => (
             </div>
           ) : (
             <div className="card__mobile">
-              <OfferCard
+              <Popular
+                title="Hotel Booking"
+                text="Avail hot deals on hotel"
+                image="https://tse1.mm.bing.net/th?id=OIP.8ScCX1fIM6a75Vhi4aEAzAHaE0&pid=Api&P=0"
+              />
+              <Popular
                 title="Hotel Booking"
                 text="Avail hot deals on hotel"
                 image="https://tse1.mm.bing.net/th?id=OIP.8ScCX1fIM6a75Vhi4aEAzAHaE0&pid=Api&P=0"
@@ -76,10 +57,35 @@ const Home = () => (
           )
       }
     </article>
-    <section className="card__explainer">
+    <section className="explainer__component">
       <Explainer />
     </section>
-    <footer className="card__footer">
+    <section className="read-article__component">
+      <article>
+        <ReadArticles
+          image="https://tse4.mm.bing.net/th?id=OIP.RGktba09JIpAQ29ri0leSQHaHJ&pid=Api&P=0"
+          day="02"
+          month="JUN"
+          postBy="Regina Tylor"
+          text="Lorem ipsum dolor sit amet consectetur "
+          headline="neque minus, eveniet hic modi obcaecati expedita delectus mollitia! Blanditiis"
+        />
+      </article>
+      <article className="read-article__descktop">
+        <ReadArticles
+          image="https://tse4.mm.bing.net/th?id=OIP.JVqWEQTJbh_NW4PbHRZC7AHaHa&pid=Api&P=0"
+          day="02"
+          month="JUN"
+          postBy="Regina Tylor"
+          text="Lorem ipsum dolor sit amet consectetur "
+          headline="neque minus, eveniet hic modi obcaecati expedita delectus mollitia! Blanditiis"
+        />
+      </article>
+    </section>
+    <article className="newsletter-form__component">
+      <NewsletterForm />
+    </article>
+    <footer className="footer__component">
       <Footer />
     </footer>
   </div>
