@@ -1,3 +1,5 @@
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 export const createHotel = async (hotel) => {
   const options = {
     method: 'POST',
@@ -7,13 +9,13 @@ export const createHotel = async (hotel) => {
     body: JSON.stringify(hotel),
   };
 
-  const res = await fetch('http://localhost:8080/hotels', options);
+  const res = await fetch(`${BASE_URL}/api/hotels`, options);
   const result = await res.json();
   return result;
 };
 
 export const getHotels = async () => {
-  const res = await fetch('http://localhost:8080/hotels');
+  const res = await fetch(`${BASE_URL}/api/hotels`);
   const result = await res.json();
   return result;
 };
@@ -23,7 +25,7 @@ export const deleteHotel = async (id) => {
     method: 'DELETE',
   };
 
-  const res = await fetch(`http://localhost:8080/hotels/${id}`, options);
+  const res = await fetch(`${BASE_URL}/api/hotels/${id}`, options);
   const result = await res.json();
   return result;
 };
@@ -37,7 +39,7 @@ export const updateHotel = async (hotel, id) => {
     body: JSON.stringify(hotel),
   };
 
-  const res = await fetch(`http://localhost:8080/hotels/${id}`, options);
+  const res = await fetch(`${BASE_URL}/api/hotels/${id}`, options);
   const result = await res.json();
   return result;
 };

@@ -1,5 +1,4 @@
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Footer from '../../components/Footer/Footer';
 import ProfileMenu from '../../components/ProfileMenu/ProfileMenu';
 import UserInfo from '../../components/UserInfo/UserInfo';
 import SliderNav from '../../components/SliderNav/SliderNav';
@@ -19,7 +18,6 @@ const UserProfile = () => (
         <UserInfo />
       </div>
     </div>
-    <Footer />
   </div>
 );
 

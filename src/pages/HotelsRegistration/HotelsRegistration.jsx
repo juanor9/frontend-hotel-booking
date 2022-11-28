@@ -1,7 +1,6 @@
 import './styles.css';
 import HotelsForm from '../../components/HotelsForm/HotelsForm';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Footer from '../../components/Footer/Footer';
 import SliderNav from '../../components/SliderNav/SliderNav';
 
 const HotelsRegistration = () => (
@@ -16,7 +15,6 @@ const HotelsRegistration = () => (
     <section className="hotelsReg__form">
       <HotelsForm />
     </section>
-    <Footer />
   </div>
 );
 

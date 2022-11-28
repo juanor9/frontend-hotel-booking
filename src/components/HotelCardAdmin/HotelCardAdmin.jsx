@@ -40,7 +40,7 @@ const HotelCardAdmin = ({
 
   return (
     <section className="cardHotelAdmin">
-      <img className="cardHotelAdmin__figure" alt="hotel" src={hotelImg} />
+      <img className="cardHotelAdmin__figure" alt="hotel" src={`../${hotelImg}`} />
       <section className="cardHotelAdmin__title">
         <h3 className="cardHotelAdmin__name">{name}</h3>
         <p className="cardHotelAdmin__place"><img alt="map point" src={MapPoint} />{place}</p>

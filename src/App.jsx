@@ -7,18 +7,23 @@ import UserProfile from './pages/UserProfile/UserProfile';
 import UserRegistration from './pages/UserRegistration/UserRegistration';
 import HotelsRegistration from './pages/HotelsRegistration/HotelsRegistration';
 import HotelsManagment from './pages/HotelsManagment/HotelsManagment';
+import Footer from './components/Footer/Footer';
 
 const App = () => (
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/hotels" element={<Hotels />} />
-    <Route path="/hotel/:id" element={<Rooms />} />
-    <Route path="/profile" element={<UserProfile />} />
-    <Route path="/success" element={<Success />} />
-    <Route path="/register" element={<UserRegistration />} />
-    <Route path="/hotels-registration" element={<HotelsRegistration />} />
-    <Route path="/hotels-managment" element={<HotelsManagment />} />
-  </Routes>
+  <>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/hotels" element={<Hotels />} />
+      <Route path="/hotels/:id" element={<Rooms />} />
+      <Route path="/profile" element={<UserProfile />} />
+      <Route path="/success" element={<Success />} />
+      <Route path="/register" element={<UserRegistration />} />
+      <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
+      <Route path="/admin/hotels-managment" element={<HotelsManagment />} />
+    </Routes>
+    <Footer />
+  </>
+
 );
 
 export default App;
