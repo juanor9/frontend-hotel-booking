@@ -12,11 +12,8 @@ const App = () => (
     <Route path="/" element={<Home />} />
     <Route path="/hotels" element={<Hotels />} />
     <Route path="/hotel/:id" element={<Rooms />} />
-<<<<<<< HEAD
     <Route path="/profile" element={<UserProfile />} />
-=======
     <Route path="/success" element={<Success />} />
->>>>>>> 78200ed755b8504577308eb60d16447f1147e23c
     <Route path="/register" element={<UserRegistration />} />
     <Route path="/hotels-registration" element={<HotelsRegistration />} />
   </Routes>
