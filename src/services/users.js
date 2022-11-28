@@ -1,3 +1,5 @@
+const BASE_URL = process.env.REACT_APP_BASE_URL;
+
 const createUser = async (user) => {
   const options = {
     method: 'POST',
@@ -7,7 +9,7 @@ const createUser = async (user) => {
     body: JSON.stringify(user),
   };
 
-  const res = await fetch('http://localhost:8080/users', options);
+  const res = await fetch(`${BASE_URL}/api/users`, options);
   const result = await res.json();
   return result;
 };

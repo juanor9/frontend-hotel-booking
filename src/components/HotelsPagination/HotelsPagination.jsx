@@ -1,6 +1,6 @@
-import './StylesGrid.css';
+import './StylesPagination.css';
 
-const HotelsGrid = () => (
+const HotelsPagination = () => (
   <section className="hotel__card">
     <div className="butons_card">
       <button className="hotels__buttons" type="submit">{'<<'}</button>
@@ -12,4 +12,4 @@ const HotelsGrid = () => (
   </section>
 );
 
-export default HotelsGrid;
+export default HotelsPagination;

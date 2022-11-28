@@ -2,7 +2,6 @@ import './styles.css';
 import { useEffect, useState } from 'react';
 import { getHotels } from '../../services/hotels';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Footer from '../../components/Footer/Footer';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelCardAdmin from '../../components/HotelCardAdmin/HotelCardAdmin';
 
@@ -46,7 +45,6 @@ const HotelsManagment = () => {
           ))
         }
       </section>
-      <Footer />
     </div>
   );
 };
