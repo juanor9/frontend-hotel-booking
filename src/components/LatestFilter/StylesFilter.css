@@ -1,22 +1,22 @@
-.card__filter {
+.filter {
   background-color: #FFFFFF;
   font-weight: 800;
   padding: 30px;
   height: 70px;
 }
 
-.select__filter ion-icon {
+.filter__select ion-icon {
   vertical-align: middle;
   margin-left: 8px;
 }
 
-.icon__filter {
+.filter__icon {
   grid-template-columns: auto auto;
   justify-content: space-around;
   display: grid;
 }
 
-hr {
+.filter__divider {
   background-color: #1B1B1B;
   margin-bottom: 15px;
   margin-top: 15px;
@@ -30,57 +30,57 @@ hr {
   font-weight: 800;
 }
 
-.icon__text {
+.filter__icon-text {
   margin-right: 10px;
 }
 
-.card__descktop {
+.filter-categories{
   display: none;
 }
 
 @media (min-width: 768px) {
-  .card__descktop {
+  .filter-categories {
     grid-template-columns: auto auto;
     justify-content: space-around;
     align-items: center;
     display: grid;
   }
 
-  .select__filter {
+  .filter__select {
     display: none;
   }
 
-  .icon__filter {
+  .filter__icon {
     display: none;
   }
 
-  hr {
+  .filter__divider {
     display: none;
   }
 
-  .card__btn {
+  .filter-categories__btn {
     padding: 5px 15px;
     height: 30px;
     margin: 10px;
     border: none;
   }
 
-  .card__btn:hover {
+  .filter-categories__btn:hover {
     color: #F13F4B;
   }
 
-  .card__btn:focus {
+  .filter-categories__btn:focus {
     background-color: #F13F4B;
     color: #FFFFFF;
   }
 
-  .select__filter_descktop ion-icon {
+  .select__filter_desktop ion-icon {
     vertical-align: middle;
     margin-right: 7px;
     font-size: 25px;
   }
 
-  .select__filter_descktop span {
+  .select__filter_desktop span {
     color: #F13F4B;
     font-size: 16px;
     font-weight: 1000;

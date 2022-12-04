@@ -35,7 +35,7 @@ const BookingForm = () => (
       <section className="booking-form__text-top-features booking-form__text-top-features--prices">
         <h4 className="booking-form__features-title">Per Night</h4>
         <del><p className="booking-form__features-text">$251</p></del>
-        <p className="booking-form__features-text features_text--size">$230</p>
+        <p className="booking-form__features-text booking-form__features-text--size">$230</p>
       </section>
     </section>
     <hr className="booking-form__divider" />

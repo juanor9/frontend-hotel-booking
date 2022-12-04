@@ -27,10 +27,10 @@ const ProfileMenu = ({
     <h2 className="profile-menu__name">{name}</h2>
     <p className="profile-menu__phone">{phone}</p>
     <p className="profile-menu__email">{email}</p>
-    <section className="card__bar">
-      <p className="card__barOptions">Profile</p>
-      <p className="card__barOptions">Bookings</p>
-      <p className="card__barOptions">Cards & Payments</p>
+    <section className="profile-menu__bar">
+      <p className="profile-menu__barOptions">Profile</p>
+      <p className="profile-menu__barOptions">Bookings</p>
+      <p className="profile-menu__barOptions">Cards & Payments</p>
     </section>
   </div>
 );

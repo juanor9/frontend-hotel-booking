@@ -1,4 +1,4 @@
-.card {
+.payment-card {
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -9,30 +9,30 @@
   width: 290px;
 }
 
-.card:hover {
+.payment-card:hover {
   border: 2px solid rgb(19, 128, 128);
 }
 
-.card__option {
+.payment-card__option {
   display: flex;
   flex-direction: row;
 }
 
-.card__img {
+.payment-card__img {
   margin: 0 10em 0 1em;
 }
 
-.card__optionCompany {
+.payment-card__optionCompany {
   text-align: end;
   color: gray;
 }
 
-.card__optionNumber {
+.payment-card__optionNumber {
   margin-top: 0.5em;
 }
 
 @media (min-width:768px) {
-  .card {
+  .payment-card {
     width: 390px;
     font-size: 15px;
   }

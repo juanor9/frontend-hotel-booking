@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const RegisteredCards = ({ cardLogo, cardNumber, cardCompany }) => (
-  <section className="card">
-    <div className="card__option">
+  <section className="payment-card">
+    <div className="payment-card__option">
       <input type="checkbox" />
-      <img alt="mastercard" src={cardLogo} className="card__img" />
-      <p className="card__optionNumber">{cardNumber}</p>
+      <img alt="mastercard" src={cardLogo} className="payment-card__img" />
+      <p className="payment-card__optionNumber">{cardNumber}</p>
     </div>
-    <div className="card__optionCompany"><p>{cardCompany}</p></div>
+    <div className="payment-card__optionCompany"><p>{cardCompany}</p></div>
   </section>
 );
 

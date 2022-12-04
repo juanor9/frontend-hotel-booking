@@ -5,19 +5,19 @@
   background-color: white;
 }
 
-.booking-for__mapouter{
+.booking-form__mapouter{
   position:relative;
   text-align:right;
   width:100%;
 }
 
-.booking-for__gmap_canvas {
+.booking-form__gmap_canvas {
   overflow:hidden;
   background:none!important;
   width: 100%;
 }
 
-.card__line {
+.booking-form__divider {
   width: 100%;
   border-width: 0.5px;
   color: gray;
@@ -85,7 +85,7 @@
   margin-left: 0.5em;
 }
 
-.features_text--size {
+.booking-form__features-text--size {
   font-size: 15px;
   font-weight: 900;
 }
