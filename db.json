@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "name": "Maria",
+      "email": "maria@lo.com",
+      "password": "test",
+      "id": 1
+    },
+    {
+      "name": "Nestor",
+      "email": "nestor@lo.com",
+      "password": "test2",
+      "id": 2
+    },
+    {
+      "name": "Diana Carolina",
+      "email": "dc@lo.com",
+      "password": "12345js",
+      "id": 3
+    }
+  ],
+  "hotels": [
+    {
+      "hotelImg": "hotelPucon.jpg",
+      "name": "River",
+      "place": "Pucon",
+      "text": "sdnjfnvjefv sxndwjfner",
+      "price": "1500",
+      "finalPrice": "800",
+      "feature1": "Pool",
+      "feature2": "Bar",
+      "id": 1
+    },
+    {
+      "hotelImg": "hotelCancun.jpg",
+      "place": "Cancun",
+      "name": "Venado 9",
+      "text": "dddkdkd aslslsls asls.",
+      "price": "2100",
+      "finalPrice": "1850",
+      "feature1": "Airport Shuttle",
+      "feature2": "Room Service",
+      "id": 2
+    }
+  ]
+}

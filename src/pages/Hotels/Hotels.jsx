@@ -1,10 +1,10 @@
 import './styles.css';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import HotelCard from '../../components/HotelCard/HotelCard';
 import Filter from '../../components/LatestFilter/Filter';
-import Footer from '../../components/Footer/Footer';
-import HotelsGrid from '../../components/HotelGrid/HotelsGrid';
+import HotelsPagination from '../../components/HotelsPagination/HotelsPagination';
 import HotelsList from '../../assets/hotelsList.json';
 
 const Hotels = () => (
@@ -12,6 +12,7 @@ const Hotels = () => (
     <section className="page__nav">
       <nav className="page_navbar">
         <NavigationBar />
+        <SliderNav />
       </nav>
       <nav>
         <HotelFilter />
@@ -38,11 +39,8 @@ const Hotels = () => (
           ))
         }
       </section>
-      <HotelsGrid />
+      <HotelsPagination />
     </section>
-    <footer className="page__footer">
-      <Footer />
-    </footer>
   </div>
 );
 

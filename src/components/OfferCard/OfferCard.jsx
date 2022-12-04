@@ -2,10 +2,10 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const OfferCard = ({ title, text, image }) => (
-  <div className="card">
-    <img className="card__img" alt="offerFood" src={image} />
-    <h3 className="card__title">{title}</h3>
-    <p className="card__text">{text}</p>
+  <div className="top-offer__card">
+    <img className="offer__img" alt="offerFood" src={image} />
+    <h3 className="offer__title">{title}</h3>
+    <p className="offer__text">{text}</p>
   </div>
 );
 

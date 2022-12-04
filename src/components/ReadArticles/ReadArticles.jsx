@@ -4,26 +4,26 @@ import './styles.css';
 const ReadArticles = ({
   image, day, month, postBy, text, headline,
 }) => (
-  <section className="card">
-    <div className="card__left">
-      <div className="card__image">
-        <img src={image} alt={postBy} />
-        <div className="card__date">
-          <p className="card__number">{day}</p>
-          <p className="card__month">{month}</p>
+  <section className="readings">
+    <div className="readings__left">
+      <div className="readings__image">
+        <img className="readings__img" src={image} alt={postBy} />
+        <div className="readings__date">
+          <p className="readings__number">{day}</p>
+          <p className="readings__month">{month}</p>
         </div>
       </div>
     </div>
-    <div className="card__right">
-      <div className="card__title">
-        <h3>{postBy}</h3>
+    <div className="readings__right">
+      <div className="readings__title">
+        <h3 className="readings__title-h3">{postBy}</h3>
       </div>
-      <div className="paragraph">
+      <div className="readings__paragraph">
         <p>{text}</p>
-        <span className="card__headline">{headline}</span>
+        <span className="readings__headline">{headline}</span>
       </div>
-      <div className="card__btn">
-        <button type="submit">READ MORE</button>
+      <div>
+        <button className="readings__button" type="submit">READ MORE</button>
       </div>
     </div>
   </section>

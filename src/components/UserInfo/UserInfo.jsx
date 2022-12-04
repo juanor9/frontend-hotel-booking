@@ -4,45 +4,45 @@ import './styles.css';
 const UserInfo = ({
   name, birthday, gender, address, city, zip, email, phone, password,
 }) => (
-  <div className="card">
-    <section className="card__title">
+  <div className="user-info">
+    <section className="user-info__title">
       <h2>Profile</h2>
-      <button className="card__titleButton" type="submit">Edit</button>
+      <button className="user-info__title-button" type="submit">Edit</button>
     </section>
-    <section className="card__info">
-      <div className="card__infoRequested">
-        <h4 className="card__infoRequestedForm">Name</h4>
-        <h4 className="card__infoRequestedForm">Birthday</h4>
-        <h4 className="card__infoRequestedForm">Gender</h4>
-        <h4 className="card__infoRequestedForm">Street Address</h4>
-        <h4 className="card__infoRequestedForm">City/State</h4>
-        <h4 className="card__infoRequestedForm">Zip</h4>
+    <section className="user-info__info">
+      <div className="user-info__info-requested">
+        <h4 className="user-info__info-requested-form">Name</h4>
+        <h4 className="user-info__info-requested-form">Birthday</h4>
+        <h4 className="user-info__info-requested-form">Gender</h4>
+        <h4 className="user-info__info-requested-form">Street Address</h4>
+        <h4 className="user-info__info-requested-form">City/State</h4>
+        <h4 className="user-info__info-requested-form">Zip</h4>
       </div>
-      <div className="card__infoUser">
-        <p className="card__infoUserData">{name}</p>
-        <p className="card__infoUserData">{birthday}</p>
-        <p className="card__infoUserData">{gender}</p>
-        <p className="card__infoUserData">{address}</p>
-        <p className="card__infoUserData">{city}</p>
-        <p className="card__infoUserData">{zip}</p>
+      <div className="user-info__info-user">
+        <p className="user-info__info-user-data">{name}</p>
+        <p className="user-info__info-user-data">{birthday}</p>
+        <p className="user-info__info-user-data">{gender}</p>
+        <p className="user-info__info-user-data">{address}</p>
+        <p className="user-info__info-user-data">{city}</p>
+        <p className="user-info__info-user-data">{zip}</p>
       </div>
     </section>
-    <h2 className="card__loginTitle">Login Details</h2>
-    <section className="card__login">
-      <div className="card__loginInfo">
-        <h4 className="card__loginInfoRequested">Email Address</h4>
-        <h4 className="card__loginInfoRequested">Phone No</h4>
-        <h4 className="card__loginInfoRequested">Password</h4>
+    <h2 className="user-info__login-title">Login Details</h2>
+    <section className="user-info__login">
+      <div className="user-info__login-info">
+        <h4 className="user-info__login-info-requested">Email Address</h4>
+        <h4 className="user-info__login-info-requested">Phone No</h4>
+        <h4 className="user-info__login-info-requested">Password</h4>
       </div>
-      <div className="card__loginUser">
-        <p className="card__loginUserData">{email}</p>
-        <p className="card__loginUserData">{phone}</p>
-        <p className="card__loginUserData">{password}</p>
+      <div className="user-info__login-user">
+        <p className="user-info__login-user-data">{email}</p>
+        <p className="user-info__login-user-data">{phone}</p>
+        <p className="user-info__login-user-data">{password}</p>
       </div>
-      <div className="card__loginEdit">
-        <button type="submit" className="card__loginEditButton">Edit</button>
-        <button type="submit" className="card__loginEditButton">Edit</button>
-        <button type="submit" className="card__loginEditButton">Edit</button>
+      <div className="user-info__login-edit">
+        <button type="submit" className="user-info__login-edit-button">Edit</button>
+        <button type="submit" className="user-info__login-edit-button">Edit</button>
+        <button type="submit" className="user-info__login-edit-button">Edit</button>
       </div>
     </section>
   </div>

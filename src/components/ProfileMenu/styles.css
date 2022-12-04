@@ -1,56 +1,63 @@
-.card {
-  width: 350px;
-  justify-content: center;
+.profile-menu {
   align-items: center;
-  text-align: center;
   background-color: rgb(240,240,240);
   font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  width: 350px;
 }
 
-.card__figures {
+.profile-menu__figures {
   position: relative;
 }
 
-.card__imgPerfil {
+.profile-menu__pic {
   border-radius: 60em;
-  width: 150px;
   height: 150px;
-  position: relative;
-  z-index: 1;
   margin-top: 2em;
+  position: relative;
+  width: 150px;
+  z-index: 1;
 }
 
-.card__iconEdit {
-  position: absolute;
+.profile-menu__edit-container {
+  background-color: white;
+  border-radius: 50%;
   bottom: 0;
+  color: rgb(239, 63, 63);
+  display: inline-block;
+  padding: .5em;
+  position: absolute;
   right: 0;
+  transform: translate(-50%);
   z-index: 2;
-  transform: translate(-90px);
+  right: 30%;
+
 }
 
-.card__name, .card__phone {
+.profile-menu__name, .profile-menu__phone {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.card__email, .card__phone {
+.profile-menu__email, .profile-menu__phone {
   color: gray;
 }
 
-.card__email {
+.profile-menu__email {
   margin-top: 0;
   margin-bottom: 2em;
 }
 
-.card__name {
+.profile-menu__name {
   font-weight: 900;
 }
 
 .card__bar {
-  display: flex;
-  justify-content: space-evenly;
   background-color: white;
+  display: flex;
   font-size: 18px;
+  justify-content: space-evenly;
 }
 
 .card__barOptions:hover {
@@ -59,13 +66,13 @@
 }
 
 @media (min-width:768px){
-  .card {
+  .profile-menu {
     width: 300px;
   }
 
   .card__bar {
-    flex-direction: column;
     align-items: flex-start;
+    flex-direction: column;
     font-size: 22px;
   }
 
@@ -73,11 +80,15 @@
     margin: 1em 0 0.5em 1em;
   }
 
-  .card__name {
+  .profile-menu__name {
     font-size: 25px;
   }
 
-  .card__phone, .card__email {
+  .profile-menu__phone, .profile-menu__email {
     font-size: 20px;
+  }
+  .profile-menu__edit-container {
+    right: 20%;
+
   }
 }
