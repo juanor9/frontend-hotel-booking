@@ -53,14 +53,14 @@
   font-weight: 900;
 }
 
-.card__bar {
+.profile-menu__bar {
   background-color: white;
   display: flex;
   font-size: 18px;
   justify-content: space-evenly;
 }
 
-.card__barOptions:hover {
+.profile-menu__barOptions:hover {
   color: rgb(5, 160, 160);
   text-decoration: underline rgb(5, 160, 160);
 }
@@ -70,13 +70,13 @@
     width: 300px;
   }
 
-  .card__bar {
+  .profile-menu__bar {
     align-items: flex-start;
     flex-direction: column;
     font-size: 22px;
   }
 
-  .card__barOptions {
+  .profile-menu__barOptions {
     margin: 1em 0 0.5em 1em;
   }
 

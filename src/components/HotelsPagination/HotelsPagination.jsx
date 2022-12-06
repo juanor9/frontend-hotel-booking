@@ -1,13 +1,13 @@
 import './StylesPagination.css';
 
 const HotelsPagination = () => (
-  <section className="hotel__card">
-    <div className="butons_card">
-      <button className="hotels__buttons" type="submit">{'<<'}</button>
-      <button className="hotels__buttons" type="submit">1</button>
-      <button className="hotels__buttons" type="submit">2</button>
-      <button className="hotels__buttons" type="submit">3</button>
-      <button className="hotels__buttons" type="submit">{'>>'}</button>
+  <section className="pagination__card">
+    <div className="pagination__buttons">
+      <button className="pagination__button" type="submit">{'<<'}</button>
+      <button className="pagination__button" type="submit">1</button>
+      <button className="pagination__button" type="submit">2</button>
+      <button className="pagination__button" type="submit">3</button>
+      <button className="pagination__button" type="submit">{'>>'}</button>
     </div>
   </section>
 );
