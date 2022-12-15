@@ -46,7 +46,7 @@ const NavigationBar = () => (
         </select>
       </div>
       <div className="navigation__option">
-        <Link className="navigation__text-icon" to="/"><ion-icon name="person-outline" /></Link>
+        <Link className="navigation__text-icon" to="/register"><ion-icon name="person-outline" /></Link>
       </div>
     </div>
   </nav>

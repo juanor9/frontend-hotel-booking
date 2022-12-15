@@ -12,6 +12,7 @@
 
 .hotelsForm__button {
   margin-top: 1em;
+  margin-left: 0.5em;
   color: white;
   background-color: red;
   border: 0;
@@ -26,7 +27,7 @@
 
 .hotelsForm__buttonEnv {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -35,3 +36,4 @@
     width: 500px;
   }
 }
+

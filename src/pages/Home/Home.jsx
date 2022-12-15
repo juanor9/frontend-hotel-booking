@@ -1,4 +1,3 @@
-import Footer from '../../components/Footer/Footer';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import Explainer from '../../components/Explainer/Explainer';
@@ -85,9 +84,6 @@ const Home = () => (
     <article className="newsletter-form__component">
       <NewsletterForm />
     </article>
-    <footer className="footer__component">
-      <Footer />
-    </footer>
   </div>
 );
 
