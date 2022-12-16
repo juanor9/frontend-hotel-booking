@@ -2,41 +2,53 @@
   background-image: url(../../assets/livingRoom.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  height: 280px;
 }
 
 .booking__nav{
-  display: flex;
-  align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  height: 100%;
 }
 
-.booking__form{
-  margin: 0 auto;
-  margin-bottom: 10px;
-  width: 93%;
+.booking__summery{
   -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
-  font-family: 'Nunito', sans-serif;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 93%;
+}
+
+.booking__form{
+  -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 93%;
 }
 
 @media(min-width: 768px){
   .booking__article{
-    display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 60% auto;
     margin: 40px 0px 40px 0px;
+    justify-content: center;
+    align-items: center;
+    display: grid;
   }
 
   .booking__article--rigth{
+    margin-right: -80px;
     width: 100%;
     order: 1;
-    margin-right: -80px;
   }
 
   .booking__article--left{
     width: 60%;
     order: 2;
   }
-
 }

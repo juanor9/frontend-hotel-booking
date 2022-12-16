@@ -1,28 +1,29 @@
 .summery__container{
+  overflow: hidden;
+  font-size: 13px;
   padding: 30px;
   width: 100%;
-  font-size: 13px;
 }
 
 .summary__view{
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .summery__image{
-  width: 25%;
   margin-right: 10px;
+  width: 25%;
 }
 
 .summery__hr{
+  background-color: rgb(252, 252, 252);
   margin: 12px 0px;
-  background-color: gray;
 }
 
 .summery__dates{
-  display: grid;
   grid-template-columns: auto auto;
   justify-content: space-between;
+  display: grid;
 }
 
 .summery__dates-item{
@@ -34,19 +35,19 @@
 }
 
 .summery__edit{
-  display: flex;
   justify-content: space-between;
+  display: flex;
 }
 
 .summeery__btn{
-  color: #F13F4B;;
+  color: #F13F4B;
   background: none;
   border: none;
 }
 
 .summery__details{
-  display: flex;
   justify-content: space-between;
+  display: flex;
 }
 
 .summery__total{
