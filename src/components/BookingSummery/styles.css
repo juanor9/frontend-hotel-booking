@@ -1,0 +1,60 @@
+.summery__container{
+  padding: 30px;
+  width: 100%;
+  font-size: 13px;
+}
+
+.summary__view{
+  display: flex;
+  align-items: center;
+}
+
+.summery__image{
+  width: 25%;
+  margin-right: 10px;
+}
+
+.summery__hr{
+  margin: 12px 0px;
+  background-color: gray;
+}
+
+.summery__dates{
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+.summery__dates-item{
+  margin-bottom: 12px;
+}
+
+.summery__left{
+  text-align: right;
+}
+
+.summery__edit{
+  display: flex;
+  justify-content: space-between;
+}
+
+.summeery__btn{
+  color: #F13F4B;;
+  background: none;
+  border: none;
+}
+
+.summery__details{
+  display: flex;
+  justify-content: space-between;
+}
+
+.summery__total{
+  font-weight: 900;
+}
+
+@media(min-width: 768px){
+  .summery__container{
+    font-size: 15px;
+  }
+}

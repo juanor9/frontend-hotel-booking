@@ -8,6 +8,7 @@ import UserRegistration from './pages/UserRegistration/UserRegistration';
 import HotelsRegistration from './pages/HotelsRegistration/HotelsRegistration';
 import HotelsManagment from './pages/HotelsManagment/HotelsManagment';
 import Footer from './components/Footer/Footer';
+import Booking from './pages/Booking/Booking';
 
 const App = () => (
   <>
@@ -20,6 +21,7 @@ const App = () => (
       <Route path="/register" element={<UserRegistration />} />
       <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/hotels-managment" element={<HotelsManagment />} />
+      <Route path="/booking" element={<Booking />} />
     </Routes>
     <Footer />
   </>

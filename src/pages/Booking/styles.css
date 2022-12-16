@@ -1,0 +1,42 @@
+.booking__container{
+  background-image: url(../../assets/livingRoom.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.booking__nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.booking__form{
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 93%;
+  -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
+  font-family: 'Nunito', sans-serif;
+}
+
+@media(min-width: 768px){
+  .booking__article{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 40px 0px 40px 0px;
+  }
+
+  .booking__article--rigth{
+    width: 100%;
+    order: 1;
+    margin-right: -80px;
+  }
+
+  .booking__article--left{
+    width: 60%;
+    order: 2;
+  }
+
+}
