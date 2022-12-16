@@ -25,7 +25,7 @@ const Booking = () => {
   return (
     <>
       <header className="booking__container">
-        <nav className="booking__navigation-bar">
+        <nav>
           <NavigationBar />
         </nav>
         <div className="booking__nav">

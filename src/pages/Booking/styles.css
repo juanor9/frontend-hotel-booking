@@ -38,6 +38,7 @@
     margin: 40px 0px 40px 0px;
     justify-content: center;
     align-items: center;
+    padding: 50px;
     display: grid;
   }
 
@@ -50,5 +51,14 @@
   .booking__article--left{
     width: 60%;
     order: 2;
+  }
+
+  .booking__form{
+    margin-right: 1px;
+    max-width: 600px;
+  }
+
+  .booking__summery{
+    width: 96%;
   }
 }
