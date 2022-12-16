@@ -17,6 +17,12 @@
       "email": "dc@lo.com",
       "password": "12345js",
       "id": 3
+    },
+    {
+      "name": "Carolina",
+      "email": "dc@lo.com",
+      "password": "234348282882",
+      "id": 4
     }
   ],
   "hotels": [

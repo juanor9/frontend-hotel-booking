@@ -1,15 +1,17 @@
+import { useDispatch } from 'react-redux';
 import useForm from '../../hooks/useForm';
 import createUser from '../../services/users';
 import './style.css';
 
 const RegisterForm = () => {
   const { form, handleChange } = useForm({});
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await createUser(form);
+      dispatch(createUser(form));
     } catch (error) {
       throw new Error(error);
     }
