@@ -1,9 +1,11 @@
-import { useDispatch } from 'react-redux';
+/* eslint-disable no-unused-vars */
+import { useDispatch, useSelector } from 'react-redux';
 import useForm from '../../hooks/useForm';
 import createUser from '../../services/users';
 import './style.css';
 
 const RegisterForm = () => {
+  // const { users } = useSelector((state) => state.users);
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
 
