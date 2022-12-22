@@ -5,6 +5,30 @@
   height: 280px;
 }
 
+.booking__article{
+  position: relative;
+  min-height: 545px;
+  width: 100%;
+}
+
+.booking__absolute{
+  margin-bottom: auto;
+  align-items: center;
+  min-height: 450px;
+  display: flex;
+}
+
+.booking__relative{
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  top: -30px;
+}
+
+.desaparecer{
+  display: none;
+}
+
 .booking__nav{
   justify-content: center;
   align-items: center;
@@ -17,8 +41,8 @@
   -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
   margin-bottom: 10px;
-  margin: 0 auto;
   margin-top: 30px;
+  margin: 0 auto;
   width: 93%;
 }
 
@@ -26,39 +50,49 @@
   -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 10px;
   width: 93%;
 }
 
 @media(min-width: 768px){
   .booking__article{
-    grid-template-columns: 60% auto;
-    margin: 40px 0px 40px 0px;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
+    grid-template-columns: 100% auto;
+    margin-top: 20px;
+    padding: 40px;
     display: grid;
   }
 
+  .booking__absolute{
+    display: flex;
+  }
+
+  .formularios{
+    margin-top: 20px;
+    display: flex;
+  }
+
   .booking__article--rigth{
-    margin-right: -80px;
-    width: 100%;
+    margin-top: -30px;
     order: 1;
   }
 
   .booking__article--left{
-    width: 60%;
     order: 2;
   }
 
   .booking__form{
-    margin-right: 1px;
-    max-width: 600px;
+    max-width: 650px;
+    width: 100%;
   }
 
   .booking__summery{
-    width: 96%;
+    background-color: white;
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 450px;
+    height: 530px;
+    width: 70%;
   }
 }

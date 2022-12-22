@@ -14,12 +14,13 @@
   padding: 5px;
   width: 100%;
 }
-.derecho{
+
+.traveller-info__derecho{
   margin-left: 15px;
 }
 
 .traveller-info__input{
-  margin-top: 20px;
+  margin-top: 16px;
   width: 100%;
 }
 
@@ -41,7 +42,6 @@
   font-size: 12px;
   padding: 5px;
   width: 70px;
-
 }
 
 .traveller-info__btn{
@@ -53,6 +53,11 @@
   height: 30px;
   border: none;
   width: 100%;
+}
+
+.traveller-info__btn:hover{
+  background-color: #f70919;
+  font-size: 11px;
 }
 
 .traveller-info__btn-cont{

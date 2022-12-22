@@ -4,7 +4,7 @@ import hotels from '../../assets/hotel.json';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
-import BookingForm from '../../components/BookingForm/BookingForm';
+import BookingForm from '../../components/BookingsForm/BookingForm';
 import Weather from '../../components/Weather/Weather';
 
 const Rooms = () => {

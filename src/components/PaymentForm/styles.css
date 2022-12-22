@@ -1,0 +1,61 @@
+.payment-info__cont{
+  padding: 30px;
+  width: 100%;
+}
+
+.payment-info__reset{
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.payment__btn{
+  align-items: center;
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+}
+
+.payment-info__reset-btn{
+  background-color: #F13F4B;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  color: white;
+  height: 30px;
+  border: none;
+  width: 20%;
+}
+
+.payment-info__reset-btn:hover{
+  background-color: #f70919;
+  font-size: 11px;
+}
+
+
+.payment__radio{
+  background-color: white;
+  border: 4px solid white;
+  border-radius: 50%;
+  padding: 2px;
+  height: 18px;
+  margin: 5px;
+  width: 18px;
+}
+
+.payment__radio-red{
+  background-color: #F13F4B;
+  border: 4px solid white;
+  border-radius: 50%;
+  padding: 2px;
+  height: 18px;
+  margin: 5px;
+  width: 18px;
+}
+
+.payment__radio:hover {
+  background-color: #F13F4B;
+}
+
+
+
