@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export const fetchHotels = createAsyncThunk('hotels/fetchHotels', async () => {
-  const response = await fetch('https://backend-hotel-booking-production.up.railway.app/api/hotels');
+  const response = await fetch('http://localhost:8080/api/hotels');
   const data = await response.json();
   return data;
 });

@@ -23,17 +23,17 @@ const HotelsForm = () => {
   return (
     <form id="formHotel" className="hotelsForm" onSubmit={handleSubmit}>
       <p className="hotelsForm__properties">Image: </p>
-      <input type="file" name="hotelImg" onChange={handleChange} />
+      <input type="file" name="imageProfile" onChange={handleChange} />
       <p className="hotelsForm__properties">Name: </p>
       <input type="text" name="name" onChange={handleChange} />
-      <p className="hotelsForm__properties">City:</p>
-      <input type="text" name="place" onChange={handleChange} />
+      {/* <p className="hotelsForm__properties">City:</p>
+      <input type="text" name="place" onChange={handleChange} /> */}
       <p className="hotelsForm__properties">Description:</p>
-      <textarea rows="5" type="text" name="text" onChange={handleChange} />
+      <textarea rows="5" type="text" name="about" onChange={handleChange} />
       <p className="hotelsForm__properties">Price:</p>
-      <input type="number" name="price" onChange={handleChange} />
-      <p className="hotelsForm__properties">Offer Price:</p>
-      <input type="number" name="finalPrice" onChange={handleChange} />
+      <input type="number" name="pricePerNight" onChange={handleChange} />
+      {/* <p className="hotelsForm__properties">Offer Price:</p>
+      <input type="number" name="finalPrice" onChange={handleChange} /> */}
       <p className="hotelsForm__properties">Feature 1:</p>
       <select name="feature1" onChange={handleChange}>
         <option value="Parking">Parking</option>

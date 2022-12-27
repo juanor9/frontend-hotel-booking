@@ -6,7 +6,7 @@ import Star from '../../assets/star.png';
 import './styles.css';
 
 const HotelCard = ({
-  hotelImg, name, place, text, reviews, price, finalPrice, feature1, feature2, id,
+  hotelImg, name, place, text, price, finalPrice, feature1, feature2, id,
 }) => (
   <Link to={`/hotel/${id}`} className="hotel-card">
     <section className="hotel-card__icons">
@@ -29,7 +29,7 @@ const HotelCard = ({
           src={Star}
           className="hotel-card__reviews"
         />
-        {reviews} reviews
+        {122222} reviews
       </p>
     </section>
     <section className="hotel-card__bottom">
@@ -46,16 +46,20 @@ const HotelCard = ({
 );
 
 HotelCard.propTypes = {
-  hotelImg: PropTypes.string.isRequired,
+  hotelImg: PropTypes.string,
   name: PropTypes.string.isRequired,
   place: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  reviews: PropTypes.number.isRequired,
   price: PropTypes.number.isRequired,
-  finalPrice: PropTypes.number.isRequired,
+  finalPrice: PropTypes.number,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+};
+
+HotelCard.defaultProps = {
+  hotelImg: './grey.jpg',
+  finalPrice: 'same',
 };
 
 export default HotelCard;

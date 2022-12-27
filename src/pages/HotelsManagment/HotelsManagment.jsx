@@ -31,12 +31,10 @@ const HotelsManagment = () => {
         {
           hotelsAdmin.map((hotel) => (
             <HotelCardAdmin
-              hotelImg={hotel.hotelImg}
+              imageProfile={hotel.imageProfile}
               name={hotel.name}
-              place={hotel.place}
-              text={hotel.text}
-              price={hotel.price}
-              finalPrice={hotel.finalPrice}
+              about={hotel.about}
+              pricePerNight={hotel.pricePerNight}
               feature1={hotel.feature1}
               feature2={hotel.feature2}
               id={hotel.id}
