@@ -1,19 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
-import createUser from '../../services/users';
+import login from '../../services/auth';
 
 const initialState = {
   user: [],
 };
 
-const usersSlice = createSlice({
-  name: 'users',
+const loggedUserSlice = createSlice({
+  name: 'loggedUser',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(createUser.fulfilled, (state, action) => {
+    builder.addCase(login.fulfilled, (state, action) => {
       // eslint-disable-next-line no-param-reassign
-      state.users = action.payload;
+      state.user = action.payload.profile;
     });
   },
 });
 
-export default usersSlice.reducer;
+export default loggedUserSlice.reducer;
