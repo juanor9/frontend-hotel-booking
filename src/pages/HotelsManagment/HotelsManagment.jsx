@@ -1,22 +1,16 @@
 import './styles.css';
-import { useEffect, useState } from 'react';
-import { getHotels } from '../../services/hotels';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHotels } from '../../features/hotels/hotelsSlice';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelCardAdmin from '../../components/HotelCardAdmin/HotelCardAdmin';
 
 const HotelsManagment = () => {
-  const [hotelsAdmin, setHotelsAdmin] = useState([]);
+  const { hotels } = useSelector((state) => state.hotels);
+  const dispatch = useDispatch();
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getHotels();
-        setHotelsAdmin(data);
-      } catch (error) {
-        throw new Error(error);
-      }
-    };
-    getData();
+    dispatch(getHotels());
   }, []);
   return (
     <div className="hotelsManagment">
@@ -29,7 +23,7 @@ const HotelsManagment = () => {
       </section>
       <section className="hotelsManagment__list">
         {
-          hotelsAdmin.map((hotel) => (
+          hotels.map((hotel) => (
             <HotelCardAdmin
               imageProfile={hotel.imageProfile}
               name={hotel.name}
@@ -37,8 +31,8 @@ const HotelsManagment = () => {
               pricePerNight={hotel.pricePerNight}
               feature1={hotel.feature1}
               feature2={hotel.feature2}
-              id={hotel.id}
-              key={hotel.id}
+              id={hotel._id}
+              key={hotel._id}
             />
           ))
         }

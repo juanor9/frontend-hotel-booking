@@ -6,19 +6,19 @@ import Star from '../../assets/star.png';
 import './styles.css';
 
 const HotelCard = ({
-  hotelImg, name, place, text, price, finalPrice, feature1, feature2, id,
+  imageProfile, name, about, pricePerNight, feature1, feature2, id,
 }) => (
   <Link to={`/hotel/${id}`} className="hotel-card">
     <section className="hotel-card__icons">
-      <img className="hotel-card__img" alt="hotel" src={hotelImg} />
+      <img className="hotel-card__img" alt="hotel" src={imageProfile} />
       <img className="hotel-card__icon" alt="icon" src={HeartIcon} />
     </section>
     <section className="hotel-card__header">
       <h3 className="hotel-card__name">{name}</h3>
-      <p className="hotel-card__city"><img alt="map point" src={MapPoint} />{place}</p>
+      <p className="hotel-card__city"><img alt="map point" src={MapPoint} />Medellin</p>
     </section>
     <section className="hotel-card__caption">
-      <p className="hotel-card__description">{text}</p>
+      <p className="hotel-card__description">{about}</p>
       <p className="hotel-card__raiting">
         <img alt="stars raiting" src={Star} />
         <img alt="stars raiting" src={Star} />
@@ -34,8 +34,8 @@ const HotelCard = ({
     </section>
     <section className="hotel-card__bottom">
       <div className="hotel-card__prices">
-        <p className="hotel-card__price-del"><del>${price}</del></p>
-        <p className="hotel-card__price-final">${finalPrice}</p>
+        <p className="hotel-card__price-del"><del>${pricePerNight}</del></p>
+        <p className="hotel-card__price-final">${200}</p>
       </div>
       <div className="hotel-card__features">
         <div className="hotel-card__feature-detail">{feature1}</div>
@@ -46,20 +46,17 @@ const HotelCard = ({
 );
 
 HotelCard.propTypes = {
-  hotelImg: PropTypes.string,
+  imageProfile: PropTypes.string,
   name: PropTypes.string.isRequired,
-  place: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  finalPrice: PropTypes.number,
+  about: PropTypes.string.isRequired,
+  pricePerNight: PropTypes.number.isRequired,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 HotelCard.defaultProps = {
-  hotelImg: './grey.jpg',
-  finalPrice: 'same',
+  imageProfile: './grey.jpg',
 };
 
 export default HotelCard;

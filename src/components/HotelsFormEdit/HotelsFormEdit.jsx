@@ -1,20 +1,20 @@
 import './styles.css';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { updateHotel } from '../../services/hotels';
 import useForm from '../../hooks/useForm';
 
 const HotelsFormEdit = ({
   imageProfile, name, about, pricePerNight, feature1, feature2, id,
 }) => {
+  const dispatch = useDispatch();
   const { form, handleChange } = useForm({});
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await updateHotel(form, id);
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
+      dispatch(updateHotel(form, id));
     } catch (error) {
       throw new Error(error);
     }
@@ -23,7 +23,7 @@ const HotelsFormEdit = ({
   return (
     <div className="hotelsFormEdit">
       <h4 className="hotelsFormEdit__title">Hotel Edit</h4>
-      <form id={id} className="hotelsFormEdit__form" onSubmit={handleSubmit}>
+      <form className="hotelsFormEdit__form" onSubmit={handleSubmit}>
         <p className="hotelsFormEdit__properties">Image: </p>
         <input type="file" name="imageProfile" onChange={handleChange} defaultValue={imageProfile} />
         <p className="hotelsFormEdit__properties">Name: </p>
@@ -78,7 +78,7 @@ HotelsFormEdit.propTypes = {
   pricePerNight: PropTypes.number.isRequired,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default HotelsFormEdit;

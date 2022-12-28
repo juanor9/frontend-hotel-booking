@@ -1,6 +1,7 @@
 import './styles.css';
-import { useState, useEffect } from 'react';
-import { getHotels } from '../../services/hotels';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHotels } from '../../features/hotels/hotelsSlice';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
@@ -9,17 +10,10 @@ import Filter from '../../components/LatestFilter/Filter';
 import HotelsPagination from '../../components/HotelsPagination/HotelsPagination';
 
 const Hotels = () => {
-  const [hotels, setHotels] = useState([]);
+  const { hotels } = useSelector((state) => state.hotels);
+  const dispatch = useDispatch();
   useEffect(() => {
-    const getData = async () => {
-      try {
-        const data = await getHotels();
-        setHotels(data);
-      } catch (error) {
-        throw new Error(error);
-      }
-    };
-    getData();
+    dispatch(getHotels());
   }, []);
   return (
     <div className="page">
@@ -37,16 +31,14 @@ const Hotels = () => {
         <section className="page__hotelsList">
           {hotels.map((hotel) => (
             <HotelCard
-              hotelImg={hotel.hotelImg}
+              imageProfile={hotel.imageProfile}
               name={hotel.name}
-              place={hotel.location.city}
-              text={hotel.text}
-              price={hotel.price}
-              finalPrice={hotel.finalPrice}
+              about={hotel.about}
+              pricePerNight={hotel.pricePerNight}
               feature1={hotel.feature1}
               feature2={hotel.feature2}
-              id={hotel.id}
-              key={hotel.id}
+              id={hotel._id}
+              key={hotel._id}
             />
           ))}
         </section>

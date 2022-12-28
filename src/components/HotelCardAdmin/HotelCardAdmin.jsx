@@ -1,20 +1,23 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { Modal } from 'react-bootstrap';
+import { deleteHotel } from '../../features/hotels/hotelsSlice';
 import MapPoint from '../../assets/mapPoint.png';
-import { deleteHotel } from '../../services/hotels';
 import HotelsFormEdit from '../HotelsFormEdit/HotelsFormEdit';
 
 const HotelCardAdmin = ({
   imageProfile, name, about, pricePerNight, feature1, feature2, id,
 }) => {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+
   const handleClickDelete = async () => {
     try {
-      await deleteHotel(id);
+      dispatch(deleteHotel(id));
       // eslint-disable-next-line no-restricted-globals
       location.reload();
     } catch (error) {
@@ -33,6 +36,8 @@ const HotelCardAdmin = ({
   const handleClose = async () => {
     try {
       await setShow(false);
+      // eslint-disable-next-line no-restricted-globals
+      location.reload();
     } catch (error) {
       throw new Error(error);
     }
@@ -71,6 +76,9 @@ const HotelCardAdmin = ({
             feature2={feature2}
             id={id}
           />
+          <div className="hotelsFormEdit__buttonEnv">
+            <button className="hotelsFormEdit__button" type="submit" onClick={handleClose}>Confirm & Close</button>
+          </div>
         </Modal.Body>
       </Modal>
     </section>
@@ -84,7 +92,7 @@ HotelCardAdmin.propTypes = {
   pricePerNight: PropTypes.number.isRequired,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default HotelCardAdmin;

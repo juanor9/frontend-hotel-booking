@@ -1,16 +1,28 @@
 import './styles.css';
-import { Link } from 'react-router-dom';
-import { createHotel } from '../../services/hotels';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { createHotel } from '../../features/hotels/hotelsSlice';
+import { createImage } from '../../features/uploads/uploadsSlice';
 import useForm from '../../hooks/useForm';
 
 const HotelsForm = () => {
   const { form, handleChange } = useForm({});
+  const dispatch = useDispatch();
+
+  const [file, setFile] = useState(null);
+
+  const handleChangeImage = ({ target }) => {
+    const { files } = target;
+    const image = files[0];
+    setFile(image);
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      await createHotel(form);
+      dispatch(createHotel(form));
+      dispatch(createImage(file));
     } catch (error) {
       throw new Error(error);
     }
@@ -23,11 +35,11 @@ const HotelsForm = () => {
   return (
     <form id="formHotel" className="hotelsForm" onSubmit={handleSubmit}>
       <p className="hotelsForm__properties">Image: </p>
-      <input type="file" name="imageProfile" onChange={handleChange} />
+      <input type="file" name="file" accept="image/*" onChange={handleChangeImage} />
       <p className="hotelsForm__properties">Name: </p>
       <input type="text" name="name" onChange={handleChange} />
       {/* <p className="hotelsForm__properties">City:</p>
-      <input type="text" name="place" onChange={handleChange} /> */}
+      <input type="text" name="city" onChange={handleChange} /> */}
       <p className="hotelsForm__properties">Description:</p>
       <textarea rows="5" type="text" name="about" onChange={handleChange} />
       <p className="hotelsForm__properties">Price:</p>
@@ -62,7 +74,6 @@ const HotelsForm = () => {
       </select>
       <div className="hotelsForm__buttonEnv">
         <button className="hotelsForm__button" type="submit" onClick={handleClick}>Create</button>
-        <Link to="/admin/hotels-managment"><button className="hotelsForm__button" type="submit">List Hotels</button></Link>
       </div>
     </form>
   );
