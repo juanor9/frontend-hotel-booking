@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import useForm from '../../hooks/useForm';
 import createUser from '../../services/users';
@@ -11,6 +12,7 @@ const RegisterForm = () => {
   const [modal, setModal] = useState(false);
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -111,7 +113,11 @@ const RegisterForm = () => {
         <span className="register-form__divider-line" />
       </div>
       <article id="login" className="register-form__section">
-        <button type="button" className="register-form__login-button">
+        <button
+          type="button"
+          className="register-form__login-button"
+          onClick={() => navigate('/login')}
+        >
           Login
         </button>
       </article>
