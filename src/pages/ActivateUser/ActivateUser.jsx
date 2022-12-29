@@ -11,10 +11,10 @@ const ActivateUser = () => {
     const validateUserMail = async () => {
       try {
         const data = await validateUserMailToken(token);
-        console.log(data);
         localStorage.setItem('token', data.token);
         navigate('/');
       } catch (error) {
+        // eslint-disable-next-line
         console.log(error.message);
       }
     };
