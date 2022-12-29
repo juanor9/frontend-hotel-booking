@@ -1,9 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import validateUserMailToken from '../../services/auth';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import SuccessfulPyment from '../../components/SuccessfulPayment/SuccessfulPayment';
+import { validateUserMailToken } from '../../services/auth';
 import './style.css';
 
 const ActivateUser = () => {
