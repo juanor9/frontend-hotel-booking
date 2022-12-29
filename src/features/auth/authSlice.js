@@ -11,7 +11,8 @@ const loggedUserSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(login.fulfilled, (state, action) => {
       // eslint-disable-next-line no-param-reassign
-      state.user = action.payload.profile;
+      localStorage.setItem('login-token', action.payload.userToken);
+      localStorage.setItem('user', JSON.stringify(action.payload.profile));
     });
   },
 });

@@ -1,7 +1,7 @@
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import SliderNav from '../../components/SliderNav/SliderNav';
 import './style.css';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import SliderNav from '../../components/SliderNav/SliderNav';
 
 const UserLogin = () => (
   <div className="user-login">
