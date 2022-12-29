@@ -7,6 +7,11 @@
   background-color: white;
 }
 
+.cardHotelAdmin__modal {
+  justify-content: center;
+  align-items: center;
+}
+
 .cardHotelAdmin__figure {
   width: 100%;
 }

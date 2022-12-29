@@ -1,0 +1,45 @@
+.hotelsFormEdit {
+  padding: 1em;
+}
+
+.hotelsFormEdit__form {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  font-size: 15px;
+}
+
+.hotelsFormEdit__title {
+  text-align: center;
+}
+
+.hotelsFormEdit__properties {
+  margin: 0.5em 0 0 0;
+  font-weight: 800;
+}
+
+.hotelsFormEdit__button {
+  margin-top: 1em;
+  color: white;
+  background-color: red;
+  border: 0;
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: bold;
+}
+
+.hotelsFormEdit__button:hover {
+  background-color: rgb(255, 77, 77);
+}
+
+.hotelsFormEdit__buttonEnv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width:768px){
+  .hotelsFormEdit__form {
+    width: 450px;
+  }
+}
+
