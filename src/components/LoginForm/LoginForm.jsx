@@ -2,7 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import useForm from '../../hooks/useForm';
-import login from '../../services/auth';
+import { login } from '../../services/auth';
 import './style.css';
 
 const LoginForm = () => {
