@@ -39,7 +39,9 @@ const ProfileMenu = () => {
       {user.email
         ? <p className="profile-menu__phone">{user.email}</p>
         : null}
-      {/* <p className="profile-menu__phone">{phone}</p> ADD TO USER MODEL */}
+      {user.phone
+        ? <p className="profile-menu__phone">{user.phone}</p>
+        : null}
       <section className="profile-menu__bar">
         <p className="profile-menu__barOptions">Profile</p>
         <p className="profile-menu__barOptions">Bookings</p>

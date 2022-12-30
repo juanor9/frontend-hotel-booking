@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import Success from './pages/Success/Success';
-import Hotels from './pages/Hotels/Hotels';
-import Rooms from './pages/Rooms/Rooms';
+import ActivateUser from './pages/ActivateUser/ActivateUser';
+import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
+import Hotels from './pages/Hotels/Hotels';
+import HotelsManagment from './pages/HotelsManagment/HotelsManagment';
+import HotelsRegistration from './pages/HotelsRegistration/HotelsRegistration';
+import Rooms from './pages/Rooms/Rooms';
+import Success from './pages/Success/Success';
+import UserLogin from './pages/UserLogin/UserLogin';
 import UserProfile from './pages/UserProfile/UserProfile';
 import UserRegistration from './pages/UserRegistration/UserRegistration';
-import HotelsRegistration from './pages/HotelsRegistration/HotelsRegistration';
-import HotelsManagment from './pages/HotelsManagment/HotelsManagment';
-import Footer from './components/Footer/Footer';
-import ActivateUser from './pages/ActivateUser/ActivateUser';
-import UserLogin from './pages/UserLogin/UserLogin';
 
 const App = () => (
   <>
