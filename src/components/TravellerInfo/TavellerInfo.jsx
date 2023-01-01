@@ -52,7 +52,7 @@ const TravellerInfo = () => {
           <div className="traveller-info__name">
             <input className="traveller-info__fact" type="text" name="numcupon" onChange={handleChange} placeholder="Promo Code" />
             <button className="traveller-info__btn-promo" type="button">
-              APLAY
+              APPLAY
             </button>
           </div>
         </div>
@@ -60,7 +60,7 @@ const TravellerInfo = () => {
           <input
             className="traveller-info__btn"
             type="submit"
-            value="PLAY NOW"
+            value="PAY NOW"
             onClick={formVisible}
             disabled={estadoBoton}
           />

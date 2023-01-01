@@ -1,6 +1,10 @@
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 import PayNowForm from '../PayNowForm/PayNoWForm';
 import './styles.css';
+
+const stripePromise = loadStripe('pk_test_51MF0poEjW2XUbvI3wVmCFBDPscgdUzDXONDz57bQp6GIg0YQ8d5H0c7T0415OfjiOaNXoHCkEKNiaUqguTsZdkUU00cjmEtXA7');
 
 const PaymentForm = () => {
   const [toPay, setToPay] = useState(0);
@@ -17,7 +21,9 @@ const PaymentForm = () => {
         </button>
         {
           toPay === 1 && (
-            <PayNowForm />
+            <Elements stripe={stripePromise}>
+              <PayNowForm />
+            </Elements>
           )
         }
       </div>
@@ -27,7 +33,9 @@ const PaymentForm = () => {
         </button>
         {
           toPay === 2 && (
-            <PayNowForm />
+            <Elements stripe={stripePromise}>
+              <PayNowForm />
+            </Elements>
           )
         }
       </div>
