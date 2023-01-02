@@ -1,13 +1,60 @@
-/* eslint-disable no-unused-vars */
 import './styles.css';
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
+import { updateUser } from '../../services/users';
+import { getUserById } from '../../features/users/usersSlice';
 import Modal from '../Modal/Modal';
 import useForm from '../../hooks/useForm';
 
 const UserInfo = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
-
+  const { _id } = JSON.parse(localStorage.getItem('user'));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getUserById(_id));
+  }, []);
+  const {
+    name,
+    email,
+    gender,
+    address,
+    phone,
+    birthday,
+    city,
+    zipCode,
+    password,
+  } = useSelector((state) => state.user.userData);
+  let birthdayStr = '';
+  if (birthday) {
+    const isoBirthday = new Date(birthday);
+    birthdayStr = isoBirthday.toISOString().substring(0, 10);
+  }
   const [modal, setModal] = useState(false);
+  const { form, handleChange } = useForm({});
+
+  const handleClick = async (event) => {
+    document.getElementById('user-edit-form').reset();
+    setModal(false);
+    event.preventDefault();
+    const reqUser = { _id, formdata: { ...form } };
+    try {
+      dispatch(updateUser(reqUser));
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      dispatch(updateUser(_id, form));
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
+  useEffect(() => {
+  }, [modal]);
 
   return (
     <div className="user-info">
@@ -24,44 +71,44 @@ const UserInfo = () => {
       </section>
       <section className="user-info__info">
         <b className="user-info__info-requested-form">Name</b>
-        {user.name
-          ? <p className="user-info__info-user-data">{user.name}</p>
+        {name
+          ? <p className="user-info__info-user-data">{name}</p>
           : <br />}
         <b className="user-info__info-requested-form">Birthday</b>
-        {user.birthday
-          ? <p className="user-info__info-user-data">{user.birthday}</p>
+        {birthday
+          ? <p className="user-info__info-user-data">{birthdayStr}</p>
           : <br />}
         <b className="user-info__info-requested-form">Gender</b>
-        {user.gender
-          ? <p className="user-info__info-user-data">{user.gender}</p>
+        {gender
+          ? <p className="user-info__info-user-data">{gender}</p>
           : <br />}
         <b className="user-info__info-requested-form">Street Address</b>
-        {user.address
-          ? <p className="user-info__info-user-data">{user.address}</p>
+        {address
+          ? <p className="user-info__info-user-data">{address}</p>
           : <br />}
         <b className="user-info__info-requested-form">City/State</b>
-        {user.city
-          ? <p className="user-info__info-user-data">{user.city}</p>
+        {city
+          ? <p className="user-info__info-user-data">{city}</p>
           : <br />}
         <b className="user-info__info-requested-form">Zip</b>
-        {user.zipCode
-          ? <p className="user-info__info-user-data">{user.zipCode}</p>
+        {zipCode
+          ? <p className="user-info__info-user-data">{zipCode}</p>
           : <br />}
       </section>
       <h2 className="user-info__login-title">Login Details</h2>
       <section className="user-info__login">
         <b className="user-info__login-info-requested">Email Address</b>
-        {user.email
-          ? <p className="user-info__info-user-data">{user.email}</p>
+        {email
+          ? <p className="user-info__info-user-data">{email}</p>
           : <br />}
         <button type="submit" className="user-info__login-edit-button">Edit</button>
         <b className="user-info__login-info-requested">Phone No</b>
-        {user.phone
-          ? <p className="user-info__info-user-data">{user.phone}</p>
+        {phone
+          ? <p className="user-info__info-user-data">{phone}</p>
           : <br />}
         <button type="submit" className="user-info__login-edit-button">Edit</button>
         <b className="user-info__login-info-requested">Password</b>
-        {user.password
+        {password
           ? <p className="user-info__info-user-data">******</p>
           : <br />}
         <button type="submit" className="user-info__login-edit-button">Edit</button>
@@ -70,7 +117,12 @@ const UserInfo = () => {
         <Modal
           modalFunction={setModal}
         >
-          <form action="" className="user-info__edit-form">
+          <form
+            onSubmit={handleSubmit}
+            action=""
+            className="user-info__edit-form"
+            id="user-edit-form"
+          >
             <label htmlFor="name" className="user-info__form-label">
               Name
               <input
@@ -79,7 +131,8 @@ const UserInfo = () => {
                 name="name"
                 id="name"
                 placeholder="Enter your name"
-                defaultValue={user.name}
+                defaultValue={name}
+                onChange={handleChange}
               />
             </label>
             <label htmlFor="birthday" className="user-info__form-label">
@@ -90,12 +143,17 @@ const UserInfo = () => {
                 name="birthday"
                 id="birthday"
                 placeholder="Enter your birthday"
-                defaultValue={user.birthday}
+                defaultValue={birthdayStr}
+                onChange={handleChange}
               />
             </label>
             <label htmlFor="gender" className="user-info__form-label">
               Gender
-              <select name="gender" id="gender">
+              <select
+                name="gender"
+                id="gender"
+                onChange={handleChange}
+              >
                 <option value="">--- select your gender ---</option>
                 <option value="female">female</option>
                 <option value="masculine">masculine</option>
@@ -110,7 +168,8 @@ const UserInfo = () => {
                 name="address"
                 id="address"
                 placeholder="Enter your adress"
-                defaultValue={user.address}
+                defaultValue={address}
+                onChange={handleChange}
               />
             </label>
             <label htmlFor="city" className="user-info__form-label">
@@ -121,18 +180,8 @@ const UserInfo = () => {
                 name="city"
                 id="city"
                 placeholder="Enter your city or state"
-                defaultValue={user.city}
-              />
-            </label>
-            <label htmlFor="city" className="user-info__form-label">
-              City/State
-              <input
-                className=""
-                type="text"
-                name="city"
-                id="city"
-                placeholder="Enter your city or state"
-                defaultValue={user.city}
+                defaultValue={city}
+                onChange={handleChange}
               />
             </label>
             <label htmlFor="zipCode" className="user-info__form-label">
@@ -143,13 +192,19 @@ const UserInfo = () => {
                 name="zipCode"
                 id="zipCode"
                 placeholder="Enter your zip code"
-                defaultValue={user.zipCode}
+                defaultValue={zipCode}
+                onChange={handleChange}
               />
             </label>
-            <button type="submit">Save</button>
+            <button
+              type="submit"
+              className="user-info__submit-button"
+              onClick={handleClick}
+            >Save
+            </button>
           </form>
         </Modal>
-      ) : null}c
+      ) : null}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import useForm from '../../hooks/useForm';
-import createUser from '../../services/users';
+import { createUser } from '../../services/users';
 import './style.css';
 import Modal from '../Modal/Modal';
 
