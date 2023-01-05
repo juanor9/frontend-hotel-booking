@@ -6,8 +6,8 @@ import userReducer from '../features/users/usersSlice';
 const store = configureStore({
   reducer: {
     hotels: hotelReducer,
-    user: userLoginReducer,
-    users: userReducer,
+    login: userLoginReducer,
+    user: userReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
 });

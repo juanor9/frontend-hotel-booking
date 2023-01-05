@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
 import useForm from '../../hooks/useForm';
 import { login } from '../../services/auth';
 import './style.css';
