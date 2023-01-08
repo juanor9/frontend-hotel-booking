@@ -1,17 +1,30 @@
-import { createSlice } from '@reduxjs/toolkit';
-import createUser from '../../services/users';
+/* eslint-disable no-param-reassign */
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createUser, updateUser } from '../../services/users';
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const initialState = {
-  users: [],
+  userData: [],
 };
+export const getUserById = createAsyncThunk('users/getUserById', async (id) => {
+  const response = await fetch(`${BASE_URL}/api/users/${id}`);
+  const data = await response.json();
+  return data;
+});
 
 const usersSlice = createSlice({
-  name: 'users',
+  name: 'userData',
   initialState,
   extraReducers: (builder) => {
+    builder.addCase(getUserById.fulfilled, (state, action) => {
+      state.userData = action.payload;
+    });
     builder.addCase(createUser.fulfilled, (state, action) => {
-      // eslint-disable-next-line no-param-reassign
-      state.users = action.payload;
+      state.userData = action.payload;
+    });
+    builder.addCase(updateUser.fulfilled, (state, action) => {
+      state.userData = action.payload;
     });
   },
 });
