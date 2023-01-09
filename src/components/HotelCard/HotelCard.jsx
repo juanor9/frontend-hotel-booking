@@ -34,8 +34,7 @@ const HotelCard = ({
     </section>
     <section className="hotel-card__bottom">
       <div className="hotel-card__prices">
-        <p className="hotel-card__price-del"><del>${pricePerNight}</del></p>
-        <p className="hotel-card__price-final">${offerPrice}</p>
+        { offerPrice ? <><p className="hotel-card__price-del"><del>${pricePerNight}</del></p><p className="hotel-card__price-final">{offerPrice}</p></> : <p className="hotel-card__price-del">${pricePerNight}</p> }
       </div>
       <div className="hotel-card__features">
         <div className="hotel-card__feature-detail">{feature1}</div>
