@@ -5,7 +5,7 @@ import { updateHotel } from '../../services/hotels';
 import useForm from '../../hooks/useForm';
 
 const HotelsFormEdit = ({
-  imageProfile, name, about, pricePerNight, feature1, feature2, id,
+  imageProfile, name, about, city, pricePerNight, offerPrice, feature1, feature2, id,
 }) => {
   const dispatch = useDispatch();
   const { form, handleChange } = useForm({});
@@ -28,14 +28,14 @@ const HotelsFormEdit = ({
         <input type="file" name="imageProfile" onChange={handleChange} defaultValue={imageProfile} />
         <p className="hotelsFormEdit__properties">Name: </p>
         <input type="text" name="name" onChange={handleChange} defaultValue={name} />
-        { /*  <p className="hotelsFormEdit__properties">City:</p>
-        <input type="text" name="place" onChange={handleChange} defaultValue="Medellin" /> */ }
+        <p className="hotelsFormEdit__properties">City:</p>
+        <input type="text" name="city" onChange={handleChange} defaultValue={city} />
         <p className="hotelsFormEdit__properties">Description:</p>
         <textarea rows="5" type="text" name="about" onChange={handleChange} defaultValue={about} />
         <p className="hotelsFormEdit__properties">Price:</p>
         <input type="number" name="pricePerNight" onChange={handleChange} defaultValue={pricePerNight} />
-        { /* <p className="hotelsForm__properties">Offer Price:</p>
-        <input type="number" name="finalPrice" onChange={handleChange} defaultValue={200} /> */ }
+        <p className="hotelsForm__properties">Offer Price:</p>
+        <input type="number" name="offerPrice" onChange={handleChange} defaultValue={offerPrice} />
         <p className="hotelsFormEdit__properties">Feature 1:</p>
         <select name="feature1" onChange={handleChange} defaultValue={feature1}>
           <option value="Parking">Parking</option>
@@ -75,10 +75,16 @@ HotelsFormEdit.propTypes = {
   imageProfile: PropTypes.isRequired,
   name: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
   pricePerNight: PropTypes.number.isRequired,
+  offerPrice: PropTypes.number,
   feature1: PropTypes.string.isRequired,
   feature2: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+};
+
+HotelsFormEdit.defaultProps = {
+  offerPrice: 0,
 };
 
 export default HotelsFormEdit;
