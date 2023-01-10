@@ -1,0 +1,30 @@
+.modal-container{
+  background-color: rgba(0,0,0,.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal{
+  background-color: #fff;
+  padding: 2em;
+  box-shadow: 0px 1em 1em 0px rgba(0,0,0,0.2);
+  position: relative;
+}
+.modal__header{
+  display: flex;
+  margin-bottom: 1em;
+}
+.modal__close{
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  padding: .5em;
+  background-color: #fff;
+  color: red;
+  border: none;
+}

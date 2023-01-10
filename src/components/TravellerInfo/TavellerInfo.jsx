@@ -1,17 +1,23 @@
+/* eslint-disable no-const-assign */
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import useForm from '../../hooks/useForm';
+import { captureData } from '../../features/bookings/bookingsSlice';
 import './styles.css';
 
 const TravellerInfo = () => {
+  const bookings = useSelector((state) => state.bookings);
+  const dispatch = useDispatch();
   const [visible, setVisible] = useState(true);
   const { form, handleChange } = useForm({});
   const [estadoBoton, setEstadoBoton] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    return form;
   };
   const formVisible = () => {
-    if (form.firstname && form.lastname && form.email && form.contact) {
+    dispatch(captureData({ bookings, ...form }));
+    if (form.firstnameUser && form.lastnameUser && form.emailUser && form.contactUser) {
       setEstadoBoton(!estadoBoton);
       setVisible(!visible);
     } else {
@@ -28,24 +34,24 @@ const TravellerInfo = () => {
         <div className="traveller-info__name">
           <div className="traveller-info__input">
             <p>First Name</p>
-            <input className="traveller-info__space" type="text" name="firstname" onChange={handleChange} placeholder="First Name" required />
+            <input className="traveller-info__space" type="text" name="firstnameUser" onChange={handleChange} placeholder="First Name" required />
           </div>
           <div className="traveller-info__input traveller-info__derecho">
             <p>Last Name</p>
-            <input className="traveller-info__space" type="text" name="lastname" onChange={handleChange} placeholder="Last Name" required />
+            <input className="traveller-info__space" type="text" name="lastnameUser" onChange={handleChange} placeholder="Last Name" required />
           </div>
         </div>
         <div className="traveller-info__input">
           <p>Email Address</p>
-          <input className="traveller-info__fact" type="email" name="email" onChange={handleChange} placeholder="Enter Email" required />
+          <input className="traveller-info__fact" type="email" name="emailUser" onChange={handleChange} placeholder="Enter Email" required />
         </div>
         <div className="traveller-info__input">
           <p>Contact Info</p>
-          <input className="traveller-info__fact" name="contact" onChange={handleChange} placeholder="Contact info" required />
+          <input className="traveller-info__fact" name="contactUser" onChange={handleChange} placeholder="Contact info" required />
         </div>
         <div className="traveller-info__input">
           <p>Special Request</p>
-          <textarea className="traveller-info__fact traveller-info__area" name="request" onChange={handleChange} placeholder="e.g.. early check-in, airport transfer" />
+          <textarea className="traveller-info__fact traveller-info__area" name="requestUser" onChange={handleChange} placeholder="e.g.. early check-in, airport transfer" />
         </div>
         <div className="traveller-info__input">
           <p>Have A Coupon Code</p>

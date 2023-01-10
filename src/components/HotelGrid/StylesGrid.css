@@ -1,0 +1,63 @@
+.hotel__card {
+  font-family: 'Nunito', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+.butons_card {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 40px;
+}
+
+.butons_card button {
+  box-shadow: -2px 1px 63px -7px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: -2px 1px 63px -7px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: -2px 1px 63px -7px rgba(0, 0, 0, 0.6);
+  background-color: #FFFFFF;
+  letter-spacing: -2px;
+  font-weight: 800;
+  border: none;
+  height: 30px;
+  margin: 10px;
+  width: 30px;
+}
+
+.butons_card button:hover {
+  background-color: #F13F4B;
+}
+
+.butons_card button:focus {
+  background-color: #F13F4B;
+}
+
+@media(min-width: 768px){
+  .hotel__card {
+    justify-content: space-between;
+    display: flex;
+  }
+
+  .component__card{
+    justify-content: center;
+    height: 240px;
+    width: 95%;
+  }
+
+  .butons_card button {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hotel__card {
+    justify-content: center;
+    display: flex;
+  }
+
+  .butons_card button {
+    width: 40px;
+    height: 40px;
+  }
+}

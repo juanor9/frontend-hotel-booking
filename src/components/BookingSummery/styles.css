@@ -1,5 +1,4 @@
 .summery__container{
-  overflow: hidden;
   font-size: 13px;
   padding: 30px;
   width: 100%;
@@ -13,6 +12,21 @@
 .summery__image{
   margin-right: 10px;
   width: 25%;
+}
+
+.summery__about{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 150px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.summery__paragraph{
+  font-size: 12px;
+  overflow: hidden;
+  width: 85%;
 }
 
 .summery__hr{
