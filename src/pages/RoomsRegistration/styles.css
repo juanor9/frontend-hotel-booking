@@ -1,0 +1,39 @@
+.roomsReg__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/livingRoom.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  row-gap: 2em;
+  padding: 1em 0;
+}
+
+.roomsReg__form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.roomsReg__title {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.roomsReg__list {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .roomsReg__form {
+    padding: 0 7em;
+  }
+}

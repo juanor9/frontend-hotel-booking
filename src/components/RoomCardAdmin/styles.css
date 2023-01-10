@@ -1,0 +1,134 @@
+.room-cardAdmin {
+  text-align: center;
+  background-color: rgb(250, 215, 221);
+  border-radius: 20px;
+  padding: 1em;
+}
+
+.room-cardAdmin__info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.room-cardAdmin__img {
+  width: 100%;
+}
+.room-cardAdmin__pic {
+  width: 100%;
+}
+.room-cardAdmin__pic img {
+  width: 100%;
+}
+.room-cardAdmin__amenities {
+  margin-right: 2em;
+}
+.room-cardAdmin__info-list {
+  list-style: none;
+}
+.room-cardAdmin__old-price {
+  text-decoration: line-through;
+  color: rgb(180, 180, 180);
+}
+.room-cardAdmin__current-price {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+.room-cardAdmin__price-divider {
+  border-top: 1px solid rgb(247, 247, 247);
+  margin: 1em 0;
+}
+.room-cardAdmin__list-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.room-cardAdmin__list-icon--check {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0.5em;
+  background-image: url("../../assets/checkBlue.png");
+}
+
+.room-cardAdmin__doblePrice {
+  display: flex;
+  gap: 20px;
+}
+
+.room-cardAdmin__managment {
+  margin: 1em 0 1em 0;
+  display: flex;
+  justify-content: right;
+  margin-right: 1em;
+}
+
+.room-cardAdmin__iconManagment {
+  padding: 0.5em;
+}
+
+.room-cardAdmin__iconManagment:hover {
+  color: red;
+}
+
+.roomsFormEdit {
+  padding: 1em;
+}
+
+.roomsFormEdit {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  font-size: 15px;
+}
+
+.roomsFormEdit__title {
+  text-align: center;
+}
+
+.roomsFormEdit__properties {
+  margin: 0.5em 0 0 0;
+  font-weight: 800;
+}
+
+.roomsFormEdit__button {
+  margin-top: 1em;
+  color: white;
+  background-color: red;
+  border: 0;
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: bold;
+}
+
+.roomsFormEdit__button:hover {
+  background-color: rgb(255, 77, 77);
+}
+
+.roomsFormEdit__buttonEnv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .room-cardAdmin__img {
+    width: 250px;
+    margin-right: 1em;
+  }
+  .room-cardAdmin__price {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+  }
+  .room-cardAdmin__price-divider {
+    display: none;
+  }
+  .roomsFormEdit {
+    width: 450px;
+  }
+}

@@ -37,7 +37,9 @@ const Hotels = () => {
               imageProfile={hotel.imageProfile}
               name={hotel.name}
               about={hotel.about}
+              city={hotel.city}
               pricePerNight={hotel.pricePerNight}
+              offerPrice={hotel.offerPrice}
               feature1={hotel.feature1}
               feature2={hotel.feature2}
               id={hotel._id}
