@@ -1,14 +1,14 @@
-import { useParams } from 'react-router-dom';
+import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { getHotelById } from '../../features/hotels/hotelsSlice';
-import './style.css';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import BookingForm from '../../components/BookingForm/BookingForm';
+import HotelContact from '../../components/HotelContact/HotelContact';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
-import BookingForm from '../../components/BookingForm/BookingForm';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Weather from '../../components/Weather/Weather';
-import HotelContact from '../../components/HotelContact/HotelContact';
 
 const Rooms = () => {
   const { id } = useParams();

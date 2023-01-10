@@ -14,7 +14,7 @@ const Popular = ({ title, text, image }) => (
 Popular.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  image: PropTypes.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Popular;
