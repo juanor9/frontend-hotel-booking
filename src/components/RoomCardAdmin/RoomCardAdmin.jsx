@@ -12,7 +12,7 @@ import useForm from '../../hooks/useForm';
 import { deleteRoom } from '../../features/rooms/roomsSlice';
 import { updateRoom } from '../../services/rooms';
 
-const RoomCard = ({
+const RoomCardAdmin = ({
   roomType, image, bedType, amenitiesPool, amenitiesShower, amenitiesTV, amenitiesCouch,
   pricePerNight, offerPrice, id,
 }) => {
@@ -152,7 +152,7 @@ const RoomCard = ({
   );
 };
 
-RoomCard.propTypes = {
+RoomCardAdmin.propTypes = {
   roomType: PropTypes.string.isRequired,
   image: PropTypes.string,
   bedType: PropTypes.string,
@@ -164,7 +164,7 @@ RoomCard.propTypes = {
   offerPrice: PropTypes.number,
   id: PropTypes.string.isRequired,
 };
-RoomCard.defaultProps = {
+RoomCardAdmin.defaultProps = {
   image: './grey.jpg',
   bedType: '',
   amenitiesPool: false,
@@ -173,4 +173,4 @@ RoomCard.defaultProps = {
   amenitiesCouch: false,
   offerPrice: 0,
 };
-export default RoomCard;
+export default RoomCardAdmin;
