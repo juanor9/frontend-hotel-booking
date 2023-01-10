@@ -9,7 +9,8 @@ const HotelInfo = (props) => {
     name,
     rating,
     address,
-    features,
+    feature1,
+    feature2,
   } = props;
   let i = 0;
   return (
@@ -37,7 +38,8 @@ const HotelInfo = (props) => {
       </div>
       <p className="hotel-info__address">{address}</p>
       <ul className="hotel-info__features">
-        {features.map((e) => <li className="hotel-info__feature-item">{e}</li>)}
+        <li className="hotel-info__feature-item">{feature1}</li>
+        <li className="hotel-info__feature-item">{feature2}</li>
       </ul>
     </section>
   );
@@ -46,11 +48,11 @@ HotelInfo.propTypes = {
   name: PropTypes.string.isRequired,
   rating: PropTypes.number,
   address: PropTypes.string,
-  features: PropTypes.arrayOf(PropTypes.string),
+  feature1: PropTypes.string.isRequired,
+  feature2: PropTypes.string.isRequired,
 };
 HotelInfo.defaultProps = {
   rating: 0,
   address: 'No address available',
-  features: [''],
 };
 export default HotelInfo;

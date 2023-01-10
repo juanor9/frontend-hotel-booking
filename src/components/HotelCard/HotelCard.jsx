@@ -8,7 +8,7 @@ import './styles.css';
 const HotelCard = ({
   imageProfile, name, about, city, pricePerNight, offerPrice, feature1, feature2, id,
 }) => (
-  <Link to={`/hotel/${id}`} className="hotel-card">
+  <Link to={`/hotels/${id}`} className="hotel-card">
     <section className="hotel-card__icons">
       <img className="hotel-card__img" alt="hotel" src={imageProfile} />
       <img className="hotel-card__icon" alt="icon" src={HeartIcon} />

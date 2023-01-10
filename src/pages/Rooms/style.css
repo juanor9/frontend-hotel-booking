@@ -24,7 +24,9 @@
 .hotel-details__aside{
   display: flex;
   flex-direction: column;
-  row-gap: 1em;}
+  row-gap: 1em;
+  margin-bottom: 1em;
+}
 
 @media (min-width: 768px) {
   .hotel-details__main-container {
