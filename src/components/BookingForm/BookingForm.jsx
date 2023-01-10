@@ -1,10 +1,13 @@
 import './styles.css';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 
-const BookingForm = () => (
+const BookingForm = ({
+  pricePerNight, offerPrice,
+}) => (
   <div className="booking-form">
     <div className="booking-form__mapouter">
       <div className="booking-form__gmap_canvas">
@@ -34,8 +37,7 @@ const BookingForm = () => (
       </section>
       <section className="booking-form__text-top-features booking-form__text-top-features--prices">
         <h4 className="booking-form__features-title">Per Night</h4>
-        <del><p className="booking-form__features-text">$251</p></del>
-        <p className="booking-form__features-text booking-form__features-text--size">$230</p>
+        {offerPrice ? <><del><p className="booking-form__features-text">{pricePerNight}</p></del> <p className="booking-form__features-text booking-form__features-text--size">{offerPrice}</p></> : <p className="booking-form__features-text">{pricePerNight}</p> }
       </section>
     </section>
     <hr className="booking-form__divider" />
@@ -61,5 +63,14 @@ const BookingForm = () => (
     </form>
   </div>
 );
+
+BookingForm.propTypes = {
+  pricePerNight: PropTypes.number.isRequired,
+  offerPrice: PropTypes.number,
+};
+
+BookingForm.defaultProps = {
+  offerPrice: 0,
+};
 
 export default BookingForm;
