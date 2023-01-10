@@ -12,7 +12,7 @@ const OfferCard = ({ title, text, image }) => (
 OfferCard.propTypes = {
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
-  image: PropTypes.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default OfferCard;
