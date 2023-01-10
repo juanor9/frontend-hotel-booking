@@ -75,6 +75,45 @@
   color: red;
 }
 
+.roomsFormEdit {
+  padding: 1em;
+}
+
+.roomsFormEdit {
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  font-size: 15px;
+}
+
+.roomsFormEdit__title {
+  text-align: center;
+}
+
+.roomsFormEdit__properties {
+  margin: 0.5em 0 0 0;
+  font-weight: 800;
+}
+
+.roomsFormEdit__button {
+  margin-top: 1em;
+  color: white;
+  background-color: red;
+  border: 0;
+  padding: 0.5em 1em 0.5em 1em;
+  font-weight: bold;
+}
+
+.roomsFormEdit__button:hover {
+  background-color: rgb(255, 77, 77);
+}
+
+.roomsFormEdit__buttonEnv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: 768px) {
   .room-cardAdmin__img {
     width: 250px;
@@ -88,5 +127,8 @@
   }
   .room-cardAdmin__price-divider {
     display: none;
+  }
+  .roomsFormEdit {
+    width: 450px;
   }
 }

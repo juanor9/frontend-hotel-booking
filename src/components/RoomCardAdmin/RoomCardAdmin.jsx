@@ -1,21 +1,23 @@
 import PropTypes from 'prop-types';
 import './styles.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import {
   faBed, faShower, faPersonSwimming as faPool, faTv, faCouch,
 } from '@fortawesome/free-solid-svg-icons';
-import { Modal } from 'react-bootstrap';
+import Modal from '../Modal/Modal';
+import useForm from '../../hooks/useForm';
 import { deleteRoom } from '../../features/rooms/roomsSlice';
-import RoomsFormEdit from '../RoomsFormEdit/RoomsFormEdit';
+import { updateRoom } from '../../services/rooms';
 
 const RoomCard = ({
   roomType, image, bedType, amenitiesPool, amenitiesShower, amenitiesTV, amenitiesCouch,
   pricePerNight, offerPrice, id,
 }) => {
-  const [show, setShow] = useState(false);
+  const { form, handleChange } = useForm({});
+  const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
 
   const handleClickDelete = async () => {
@@ -28,23 +30,21 @@ const RoomCard = ({
     }
   };
 
-  const handleShow = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setModal(false);
+    // eslint-disable-next-line no-restricted-globals
+    location.reload();
+
     try {
-      await setShow(true);
+      dispatch(updateRoom(form, id));
     } catch (error) {
       throw new Error(error);
     }
   };
 
-  const handleClose = async () => {
-    try {
-      await setShow(false);
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
-    } catch (error) {
-      throw new Error(error);
-    }
-  };
+  useEffect(() => {
+  }, [modal]);
 
   return (
     <section id="room-cardAdmin" className="room-cardAdmin">
@@ -97,28 +97,57 @@ const RoomCard = ({
         <p className="room-cardAdmin__pricing">per night</p>
       </article>
       <section className="room-cardAdmin__managment">
-        <FontAwesomeIcon className="room-cardAdmin__iconManagment" icon={faPenToSquare} onClick={handleShow} />
+        <FontAwesomeIcon className="room-cardAdmin__iconManagment" icon={faPenToSquare} onClick={() => { setModal(true); }} />
         <FontAwesomeIcon className="room-cardAdmin__iconManagment" icon={faTrashCan} onClick={handleClickDelete} />
       </section>
-      <Modal show={show} onHide={handleClose} className="cardHotelAdmin__modal">
-        <Modal.Body>
-          <RoomsFormEdit
-            roomType={roomType}
-            image={image}
-            bedType={bedType}
-            amenitiesCouch={amenitiesCouch}
-            amenitiesPool={amenitiesPool}
-            amenitiesShower={amenitiesShower}
-            amenitiesTV={amenitiesTV}
-            pricePerNight={pricePerNight}
-            offerPrice={offerPrice}
-            id={id}
-          />
-          <div className="hotelsFormEdit__buttonEnv">
-            <button className="hotelsFormEdit__button" type="submit" onClick={handleClose}>Confirm & Close</button>
-          </div>
-        </Modal.Body>
-      </Modal>
+      {
+        modal === true ? (
+          <Modal modalFunction={setModal}>
+            <div className="roomsFormEdit">
+              <h4 className="roomsFormEdit__title">Room Edit</h4>
+              <form id="formRoom" className="roomsFormEdit" name="formRoom" onSubmit={handleSubmit}>
+                <section>
+                  <p className="roomsFormEdit__properties">Room Type:</p>
+                  <select name="roomType" onChange={handleChange} defaultValue={roomType}>
+                    <option value="Standard Room">Standard Room</option>
+                    <option value="Deluxe Room">Deluxe Room</option>
+                    <option value="Suite Room">Suite Room</option>
+                    <option value="Royal Room">Royal Room</option>
+                    <option value="Accessible Room">Accessible Room</option>
+                  </select>
+                  <p className="roomsFormEdit__properties">Room Image: </p>
+                  <input type="file" name="image" accept="image/*" onChange={handleChange} defaultValue={image} />
+                  <p className="roomsForm__properties">Bed Type:</p>
+                  <select name="bedType" onChange={handleChange} defaultValue={bedType}>
+                    <option value="King">King</option>
+                    <option value="Queen">Queen</option>
+                    <option value="Twin">Twin</option>
+                    <option value="Double">Double</option>
+                  </select>
+                  <p className="roomsFormEdit__properties">Amenities:</p>
+                  <div className="roosmForm__propertiesAmenities">
+                    <p className="roomsForm__properties">Shower:</p>
+                    <input type="checkbox" name="amenitiesShower" value="true" onChange={handleChange} defaultValue={amenitiesShower} />
+                    <p className="roomsForm__properties">TV:</p>
+                    <input type="checkbox" name="amenitiesTV" value="true" onChange={handleChange} defaultValue={amenitiesTV} />
+                    <p className="roomsForm__properties">Couch:</p>
+                    <input type="checkbox" name="amenitiesCouch" value="true" onChange={handleChange} defaultValue={amenitiesCouch} />
+                    <p className="roomsForm__properties">Pool View:</p>
+                    <input type="checkbox" name="amenitiesPool" value="true" onChange={handleChange} defaultValue={amenitiesPool} />
+                  </div>
+                  <p className="roomsFormEdit__properties">Price Per Night:</p>
+                  <input type="number" name="pricePerNight" onChange={handleChange} defaultValue={pricePerNight} />
+                  <p className="roomsFormEdit__properties">Offer Price:</p>
+                  <input type="number" name="offerPrice" onChange={handleChange} defaultValue={offerPrice} />
+                </section>
+                <div className="roomsFormEdit__buttonEnv">
+                  <button className="roomsFormEdit__button" type="submit">Edit</button>
+                </div>
+              </form>
+            </div>
+          </Modal>
+        ) : null
+      }
     </section>
   );
 };
