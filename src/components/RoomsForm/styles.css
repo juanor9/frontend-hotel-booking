@@ -1,16 +1,23 @@
-.hotelsForm {
+.roomsForm {
   display: flex;
   flex-direction: column;
   width: 340px;
   padding: 1em;
   font-size: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
-.hotelsForm__properties {
+.roomsForm__properties {
   margin: 0.5em 0 0 0;
 }
 
-.hotelsForm__button {
+.roosmForm__propertiesAmenities {
+  display: flex;
+  gap: 10px;
+}
+
+.roomsForm__button {
   margin-top: 1em;
   margin-left: 0.5em;
   color: white;
@@ -21,19 +28,17 @@
   font-weight: bold;
 }
 
-.hotelsForm__button:hover {
+.roomsForm__button:hover {
   background-color: rgb(255, 77, 77);
 }
 
-.hotelsForm__buttonEnv {
+.roomsForm__buttonEnv {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
 }
 
 @media (min-width:768px){
-  .hotelsForm {
+  .roomsForm {
     width: 1000px;
   }
 }
-

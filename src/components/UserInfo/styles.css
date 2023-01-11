@@ -16,10 +16,14 @@
   border: 0;
   font-weight: 700;
 }
+.user-info__info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-.user-info__info, .user-info__login {
-  display: flex;
-  flex-direction: row;
+.user-info__login {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .user-info__info-requested, .user-info__login-info {
@@ -33,11 +37,13 @@
 
 .user-info__info-requested-form, .user-info__login-info-requested {
   margin-bottom: 0.5em;
+  grid-column-start: 1;
 }
 
 .user-info__info-user-data {
   margin-bottom: 0.75em;
   color: gray;
+  grid-column-start: 2;
 }
 
 .user-info__login-title {
@@ -63,6 +69,7 @@
   color: rgb(239, 63, 63);
   background-color: white;
   font-weight: 700;
+  grid-column-start: 3;
 }
 
 .user-info__login-edit-button:hover, .user-info__title-button:hover {
@@ -70,6 +77,19 @@
   color: white;
 }
 
+.user-info__edit-form{
+  display: grid;
+  row-gap: .5em;
+}
+.user-info__form-label{
+  display: flex;
+  flex-direction: column;
+}
+.user-info__submit-button{
+  border: none;
+  background-color: rgb(239, 63, 63);
+  color: white;
+}
 @media (min-width:768px){
   .user-info {
     width: 500px;

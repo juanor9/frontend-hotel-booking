@@ -57,6 +57,11 @@
   background-image: url("../../assets/checkBlue.png");
 }
 
+.room-card__doblePrice {
+  display: flex;
+  gap: 20px;
+}
+
 @media (min-width: 768px) {
   .room-card__img {
     width: 30%;

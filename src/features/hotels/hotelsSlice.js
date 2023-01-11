@@ -13,6 +13,12 @@ export const getHotels = createAsyncThunk('hotels/getHotels', async () => {
   return data;
 });
 
+export const getHotelById = createAsyncThunk('hotels/getHotelById', async (id) => {
+  const response = await fetch(`${BASE_URL}/api/hotels/${id}`);
+  const data = await response.json();
+  return data;
+});
+
 export const createHotel = createAsyncThunk('hotels/createHotel', async (hotel) => {
   const options = {
     method: 'POST',
@@ -56,6 +62,9 @@ const hotelsSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getHotels.fulfilled, (state, action) => {
+      state.hotels = action.payload;
+    });
+    builder.addCase(getHotelById.fulfilled, (state, action) => {
       state.hotels = action.payload;
     });
     builder.addCase(createHotel.fulfilled, (state, action) => {

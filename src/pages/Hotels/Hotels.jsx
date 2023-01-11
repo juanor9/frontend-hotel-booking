@@ -1,6 +1,7 @@
 import './styles.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// componentes
 import { getHotels } from '../../features/hotels/hotelsSlice';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
@@ -12,9 +13,11 @@ import HotelsPagination from '../../components/HotelsPagination/HotelsPagination
 const Hotels = () => {
   const { hotels } = useSelector((state) => state.hotels);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getHotels());
   }, []);
+
   return (
     <div className="page">
       <section className="page__nav">
@@ -34,7 +37,9 @@ const Hotels = () => {
               imageProfile={hotel.imageProfile}
               name={hotel.name}
               about={hotel.about}
+              city={hotel.city}
               pricePerNight={hotel.pricePerNight}
+              offerPrice={hotel.offerPrice}
               feature1={hotel.feature1}
               feature2={hotel.feature2}
               id={hotel._id}
