@@ -1,0 +1,72 @@
+.traveller-info__cont{
+  padding: 30px;
+  width: 100%;
+}
+
+.traveller-info__name{
+  display: flex;
+  width: 100%;
+}
+
+.traveller-info__space{
+  outline: none;
+  height: 30px;
+  padding: 5px;
+  width: 100%;
+}
+
+.traveller-info__derecho{
+  margin-left: 15px;
+}
+
+.traveller-info__input{
+  margin-top: 16px;
+  width: 100%;
+}
+
+.traveller-info__input .traveller-info__fact{
+  width: 100%;
+}
+
+.traveller-info__fact{
+  outline: none;
+  height: 30px;
+  padding: 5px;
+}
+
+.traveller-info__area{
+  min-height: 60px;
+}
+
+.traveller-info__btn-promo{
+  font-size: 12px;
+  padding: 5px;
+  width: 70px;
+}
+
+.traveller-info__btn{
+  background-color: #F13F4B;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 12px;
+  color: white;
+  height: 30px;
+  border: none;
+  width: 100%;
+}
+
+.traveller-info__btn:hover{
+  background-color: #f70919;
+  font-size: 11px;
+}
+
+.traveller-info__btn-cont{
+  justify-content: end;
+  display: flex;
+}
+
+@media(min-width: 768px){
+  .traveller-info__btn{
+    width: 140px;
+  }
+}

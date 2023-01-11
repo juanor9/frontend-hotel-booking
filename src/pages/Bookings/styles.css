@@ -1,0 +1,116 @@
+.booking__container{
+  width: 100%;
+  height: 1600px;
+}
+
+.booking__header{
+  background-image: url(../../assets/livingRoom.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 280px;
+}
+
+.booking__article{
+  position: relative;
+  min-height: 545px;
+  width: 100%;
+}
+
+.booking__absolute{
+  margin-bottom: auto;
+  align-items: center;
+  min-height: 450px;
+  display: flex;
+}
+
+.booking__relative{
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  top: -30px;
+}
+
+.desaparecer{
+  display: none;
+}
+
+.booking__nav{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 100%;
+}
+
+.booking__summery{
+  -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
+  line-height: 15px;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  width: 93%;
+}
+
+.booking__form{
+  -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
+  box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
+  margin: 0 auto;
+  margin-top: 30px;
+  width: 93%;
+}
+
+@media(min-width: 768px){
+.booking__container{
+  height: 1000px;
+}
+
+
+  .booking__article{
+    grid-template-columns: 100% auto;
+    margin-top: 20px;
+    padding: 40px;
+    display: grid;
+  }
+
+  .booking__absolute{
+    display: flex;
+    height: 600px;
+  }
+
+  .booking__relative{
+    margin-top: 40px;
+  }
+
+
+  .container__tables{
+    margin-top: 20px;
+    display: flex;
+  }
+
+  .booking__article--rigth{
+    margin-top: -30px;
+    order: 1;
+  }
+
+  .booking__article--left{
+    order: 2;
+    height: 30px;
+  }
+
+  .booking__form{
+    max-width: 650px;
+    width: 100%;
+  }
+
+  .booking__summery{
+    background-color: white;
+    margin-right: 10%;
+    margin-left: 10%;
+    max-width: 450px;
+    height: 630px;
+    width: 70%;
+  }
+}
