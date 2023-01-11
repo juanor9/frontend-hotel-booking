@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import './Modal.css';
 
-const Modal = ({ modalFunction, message }) => (
+const Modal = ({ modalFunction, message, children }) => (
   <div className="modal-container">
-    <div className="modal">
+    <div className="modal__main">
       <header className="modal__header">
         <button
           className="modal__close"
@@ -15,6 +15,7 @@ const Modal = ({ modalFunction, message }) => (
 
       </header>
       <p className="modal__copy">{message}</p>
+      {children}
     </div>
   </div>
 );

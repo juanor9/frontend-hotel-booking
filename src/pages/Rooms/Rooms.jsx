@@ -1,15 +1,34 @@
-import { useParams } from 'react-router-dom';
 import './style.css';
-import hotels from '../../assets/hotel.json';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getHotelById } from '../../features/hotels/hotelsSlice';
+import BookingForm from '../../components/BookingForm/BookingForm';
+import HotelContact from '../../components/HotelContact/HotelContact';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
-import BookingForm from '../../components/BookingForm/BookingForm';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Weather from '../../components/Weather/Weather';
 
 const Rooms = () => {
   const { id } = useParams();
-  const hotel = hotels.hotels.find((e) => e.id === String(id));
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getHotelById(id));
+  }, []);
+  const {
+    name,
+    address,
+    phone,
+    email,
+    pricePerNight,
+    offerPrice,
+    feature1,
+    feature2,
+    checkin,
+    checkout,
+    rooms,
+  } = useSelector((state) => state.hotels.hotels);
   return (
     <div className="hotel-details">
       <header className="hotel-details__header">
@@ -17,19 +36,32 @@ const Rooms = () => {
       </header>
       <div className="hotel-details__hotel-info">
         <HotelInfo
-          name={hotel.name}
-          rating={hotel.rating}
-          address={hotel.address}
-          features={hotel.features}
+          name={name}
+          address={address}
+          feature1={feature1}
+          feature2={feature2}
         />
       </div>
-
       <div className="hotel-details__main-container">
-        <main className="hotel-details__rooms">
-          <HotelRooms rooms={hotel.rooms} />
-        </main>
+        {
+          rooms !== undefined ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main> : null
+        }
+        {
+          // eslint-disable-next-line no-console
+          console.log('rooms', rooms)
+        }
         <aside className="hotel-details__aside">
-          <BookingForm />
+          <BookingForm
+            pricePerNight={pricePerNight}
+            offerPrice={offerPrice}
+          />
+          <HotelContact
+            address={address}
+            phone={phone}
+            email={email}
+            checkin={checkin}
+            checkout={checkout}
+          />
           <Weather />
         </aside>
       </div>

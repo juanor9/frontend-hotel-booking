@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import useForm from '../../hooks/useForm';
-import createUser from '../../services/users';
+import { createUser } from '../../services/users';
 import './style.css';
 import Modal from '../Modal/Modal';
 
 const RegisterForm = () => {
-  const { users } = useSelector((state) => state.users);
+  // const { users } = useSelector((state) => state.users);
   const [modal, setModal] = useState(false);
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
@@ -27,9 +27,11 @@ const RegisterForm = () => {
   const handleClick = () => {
     document.getElementById('register-form__form').reset();
   };
-  useEffect(() => {
-    if (users.length !== 0) setModal(true);
-  }, [users]);
+  // useEffect(() => {
+  //   if (users !== undefined) {
+  //     if (users.length !== 0) setModal(true);
+  //   }
+  // }, [users]);
   const message = 'User has been correctly created. Please check your email to confirm your registration';
   return (
     <section id="register-form" className="register-form">

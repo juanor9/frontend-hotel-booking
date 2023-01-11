@@ -7,69 +7,65 @@ import {
   faPersonSwimming as faPool,
   faTv,
   faCouch,
-  faCheck,
 } from '@fortawesome/free-solid-svg-icons';
 
 const RoomCard = (props) => {
   const {
-    name,
-    img,
-    bed,
-    pool,
-    shower,
-    tv,
-    couch,
-    inclusion,
-    price,
-    offer,
+    roomType,
+    image,
+    bedType,
+    amenitiesPool,
+    amenitiesShower,
+    amenitiesTV,
+    amenitiesCouch,
+    pricePerNight,
     offerPrice,
   } = props;
-  let i = 0;
   return (
     <section id="room-card" className="room-card">
-      <h3 className="room-card__header">{name}</h3>
+      <h3 className="room-card__header">{roomType}</h3>
       <div className="room-card__info">
         <article className="room-card__img">
           <picture className="room-card__pic">
-            <img src={`../${img}`} alt="" />
+            <img src={image} alt="" />
           </picture>
         </article>
         <article className="room-card__amenities">
           <h4>Amenities</h4>
           <ul className="room-card__info-list">
-            {bed ? (
+            {bedType ? (
               <li className="room-card__list-item">
-                <FontAwesomeIcon icon={faBed} key={`${name} bed`} /> {' '}
-                <span className="room-card__list-icon">{bed}</span>
+                <FontAwesomeIcon icon={faBed} key={`${roomType} bed`} /> {' '}
+                <span className="room-card__list-icon">{bedType}</span>
               </li>
             ) : null}
-            {pool === true ? (
+            {amenitiesPool === true ? (
               <li className="room-card__list-item">
-                <FontAwesomeIcon icon={faPool} key={`${name} pool view`} />
+                <FontAwesomeIcon icon={faPool} key={`${roomType} pool view`} />
                 <span className="room-card__list-icon">Pool view</span>
               </li>
             ) : null}
-            {shower === true ? (
+            {amenitiesShower === true ? (
               <li className="room-card__list-item">
-                <FontAwesomeIcon icon={faShower} key={`${name} shower`} />
+                <FontAwesomeIcon icon={faShower} key={`${roomType} shower`} />
                 <span className="room-card__list-icon">Shower</span>
               </li>
             ) : null}
-            {tv ? (
+            {amenitiesTV === true ? (
               <li className="room-card__list-item">
-                <FontAwesomeIcon icon={faTv} key={`${name} tv`} />
-                <span className="room-card__list-icon">{tv}</span>
+                <FontAwesomeIcon icon={faTv} key={`${roomType} tv`} />
+                <span className="room-card__list-icon">LCD TV</span>
               </li>
             ) : null}
-            {couch === true ? (
+            {amenitiesCouch === true ? (
               <li className="room-card__list-item">
-                <FontAwesomeIcon icon={faCouch} key={`${name} couch`} />
+                <FontAwesomeIcon icon={faCouch} key={`${roomType} couch`} />
                 <span className="room-card__list-icon">Couch</span>
               </li>
             ) : null}
           </ul>
         </article>
-        <article className="room-card__inclusion">
+        {/* <article className="room-card__inclusion">
           <h4>Inclusion</h4>
           <ul className="room-card__info-list">
             {inclusion.map((e) => {
@@ -82,22 +78,12 @@ const RoomCard = (props) => {
               );
             })}
           </ul>
-        </article>
+          </article> */}
       </div>
       <hr className="room-card__price-divider" />
       <article className="room-card__price">
-        {offer === true ? (
-          <>
-            <p className="room-card__old-price">${price}</p>
-            <p className="room-card__current-price">${offerPrice}</p>
-            <p className="room-card__pricing">per night</p>
-          </>
-        ) : (
-          <>
-            <p className="room-card__current-price">${price}</p>
-            <p className="room-card__pricing">per night</p>
-          </>
-        )}
+        { offerPrice ? <div className="room-card__doblePrice"><p className="room-card__old-price"><del>${pricePerNight}</del></p><p className="room-card__current-price">{offerPrice}</p></div> : <p className="room-card__current-price">${pricePerNight}</p> }
+        <p className="room-card__pricing">per night</p>
         <button type="button" className="room-card__book-button">
           Book Now
         </button>
@@ -107,26 +93,24 @@ const RoomCard = (props) => {
 };
 
 RoomCard.propTypes = {
-  name: PropTypes.string.isRequired,
-  img: PropTypes.string,
-  bed: PropTypes.string,
-  pool: PropTypes.bool,
-  shower: PropTypes.bool,
-  tv: PropTypes.string,
-  couch: PropTypes.bool,
-  inclusion: PropTypes.arrayOf(PropTypes.string).isRequired,
-  price: PropTypes.number.isRequired,
-  offer: PropTypes.bool,
+  roomType: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  bedType: PropTypes.string,
+  amenitiesPool: PropTypes.bool,
+  amenitiesShower: PropTypes.bool,
+  amenitiesTV: PropTypes.bool,
+  amenitiesCouch: PropTypes.bool,
+  pricePerNight: PropTypes.number.isRequired,
   offerPrice: PropTypes.number,
 };
 RoomCard.defaultProps = {
-  img: './grey.jpg',
-  bed: '',
-  pool: false,
-  shower: false,
-  tv: '',
-  couch: false,
-  offer: false,
+  image: './grey.jpg',
+  bedType: '',
+  amenitiesPool: false,
+  amenitiesShower: false,
+  amenitiesTV: false,
+  amenitiesCouch: false,
   offerPrice: 0,
 };
+
 export default RoomCard;
