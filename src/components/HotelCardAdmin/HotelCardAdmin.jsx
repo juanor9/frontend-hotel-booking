@@ -73,8 +73,6 @@ const HotelCardAdmin = ({
             <div className="hotelsFormEdit">
               <h4 className="hotelsFormEdit__title">Hotel Edit</h4>
               <form className="hotelsFormEdit__form" onSubmit={handleSubmit}>
-                <p className="hotelsFormEdit__properties">Image: </p>
-                <input type="file" name="imageProfile" onChange={handleChange} defaultValue={imageProfile} />
                 <p className="hotelsFormEdit__properties">Name: </p>
                 <input type="text" name="name" onChange={handleChange} defaultValue={name} />
                 <p className="hotelsFormEdit__properties">City:</p>

@@ -1,18 +1,20 @@
 import './styles.css';
 import { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRooms } from '../../features/rooms/roomsSlice';
+import { getHotelById } from '../../features/hotels/hotelsSlice';
 import RoomsForm from '../../components/RoomsForm/RoomsForm';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import RoomCardAdmin from '../../components/RoomCardAdmin/RoomCardAdmin';
 
 const RoomsRegistration = () => {
-  const { rooms } = useSelector((state) => state.rooms);
+  const { id } = useParams();
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getRooms());
+    dispatch(getHotelById(id));
   }, []);
+  const { rooms } = useSelector((state) => state.hotels.hotels);
   return (
     <div className="roomsReg">
       <header className="roomsReg__header">
@@ -21,28 +23,33 @@ const RoomsRegistration = () => {
       </header>
       <h2 className="roomsReg__title">Rooms Registration Form</h2>
       <section className="roomsReg__form">
-        <RoomsForm />
+        <RoomsForm hotelID={id} />
       </section>
       <h2 className="roomsReg__title">Rooms List</h2>
-      <section className="roomsReg__list">
-        {
-          rooms.map((room) => (
-            <RoomCardAdmin
-              roomType={room.roomType}
-              image={room.image}
-              bedType={room.bedType}
-              amenitiesCouch={room.amenitiesCouch}
-              amenitiesPool={room.amenitiesPool}
-              amenitiesShower={room.amenitiesShower}
-              amenitiesTV={room.amenitiesTV}
-              pricePerNight={room.pricePerNight}
-              offerPrice={room.offerPrice}
-              id={room._id}
-              key={room._id}
-            />
-          ))
-        }
-      </section>
+      {
+          rooms !== undefined
+            ? (
+              <section className="roomsReg__list">
+                {
+            rooms.map((room) => (
+              <RoomCardAdmin
+                roomType={room.roomType}
+                image={room.image}
+                bedType={room.bedType}
+                amenitiesCouch={room.amenitiesCouch}
+                amenitiesPool={room.amenitiesPool}
+                amenitiesShower={room.amenitiesShower}
+                amenitiesTV={room.amenitiesTV}
+                pricePerNight={room.pricePerNight}
+                offerPrice={room.offerPrice}
+                id={room._id}
+                key={room._id}
+              />
+            ))
+            }
+              </section>
+            ) : null
+      }
     </div>
   );
 };

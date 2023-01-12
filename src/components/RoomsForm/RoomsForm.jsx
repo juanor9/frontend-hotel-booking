@@ -1,11 +1,12 @@
 import './styles.css';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { createRoom } from '../../features/rooms/roomsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
 import useForm from '../../hooks/useForm';
 
-const RoomsForm = () => {
+const RoomsForm = ({ hotelID }) => {
   const { uploads } = useSelector((state) => state.upload);
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
@@ -23,9 +24,16 @@ const RoomsForm = () => {
 
     try {
       dispatch(createImage(file));
-      dispatch(createRoom({ ...form, image: uploads }));
+      // dispatch(createRoom({ ...form, image: uploads, hotel: hotelID }));
+      // 1. Crear Room en el back, y obtener ID Room
+      // 2. Del estado hotels, seleccionar hotel a actualizar
+      // 3. Agregar ID Room al hotel seleccionado
+      // 4. Enviar el objeto hotel actualizado a
+      // updateHotel dispatch(updateHotel(updatedHotel, hotelID))
+      // eslint-disable-next-line no-console
+      console.log('uploads', uploads);
       if (uploads) {
-        dispatch(createRoom({ ...form, image: uploads }));
+        dispatch(createRoom({ ...form, image: uploads, hotel: hotelID }));
       }
       // eslint-disable-next-line no-restricted-globals
       location.reload();
@@ -79,6 +87,10 @@ const RoomsForm = () => {
       </div>
     </form>
   );
+};
+
+RoomsForm.propTypes = {
+  hotelID: PropTypes.string.isRequired,
 };
 
 export default RoomsForm;

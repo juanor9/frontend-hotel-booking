@@ -23,7 +23,6 @@ const HotelsForm = () => {
 
     try {
       dispatch(createImage(file));
-      dispatch(createHotel({ ...form, imageProfile: uploads }));
       // eslint-disable-next-line no-console
       console.log('uploads', uploads);
       if (uploads) {
