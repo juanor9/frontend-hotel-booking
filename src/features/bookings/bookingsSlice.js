@@ -3,9 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const initialState = {
-  bookings: [],
-};
+const initialState = {};
 
 export const getBooking = createAsyncThunk('bookings/getBookings', async (id) => {
   const resp = await fetch(`${BASE_URL}/api/bookings/${id}`);
@@ -19,6 +17,7 @@ export const getBookings = createAsyncThunk('bookings/getBookings', async () => 
   return data;
 });
 
+// eslint-disable-next-line consistent-return
 export const createBooking = createAsyncThunk('bookings/createBooking', async (booking) => {
   const options = {
     method: 'POST',
@@ -27,10 +26,13 @@ export const createBooking = createAsyncThunk('bookings/createBooking', async (b
     },
     body: JSON.stringify(booking),
   };
-
-  const response = await fetch(`${BASE_URL}/api/bookings`, options);
-  const data = await response.json();
-  return data;
+  try {
+    const response = await fetch(`${BASE_URL}/api/bookings`, options);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 export const deleteBooking = createAsyncThunk('bookings/deleteBooking', async (id) => {
@@ -62,6 +64,7 @@ const bookingsSlice = createSlice({
   initialState,
   reducers: {
     captureData: (state, action) => {
+      console.log(state.bookings, action.payload);
       state.bookings = action.payload;
     },
   },
@@ -70,7 +73,10 @@ const bookingsSlice = createSlice({
       state.bookings = action.payload;
     });
     builder.addCase(createBooking.fulfilled, (state, action) => {
-      state.bookings = action.payload;
+      console.log(action.payload);
+      if (action.payload.name !== 'ValidationError') {
+        state.bookings = action.payload;
+      }
     });
     builder.addCase(deleteBooking.fulfilled, (state, action) => {
       state.bookings = action.payload;

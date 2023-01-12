@@ -1,7 +1,9 @@
 .summery__container{
+  line-height: 18px;
   font-size: 13px;
   padding: 30px;
   width: 100%;
+  height: 540px;
 }
 
 .summary__view{
@@ -11,6 +13,7 @@
 
 .summery__image{
   margin-right: 10px;
+  margin-top: 12px;
   width: 25%;
 }
 

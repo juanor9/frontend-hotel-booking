@@ -14,7 +14,7 @@ const PayNowForm = () => {
   const elements = useElements();
   const stripe = useStripe();
   const dispatch = useDispatch();
-  const bookings = useSelector((state) => state.bookings);
+  const bookings = useSelector((state) => state.bookings.bookings);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -31,17 +31,17 @@ const PayNowForm = () => {
       },
       body: JSON.stringify({
         paymentMethod,
-        amount: Math.floor(bookings.pricePerNight * 100),
+        amount: bookings.bookings.pricePerNight,
       }),
     };
-    const response = await fetch('http://localhost:8080/api/healthcheck', options);
+    const response = await fetch('http://localhost:8080/api/payments', options);
     const data = await response.json();
+    elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement).clear();
     console.log(data);
   };
 
   const makePayment = () => {
     dispatch(createBooking(bookings));
-    console.log('valor', bookings);
   };
   return (
     <form className="card-data__form" onSubmit={handleSubmit}>

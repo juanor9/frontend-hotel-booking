@@ -9,8 +9,8 @@ const BookingSummery = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getHotel('63bc801c24c669677e027c5f'));
     dispatch(captureData(hotels));
+    dispatch(getHotel('63bc801c24c669677e027c5f'));
   }, [captureData, getHotel]);
 
   return (

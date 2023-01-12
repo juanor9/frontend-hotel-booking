@@ -1,4 +1,3 @@
-/* eslint-disable no-const-assign */
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import useForm from '../../hooks/useForm';
@@ -16,7 +15,7 @@ const TravellerInfo = () => {
     event.preventDefault();
   };
   const formVisible = () => {
-    dispatch(captureData({ bookings, ...form }));
+    dispatch(captureData(bookings));
     if (form.firstnameUser && form.lastnameUser && form.emailUser && form.contactUser) {
       setEstadoBoton(!estadoBoton);
       setVisible(!visible);

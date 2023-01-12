@@ -1,12 +1,13 @@
 .booking__container{
   width: 100%;
-  height: 1600px;
+  height: 1500px;
 }
 
 .booking__header{
   background-image: url(../../assets/livingRoom.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 20px;
   height: 280px;
 }
 
@@ -45,10 +46,9 @@
   -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
+  margin-bottom: 10px;
   line-height: 15px;
   margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 10px;
   width: 93%;
 }
 
@@ -64,26 +64,26 @@
 
 @media(min-width: 768px){
 .booking__container{
-  height: 1000px;
+  height: 900px;
 }
-
 
   .booking__article{
     grid-template-columns: 100% auto;
     margin-top: 20px;
     padding: 40px;
     display: grid;
+    right: -3%;
   }
 
   .booking__absolute{
+    margin-top: 50px;
     display: flex;
-    height: 600px;
+    height: 450px;
   }
 
   .booking__relative{
     margin-top: 40px;
   }
-
 
   .container__tables{
     margin-top: 20px;
@@ -92,12 +92,13 @@
 
   .booking__article--rigth{
     margin-top: -30px;
+    height: 510px;
     order: 1;
   }
 
   .booking__article--left{
-    order: 2;
     height: 30px;
+    order: 2;
   }
 
   .booking__form{
@@ -107,10 +108,11 @@
 
   .booking__summery{
     background-color: white;
+    margin-top: 30px;
     margin-right: 10%;
     margin-left: 10%;
     max-width: 450px;
-    height: 630px;
+    height: 500px;
     width: 70%;
   }
 }
