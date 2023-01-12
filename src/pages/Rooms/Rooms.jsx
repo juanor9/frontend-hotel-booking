@@ -9,6 +9,7 @@ import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Weather from '../../components/Weather/Weather';
+import HotelGallery from '../../components/HotelGallery/HotelGallery';
 
 const Rooms = () => {
   const { id } = useParams();
@@ -28,6 +29,8 @@ const Rooms = () => {
     checkin,
     checkout,
     rooms,
+    // imageProfile,
+    images,
   } = useSelector((state) => state.hotels.hotels);
   return (
     <div className="hotel-details">
@@ -35,26 +38,45 @@ const Rooms = () => {
         <NavigationBar />
       </header>
       <div className="hotel-details__hotel-info">
-        <HotelInfo
-          name={name}
-          address={address}
-          feature1={feature1}
-          feature2={feature2}
-        />
+        {name && address && feature1 && feature2
+          ? (
+            <HotelInfo
+              name={name}
+              address={address}
+              feature1={feature1}
+              feature2={feature2}
+            />
+          )
+          : null}
+
       </div>
+
       <div className="hotel-details__main-container">
-        {
-          rooms !== undefined ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main> : null
+        <div>
+          <div className="hotel-details__hotel-images">
+            {images
+              ? (
+                <HotelGallery
+                  images={images}
+                />
+              )
+              : null}
+          </div>
+          {
+          rooms
+            ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main>
+            : null
         }
-        {
-          // eslint-disable-next-line no-console
-          console.log('rooms', rooms)
-        }
+        </div>
         <aside className="hotel-details__aside">
-          <BookingForm
-            pricePerNight={pricePerNight}
-            offerPrice={offerPrice}
-          />
+          {pricePerNight
+            ? (
+              <BookingForm
+                pricePerNight={pricePerNight}
+                offerPrice={offerPrice}
+              />
+            )
+            : null}
           <HotelContact
             address={address}
             phone={phone}

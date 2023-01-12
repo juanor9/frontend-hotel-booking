@@ -1,0 +1,16 @@
+.image-slider {
+  width: 100%;
+
+}
+
+.image-slider__buttons {
+  text-align: center;
+}
+
+.image-slider__buttons button {
+  margin: 10px;
+}
+
+figure img{
+  width: 100%;
+}
