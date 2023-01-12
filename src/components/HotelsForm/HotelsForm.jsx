@@ -27,6 +27,7 @@ const HotelsForm = () => {
       console.log('uploads', uploads);
       if (uploads) {
         dispatch(createHotel({ ...form, imageProfile: uploads }));
+        setFile(null);
       }
     } catch (error) {
       throw new Error(error);
