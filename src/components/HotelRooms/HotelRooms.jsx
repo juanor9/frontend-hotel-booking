@@ -36,7 +36,18 @@ const HotelRooms = ({ rooms }) => (
 );
 
 HotelRooms.propTypes = {
-  rooms: PropTypes.arrayOf({}).isRequired,
+  rooms: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    roomType: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    bedType: PropTypes.string.isRequired,
+    amenitiesShower: PropTypes.bool.isRequired,
+    amenitiesTV: PropTypes.bool.isRequired,
+    amenitiesCouch: PropTypes.bool.isRequired,
+    amenitiesPool: PropTypes.bool.isRequired,
+    pricePerNight: PropTypes.number.isRequired,
+    offerPrice: PropTypes.number,
+  })).isRequired,
 };
 
 export default HotelRooms;
