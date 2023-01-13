@@ -41,6 +41,15 @@
   display: none;
 }
 
+.page__hotelsList {
+  margin-top: 3em;
+  margin-bottom: 1em;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   .hotel-filter__label{
     width: 18%;

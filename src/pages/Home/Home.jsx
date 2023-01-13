@@ -1,5 +1,4 @@
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import Explainer from '../../components/Explainer/Explainer';
 import data from '../../assets/offer.json';
 import OfferView from '../../components/OfferView/OfferView';
@@ -17,7 +16,6 @@ const Home = () => (
       <h2 className="title__nav-home">
         BOOK ROOMS, HOMES & APTS
       </h2>
-      <HotelFilter />
     </header>
     <section className="offer-view__component">
       <OfferView />
