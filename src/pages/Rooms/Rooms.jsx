@@ -19,6 +19,7 @@ const Rooms = () => {
   const {
     name,
     address,
+    geoLocation,
     phone,
     email,
     pricePerNight,
@@ -29,6 +30,7 @@ const Rooms = () => {
     checkout,
     rooms,
   } = useSelector((state) => state.hotels.hotels);
+  const { coordinates } = geoLocation;
   return (
     <div className="hotel-details">
       <header className="hotel-details__header">
@@ -42,18 +44,18 @@ const Rooms = () => {
           feature2={feature2}
         />
       </div>
+
       <div className="hotel-details__main-container">
         {
           rooms !== undefined ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main> : null
-        }
-        {
-          // eslint-disable-next-line no-console
-          console.log('rooms', rooms)
         }
         <aside className="hotel-details__aside">
           <BookingForm
             pricePerNight={pricePerNight}
             offerPrice={offerPrice}
+            {coordinates
+            ?coordinates={coordinates}
+          :coordinates=[0,0]}
           />
           <HotelContact
             address={address}
