@@ -1,8 +1,6 @@
 import './style.css';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getHotels } from '../../features/hotels/hotelsSlice';
 import { createBooking } from '../../features/bookings/bookingsSlice';
 import useForm from '../../hooks/useForm';
 
@@ -10,10 +8,6 @@ const HotelFilter = () => {
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    dispatch(getHotels());
-  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
