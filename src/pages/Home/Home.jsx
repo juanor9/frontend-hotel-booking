@@ -1,11 +1,11 @@
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
+import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import Explainer from '../../components/Explainer/Explainer';
 import data from '../../assets/offer.json';
 import OfferView from '../../components/OfferView/OfferView';
 import Popular from '../../components/Popular/Popular';
 import NewsletterForm from '../../components/NewsletterForm/NewsletterForm';
 import ReadArticles from '../../components/ReadArticles/ReadArticles';
-import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import './styles.css';
 
 const Home = () => (
@@ -16,8 +16,8 @@ const Home = () => (
     <header className="card__filter-home">
       <h2 className="title__nav-home">
         BOOK ROOMS, HOMES & APTS
-        <HotelFilter />
       </h2>
+      <HotelFilter />
     </header>
     <section className="offer-view__component">
       <OfferView />
