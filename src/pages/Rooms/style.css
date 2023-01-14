@@ -18,6 +18,7 @@
 .hotel-details__hotel-info {
   padding: 1em 0.5em;
 }
+
 .hotel-details__rooms {
   background-color: white;
 }
@@ -36,10 +37,10 @@
     flex-direction: row;
     justify-content: stretch;
   }
-  .hotel-details__hotel-info {
+  .hotel-details__hotel-info{
     padding: 1em 7em;
   }
-  .hotel-details__rooms {
+  .hotel-details__rooms .hotel-details__hotel-images {
     width: 60%;
   }
   .hotel-details__aside {
