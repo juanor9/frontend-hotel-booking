@@ -1,13 +1,11 @@
-/* eslint-disable no-console */
 import './StylesPagination.css';
 import PropTypes from 'prop-types';
 import HotelCard from '../HotelCard/HotelCard';
 
 const HotelsPagination = ({
-  results, currentPage, handleNext, handlePrev,
+  results, currentPage, maxPages, handleNext, handlePrev,
 }) => (
   <section className="pagination__card">
-    {console.log('Current Page', currentPage)}
     <section className="page__hotelsList">
       {results.map((hotel) => (
         <HotelCard
@@ -26,7 +24,7 @@ const HotelsPagination = ({
     </section>
     <section className="pagination__buttons">
       <button className="pagination__button" type="submit" onClick={handlePrev}>{'<<'}</button>
-      <p className="pagination__currentPage">{currentPage + 1} of 10</p>
+      <p className="pagination__currentPage">{currentPage + 1} of {maxPages}</p>
       <button className="pagination__button" type="submit" onClick={handleNext}>{'>>'}</button>
     </section>
   </section>
@@ -35,6 +33,7 @@ const HotelsPagination = ({
 HotelsPagination.propTypes = {
   results: PropTypes.arrayOf({}).isRequired,
   currentPage: PropTypes.number.isRequired,
+  maxPages: PropTypes.number.isRequired,
   handleNext: PropTypes.isRequired,
   handlePrev: PropTypes.isRequired,
 };

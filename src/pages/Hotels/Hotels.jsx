@@ -18,6 +18,7 @@ const Hotels = () => {
 
   // Pagination
   const hotelsPerPage = 9;
+  const maxPages = hotels.length / hotelsPerPage;
   const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -58,6 +59,7 @@ const Hotels = () => {
           handleNext={handleNext}
           handlePrev={handlePrev}
           currentPage={currentPage}
+          maxPages={maxPages}
         />
       </section>
     </div>
