@@ -1,12 +1,10 @@
 import './styles.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// componentes
 import { getHotels } from '../../features/hotels/hotelsSlice';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
-import HotelCard from '../../components/HotelCard/HotelCard';
 import Filter from '../../components/LatestFilter/Filter';
 import HotelsPagination from '../../components/HotelsPagination/HotelsPagination';
 
@@ -17,6 +15,31 @@ const Hotels = () => {
   useEffect(() => {
     dispatch(getHotels());
   }, []);
+
+  // Pagination
+  const hotelsPerPage = 9;
+  const maxPages = hotels.length / hotelsPerPage;
+  const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handleNext = () => {
+    const totalHotels = hotels.length;
+    const nextPage = currentPage + 1;
+    const firstIndex = nextPage * hotelsPerPage;
+    if (firstIndex === totalHotels) return;
+
+    setItems([...hotels].splice(firstIndex, hotelsPerPage));
+    setCurrentPage(nextPage);
+  };
+
+  const handlePrev = () => {
+    const prevPage = currentPage - 1;
+    const firstIndex = prevPage * hotelsPerPage;
+    if (prevPage < 0) return;
+
+    setItems([...hotels].splice(firstIndex, hotelsPerPage));
+    setCurrentPage(prevPage);
+  };
 
   return (
     <div className="page">
@@ -31,23 +54,13 @@ const Hotels = () => {
       </section>
       <section className="page__body">
         <Filter />
-        <section className="page__hotelsList">
-          {hotels.map((hotel) => (
-            <HotelCard
-              imageProfile={hotel.imageProfile}
-              name={hotel.name}
-              about={hotel.about}
-              city={hotel.city}
-              pricePerNight={hotel.pricePerNight}
-              offerPrice={hotel.offerPrice}
-              feature1={hotel.feature1}
-              feature2={hotel.feature2}
-              id={hotel._id}
-              key={hotel._id}
-            />
-          ))}
-        </section>
-        <HotelsPagination />
+        <HotelsPagination
+          results={items}
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+          currentPage={currentPage}
+          maxPages={maxPages}
+        />
       </section>
     </div>
   );

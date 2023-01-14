@@ -9,6 +9,7 @@
   text-align: center;
   margin-bottom: 50px;
   margin-top: 40px;
+  display: flex;
 }
 
 .pagination__button {
@@ -22,6 +23,13 @@
   height: 30px;
   margin: 10px;
   width: 30px;
+}
+
+.pagination__currentPage {
+  margin: 10px;
+  background-color: #FFFFFF;
+  width: 80px;
+  padding-top: 0.5em;
 }
 
 .pagination__button:hover {
