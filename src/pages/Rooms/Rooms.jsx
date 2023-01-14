@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
@@ -10,6 +9,7 @@ import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Weather from '../../components/Weather/Weather';
+import HotelGallery from '../../components/HotelGallery/HotelGallery';
 
 const Rooms = () => {
   const { id } = useParams();
@@ -32,6 +32,7 @@ const Rooms = () => {
     checkin,
     checkout,
     rooms,
+    images,
   } = useSelector((state) => state.hotels.hotels);
   useEffect(() => {
     if (geoLocation) {
@@ -43,30 +44,44 @@ const Rooms = () => {
       <header className="hotel-details__header">
         <NavigationBar />
       </header>
-      {name
-        ? (
-          <div className="hotel-details__hotel-info">
+      <div className="hotel-details__hotel-info">
+        {name && address && feature1 && feature2
+          ? (
             <HotelInfo
               name={name}
               address={address}
               feature1={feature1}
               feature2={feature2}
             />
-          </div>
-        )
-        : null}
+          )
+          : null}
+
+      </div>
 
       <div className="hotel-details__main-container">
-        {
-          rooms !== undefined ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main> : null
+        <div>
+          <div className="hotel-details__hotel-images">
+            {images
+              ? (
+                <HotelGallery
+                  images={images}
+                />
+              )
+              : null}
+          </div>
+          {
+          rooms
+            ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main>
+            : null
         }
+        </div>
         <aside className="hotel-details__aside">
           {pricePerNight
             ? (
               <BookingForm
                 pricePerNight={pricePerNight}
                 offerPrice={offerPrice}
-                // coordinates={coordinates}
+                coordinates={coordinates}
               />
             )
             : null}
