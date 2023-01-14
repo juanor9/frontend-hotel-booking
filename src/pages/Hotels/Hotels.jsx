@@ -5,7 +5,6 @@ import { getHotels } from '../../features/hotels/hotelsSlice';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
-import Filter from '../../components/LatestFilter/Filter';
 import HotelsPagination from '../../components/HotelsPagination/HotelsPagination';
 
 const Hotels = () => {
@@ -16,7 +15,6 @@ const Hotels = () => {
     dispatch(getHotels());
   }, []);
 
-  // Pagination
   const hotelsPerPage = 9;
   const maxPages = hotels.length / hotelsPerPage;
   const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
@@ -53,7 +51,6 @@ const Hotels = () => {
         </nav>
       </section>
       <section className="page__body">
-        <Filter />
         <HotelsPagination
           results={items}
           handleNext={handleNext}
