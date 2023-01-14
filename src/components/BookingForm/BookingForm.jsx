@@ -24,7 +24,6 @@ const BookingForm = ({
             marginWidth="0"
           />
         </div>
-        {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.7759977150563!2d-86.84655458574242!3d21.121494889983392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2cd8cb481aabab3!2zMjHCsDA3JzE3LjQiTiA4NsKwNTAnMzkuNyJX!5e0!3m2!1ses-419!2sco!4v1673658020497!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
       </div>
       <section className="booking-form__text-top">
         <section className="booking-form__text-top-features">
@@ -71,11 +70,12 @@ const BookingForm = ({
 BookingForm.propTypes = {
   pricePerNight: PropTypes.number.isRequired,
   offerPrice: PropTypes.number,
-  coordinates: PropTypes.arrayOf(PropTypes.string).isRequired,
+  coordinates: PropTypes.arrayOf(PropTypes.string),
 };
 
 BookingForm.defaultProps = {
   offerPrice: 0,
+  coordinates: ['0', '0'],
 };
 
 export default BookingForm;

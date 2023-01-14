@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getHotelById } from '../../features/hotels/hotelsSlice';
 import BookingForm from '../../components/BookingForm/BookingForm';
@@ -12,10 +13,12 @@ import Weather from '../../components/Weather/Weather';
 
 const Rooms = () => {
   const { id } = useParams();
+  const [coordinates, setCoordinates] = useState(['0', '0']);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getHotelById(id));
-  }, []);
+  }, [id]);
+
   const {
     name,
     address,
@@ -30,33 +33,43 @@ const Rooms = () => {
     checkout,
     rooms,
   } = useSelector((state) => state.hotels.hotels);
-  const { coordinates } = geoLocation;
+  useEffect(() => {
+    if (geoLocation) {
+      setCoordinates(geoLocation.coordinates);
+    }
+  }, [geoLocation]);
   return (
     <div className="hotel-details">
       <header className="hotel-details__header">
         <NavigationBar />
       </header>
-      <div className="hotel-details__hotel-info">
-        <HotelInfo
-          name={name}
-          address={address}
-          feature1={feature1}
-          feature2={feature2}
-        />
-      </div>
+      {name
+        ? (
+          <div className="hotel-details__hotel-info">
+            <HotelInfo
+              name={name}
+              address={address}
+              feature1={feature1}
+              feature2={feature2}
+            />
+          </div>
+        )
+        : null}
 
       <div className="hotel-details__main-container">
         {
           rooms !== undefined ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main> : null
         }
         <aside className="hotel-details__aside">
-          <BookingForm
-            pricePerNight={pricePerNight}
-            offerPrice={offerPrice}
-            {coordinates
-            ?coordinates={coordinates}
-          :coordinates=[0,0]}
-          />
+          {pricePerNight
+            ? (
+              <BookingForm
+                pricePerNight={pricePerNight}
+                offerPrice={offerPrice}
+                // coordinates={coordinates}
+              />
+            )
+            : null}
           <HotelContact
             address={address}
             phone={phone}
