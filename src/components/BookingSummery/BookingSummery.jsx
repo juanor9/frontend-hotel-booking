@@ -1,3 +1,4 @@
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getHotel } from '../../features/hotels/hotelsSlice';
@@ -6,11 +7,11 @@ import './styles.css';
 
 const BookingSummery = () => {
   const { hotels } = useSelector((state) => state.hotels);
-
+  const { bookings } = useSelector((state) => state.bookings);
+  const { id } = useParams;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getHotel('63bc801c24c669677e027c5f'));
-    dispatch(captureData(hotels));
+    dispatch(getHotel(id));
   }, [captureData, getHotel]);
 
   return (
@@ -32,13 +33,13 @@ const BookingSummery = () => {
         <div className="summery__dates-item">
           <p>Check In</p>
           <span>
-            {hotels.checkin}
+            {bookings.checkin}
           </span>
         </div>
         <div className="summery__dates-item summery__left">
           <p>Check Out</p>
           <span>
-            {hotels.checkout}
+            {bookings.checkout}
           </span>
         </div>
         <div className="summery__dates-item">
@@ -56,18 +57,18 @@ const BookingSummery = () => {
       </div>
       <hr className="summery__hr" />
       <div className="summery__edit">
-        <p>{hotels.name}&nbsp;
-          {hotels.name}&nbsp;
+        <p>{bookings.guests}&nbsp;guests,&nbsp;
+          {bookings.roomstype}&nbsp;
           {hotels.name}
         </p>
-        <button className="summeery__btn" type="button">Edit</button>
+        <button className="summery__btn" type="button"><Link to="/hotels/:id" className="summery__btn">Edit</Link></button>
       </div>
       <hr className="summery__hr" />
       <div>
         <h3>Payment Details</h3>
-        <p className="summery__details">Base Price <span>{hotels.pricePerNight}</span></p>
-        <p className="summery__details">Promo Discount <span>{0}</span></p>
-        <p className="summery__details">Tax & ServiceFees <span>{0}</span></p>
+        <p className="summery__details">Base Price <span>${hotels.pricePerNight}</span></p>
+        <p className="summery__details">Promo Discount $<span>${0}</span></p>
+        <p className="summery__details">Tax & ServiceFees <span>${0}</span></p>
         <hr className="summery__hr" />
         <p className="summery__details">Payable Amount <span className="summery__total">${hotels.pricePerNight}</span></p>
       </div>

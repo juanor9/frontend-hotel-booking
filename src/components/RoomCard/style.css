@@ -62,6 +62,21 @@
   gap: 20px;
 }
 
+.room-card__book-button{
+  background-color: #F13F4B;
+  font-weight: 700;
+  font-size: 17px;
+  height: 30px;
+  color: white;
+  width: 130px;
+  padding: 0;
+  border: none;
+}
+
+.room-card__book-button:hover{
+  background-color: #f70919;
+}
+
 @media (min-width: 768px) {
   .room-card__img {
     width: 30%;

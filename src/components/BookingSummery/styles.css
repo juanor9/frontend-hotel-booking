@@ -53,7 +53,8 @@
   display: flex;
 }
 
-.summeery__btn{
+.summery__btn{
+  text-decoration: none;
   color: #F13F4B;
   background: none;
   border: none;

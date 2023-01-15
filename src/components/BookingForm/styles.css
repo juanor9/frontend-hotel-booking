@@ -5,6 +5,60 @@
   background-color: white;
 }
 
+.booking-form__text-top{
+  margin-bottom: 10px;
+}
+
+.booking-form__form-calendar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.booking-form__features-highlight{
+  margin-bottom: 10px;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+.booking__through{
+  text-decoration: line-through;
+}
+
+.booking-form__item{
+  color: gray;
+}
+
+.booking-form__input{
+  height: 40px;
+  color: gray;
+
+}
+.booking-form__input:focus {
+  outline: none;
+}
+
+.booking-form__header{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin: 10px;
+}
+
+.booking-form__form{
+  margin-top: 10px;
+}
+
+.booking-form__text_icon{
+  display: flex;
+  justify-content: space-between;
+}
+
+.booking-form__icon{
+  color: green;
+}
+
 .booking-for__mapouter{
   position:relative;
   text-align:right;
@@ -17,79 +71,29 @@
   width: 100%;
 }
 
-.card__line {
-  width: 100%;
-  border-width: 0.5px;
-  color: gray;
-  margin: 1em 0 1em 0;
-}
-
-.card__form {
+.booking-form__cont-btn{
   display: flex;
-  flex-direction: column;
-  font-size: 13px;
+  justify-content: flex-end;
 }
 
-.form__button {
+.booking-form__form-button{
+  background-color: #F13F4B;
+  margin-bottom: 22px;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 17px;
   color: white;
-  background-color: red;
-  border: 0;
-  padding: 0.5em 2em 0.5em 2em;
-  font-weight: bold;
-  margin-top: 1em;
+  width: 160px;
+  height: 40px;
+  border: none;
 }
 
-.form__button--left {
-  display: flex;
-  justify-content:flex-end;
+.booking-form__form-button:hover{
+  background-color: #f70919;
 }
 
-.form__date {
-  display: flex;
-  justify-content: space-between;
+.booking-form__link{
+  color: white;
+  text-decoration: none;
 }
-
-.form__date, .form__rooms, .form__num {
-  margin-bottom: 0.5em;
-}
-
-.form__calendar {
-  width: 60%;
-}
-
-.card__textTop {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-top: 2em;
-}
-
-.textTop__features--prices {
-  text-align: right;
-}
-
-.features__body {
-  display: flex;
-}
-
-.features__title, .features__text {
-  margin: 0;
-}
-
-.features__title {
-  margin-bottom: 1em;
-}
-
-.features__text {
-  margin-left: 0.5em;
-}
-
-.features_text--size {
-  font-size: 15px;
-  font-weight: 900;
-}
-
-
-
 

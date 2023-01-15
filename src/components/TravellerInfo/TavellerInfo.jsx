@@ -16,8 +16,8 @@ const TravellerInfo = () => {
     event.preventDefault();
   };
   const formVisible = () => {
-    dispatch(captureData({ bookings, ...form }));
     if (form.firstnameUser && form.lastnameUser && form.emailUser && form.contactUser) {
+      dispatch(captureData({ bookings, ...form }));
       setEstadoBoton(!estadoBoton);
       setVisible(!visible);
     } else {

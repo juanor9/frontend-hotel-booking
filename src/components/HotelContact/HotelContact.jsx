@@ -18,11 +18,11 @@ const HotelContact = (props) => {
       <div className="hotel-contact__contact-details">
         <p className="hotel-contact__address">
           {' '}
-          <FontAwesomeIcon icon={faLocationPin} key="location" />
+          <FontAwesomeIcon icon={faLocationPin} key="location" />&nbsp;
           {address}
         </p>
         <p className="hotel-contact__phone">
-          <FontAwesomeIcon icon={faPhone} key="phone" /> {phone}
+          <FontAwesomeIcon icon={faPhone} key="phone" />&nbsp; {phone}
         </p>
         <p className="hotel-contact__email">
           <FontAwesomeIcon icon={faEnvelope} key="email" /> {email}
