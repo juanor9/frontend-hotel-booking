@@ -10,17 +10,28 @@ import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import Weather from '../../components/Weather/Weather';
 import HotelGallery from '../../components/HotelGallery/HotelGallery';
+import HotelsMenu from '../../components/HotelsMenu/HotelsMenu';
+import HotelsAbout from '../../components/HotelsAbout/HotelsAbout';
+import HotelsLocation from '../../components/HotelsLocation/HotelsLocation';
 
 const Rooms = () => {
   const { id } = useParams();
   const [coordinates, setCoordinates] = useState(['0', '0']);
+  const [navTab, setNavTab] = useState('rooms');
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getHotelById(id));
   }, [id]);
 
+  useEffect(() => {
+  }, [navTab]);
+
   const {
     name,
+    about,
+    country,
+    city,
     address,
     geoLocation,
     phone,
@@ -69,11 +80,25 @@ const Rooms = () => {
               )
               : null}
           </div>
+          <HotelsMenu navTab={navTab} setNavTab={setNavTab} />
           {
-          rooms
-            ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main>
-            : null
-        }
+            rooms && navTab === 'rooms' ? (
+              <main className="hotel-details__rooms">
+                <HotelRooms rooms={rooms} />
+              </main>
+            ) : null
+          }
+          { navTab === 'about' ? (
+            <main className="hotel-details__rooms">
+              <HotelsAbout about={about} />
+            </main>
+          ) : null }
+          { navTab === 'location' ? (
+            <main className="hotel-details__rooms">
+              <HotelsLocation country={country} city={city} address={address} />
+            </main>
+          ) : null }
+
         </div>
         <aside className="hotel-details__aside">
           {pricePerNight

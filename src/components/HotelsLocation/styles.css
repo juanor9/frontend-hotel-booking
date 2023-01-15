@@ -1,0 +1,13 @@
+.hotelsLocation {
+  font-size: 15px;
+  padding: 2em;
+  display: flex;
+}
+
+.hotelsLocation__div {
+  margin-left: 10em;
+}
+
+.hotelsLocation__description {
+  margin: 0.5em 0 1em 0.5em;
+}

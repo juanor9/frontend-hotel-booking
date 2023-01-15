@@ -4,16 +4,6 @@ import RoomCard from '../RoomCard/RoomCard';
 
 const HotelRooms = ({ rooms }) => (
   <section id="hotel-rooms" className="hotel-rooms">
-    <nav>
-      <ul className="hotel-rooms__nav-list">
-        <li className="hotel-rooms__nav-item hotel-rooms__nav-item--active">Rooms</li>
-        <li className="hotel-rooms__nav-item">About</li>
-        <li className="hotel-rooms__nav-item">Facility</li>
-        <li className="hotel-rooms__nav-item">Location</li>
-        <li className="hotel-rooms__nav-item">Reviews</li>
-        <li className="hotel-rooms__nav-item">Policies</li>
-      </ul>
-    </nav>
     <article id="rooms" className="hotel-rooms__list">
       {rooms.map((e) => (
         <><RoomCard

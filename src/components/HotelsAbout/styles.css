@@ -1,0 +1,9 @@
+.hotelsAbout {
+  font-size: 15px;
+  padding: 2em;
+  width: 90%;
+}
+
+.hotelsAbout__title {
+  margin-bottom: 1em;
+}
