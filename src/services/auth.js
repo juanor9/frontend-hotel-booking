@@ -28,17 +28,17 @@ export const validateUserMailToken = async (token) => {
 export const resetPassword = createAsyncThunk(
   'auth/reset-password',
   async (email) => {
-    // get user id
-    const getIdOptions = {
-      method: 'GET',
+    // send email to reset password
+    const options = {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      body: JSON.stringify(email),
     };
 
-    const res = await fetch(`${BASE_URL}/api/users/search?email=${email}`, getIdOptions);
+    const res = await fetch(`${BASE_URL}/auth/local/password-reset`, options);
     const result = await res.json();
-    const { _id } = result;
-    console.log(_id);
+    return result;
   },
 );

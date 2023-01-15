@@ -11,10 +11,12 @@ import SliderNav from '../../components/SliderNav/SliderNav';
 import useForm from '../../hooks/useForm';
 
 const UserLogin = () => {
-  const [modal, setModal] = useState(false);
+  const [modalForm, setModalForm] = useState(false);
+  const [modalMessage, setModalMessage] = useState(false);
+
   const dispatch = useDispatch();
   const handleRecoverClick = () => {
-    setModal(true);
+    setModalForm(true);
   };
 
   const { form, handleChange } = useForm({});
@@ -25,7 +27,9 @@ const UserLogin = () => {
     event.preventDefault();
 
     try {
-      dispatch(resetPassword(form.email));
+      dispatch(resetPassword(form));
+      setModalForm(false);
+      setModalMessage(true);
     } catch (error) {
       throw new Error(error);
     }
@@ -39,29 +43,24 @@ const UserLogin = () => {
       <div className="user-login__form-container">
         <LoginForm />
         <div className="user-login__other">
-          <p>Are you a new user?
-            <Link to="/register">
-              Please register
-            </Link>
+          <p>
+            Are you a new user?
+            <Link to="/register">Please register</Link>
           </p>
-          <p>Did you lost your password?
-            <button
-              type="button"
-              onClick={handleRecoverClick}
-            >Reset your password
+          <p>
+            Did you lost your password?
+            <button type="button" onClick={handleRecoverClick}>
+              Reset your password
             </button>
           </p>
         </div>
       </div>
-      {modal === true ? (
-        <Modal modalFunction={setModal}>
+      {modalForm === true ? (
+        <Modal modalFunction={setModalMessage}>
           <div>
             <p>To reset your password please provide us with your email.</p>
             <form onSubmit={handleSubmit} id="reset-password-form">
-              <label
-                htmlFor="email"
-                className="register-form__input-group"
-              >
+              <label htmlFor="email" className="register-form__input-group">
                 Email Address
                 <input
                   className="register-form__input"
@@ -82,6 +81,12 @@ const UserLogin = () => {
             </form>
           </div>
         </Modal>
+      ) : null}
+      {modalMessage === true ? (
+        <Modal
+          modalFunction={setModalMessage}
+          message="An email has ben sent to the email address to reset your password."
+        />
       ) : null}
     </div>
   );
