@@ -64,7 +64,6 @@ const bookingsSlice = createSlice({
   initialState,
   reducers: {
     captureData: (state, action) => {
-      console.log(state.bookings, action.payload);
       state.bookings = action.payload;
     },
   },
@@ -73,7 +72,6 @@ const bookingsSlice = createSlice({
       state.bookings = action.payload;
     });
     builder.addCase(createBooking.fulfilled, (state, action) => {
-      console.log(action.payload);
       if (action.payload.name !== 'ValidationError') {
         state.bookings = action.payload;
       }

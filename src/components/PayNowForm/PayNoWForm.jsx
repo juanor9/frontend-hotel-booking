@@ -3,6 +3,7 @@ import {
 } from '@stripe/react-stripe-js';
 import { useDispatch, useSelector } from 'react-redux';
 import { createBooking } from '../../features/bookings/bookingsSlice';
+import { generatePayment } from '../../services/bookings';
 import masterCard from '../../assets/master-card-r.png';
 import visa from '../../assets/visa.png';
 import americanExpress from '../../assets/american-express.png';
@@ -15,6 +16,7 @@ const PayNowForm = () => {
   const stripe = useStripe();
   const dispatch = useDispatch();
   const bookings = useSelector((state) => state.bookings.bookings);
+  const hotels = useSelector((state) => state.hotels.hotels);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -22,7 +24,7 @@ const PayNowForm = () => {
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
     });
     if (error) {
-      console.log(error);
+      console.error(error);
     }
     const options = {
       method: 'POST',
@@ -31,13 +33,11 @@ const PayNowForm = () => {
       },
       body: JSON.stringify({
         paymentMethod,
-        amount: bookings.bookings.pricePerNight,
+        amount: Math.floor(hotels.pricePerNight * 100),
+        description: `Hotel ${hotels.name}`,
       }),
     };
-    const response = await fetch('http://localhost:8080/api/payments', options);
-    const data = await response.json();
-    elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement).clear();
-    console.log(data);
+    generatePayment(options);
   };
 
   const makePayment = () => {
