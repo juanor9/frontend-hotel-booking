@@ -32,6 +32,7 @@ const HotelsForm = () => {
 
   const handleUploadImage = async () => {
     try {
+      // dispatch(createImages(file));
       dispatch(createImage(file));
     } catch (error) {
       throw new Error(error);
