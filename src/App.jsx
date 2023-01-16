@@ -13,23 +13,25 @@ import UserRegistration from './pages/UserRegistration/UserRegistration';
 import RoomsRegistration from './pages/RoomsRegistration/RoomsRegistration';
 import Bookings from './pages/Bookings/Bookings';
 import HotelsFiltered from './pages/HotelsFiltered/HotelsFiltered';
+import AdminRegistration from './pages/AdminRegistration/AdminRegistration';
 
 const App = () => (
   <>
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/hotels" element={<Hotels />} />
-      <Route path="/hotels-filtered" element={<HotelsFiltered />} />
-      <Route path="/hotels/:id" element={<Rooms />} />
-      <Route path="/profile" element={<UserProfile />} />
-      <Route path="/success" element={<Success />} />
-      <Route path="/register" element={<UserRegistration />} />
       <Route path="/activate/:token" element={<ActivateUser />} />
-      <Route path="/login" element={<UserLogin />} />
-      <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
+      <Route path="/admin/register" element={<AdminRegistration />} />
       <Route path="/admin/hotels-managment" element={<HotelsManagment />} />
-      <Route path="/bookings" element={<Bookings />} />
+      <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/rooms-registration/:id" element={<RoomsRegistration />} />
+      <Route path="/bookings" element={<Bookings />} />
+      <Route path="/hotels-filtered" element={<HotelsFiltered />} />
+      <Route path="/hotels" element={<Hotels />} />
+      <Route path="/hotels/:id" element={<Rooms />} />
+      <Route path="/login" element={<UserLogin />} />
+      <Route path="/profile" element={<UserProfile />} />
+      <Route path="/register" element={<UserRegistration />} />
+      <Route path="/success" element={<Success />} />
     </Routes>
     <Footer />
   </>
