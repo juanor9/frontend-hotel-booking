@@ -1,6 +1,6 @@
 import './style.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getHotelById } from '../../features/hotels/hotelsSlice';
 import BookingForm from '../../components/BookingForm/BookingForm';
@@ -13,13 +13,16 @@ import HotelGallery from '../../components/HotelGallery/HotelGallery';
 
 const Rooms = () => {
   const { id } = useParams();
+  const [coordinates, setCoordinates] = useState(['0', '0']);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getHotelById(id));
-  }, []);
+  }, [id]);
+
   const {
     name,
     address,
+    geoLocation,
     phone,
     email,
     pricePerNight,
@@ -29,9 +32,13 @@ const Rooms = () => {
     checkin,
     checkout,
     rooms,
-    // imageProfile,
     images,
   } = useSelector((state) => state.hotels.hotels);
+  useEffect(() => {
+    if (geoLocation) {
+      setCoordinates(geoLocation.coordinates);
+    }
+  }, [geoLocation]);
   return (
     <div className="hotel-details">
       <header className="hotel-details__header">
@@ -74,6 +81,7 @@ const Rooms = () => {
               <BookingForm
                 pricePerNight={pricePerNight}
                 offerPrice={offerPrice}
+                coordinates={coordinates}
               />
             )
             : null}

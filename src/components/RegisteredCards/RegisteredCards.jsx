@@ -13,7 +13,7 @@ const RegisteredCards = ({ cardLogo, cardNumber, cardCompany }) => (
 );
 
 RegisteredCards.propTypes = {
-  cardLogo: PropTypes.isRequired,
+  cardLogo: PropTypes.string.isRequired,
   cardNumber: PropTypes.string.isRequired,
   cardCompany: PropTypes.string.isRequired,
 };

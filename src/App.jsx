@@ -13,12 +13,14 @@ import UserRegistration from './pages/UserRegistration/UserRegistration';
 import RoomsRegistration from './pages/RoomsRegistration/RoomsRegistration';
 import Bookings from './pages/Bookings/Bookings';
 import ResetPassword from './pages/ResetPassword/ResetPassword';
+import HotelsFiltered from './pages/HotelsFiltered/HotelsFiltered';
 
 const App = () => (
   <>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/hotels" element={<Hotels />} />
+      <Route path="/hotels-filtered" element={<HotelsFiltered />} />
       <Route path="/hotels/:id" element={<Rooms />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/success" element={<Success />} />
