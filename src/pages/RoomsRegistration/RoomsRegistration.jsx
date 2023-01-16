@@ -1,6 +1,6 @@
 import './styles.css';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHotelById } from '../../features/hotels/hotelsSlice';
 import RoomsForm from '../../components/RoomsForm/RoomsForm';
@@ -50,6 +50,7 @@ const RoomsRegistration = () => {
               </section>
             ) : null
       }
+      <Link to="/admin/hotels-managment"><button type="submit">Back</button></Link>
     </div>
   );
 };
