@@ -24,8 +24,8 @@
 }
 
 .summery__paragraph{
-  font-size: 12px;
   overflow: hidden;
+  font-size: 12px;
   width: 85%;
 }
 
@@ -58,6 +58,10 @@
   color: #F13F4B;
   background: none;
   border: none;
+}
+
+.summery__btn:hover{
+  text-decoration: overline;
 }
 
 .summery__details{

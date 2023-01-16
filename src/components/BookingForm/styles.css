@@ -1,74 +1,9 @@
 .booking-form {
   display: flex;
   flex-direction: column;
+  font-size: 12px;
   padding: 2em;
   background-color: white;
-}
-
-.booking-form__text-top{
-  margin-bottom: 10px;
-}
-
-.booking-form__form-calendar{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 15px;
-}
-
-.booking-form__features-highlight{
-  margin-bottom: 10px;
-  font-weight: 900;
-  font-size: 15px;
-}
-
-.booking__through{
-  text-decoration: line-through;
-}
-
-.booking-form__item{
-  color: gray;
-}
-
-.booking-form__input{
-  height: 40px;
-  color: gray;
-
-}
-.booking-form__input:focus {
-  outline: none;
-}
-
-.booking-form__header{
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  margin: 10px;
-}
-
-.booking-form__form{
-  margin-top: 10px;
-}
-
-.booking-form__text_icon{
-  display: flex;
-  justify-content: space-between;
-}
-
-.booking-form__icon{
-  color: green;
-}
-
-.booking-for__mapouter{
-  position:relative;
-  text-align:right;
-  width:100%;
-}
-
-.booking-for__gmap_canvas {
-  overflow:hidden;
-  background:none!important;
-  width: 100%;
 }
 
 .booking-form__cont-btn{
@@ -91,9 +26,40 @@
 .booking-form__form-button:hover{
   background-color: #f70919;
 }
-
-.booking-form__link{
-  color: white;
-  text-decoration: none;
+.booking-form__text-top{
+  display: flex;
+  justify-content: space-between;
 }
 
+.booking-form__features-body{
+  display: flex;
+}
+
+.booking-for__mapouter{
+  position:relative;
+  text-align:right;
+  width:100%;
+}
+
+.booking-form__form-date{
+  margin-top: 12px;
+}
+
+.booking-form__features-price{
+  color: gray;
+}
+.booking-form__features-icon{
+  color: green;
+}
+
+.booking-for__gmap_canvas {
+  overflow:hidden;
+  background:none!important;
+  width: 100%;
+}
+
+.booking-form__input{
+  width: 100%;
+  height: 35px;
+  margin-top: 12px;
+}

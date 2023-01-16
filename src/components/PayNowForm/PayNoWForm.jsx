@@ -1,7 +1,7 @@
 import {
   CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe,
 } from '@stripe/react-stripe-js';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { createBooking } from '../../features/bookings/bookingsSlice';
 import masterCard from '../../assets/master-card-r.png';
 import visa from '../../assets/visa.png';
@@ -14,13 +14,14 @@ const PayNowForm = () => {
   const elements = useElements();
   const stripe = useStripe();
   const dispatch = useDispatch();
-  const bookings = useSelector((state) => state.bookings);
+  const { bookings } = useSelector((state) => state.bookings);
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
     });
+
     if (error) {
       console.log(error);
     }
@@ -41,7 +42,6 @@ const PayNowForm = () => {
 
   const makePayment = () => {
     dispatch(createBooking(bookings));
-    console.log('valor', bookings);
   };
   return (
     <form className="card-data__form" onSubmit={handleSubmit}>

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getHotel } from '../../features/hotels/hotelsSlice';
 import { captureData } from '../../features/bookings/bookingsSlice';
+import calculateDays from '../../services/bookings';
 import './styles.css';
 
 const BookingSummery = () => {
@@ -58,8 +59,8 @@ const BookingSummery = () => {
       <hr className="summery__hr" />
       <div className="summery__edit">
         <p>{bookings.guests}&nbsp;guests,&nbsp;
-          {bookings.roomstype}&nbsp;
-          {hotels.name}
+          {bookings.roomstype},&nbsp;
+          {`${calculateDays(bookings.checkin, bookings.checkout)} Nights`}
         </p>
         <button className="summery__btn" type="button"><Link to="/hotels/:id" className="summery__btn">Edit</Link></button>
       </div>
@@ -67,10 +68,10 @@ const BookingSummery = () => {
       <div>
         <h3>Payment Details</h3>
         <p className="summery__details">Base Price <span>${hotels.pricePerNight}</span></p>
-        <p className="summery__details">Promo Discount $<span>${0}</span></p>
+        <p className="summery__details">Promo Discount $<span>-${hotels.offerPrice ? hotels.pricePerNight - hotels.offerPrice : 0 }</span></p>
         <p className="summery__details">Tax & ServiceFees <span>${0}</span></p>
         <hr className="summery__hr" />
-        <p className="summery__details">Payable Amount <span className="summery__total">${hotels.pricePerNight}</span></p>
+        <p className="summery__details">Payable Amount <span className="summery__total">${hotels.offerPrice ? hotels.offerPrice : hotels.pricePerNight}</span></p>
       </div>
     </div>
   );
