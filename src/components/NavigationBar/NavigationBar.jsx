@@ -76,7 +76,29 @@ const NavigationBar = () => {
           </select>
         </div>
         <div className="navigation__option">
-          <Link className="navigation__text-icon" to="/register"><ion-icon name="person-outline" /></Link>
+          {userToken
+            ? (
+              <Link
+                className="navigation__text-icon"
+                to="/profile"
+              >
+                <FontAwesomeIcon
+                  icon={faUser}
+                  key="profile"
+                />
+              </Link>
+            )
+            : (
+              <Link
+                className="navigation__text-icon"
+                to="/register"
+              >
+                <FontAwesomeIcon
+                  icon={faUser}
+                  key="sign up"
+                />
+              </Link>
+            )}
         </div>
         {userToken
           ? (
@@ -88,7 +110,7 @@ const NavigationBar = () => {
                 navigate('/');
               }}
             >
-              <FontAwesomeIcon icon={faPowerOff} key="profile" />
+              <FontAwesomeIcon icon={faPowerOff} key="logut" />
             </button>
           )
           : null}

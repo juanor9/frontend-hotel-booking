@@ -4,7 +4,7 @@
   font-size: 15px;
   justify-content: center;
   text-align: center;
-  width: 350px;
+  width: 100%;
 }
 
 .profile-menu__figures {
@@ -58,17 +58,22 @@
   display: flex;
   font-size: 18px;
   justify-content: space-evenly;
+  padding: 0.5em 1em;
 }
-
+.card__barOptions{
+  border: none;
+  background-color: white;
+  padding-bottom: .3em;
+}
+.card__barOptions:hover{
+  color: rgb(239, 63, 63)
+}
 .profile-menu__barOptions:hover {
   color: rgb(239, 63, 63);
   text-decoration: underline rgb(239, 63, 63);
 }
 
 @media (min-width:768px){
-  .profile-menu {
-    width: 300px;
-  }
 
   .profile-menu__bar {
     align-items: flex-start;
