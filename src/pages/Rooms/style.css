@@ -22,6 +22,7 @@
 .hotel-details__rooms {
   background-color: white;
 }
+
 .hotel-details__aside {
   display: flex;
   flex-direction: column;
