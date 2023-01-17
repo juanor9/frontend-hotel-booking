@@ -1,0 +1,100 @@
+.profile-menu {
+  align-items: center;
+  background-color: rgb(240,240,240);
+  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.profile-menu__figures {
+  position: relative;
+}
+
+.profile-menu__pic {
+  border-radius: 60em;
+  height: 150px;
+  margin-top: 2em;
+  position: relative;
+  width: 150px;
+  z-index: 1;
+}
+
+.profile-menu__edit-container {
+  background-color: white;
+  border-radius: 50%;
+  bottom: 0;
+  color: rgb(239, 63, 63);
+  display: inline-block;
+  padding: .5em;
+  position: absolute;
+  right: 0;
+  transform: translate(-50%);
+  z-index: 2;
+  right: 30%;
+
+}
+
+.profile-menu__name, .profile-menu__phone {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.profile-menu__email, .profile-menu__phone {
+  color: gray;
+}
+
+.profile-menu__email {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+.profile-menu__name {
+  font-weight: 900;
+}
+
+.profile-menu__bar {
+  background-color: white;
+  display: flex;
+  font-size: 18px;
+  justify-content: space-evenly;
+  padding: 0.5em 1em;
+}
+.card__barOptions{
+  border: none;
+  background-color: white;
+  padding-bottom: .3em;
+}
+.card__barOptions:hover{
+  color: rgb(239, 63, 63)
+}
+.profile-menu__barOptions:hover {
+  color: rgb(239, 63, 63);
+  text-decoration: underline rgb(239, 63, 63);
+}
+
+@media (min-width:768px){
+
+  .profile-menu__bar {
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 22px;
+  }
+
+  .profile-menu__barOptions {
+    text-align: left;
+    padding: .5em;
+  }
+
+  .profile-menu__name {
+    font-size: 25px;
+  }
+
+  .profile-menu__phone, .profile-menu__email {
+    font-size: 20px;
+  }
+  .profile-menu__edit-container {
+    right: 20%;
+
+  }
+}

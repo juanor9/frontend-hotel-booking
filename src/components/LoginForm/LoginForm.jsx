@@ -1,27 +1,29 @@
 /* eslint-disable no-unused-vars */
-import { useDispatch, useSelector } from 'react-redux';
-import useForm from '../../hooks/useForm';
-import { login } from '../../services/auth';
 import './style.css';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../../services/auth';
+import useForm from '../../hooks/useForm';
 
 const LoginForm = () => {
-  const { user } = useSelector((state) => state.user);
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
       dispatch(login(form));
+      navigate('/');
     } catch (error) {
       throw new Error(error);
     }
   };
 
   const handleClick = () => {
-    document.getElementById('login-form__form').reset();
   };
+
   return (
     <section id="login-form" className="login-form">
       <h2 className="login-form__header">Login</h2>
