@@ -12,6 +12,7 @@ import UserProfile from './pages/UserProfile/UserProfile';
 import UserRegistration from './pages/UserRegistration/UserRegistration';
 import RoomsRegistration from './pages/RoomsRegistration/RoomsRegistration';
 import Bookings from './pages/Bookings/Bookings';
+import ResetPassword from './pages/ResetPassword/ResetPassword';
 import HotelsFiltered from './pages/HotelsFiltered/HotelsFiltered';
 import AdminRegistration from './pages/AdminRegistration/AdminRegistration';
 
@@ -21,6 +22,9 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/activate/:token" element={<ActivateUser />} />
       <Route path="/admin/register" element={<AdminRegistration />} />
+      <Route path="/activate/new-password/:token" element={<ResetPassword />} />
+      <Route path="/login" element={<UserLogin />} />
+      <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/hotels-managment" element={<HotelsManagment />} />
       <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/rooms-registration/:id" element={<RoomsRegistration />} />
