@@ -10,7 +10,7 @@ const AdminHotels = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getHotels());
-  }, [hotels]);
+  }, []);
   return (
     <section className="hotelsManagment__list">
       <h2>Hotels Managment</h2>
