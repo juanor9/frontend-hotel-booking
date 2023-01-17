@@ -7,7 +7,7 @@ const initialState = {
   bookings: [],
 };
 
-export const getBooking = createAsyncThunk('bookings/getBookings', async (id) => {
+export const getBookingById = createAsyncThunk('bookings/getBookingByIdx', async (id) => {
   const resp = await fetch(`${BASE_URL}/api/bookings/${id}`);
   const data = await resp.json();
   return data;
@@ -67,6 +67,9 @@ const bookingsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(getBookings.fulfilled, (state, action) => {
+      state.bookings = action.payload;
+    });
+    builder.addCase(getBookingById.fulfilled, (state, action) => {
       state.bookings = action.payload;
     });
     builder.addCase(createBooking.fulfilled, (state, action) => {

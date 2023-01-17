@@ -101,12 +101,14 @@ const Rooms = () => {
 
         </div>
         <aside className="hotel-details__aside">
-          {pricePerNight
+          {pricePerNight && rooms
             ? (
               <BookingForm
                 pricePerNight={pricePerNight}
                 offerPrice={offerPrice}
                 coordinates={coordinates}
+                id={id}
+                rooms={rooms}
               />
             )
             : null}

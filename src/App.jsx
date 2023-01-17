@@ -13,6 +13,7 @@ import UserRegistration from './pages/UserRegistration/UserRegistration';
 import RoomsRegistration from './pages/RoomsRegistration/RoomsRegistration';
 import Bookings from './pages/Bookings/Bookings';
 import HotelsFiltered from './pages/HotelsFiltered/HotelsFiltered';
+import BookingPayment from './pages/BookingPayment/BookingPayment';
 
 const App = () => (
   <>
@@ -29,6 +30,7 @@ const App = () => (
       <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/hotels-managment" element={<HotelsManagment />} />
       <Route path="/bookings" element={<Bookings />} />
+      <Route path="/bookings-payment" element={<BookingPayment />} />
       <Route path="/admin/rooms-registration/:id" element={<RoomsRegistration />} />
     </Routes>
     <Footer />
