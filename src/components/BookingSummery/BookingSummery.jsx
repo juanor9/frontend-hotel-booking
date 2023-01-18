@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getHotelById } from '../../features/hotels/hotelsSlice';
@@ -11,8 +11,7 @@ const BookingSummery = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { _id } = JSON.parse(localStorage.getItem('user'));
-  const
-    { bookings } = useSelector((state) => state.bookings);
+  const { bookings } = useSelector((state) => state.bookings);
 
   useEffect(() => {
     getHotelById(bookings.idHotel);
@@ -105,10 +104,10 @@ const BookingSummery = () => {
       <div>
         <h3>Payment Details</h3>
         <p className="summery__details">Base Price <span>{bookings.pricePerNight}</span></p>
-        <p className="summery__details">Promo Discount $<span>-${bookings.offerPrice ? bookings.pricePerNight - bookings.offerPrice : 0 }</span></p>
+        <p className="summery__details">Promo Discount $<span>-${bookings.offerPrice !== '0' ? bookings.pricePerNight - bookings.offerPrice : 0 }</span></p>
         <p className="summery__details">Tax & ServiceFees <span>{0}</span></p>
         <hr className="summery__hr" />
-        <p className="summery__details">Payable Amount <span className="summery__total">${bookings.offerPrice || bookings.pricePerNight}</span></p>
+        <p className="summery__details">Payable Amount <span className="summery__total">${bookings.offerPrice !== '0' ? bookings.offerPrice : bookings.pricePerNight}</span></p>
       </div>
       <div className="summery__buttonEnv">
         <button className="summery__button" type="submit" onClick={handleClickBack}>Back</button>

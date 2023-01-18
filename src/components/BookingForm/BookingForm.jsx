@@ -31,11 +31,6 @@ const BookingForm = ({
     }
   };
 
-  // eslint-disable-next-line no-console
-  console.log('normal price', normalPrice);
-  // eslint-disable-next-line no-console
-  console.log('promo price', promoPrice);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -88,13 +83,13 @@ const BookingForm = ({
       <form className="booking-form__form" onSubmit={handleSubmit}>
         <section className="booking-form__form-date">
           <div>Check In</div>
-          <input className="booking-form__form-calendar" type="date" name="checkInDate" onChange={handleChange} />
+          <input className="booking-form__form-calendar" type="date" name="checkInDate" required onChange={handleChange} />
         </section>
         <section className="booking-form__form-date">
           <div>Check Out</div>
-          <input className="booking-form__form-calendar" type="date" name="checkOutDate" onChange={handleChange} />
+          <input className="booking-form__form-calendar" type="date" name="checkOutDate" required onChange={handleChange} />
         </section>
-        <input className="booking-form__form-number" type="number" placeholder="Guests Number" name="guestsNumber" onChange={handleChange} />
+        <input className="booking-form__form-number" type="number" placeholder="Guests Number" required name="guestsNumber" onChange={handleChange} />
         <select className="booking-form__form-rooms" name="selectedRoom" onChange={handleChangeRooms}>
           <option disabled selected>Rooms Type</option>
           {

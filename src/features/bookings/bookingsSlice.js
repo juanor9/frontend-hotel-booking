@@ -7,7 +7,7 @@ const initialState = {
   bookings: [],
 };
 
-export const getBookingById = createAsyncThunk('bookings/getBookingByIdx', async (id) => {
+export const getBookingById = createAsyncThunk('bookings/getBookingById', async (id) => {
   const resp = await fetch(`${BASE_URL}/api/bookings/${id}`);
   const data = await resp.json();
   return data;
