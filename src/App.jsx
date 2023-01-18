@@ -1,30 +1,24 @@
 import { Routes, Route } from 'react-router-dom';
 import ActivateUser from './pages/ActivateUser/ActivateUser';
+import Bookings from './pages/Bookings/Bookings';
 import Footer from './components/Footer/Footer';
 import Home from './pages/Home/Home';
 import Hotels from './pages/Hotels/Hotels';
+import HotelsFiltered from './pages/HotelsFiltered/HotelsFiltered';
 import HotelsManagment from './pages/HotelsManagment/HotelsManagment';
 import HotelsRegistration from './pages/HotelsRegistration/HotelsRegistration';
 import Rooms from './pages/Rooms/Rooms';
+import RoomsRegistration from './pages/RoomsRegistration/RoomsRegistration';
 import Success from './pages/Success/Success';
 import UserLogin from './pages/UserLogin/UserLogin';
 import UserProfile from './pages/UserProfile/UserProfile';
 import UserRegistration from './pages/UserRegistration/UserRegistration';
-import RoomsRegistration from './pages/RoomsRegistration/RoomsRegistration';
-import Bookings from './pages/Bookings/Bookings';
-import ResetPassword from './pages/ResetPassword/ResetPassword';
-import HotelsFiltered from './pages/HotelsFiltered/HotelsFiltered';
-import AdminRegistration from './pages/AdminRegistration/AdminRegistration';
 
 const App = () => (
   <>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/activate/:token" element={<ActivateUser />} />
-      <Route path="/admin/register" element={<AdminRegistration />} />
-      <Route path="/activate/new-password/:token" element={<ResetPassword />} />
-      <Route path="/login" element={<UserLogin />} />
-      <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/hotels-managment" element={<HotelsManagment />} />
       <Route path="/admin/hotels-registration" element={<HotelsRegistration />} />
       <Route path="/admin/rooms-registration/:id" element={<RoomsRegistration />} />
