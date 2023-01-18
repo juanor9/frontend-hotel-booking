@@ -42,6 +42,7 @@
 .booking-form__form-button--left {
   display: flex;
   justify-content:flex-end;
+  gap: 10px;
 }
 
 .booking-form__form-date  {

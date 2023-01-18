@@ -19,7 +19,7 @@ const BookingSummery = () => {
 
   useEffect(() => {
     getBookingById(bookings._id);
-  });
+  }, []);
 
   useEffect(() => {
     dispatch(getUserById(_id));
@@ -84,13 +84,13 @@ const BookingSummery = () => {
         <div className="summery__dates-item summery__left">
           <p>Check In Time</p>
           <span>
-            {bookings.checkInDate}
+            {bookings.checkInDate ? bookings.checkInDate.toString().slice(0, 10) : null}
           </span>
         </div>
         <div className="summery__dates-item summery__right">
           <p>Check Out Time</p>
           <span>
-            {bookings.checkOutDate}
+            {bookings.checkOutDate ? bookings.checkOutDate.toString().slice(0, 10) : null}
           </span>
         </div>
       </div>
