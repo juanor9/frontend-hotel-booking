@@ -13,7 +13,7 @@ const Hotels = () => {
 
   useEffect(() => {
     dispatch(getHotels());
-  }, []);
+  });
 
   const hotelsPerPage = 9;
   const maxPages = hotels.length / hotelsPerPage;

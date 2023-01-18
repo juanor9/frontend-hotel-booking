@@ -1,23 +1,23 @@
-.booking__container{
+.bookingPayment__container{
   width: 100%;
   height: 1600px;
 }
 
-.booking__header{
+.bookingPayment__header{
   background-image: url(../../assets/livingRoom.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 280px;
 }
 
-.booking__nav{
+.bookingPayment__nav{
   justify-content: center;
   align-items: center;
   display: flex;
   height: 100%;
 }
 
-.booking__summery{
+.bookingPayment__options{
   -webkit-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   -moz-box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.);
   box-shadow: -1px 2px 30px -7px rgba(0,0,0,0.5);
@@ -32,11 +32,11 @@
 }
 
 @media(min-width: 768px){
-  .booking__container{
+  .bookingPayment__container{
   height: 1000px;
   }
 
-  .booking__summery{
+  .bookingPayment__options{
     background-color: white;
     max-width: 450px;
     height: 630px;

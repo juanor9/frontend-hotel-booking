@@ -1,7 +1,7 @@
 import './style.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { createBooking } from '../../features/bookings/bookingsSlice';
+import { captureData } from '../../features/bookings/bookingsSlice';
 import useForm from '../../hooks/useForm';
 
 const HotelFilter = () => {
@@ -12,7 +12,7 @@ const HotelFilter = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      dispatch(createBooking(form));
+      dispatch(captureData(form));
       navigate('/hotels-filtered');
     } catch (error) {
       throw new Error(error);
