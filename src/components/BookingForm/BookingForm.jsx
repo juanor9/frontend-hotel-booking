@@ -14,7 +14,6 @@ const BookingForm = ({
   pricePerNight, offerPrice, coordinates, id, rooms,
 }) => {
   const mapLocation = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.7759977150563!2d${coordinates[1]}!3d${coordinates[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2cd8cb481aabab3!2zMjHCsDA3JzE3LjQiTiA4NsKwNTAnMzkuNyJX!5e0!3m2!1ses-419!2sco!4v1673658020497!5m2!1ses-419!2sco`;
-  const { _id } = JSON.parse(localStorage.getItem('user'));
   const { form, handleChange } = useForm({});
   const [normalPrice, setNormalPrice] = useState(pricePerNight);
   const [promoPrice, setPromoPrice] = useState(offerPrice);
@@ -37,7 +36,7 @@ const BookingForm = ({
     try {
       dispatch(createBooking(
         {
-          ...form, idHotel: id, idUser: _id, pricePerNight: normalPrice, offerPrice: promoPrice,
+          ...form, idHotel: id, pricePerNight: normalPrice, offerPrice: promoPrice,
         },
       ));
       navigate('/bookings');
