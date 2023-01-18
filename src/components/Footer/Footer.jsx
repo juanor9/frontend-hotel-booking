@@ -25,6 +25,7 @@ const Footer = () => (
         <h3>Uself Links</h3>
       </div>
       <Link className="footer__link" to="/">Home</Link>
+      <Link className="footer__link" to="/admin/register">Hotels&apos; Registration</Link>
       <Link className="footer__link" to="/">Our Vehical</Link>
       <Link className="footer__link" to="/">Latest Video</Link>
       <Link className="footer__link" to="/">Services</Link>

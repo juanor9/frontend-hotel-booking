@@ -1,0 +1,19 @@
+.new-password-form{
+  display: flex;
+  flex-direction: column;
+}
+.new-password-form__label{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.new-password-form__input--match{
+  border: solid 2px green;
+}
+.new-password-form__input--dont-match{
+  border: solid 2px red;
+}
+.register-form__create-button--disable{
+  pointer-events: none;
+  background-color: rgb(197, 197, 197);
+}
