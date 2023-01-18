@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types';
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import './styles.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashCan, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { faBed } from '@fortawesome/free-solid-svg-icons';
-import Modal from '../Modal/Modal';
-import useForm from '../../hooks/useForm';
+import { faTrashCan, faPenToSquare } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { updateHotel } from '../../services/hotels';
-import { deleteHotel } from '../../features/hotels/hotelsSlice';
 import MapPoint from '../../assets/mapPoint.png';
+import Modal from '../Modal/Modal';
+import { deleteHotel } from '../../features/hotels/hotelsSlice';
+import useForm from '../../hooks/useForm';
 
 const HotelCardAdmin = ({
   imageProfile, name, about, city, pricePerNight, offerPrice, feature1, feature2, id,
@@ -46,14 +46,14 @@ const HotelCardAdmin = ({
   }, [modal]);
 
   return (
-    <section className="cardHotelAdmin">
+    <article className="cardHotelAdmin">
       <img className="cardHotelAdmin__figure" alt="hotel" src={imageProfile} />
-      <section className="cardHotelAdmin__title">
+      <div className="cardHotelAdmin__title">
         <h3 className="cardHotelAdmin__name">{name}</h3>
         <p className="cardHotelAdmin__place"><img alt="map point" src={MapPoint} />{city}</p>
-      </section>
+      </div>
       <p className="cardHotelAdmin__description">{about}</p>
-      <section className="cardHotelAdmin__bottom">
+      <div className="cardHotelAdmin__bottom">
         <div className="cardHotelAdmin__prices">
           { offerPrice ? <><p className="cardHotelAdmin__priceBefore"><del>${pricePerNight}</del></p><p className="cardHotelAdmin__priceAfter">{offerPrice}</p></> : <p className="cardHotelAdmin__priceBefore">${pricePerNight}</p> }
         </div>
@@ -61,12 +61,12 @@ const HotelCardAdmin = ({
           <div className="cardHotelAdmin__detail">{feature1}</div>
           <div className="cardHotelAdmin__detail">{feature2}</div>
         </div>
-      </section>
-      <section className="cardHotelAdmin__managment">
+      </div>
+      <div className="cardHotelAdmin__managment">
         <Link to={`/admin/rooms-registration/${id}`}><FontAwesomeIcon className="cardHotelAdmin__icon" icon={faBed} /></Link>
         <FontAwesomeIcon className="cardHotelAdmin__icon" icon={faPenToSquare} onClick={() => { setModal(true); }} />
         <FontAwesomeIcon className="cardHotelAdmin__icon" icon={faTrashCan} onClick={handleClickDelete} />
-      </section>
+      </div>
       {
         modal === true ? (
           <Modal modalFunction={setModal}>
@@ -119,12 +119,12 @@ const HotelCardAdmin = ({
           </Modal>
         ) : null
       }
-    </section>
+    </article>
   );
 };
 
 HotelCardAdmin.propTypes = {
-  imageProfile: PropTypes.isRequired,
+  imageProfile: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
