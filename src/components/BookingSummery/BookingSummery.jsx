@@ -46,8 +46,6 @@ const BookingSummery = () => {
 
   const handleClickPay = async () => {
     try {
-      // eslint-disable-next-line no-console
-      console.log('user id', _id);
       dispatch(updateUser({ _id, formdata: { booking: bookings._id } }));
       navigate('/bookings-payment');
     } catch (error) {
