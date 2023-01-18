@@ -17,7 +17,7 @@ const RoomsForm = ({ hotelID }) => {
   const dispatch = useDispatch();
 
   // eslint-disable-next-line no-console
-  console.log('rooms', newArray);
+  // console.log('rooms', newArray);
 
   const handleChangeImage = ({ target }) => {
     const { files } = target;

@@ -1,10 +1,20 @@
 import './styles.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PropTypes from 'prop-types';
 import defaultProfilePic from '../../assets/perfilImage.jpg';
 
-const ProfileMenu = () => {
+const ProfileMenu = ({ setNavTab }) => {
   const user = JSON.parse(localStorage.getItem('user'));
+  const handleProfileClick = () => {
+    setNavTab('profile');
+  };
+  const handleBookingsClick = () => {
+    setNavTab('bookings');
+  };
+  const handlePaymentsClick = () => {
+    setNavTab('payments');
+  };
 
   return (
     <div className="profile-menu">
@@ -43,12 +53,14 @@ const ProfileMenu = () => {
         ? <p className="profile-menu__phone">{user.phone}</p>
         : null}
       <section className="profile-menu__bar">
-        <p className="profile-menu__barOptions">Profile</p>
-        <p className="profile-menu__barOptions">Bookings</p>
-        <p className="profile-menu__barOptions">Cards & Payments</p>
+        <button type="button" className="card__barOptions" onClick={handleProfileClick}>Profile</button>
+        <button type="button" className="card__barOptions" onClick={handleBookingsClick}>Bookings</button>
+        <button type="button" className="card__barOptions" onClick={handlePaymentsClick}>Cards & Payments</button>
       </section>
     </div>
   );
 };
-
+ProfileMenu.propTypes = {
+  setNavTab: PropTypes.func.isRequired,
+};
 export default ProfileMenu;

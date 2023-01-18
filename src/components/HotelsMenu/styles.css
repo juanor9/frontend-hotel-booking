@@ -1,0 +1,35 @@
+.hotelsMenu__bar {
+  background-color: #ffffffaa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.5em 1em;
+}
+
+.hotelsMenu__options{
+  border: none;
+  background-color: #ffffffaa;
+  padding-bottom: .3em;
+  font-size: 20px;
+}
+.hotelsMenu__options:hover{
+  color: rgb(239, 63, 63)
+}
+.hotelsMenu__options:hover {
+  color: rgb(239, 63, 63);
+  text-decoration: underline rgb(239, 63, 63);
+}
+
+
+@media (min-width:768px){
+
+  .hotelsMenu__bar {
+    flex-direction: row;
+  }
+
+  .hotelsMenu__options {
+    text-align: left;
+    padding: 0.5em;
+  }
+
+}

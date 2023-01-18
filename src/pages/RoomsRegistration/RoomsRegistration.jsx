@@ -11,10 +11,12 @@ import RoomCardAdmin from '../../components/RoomCardAdmin/RoomCardAdmin';
 const RoomsRegistration = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const { rooms } = useSelector((state) => state.hotels.hotels);
+
   useEffect(() => {
     dispatch(getHotelById(id));
   }, []);
-  const { rooms } = useSelector((state) => state.hotels.hotels);
+
   return (
     <div className="roomsReg">
       <header className="roomsReg__header">

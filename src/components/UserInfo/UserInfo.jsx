@@ -95,8 +95,9 @@ const UserInfo = () => {
           ? <p className="user-info__info-user-data">{zipCode}</p>
           : <br />}
       </section>
-      <h2 className="user-info__login-title">Login Details</h2>
+
       <section className="user-info__login">
+        <h2 className="user-info__login-title">Login Details</h2>
         <b className="user-info__login-info-requested">Email Address</b>
         {email
           ? <p className="user-info__info-user-data">{email}</p>
