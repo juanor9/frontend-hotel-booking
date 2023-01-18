@@ -39,16 +39,6 @@ const PaymentForm = () => {
           )
         }
       </div>
-      <div className="payment__btn-container">
-        <button className="payment__btn" type="submit" onClick={() => setToPay(3)}>
-          <div className={`${toPay === 4 ? 'payment__radio-red' : 'payment__radio'}`}> </div>My Wallet
-        </button>
-        {
-          toPay === 3 && (
-            <p>We are sorry. This functionality is not yet available</p>
-          )
-        }
-      </div>
     </div>
   );
 };
