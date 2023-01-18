@@ -1,3 +1,16 @@
+.hotelsManagment__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/livingRoom.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  row-gap: 2em;
+  padding: 1em 0;
+}
+
 .hotelsManagment__list {
   margin-top: 3em;
   margin-bottom: 1em;
@@ -6,16 +19,14 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.admin-hotels__header{
+
+.hotelsManagment__title {
   text-align: center;
-}
-.admin-hotels__add-button{
-  width: 100%;
-  display: block;
-  text-align: center;
-  color: white;
-  background-color: red;
-  text-decoration: none;
-  padding: 0.5em 1em;
   margin-top: 1em;
+}
+
+@media (min-width: 768px) {
+  .hotelsManagment__list {
+    padding: 0 7em;
+  }
 }
