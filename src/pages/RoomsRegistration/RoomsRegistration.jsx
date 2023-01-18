@@ -11,7 +11,14 @@ import RoomCardAdmin from '../../components/RoomCardAdmin/RoomCardAdmin';
 const RoomsRegistration = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { rooms } = useSelector((state) => state.hotels.hotels);
+  const {
+    rooms,
+    name,
+    imageProfile,
+    country,
+    city,
+    address,
+  } = useSelector((state) => state.hotels.hotels);
 
   useEffect(() => {
     dispatch(getHotelById(id));
@@ -23,11 +30,21 @@ const RoomsRegistration = () => {
         <NavigationBar />
         <SliderNav />
       </header>
-      <h2 className="roomsReg__title">Rooms Registration Form</h2>
+      <section className="roomsReg__hotel">
+        <figure className="roomsReg__hotel-figure">
+          <img className="roomsReg__hotel-image" src={imageProfile} alt="" />
+        </figure>
+        <div>
+          <h2>{name}</h2>
+          <p>{city}, {country}</p>
+          <p>{address}</p>
+        </div>
+      </section>
+      <h3 className="roomsReg__title">Rooms Registration Form</h3>
       <section className="roomsReg__form">
         <RoomsForm hotelID={id} />
       </section>
-      <h2 className="roomsReg__title">Rooms List</h2>
+      <h3 className="roomsReg__title">Rooms List</h3>
       {
           rooms !== undefined
             ? (
@@ -52,7 +69,7 @@ const RoomsRegistration = () => {
               </section>
             ) : null
       }
-      <Link to="/admin/hotels-managment"><button type="submit">Back</button></Link>
+      <Link to="/profile"><button type="submit">Back</button></Link>
     </div>
   );
 };
