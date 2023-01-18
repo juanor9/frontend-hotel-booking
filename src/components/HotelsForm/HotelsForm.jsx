@@ -88,7 +88,7 @@ const HotelsForm = () => {
       </select>
       <div className="hotelsForm__buttonEnv">
         <button className="hotelsForm__button" type="submit" onClick={handleClick}>Create</button>
-        <Link to="/admin/hotels-managment"><button className="hotelsForm__button" type="submit" onClick={handleClick}>Hotel List</button></Link>
+        <Link to="/profile"><button className="hotelsForm__button" type="submit" onClick={handleClick}>Back</button></Link>
       </div>
     </form>
   );

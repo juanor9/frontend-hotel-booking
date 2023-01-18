@@ -126,6 +126,9 @@
 }
 
 @media (min-width:768px){
+  .cardHotelAdmin{
+    width: 15em;
+  }
   .cardHotelAdmin__title, .cardHotelAdmin__bottom {
     display: flex;
   }
