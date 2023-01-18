@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe,
 } from '@stripe/react-stripe-js';
@@ -22,7 +23,7 @@ const PayNowForm = () => {
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
     });
     if (error) {
-      console.log(error);
+      throw new Error(error);
     }
     const options = {
       method: 'POST',
@@ -31,10 +32,10 @@ const PayNowForm = () => {
       },
       body: JSON.stringify({
         paymentMethod,
-        amount: Math.floor(bookings.pricePerNight * 100),
+        amount: Math.floor(4 * 100),
       }),
     };
-    const response = await fetch('http://localhost:8080/api/healthcheck', options);
+    const response = await fetch('http://localhost:8080/api/payments', options);
     const data = await response.json();
     console.log(data);
   };
