@@ -55,7 +55,7 @@ const BookingSummery = () => {
 
   return (
     <div className="summery__container">
-      <h2>Booking Summery</h2>
+      <h2>Booking Summary</h2>
       <div className="summary__view">
         <img className="summery__image" src={imageProfile} alt={name} />
         <div>

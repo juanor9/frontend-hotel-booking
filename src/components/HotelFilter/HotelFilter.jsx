@@ -29,12 +29,12 @@ const HotelFilter = () => {
         <span className="hotel-filter__divider" />
         <label htmlFor="check-in" className="hotel-filter__label">
           Check-in
-          <input className="hotel-filter__input" type="date" name="checkInDate" id="check-in" pattern="\d{4}-\d{2}-\d{2}" required onChange={handleChange} />
+          <input className="hotel-filter__input" type="date" name="checkInDate" id="check-in" required onChange={handleChange} />
         </label>
         <span className="hotel-filter__divider hotel-filter__divider--half" />
         <label htmlFor="check-out" className="hotel-filter__label">
           Check-out
-          <input className="hotel-filter__input" type="date" name="checkOutDate" id="check-out" pattern="\d{4}-\d{2}-\d{2}" required onChange={handleChange} />
+          <input className="hotel-filter__input" type="date" name="checkOutDate" id="check-out" required onChange={handleChange} />
         </label>
         <span className="hotel-filter__divider" />
         <label htmlFor="guests" className="hotel-filter__label">
