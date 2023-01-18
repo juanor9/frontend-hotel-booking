@@ -2,6 +2,7 @@ import {
   CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe,
 } from '@stripe/react-stripe-js';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import createPayment from '../../services/payments';
 import masterCard from '../../assets/master-card-r.png';
 import visa from '../../assets/visa.png';
@@ -14,6 +15,8 @@ const PayNowForm = () => {
   const { bookings } = useSelector((state) => state.bookings);
   const elements = useElements();
   const stripe = useStripe();
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const { paymentMethod } = await stripe.createPaymentMethod({
@@ -23,11 +26,13 @@ const PayNowForm = () => {
 
     try {
       if (bookings.offerPrice !== '0') {
-        const amount = bookings.offerPrice * 100;
+        const amount = Math.floor(bookings.offerPrice * 100);
         createPayment(paymentMethod, amount);
+        navigate('/success');
       } else {
-        const amount = bookings.pricePerNight * 100;
+        const amount = Math.floor(bookings.pricePerNight * 100);
         createPayment(paymentMethod, amount);
+        navigate('/success');
       }
     } catch (error) {
       throw new Error(error);
