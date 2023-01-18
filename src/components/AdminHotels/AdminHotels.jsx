@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import './styles.css';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,9 +11,10 @@ const AdminHotels = () => {
     dispatch(getHotels());
   }, []);
   return (
-    <section className="hotelsManagment__list">
-      <h2>Hotels Managment</h2>
-      {
+    <section className="admin-hotels">
+      <h2 className="admin-hotels__header">Hotels Managment</h2>
+      <div className="hotelsManagment__list">
+        {
     hotels.map((hotel) => (
       <HotelCardAdmin
         imageProfile={hotel.imageProfile}
@@ -30,6 +30,7 @@ const AdminHotels = () => {
       />
     ))
   }
+      </div>
     </section>
   );
 };

@@ -124,7 +124,7 @@ const HotelCardAdmin = ({
 };
 
 HotelCardAdmin.propTypes = {
-  imageProfile: PropTypes.isRequired,
+  imageProfile: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   about: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
