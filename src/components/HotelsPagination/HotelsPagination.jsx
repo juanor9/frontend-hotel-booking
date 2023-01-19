@@ -31,11 +31,11 @@ const HotelsPagination = ({
 );
 
 HotelsPagination.propTypes = {
-  results: PropTypes.arrayOf({}).isRequired,
+  results: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
   currentPage: PropTypes.number.isRequired,
   maxPages: PropTypes.number.isRequired,
-  handleNext: PropTypes.isRequired,
-  handlePrev: PropTypes.isRequired,
+  handleNext: PropTypes.func.isRequired,
+  handlePrev: PropTypes.func.isRequired,
 };
 
 export default HotelsPagination;
