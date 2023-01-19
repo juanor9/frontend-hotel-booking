@@ -21,7 +21,18 @@
   margin-top: 1em;
   margin-left: 0.5em;
   color: white;
-  background-color: red;
+  background-color: rgb(255, 77, 77);
+  border: 0;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 100px;
+  font-weight: bold;
+}
+.roomsForm__button--disable{
+  pointer-events: none;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  color: black;
+  background-color: rgba(0, 0, 0, 0.1);
   border: 0;
   padding: 0.5em 1em 0.5em 1em;
   width: 100px;
