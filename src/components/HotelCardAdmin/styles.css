@@ -5,6 +5,7 @@
   font-size: 15px;
   text-decoration: none;
   background-color: white;
+  justify-content: space-between;
 }
 
 .cardHotelAdmin__modal {
@@ -36,6 +37,7 @@
 
 .cardHotelAdmin__bottom {
   margin-left: 1em;
+  align-self: flex-end;
 }
 
 .cardHotelAdmin__description {
@@ -63,7 +65,7 @@
 }
 
 .cardHotelAdmin__detail {
-  border: solid gray;
+  border: solid gray 1.5px;
   border-radius: 8px;
   color: gray;
   padding: 0.3em 0.5em 0.3em 0.5em;
@@ -76,14 +78,22 @@
   display: flex;
   justify-content: right;
   margin-right: 1em;
+  gap: .8em;
 }
 
-.cardHotelAdmin__icon {
-  padding: 0.5em;
+.cardHotelAdmin__managment-button{
+  border: none;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: black;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.8em;
+  cursor: pointer;
 }
-
-.cardHotelAdmin__icon:hover {
-  color: red;
+.cardHotelAdmin__managment-button--delete{
+  background-color: rgb(255, 77, 77);
+  color: white;
 }
 
 .hotelsFormEdit {
@@ -109,7 +119,7 @@
 .hotelsFormEdit__button {
   margin-top: 1em;
   color: white;
-  background-color: red;
+  background-color: rgb(255, 77, 77);
   border: 0;
   padding: 0.5em 1em 0.5em 1em;
   font-weight: bold;
@@ -129,16 +139,9 @@
   .cardHotelAdmin{
     width: 15em;
   }
-  .cardHotelAdmin__title, .cardHotelAdmin__bottom {
-    display: flex;
-  }
 
   .cardHotelAdmin__place {
     margin-top: 0.5em;
-    margin-left: 1em;
-  }
-
-  .cardHotelAdmin__features {
     margin-left: 1em;
   }
 

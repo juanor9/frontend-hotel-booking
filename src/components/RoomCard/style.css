@@ -14,6 +14,7 @@
 }
 .room-card__pic img {
   width: 100%;
+  height: 170px;
 }
 .room-card__amenities {
   margin-right: 2em;

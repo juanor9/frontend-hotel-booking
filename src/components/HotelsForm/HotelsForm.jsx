@@ -8,8 +8,9 @@ import useForm from '../../hooks/useForm';
 
 const HotelsForm = () => {
   const { uploads } = useSelector((state) => state.upload);
+  const { uploadsMultiple } = useSelector((state) => state.uploadsMultiple);
   const { form, handleChange } = useForm({});
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState([]);
   const dispatch = useDispatch();
 
   const handleChangeImage = ({ target }) => {
@@ -27,12 +28,29 @@ const HotelsForm = () => {
 
   useEffect(() => {}, [uploads]);
 
+  const handleChangeImages = ({ target }) => {
+    const { files } = target;
+    const images = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < files.length; i++) {
+      images.push(files[i]);
+    }
+    setFile(images);
+  };
+
+  const handleUploadImage = async () => {
+    try {
+      dispatch(createImage(file));
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
       if (uploads) {
-        dispatch(createHotel({ ...form, imageProfile: uploads }));
+        dispatch(createHotel({ ...form, imageProfile: uploads, images: uploadsMultiple }));
       }
     } catch (error) {
       throw new Error(error);
