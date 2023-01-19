@@ -3,10 +3,10 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const initialState = {
-  uploads: '',
+  uploadsMultiple: [],
 };
 
-export const createImage = createAsyncThunk('uploads/createImage', async (file) => {
+export const createImages = createAsyncThunk('uploads/createImages', async (file) => {
   const formData = new FormData();
   const options = {
     method: 'POST',
@@ -16,23 +16,23 @@ export const createImage = createAsyncThunk('uploads/createImage', async (file) 
   formData.append('file', file);
   formData.append('fileName', file.name);
 
-  const response = await fetch(`${BASE_URL}/api/upload/file`, options);
+  const response = await fetch(`${BASE_URL}/api/upload/files`, options);
   const data = await response.json();
-  const url = await data.url;
   // eslint-disable-next-line no-console
-  console.log(url);
+  console.log('data images', data);
+  const url = await data.url;
   return url;
 });
 
-const uploadsSlice = createSlice({
-  name: 'uploads',
+const uploadsMultipleSlice = createSlice({
+  name: 'uploadsMultiple',
   initialState,
   extraReducers: (builder) => {
-    builder.addCase(createImage.fulfilled, (state, action) => {
+    builder.addCase(createImages.fulfilled, (state, action) => {
       // eslint-disable-next-line no-param-reassign
-      state.uploads = action.payload;
+      state.uploadsMultiple = action.payload;
     });
   },
 });
 
-export default uploadsSlice.reducer;
+export default uploadsMultipleSlice.reducer;

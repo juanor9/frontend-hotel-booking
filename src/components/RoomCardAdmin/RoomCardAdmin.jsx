@@ -115,8 +115,6 @@ const RoomCardAdmin = ({
                     <option value="Royal Room">Royal Room</option>
                     <option value="Accessible Room">Accessible Room</option>
                   </select>
-                  <p className="roomsFormEdit__properties">Room Image: </p>
-                  <input type="file" name="image" accept="image/*" onChange={handleChange} defaultValue={image} />
                   <p className="roomsForm__properties">Bed Type:</p>
                   <select name="bedType" onChange={handleChange} defaultValue={bedType}>
                     <option value="King">King</option>
@@ -127,13 +125,21 @@ const RoomCardAdmin = ({
                   <p className="roomsFormEdit__properties">Amenities:</p>
                   <div className="roosmForm__propertiesAmenities">
                     <p className="roomsForm__properties">Shower:</p>
-                    <input type="checkbox" name="amenitiesShower" value="true" onChange={handleChange} defaultValue={amenitiesShower} />
+                    {
+                      amenitiesShower === true ? <input type="checkbox" name="amenitiesShower" value="false" onChange={handleChange} defaultChecked /> : <input type="checkbox" name="amenitiesShower" value="true" onChange={handleChange} />
+                    }
                     <p className="roomsForm__properties">TV:</p>
-                    <input type="checkbox" name="amenitiesTV" value="true" onChange={handleChange} defaultValue={amenitiesTV} />
+                    {
+                      amenitiesTV === true ? <input type="checkbox" name="amenitiesTV" value="false" onChange={handleChange} defaultChecked /> : <input type="checkbox" name="amenitiesTV" value="true" onChange={handleChange} />
+                    }
                     <p className="roomsForm__properties">Couch:</p>
-                    <input type="checkbox" name="amenitiesCouch" value="true" onChange={handleChange} defaultValue={amenitiesCouch} />
+                    {
+                      amenitiesCouch === true ? <input type="checkbox" name="amenitiesCouch" value="false" onChange={handleChange} defaultChecked /> : <input type="checkbox" name="amenitiesCouch" value="true" onChange={handleChange} />
+                    }
                     <p className="roomsForm__properties">Pool View:</p>
-                    <input type="checkbox" name="amenitiesPool" value="true" onChange={handleChange} defaultValue={amenitiesPool} />
+                    {
+                      amenitiesPool === true ? <input type="checkbox" name="amenitiesPool" value="false" onChange={handleChange} defaultChecked /> : <input type="checkbox" name="amenitiesPool" value="true" onChange={handleChange} />
+                    }
                   </div>
                   <p className="roomsFormEdit__properties">Price Per Night:</p>
                   <input type="number" name="pricePerNight" onChange={handleChange} defaultValue={pricePerNight} />
