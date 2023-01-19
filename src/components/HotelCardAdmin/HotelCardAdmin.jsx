@@ -47,12 +47,14 @@ const HotelCardAdmin = ({
 
   return (
     <article className="cardHotelAdmin">
-      <img className="cardHotelAdmin__figure" alt="hotel" src={imageProfile} />
-      <div className="cardHotelAdmin__title">
-        <h3 className="cardHotelAdmin__name">{name}</h3>
-        <p className="cardHotelAdmin__place"><img alt="map point" src={MapPoint} />{city}</p>
+      <div>
+        <img className="cardHotelAdmin__figure" alt="hotel" src={imageProfile} />
+        <div className="cardHotelAdmin__title">
+          <h3 className="cardHotelAdmin__name">{name}</h3>
+          <p className="cardHotelAdmin__place"><img alt="map point" src={MapPoint} />{city}</p>
+        </div>
+        <p className="cardHotelAdmin__description">{about}</p>
       </div>
-      <p className="cardHotelAdmin__description">{about}</p>
       <div className="cardHotelAdmin__bottom">
         <div className="cardHotelAdmin__prices">
           { offerPrice ? <><p className="cardHotelAdmin__priceBefore"><del>${pricePerNight}</del></p><p className="cardHotelAdmin__priceAfter">{offerPrice}</p></> : <p className="cardHotelAdmin__priceBefore">${pricePerNight}</p> }
@@ -61,20 +63,41 @@ const HotelCardAdmin = ({
           <div className="cardHotelAdmin__detail">{feature1}</div>
           <div className="cardHotelAdmin__detail">{feature2}</div>
         </div>
+        <div className="cardHotelAdmin__managment">
+          <button
+            type="button"
+            onClick={() => { setModal(true); }}
+            className="cardHotelAdmin__managment-button"
+          >
+            <FontAwesomeIcon icon={faPenToSquare} />
+            Edit hotel
+          </button>
+
+          <Link
+            to={`/admin/rooms-registration/${id}`}
+            className="cardHotelAdmin__managment-button"
+          >
+            <FontAwesomeIcon icon={faBed} />
+            Edit rooms
+          </Link>
+          <button
+            type="button"
+            onClick={handleClickDelete}
+            className="cardHotelAdmin__managment-button cardHotelAdmin__managment-button--delete"
+          >
+            <FontAwesomeIcon icon={faTrashCan} />
+            Delete hotel
+          </button>
+
+        </div>
       </div>
-      <div className="cardHotelAdmin__managment">
-        <Link to={`/admin/rooms-registration/${id}`}><FontAwesomeIcon className="cardHotelAdmin__icon" icon={faBed} /></Link>
-        <FontAwesomeIcon className="cardHotelAdmin__icon" icon={faPenToSquare} onClick={() => { setModal(true); }} />
-        <FontAwesomeIcon className="cardHotelAdmin__icon" icon={faTrashCan} onClick={handleClickDelete} />
-      </div>
+
       {
         modal === true ? (
           <Modal modalFunction={setModal}>
             <div className="hotelsFormEdit">
               <h4 className="hotelsFormEdit__title">Hotel Edit</h4>
               <form className="hotelsFormEdit__form" onSubmit={handleSubmit}>
-                <p className="hotelsFormEdit__properties">Image: </p>
-                <input type="file" name="imageProfile" onChange={handleChange} defaultValue={imageProfile} />
                 <p className="hotelsFormEdit__properties">Name: </p>
                 <input type="text" name="name" onChange={handleChange} defaultValue={name} />
                 <p className="hotelsFormEdit__properties">City:</p>

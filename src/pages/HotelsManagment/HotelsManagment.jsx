@@ -1,5 +1,5 @@
 import './styles.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHotels } from '../../features/hotels/hotelsSlice';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
@@ -8,10 +8,23 @@ import HotelCardAdmin from '../../components/HotelCardAdmin/HotelCardAdmin';
 
 const HotelsManagment = () => {
   const { hotels } = useSelector((state) => state.hotels);
+  const [results, setResults] = useState(hotels);
+  const [search, setSearch] = useState('');
   const dispatch = useDispatch();
+
+  const handleChange = ({ target }) => {
+    setSearch(target.value);
+  };
+
   useEffect(() => {
     dispatch(getHotels());
   }, []);
+
+  useEffect(() => {
+    setResults(!search ? hotels
+      : hotels.filter((hotel) => hotel.city.toLowerCase().includes(search.toLocaleLowerCase())));
+  });
+
   return (
     <div className="hotelsManagment">
       <header className="hotelsManagment__header">
@@ -21,9 +34,13 @@ const HotelsManagment = () => {
       <section className="hotelsManagment__title">
         <h2>Hotels Managment</h2>
       </section>
+      <section className="hotelsManagment__filter">
+        <p>Filter by City: </p>
+        <input value={search} type="text" name="city" onChange={handleChange} />
+      </section>
       <section className="hotelsManagment__list">
         {
-          hotels.map((hotel) => (
+          results.map((hotel) => (
             <HotelCardAdmin
               imageProfile={hotel.imageProfile}
               name={hotel.name}

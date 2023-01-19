@@ -118,7 +118,7 @@ const BookingForm = ({
           <option disabled selected>Rooms Type</option>
           {
             rooms.map((room) => (
-              <option>{room.roomType}</option>
+              <option key={room.id}>{room.roomType}</option>
             ))
           }
         </select>
@@ -136,7 +136,7 @@ BookingForm.propTypes = {
   offerPrice: PropTypes.number,
   coordinates: PropTypes.arrayOf(PropTypes.string),
   id: PropTypes.string.isRequired,
-  rooms: PropTypes.arrayOf({}).isRequired,
+  rooms: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
 };
 
 BookingForm.defaultProps = {

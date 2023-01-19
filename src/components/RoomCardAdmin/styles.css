@@ -20,6 +20,7 @@
 }
 .room-cardAdmin__pic img {
   width: 100%;
+  height: 170px;
 }
 .room-cardAdmin__amenities {
   margin-right: 2em;
