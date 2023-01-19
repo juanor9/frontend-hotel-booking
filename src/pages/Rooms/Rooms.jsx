@@ -8,7 +8,6 @@ import HotelContact from '../../components/HotelContact/HotelContact';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Weather from '../../components/Weather/Weather';
 import HotelGallery from '../../components/HotelGallery/HotelGallery';
 import HotelsMenu from '../../components/HotelsMenu/HotelsMenu';
 import HotelsAbout from '../../components/HotelsAbout/HotelsAbout';
@@ -45,15 +44,11 @@ const Rooms = () => {
     rooms,
     images,
   } = useSelector((state) => state.hotels.hotels);
-<<<<<<< HEAD
-  const { coordinates } = geoLocation;
-=======
   useEffect(() => {
     if (geoLocation) {
       setCoordinates(geoLocation.coordinates);
     }
   }, [geoLocation]);
->>>>>>> 53913353ff560239ebb3532b03145dfbe2803ed9
   return (
     <div className="hotel-details">
       <header className="hotel-details__header">
@@ -74,19 +69,6 @@ const Rooms = () => {
       </div>
 
       <div className="hotel-details__main-container">
-<<<<<<< HEAD
-        {
-          rooms !== undefined ? <main className="hotel-details__rooms"><HotelRooms rooms={rooms} /></main> : null
-        }
-        <aside className="hotel-details__aside">
-          <BookingForm
-            pricePerNight={pricePerNight}
-            offerPrice={offerPrice}
-            {coordinates
-            ?coordinates={coordinates}
-          :coordinates=[0,0]}
-          />
-=======
         <div>
           <div className="hotel-details__hotel-images">
             {images
@@ -129,7 +111,6 @@ const Rooms = () => {
               />
             )
             : null}
->>>>>>> 53913353ff560239ebb3532b03145dfbe2803ed9
           <HotelContact
             address={address}
             phone={phone}
@@ -137,7 +118,6 @@ const Rooms = () => {
             checkin={checkin}
             checkout={checkout}
           />
-          <Weather />
         </aside>
       </div>
     </div>

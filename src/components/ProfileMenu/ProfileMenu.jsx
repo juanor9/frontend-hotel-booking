@@ -12,9 +12,6 @@ const ProfileMenu = ({ setNavTab }) => {
   const handleBookingsClick = () => {
     setNavTab('bookings');
   };
-  const handlePaymentsClick = () => {
-    setNavTab('payments');
-  };
 
   return (
     <div className="profile-menu">
@@ -55,7 +52,6 @@ const ProfileMenu = ({ setNavTab }) => {
       <section className="profile-menu__bar">
         <button type="button" className="card__barOptions" onClick={handleProfileClick}>Profile</button>
         <button type="button" className="card__barOptions" onClick={handleBookingsClick}>Bookings</button>
-        <button type="button" className="card__barOptions" onClick={handlePaymentsClick}>Cards & Payments</button>
       </section>
     </div>
   );

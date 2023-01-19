@@ -22,7 +22,7 @@ const PayNowForm = () => {
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
     });
     if (error) {
-      console.log(error);
+      throw new Error(error);
     }
     const options = {
       method: 'POST',
@@ -41,7 +41,6 @@ const PayNowForm = () => {
 
   const makePayment = () => {
     dispatch(createBooking(bookings));
-    console.log('valor', bookings);
   };
   return (
     <form className="card-data__form" onSubmit={handleSubmit}>
