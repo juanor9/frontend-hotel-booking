@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './styles.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,26 +30,28 @@ const OfferView = () => {
           {
             width > 800
               ? (
-                <div className="card__descktopHome">{
+                <div className="offerview__component">{
                   hotelsToRender.map((hotel) => (
-                    <OfferCard
-                      key={hotel._id}
-                      title={hotel.name}
-                      text={hotel.country}
-                      image={hotel.imageProfile}
-                    />
+                    <Link key={hotel._id} className="offer-component__link" to={`/hotels/${hotel._id}`}>
+                      <OfferCard
+                        title={hotel.name}
+                        text={hotel.country}
+                        image={hotel.imageProfile}
+                      />
+                    </Link>
                   ))
                 }
                 </div>
               ) : (
                 <div>{
                   renderOne.map((hotel) => (
-                    <OfferCard
-                      key={hotel._id}
-                      title={hotel.name}
-                      text={hotel.country}
-                      image={hotel.imageProfile}
-                    />
+                    <Link key={hotel._id} className="offer-component__link" to={`/hotels/${hotel._id}`}>
+                      <OfferCard
+                        title={hotel.name}
+                        text={hotel.country}
+                        image={hotel.imageProfile}
+                      />
+                    </Link>
                   ))
                 }
                 </div>

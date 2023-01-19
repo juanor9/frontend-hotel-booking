@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getHotels } from '../../features/hotels/hotelsSlice';
@@ -11,9 +12,10 @@ import ReadArticles from '../../components/ReadArticles/ReadArticles';
 import './styles.css';
 
 const Home = () => {
+  const { hotels } = useSelector((state) => state.hotels);
   const [width, setWidth] = useState(window.innerWidth);
   const dispatch = useDispatch();
-  const { hotels } = useSelector((state) => state.hotels);
+
   useEffect(() => {
     dispatch(getHotels());
     const handleResize = () => {
@@ -22,8 +24,10 @@ const Home = () => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, [window.innerWidth, getHotels]);
-  const findCheapest = (products) => {
-    const sorted = products.slice().sort((a, b) => a.pricePerNight - b.pricePerNight);
+
+  // eslint-disable-next-line no-shadow
+  const findCheapest = (hotels) => {
+    const sorted = hotels.slice().sort((a, b) => a.pricePerNight - b.pricePerNight);
     return sorted.slice(0, 5);
   };
   const offers = findCheapest(hotels);
@@ -51,24 +55,26 @@ const Home = () => {
             ? (
               <div className="card__descktopHome">{
                 offers.map((offer) => (
-                  <Popular
-                    key={offer._id}
-                    title={offer.name}
-                    image={offer.imageProfile}
-                    price={offer.pricePerNight}
-                  />
+                  <Link key={offer._id} className="home-page__link" to={`/hotels/${offer._id}`}>
+                    <Popular
+                      title={offer.name}
+                      image={offer.imageProfile}
+                      price={offer.pricePerNight}
+                    />
+                  </Link>
                 ))
               }
               </div>
             ) : (
               <div className="card__mobile">{
                 renderOne.map((offer) => (
-                  <Popular
-                    key={offer._id}
-                    title={offer.name}
-                    image={offer.imageProfile}
-                    price={offer.pricePerNight}
-                  />
+                  <Link key={offer._id} className="home-page__link" to={`/hotels/${offer._id}`}>
+                    <Popular
+                      title={offer.name}
+                      image={offer.imageProfile}
+                      price={offer.pricePerNight}
+                    />
+                  </Link>
                 ))
               }
               </div>
