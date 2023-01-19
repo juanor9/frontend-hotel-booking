@@ -4,12 +4,14 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { createHotel } from '../../features/hotels/hotelsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
+// import { createImages } from '../../features/uploads/uploadsMultipleSlice';
 import useForm from '../../hooks/useForm';
 
 const HotelsForm = () => {
   const { uploads } = useSelector((state) => state.upload);
+  const { uploadsMultiple } = useSelector((state) => state.uploadsMultiple);
   const { form, handleChange } = useForm({});
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState([]);
   const dispatch = useDispatch();
 
   const handleChangeImage = ({ target }) => {
@@ -18,16 +20,30 @@ const HotelsForm = () => {
     setFile(image);
   };
 
+  const handleChangeImages = ({ target }) => {
+    const { files } = target;
+    const images = [];
+    // eslint-disable-next-line no-plusplus
+    for (let i = 0; i < files.length; i++) {
+      images.push(files[i]);
+    }
+    setFile(images);
+  };
+
+  const handleUploadImage = async () => {
+    try {
+      // dispatch(createImages(file));
+      dispatch(createImage(file));
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     try {
-      dispatch(createImage(file));
-      dispatch(createHotel({ ...form, imageProfile: uploads }));
-      // eslint-disable-next-line no-console
-      console.log('uploads', uploads);
       if (uploads) {
-        dispatch(createHotel({ ...form, imageProfile: uploads }));
+        dispatch(createHotel({ ...form, imageProfile: uploads, images: uploadsMultiple }));
       }
     } catch (error) {
       throw new Error(error);
@@ -42,6 +58,8 @@ const HotelsForm = () => {
     <form id="formHotel" className="hotelsForm" onSubmit={handleSubmit}>
       <p className="hotelsForm__properties">Hotel Profile: </p>
       <input type="file" name="imageProfile" accept="image/*" onChange={handleChangeImage} />
+      <p className="hotelsForm__properties">Hotel Gallery: </p>
+      <input type="file" name="images" accept="image/*" multiple onChange={handleChangeImages} />
       <p className="hotelsForm__properties">Name: </p>
       <input type="text" name="name" onChange={handleChange} />
       <p className="hotelsForm__properties">Country:</p>
@@ -87,8 +105,9 @@ const HotelsForm = () => {
         <option value="Non Smoking Rooms">Non Smoking Rooms</option>
       </select>
       <div className="hotelsForm__buttonEnv">
+        <button className="hotelsForm__button" type="submit" onClick={handleUploadImage}>Upload Image</button>
         <button className="hotelsForm__button" type="submit" onClick={handleClick}>Create</button>
-        <Link to="/admin/hotels-managment"><button className="hotelsForm__button" type="submit" onClick={handleClick}>Hotel List</button></Link>
+        <Link to="/profile"><button className="hotelsForm__button" type="submit" onClick={handleClick}>Back</button></Link>
       </div>
     </form>
   );

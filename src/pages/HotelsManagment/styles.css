@@ -11,6 +11,14 @@
   padding: 1em 0;
 }
 
+.hotelsManagment__filter {
+  margin-top: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
 .hotelsManagment__list {
   margin-top: 3em;
   margin-bottom: 1em;
@@ -25,8 +33,3 @@
   margin-top: 1em;
 }
 
-@media (min-width: 768px) {
-  .hotelsManagment__list {
-    padding: 0 7em;
-  }
-}

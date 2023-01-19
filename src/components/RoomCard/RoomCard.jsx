@@ -84,9 +84,6 @@ const RoomCard = (props) => {
       <article className="room-card__price">
         { offerPrice ? <div className="room-card__doblePrice"><p className="room-card__old-price"><del>${pricePerNight}</del></p><p className="room-card__current-price">{offerPrice}</p></div> : <p className="room-card__current-price">${pricePerNight}</p> }
         <p className="room-card__pricing">per night</p>
-        <button type="button" className="room-card__book-button">
-          Book Now
-        </button>
       </article>
     </section>
   );

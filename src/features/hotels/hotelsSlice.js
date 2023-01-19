@@ -7,12 +7,6 @@ const initialState = {
   hotels: [],
 };
 
-export const getHotel = createAsyncThunk('hotels/getHotels', async (id) => {
-  const resp = await fetch(`${BASE_URL}/api/hotels/${id}`);
-  const data = await resp.json();
-  return data;
-});
-
 export const getHotels = createAsyncThunk('hotels/getHotels', async () => {
   const response = await fetch(`${BASE_URL}/api/hotels`);
   const data = await response.json();

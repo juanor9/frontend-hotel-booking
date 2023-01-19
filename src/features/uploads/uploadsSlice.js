@@ -6,9 +6,8 @@ const initialState = {
   uploads: '',
 };
 
-const formData = new FormData();
-
-export const createImage = createAsyncThunk('hotels/createImage', async (file) => {
+export const createImage = createAsyncThunk('uploads/createImage', async (file) => {
+  const formData = new FormData();
   const options = {
     method: 'POST',
     body: formData,

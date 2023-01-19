@@ -1,0 +1,32 @@
+.pageHotelsFiltered {
+  width: 100%;
+  position: relative;
+}
+
+.pageHotelsFiltered__body {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.pageHotelsFiltered__hotelsList {
+  margin-top: 3em;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pageHotelsFiltered_navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('../../assets/livingRoom.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  row-gap: 2em;
+  padding: 1em 0;
+}

@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import useForm from '../../hooks/useForm';
-import { createUser } from '../../services/users';
 import './style.css';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import Modal from '../Modal/Modal';
+import { createUser } from '../../services/users';
+import useForm from '../../hooks/useForm';
 
-const RegisterForm = () => {
-  // const { users } = useSelector((state) => state.users);
+const RegisterForm = ({ userRole }) => {
   const [modal, setModal] = useState(false);
   const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
@@ -18,6 +18,7 @@ const RegisterForm = () => {
     event.preventDefault();
 
     try {
+      form.role = userRole;
       dispatch(createUser(form));
     } catch (error) {
       throw new Error(error);
@@ -27,11 +28,6 @@ const RegisterForm = () => {
   const handleClick = () => {
     document.getElementById('register-form__form').reset();
   };
-  // useEffect(() => {
-  //   if (users !== undefined) {
-  //     if (users.length !== 0) setModal(true);
-  //   }
-  // }, [users]);
   const message = 'User has been correctly created. Please check your email to confirm your registration';
   return (
     <section id="register-form" className="register-form">
@@ -132,5 +128,10 @@ const RegisterForm = () => {
     </section>
   );
 };
-
+RegisterForm.propTypes = {
+  userRole: PropTypes.string,
+};
+RegisterForm.defaultProps = {
+  userRole: 'USER',
+};
 export default RegisterForm;

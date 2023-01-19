@@ -1,16 +1,23 @@
 import './styles.css';
+import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { createRoom } from '../../features/rooms/roomsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
+import { updateHotel } from '../../services/hotels';
 import useForm from '../../hooks/useForm';
 
-const RoomsForm = () => {
+const RoomsForm = ({ hotelID }) => {
   const { uploads } = useSelector((state) => state.upload);
+  const { rooms } = useSelector((state) => state.rooms);
+  const { hotels } = useSelector((state) => state.hotels);
   const { form, handleChange } = useForm({});
+  const [newArray, setNewArray] = useState(hotels.rooms);
+  const [file, setFile] = useState(null);
   const dispatch = useDispatch();
 
-  const [file, setFile] = useState(null);
+  // eslint-disable-next-line no-console
+  // console.log('rooms', newArray);
 
   const handleChangeImage = ({ target }) => {
     const { files } = target;
@@ -18,17 +25,20 @@ const RoomsForm = () => {
     setFile(image);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleUploadImage = async () => {
     try {
       dispatch(createImage(file));
-      dispatch(createRoom({ ...form, image: uploads }));
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
       if (uploads) {
-        dispatch(createRoom({ ...form, image: uploads }));
+        dispatch(createRoom({ ...form, image: uploads, hotel: hotelID }));
       }
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
     } catch (error) {
       throw new Error(error);
     }
@@ -38,47 +48,65 @@ const RoomsForm = () => {
     document.getElementById('formRoom').reset();
   };
 
+  const handleClickAddRoom = () => {
+    try {
+      setNewArray(hotels.rooms);
+      setNewArray(newArray.concat(rooms._id));
+      updateHotel({ rooms: newArray }, hotelID);
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
+
   return (
-    <form id="formRoom" className="roomsForm" name="formRoom" onSubmit={handleSubmit}>
-      <section>
-        <p className="roomsForm__properties">Room Type:</p>
-        <select name="roomType" onChange={handleChange}>
-          <option value="Standard Room">Standard Room</option>
-          <option value="Deluxe Room">Deluxe Room</option>
-          <option value="Suite Room">Suite Room</option>
-          <option value="Royal Room">Royal Room</option>
-          <option value="Accessible Room">Accessible Room</option>
-        </select>
-        <p className="roomsForm__properties">Room Image: </p>
-        <input type="file" name="image" accept="image/*" onChange={handleChangeImage} />
-        <p className="roomsForm__properties">Bed Type:</p>
-        <select name="bedType" onChange={handleChange}>
-          <option value="King">King</option>
-          <option value="Queen">Queen</option>
-          <option value="Twin">Twin</option>
-          <option value="Double">Double</option>
-        </select>
-        <p className="roomsForm__properties">Amenities:</p>
-        <div className="roosmForm__propertiesAmenities">
-          <p className="roomsForm__properties">Shower:</p>
-          <input type="checkbox" name="amenitiesShower" value="true" onChange={handleChange} />
-          <p className="roomsForm__properties">TV:</p>
-          <input type="checkbox" name="amenitiesTV" value="true" onChange={handleChange} />
-          <p className="roomsForm__properties">Couch:</p>
-          <input type="checkbox" name="amenitiesCouch" value="true" onChange={handleChange} />
-          <p className="roomsForm__properties">Pool View:</p>
-          <input type="checkbox" name="amenitiesPool" value="true" onChange={handleChange} />
+    <section>
+      <form id="formRoom" className="roomsForm" name="formRoom" onSubmit={handleSubmit}>
+        <section>
+          <p className="roomsForm__properties">Room Type:</p>
+          <select name="roomType" onChange={handleChange}>
+            <option value="Standard Room">Standard Room</option>
+            <option value="Deluxe Room">Deluxe Room</option>
+            <option value="Suite Room">Suite Room</option>
+            <option value="Royal Room">Royal Room</option>
+            <option value="Accessible Room">Accessible Room</option>
+          </select>
+          <p className="roomsForm__properties">Room Image: </p>
+          <input type="file" name="image" accept="image/*" onChange={handleChangeImage} />
+          <p className="roomsForm__properties">Bed Type:</p>
+          <select name="bedType" onChange={handleChange}>
+            <option value="King">King</option>
+            <option value="Queen">Queen</option>
+            <option value="Twin">Twin</option>
+            <option value="Double">Double</option>
+          </select>
+          <p className="roomsForm__properties">Amenities:</p>
+          <div className="roosmForm__propertiesAmenities">
+            <p className="roomsForm__properties">Shower:</p>
+            <input type="checkbox" name="amenitiesShower" value="true" onChange={handleChange} />
+            <p className="roomsForm__properties">TV:</p>
+            <input type="checkbox" name="amenitiesTV" value="true" onChange={handleChange} />
+            <p className="roomsForm__properties">Couch:</p>
+            <input type="checkbox" name="amenitiesCouch" value="true" onChange={handleChange} />
+            <p className="roomsForm__properties">Pool View:</p>
+            <input type="checkbox" name="amenitiesPool" value="true" onChange={handleChange} />
+          </div>
+          <p className="roomsForm__properties">Price Per Night:</p>
+          <input type="number" name="pricePerNight" onChange={handleChange} />
+          <p className="roomsForm__properties">Offer Price:</p>
+          <input type="number" name="offerPrice" onChange={handleChange} />
+        </section>
+        <div className="roomsForm__buttonEnv">
+          <button className="roomsForm__button" type="submit" onClick={handleUploadImage}>Upload Image</button>
+          <button className="roomsForm__button" type="submit" onClick={handleClick}>Create</button>
+          <button className="roomsForm__button" type="submit" onClick={handleClickAddRoom}>Add Room</button>
         </div>
-        <p className="roomsForm__properties">Price Per Night:</p>
-        <input type="number" name="pricePerNight" onChange={handleChange} />
-        <p className="roomsForm__properties">Offer Price:</p>
-        <input type="number" name="offerPrice" onChange={handleChange} />
-      </section>
-      <div className="roomsForm__buttonEnv">
-        <button className="roomsForm__button" type="submit" onClick={handleClick}>Create</button>
-      </div>
-    </form>
+      </form>
+    </section>
   );
+};
+
+RoomsForm.propTypes = {
+  hotelID: PropTypes.string.isRequired,
 };
 
 export default RoomsForm;
