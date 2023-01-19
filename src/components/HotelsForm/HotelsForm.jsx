@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
 import './styles.css';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { createHotel } from '../../features/hotels/hotelsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
+import { createHotel } from '../../features/hotels/hotelsSlice';
 import useForm from '../../hooks/useForm';
 
 const HotelsForm = () => {
@@ -14,16 +13,11 @@ const HotelsForm = () => {
   const dispatch = useDispatch();
 
   const handleChangeImage = ({ target }) => {
-    // console.log('target: ', target);
     const { files } = target;
-    // console.log('files: ', files);
     const image = files[0];
-    // console.log('image: ', files);
-    setFile(image); // State updated but variable still not to use.
-    // console.log(file);
+    setFile(image);
   };
   useEffect(() => {
-    // console.log(file);
     if (file) {
       const imageButton = document.getElementById('formHotel__img-button');
       imageButton.classList.remove('hotelsForm__button--disable');
@@ -31,21 +25,13 @@ const HotelsForm = () => {
     }
   }, [file]);
 
-  useEffect(() => {
-
-  }, [uploads]);
+  useEffect(() => {}, [uploads]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      // dispatch(createImage(file));
-
-      // dispatch(createHotel({ ...form, imageProfile: uploads }));
-      // eslint-disable-next-line no-console
-      // console.log('uploads', uploads);
       if (uploads) {
-        // console.log('form: ', form, 'img: ', uploads);
         dispatch(createHotel({ ...form, imageProfile: uploads }));
       }
     } catch (error) {
@@ -59,8 +45,6 @@ const HotelsForm = () => {
     if (file) {
       try {
         dispatch(createImage(file));
-        // eslint-disable-next-line no-console
-        console.log('uploads', uploads);
       } catch (error) {
         throw new Error(error);
       }
@@ -74,18 +58,32 @@ const HotelsForm = () => {
   return (
     <>
       <div className="formHotel__img-container">
-        <form id="formHotel" className="formHotel__img-form" onSubmit={handleSubmitimage}>
+        <form
+          id="formHotel"
+          className="formHotel__img-form"
+          onSubmit={handleSubmitimage}
+        >
           <p className="hotelsForm__properties">Hotel Profile Image: </p>
-          <input type="file" name="imageProfile" accept="image/*" onChange={handleChangeImage} />
-          <button id="formHotel__img-button" className="hotelsForm__button--disable" type="submit" onClick={handleClick}>Upload Image</button>
+          <input
+            type="file"
+            name="imageProfile"
+            accept="image/*"
+            onChange={handleChangeImage}
+          />
+          <button
+            id="formHotel__img-button"
+            className="hotelsForm__button--disable"
+            type="submit"
+            onClick={handleClick}
+          >
+            Upload Image
+          </button>
         </form>
-        {uploads
-          ? (
-            <figure className="formHotel__img-preview">
-              <img src={uploads} alt="" />
-            </figure>
-          )
-          : null}
+        {uploads ? (
+          <figure className="formHotel__img-preview">
+            <img src={uploads} alt="" />
+          </figure>
+        ) : null}
       </div>
 
       <form id="formHotel" className="hotelsForm" onSubmit={handleSubmit}>
@@ -134,8 +132,22 @@ const HotelsForm = () => {
           <option value="Non Smoking Rooms">Non Smoking Rooms</option>
         </select>
         <div className="hotelsForm__buttonEnv">
-          <button className="hotelsForm__button" type="submit" onClick={handleClick}>Create</button>
-          <Link to="/profile"><button className="hotelsForm__button" type="submit" onClick={handleClick}>Back</button></Link>
+          <button
+            className="hotelsForm__button"
+            type="submit"
+            onClick={handleClick}
+          >
+            Create
+          </button>
+          <Link to="/profile">
+            <button
+              className="hotelsForm__button"
+              type="submit"
+              onClick={handleClick}
+            >
+              Back
+            </button>
+          </Link>
         </div>
       </form>
     </>

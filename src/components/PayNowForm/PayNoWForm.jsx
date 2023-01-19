@@ -36,12 +36,10 @@ const PayNowForm = () => {
     };
     const response = await fetch('http://localhost:8080/api/healthcheck', options);
     const data = await response.json();
-    console.log(data);
   };
 
   const makePayment = () => {
     dispatch(createBooking(bookings));
-    console.log('valor', bookings);
   };
   return (
     <form className="card-data__form" onSubmit={handleSubmit}>
