@@ -16,7 +16,7 @@ const AdminHotels = () => {
 
   const hotelsPerPage = 6;
   const maxPages = Math.floor(hotels.length / hotelsPerPage);
-  const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
+  const [items, setItems] = useState(hotels.splice(0, hotelsPerPage));
   const [currentPage, setCurrentPage] = useState(0);
 
   const handleNext = () => {
