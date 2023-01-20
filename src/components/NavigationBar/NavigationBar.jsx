@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import './styles.css';
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -38,7 +37,7 @@ const NavigationBar = () => {
           </button>
         </div>
         <div className="navigation__icon">
-          {userRole === 'USER' ? (
+          {userToken ? (
             <Link to="/profile">
               <FontAwesomeIcon icon={faUser} key="profile" />
             </Link>
@@ -78,29 +77,12 @@ const NavigationBar = () => {
           </li>
           <li className="navigation__menu-li">
             <Link className="navigation__text" to="/hotels">
-              HOTEL
-            </Link>
-          </li>
-          <li className="navigation__menu-li">
-            <Link className="navigation__text" to="/">
-              PAGES
+              HOTELS
             </Link>
           </li>
         </ul>
       </div>
       <div className="navigation__selects">
-        <div className="navigation__options">
-          <select className="navigation__sel-option" name="currency">
-            <option value="usd">USD</option>
-            <option value="cop">COP</option>
-          </select>
-        </div>
-        <div className="navigation__options">
-          <select className="navigation__sel-option" name="languaje">
-            <option value="spanish">SPA</option>
-            <option value="english">ENG</option>
-          </select>
-        </div>
         <div className="navigation__option">
           {userToken ? (
             <Link className="navigation__text-icon" to="/profile">
@@ -112,18 +94,20 @@ const NavigationBar = () => {
             </Link>
           )}
         </div>
-        {userToken ? (
-          <button
-            type="button"
-            className="navigation__text-icon"
-            onClick={() => {
-              localStorage.clear();
-              navigate('/');
-            }}
-          >
-            <FontAwesomeIcon icon={faPowerOff} key="logut" />
-          </button>
-        ) : null}
+        <div className="navigation__option">
+          {userToken ? (
+            <button
+              type="button"
+              className="navigation__text-icon"
+              onClick={() => {
+                localStorage.clear();
+                navigate('/');
+              }}
+            >
+              <FontAwesomeIcon icon={faPowerOff} key="logut" />
+            </button>
+          ) : null}
+        </div>
       </div>
     </nav>
   );
