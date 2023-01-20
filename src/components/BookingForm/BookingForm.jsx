@@ -1,12 +1,10 @@
 import './styles.css';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCheck,
-} from '@fortawesome/free-solid-svg-icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { createBooking } from '../../features/bookings/bookingsSlice';
 import useForm from '../../hooks/useForm';
 
@@ -134,7 +132,11 @@ const BookingForm = ({
 BookingForm.propTypes = {
   pricePerNight: PropTypes.number.isRequired,
   offerPrice: PropTypes.number,
-  coordinates: PropTypes.arrayOf(PropTypes.string),
+  // coordinates: PropTypes.arrayOf(PropTypes.string),
+  coordinates: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.string),
+    PropTypes.arrayOf(PropTypes.number),
+  ]),
   id: PropTypes.string.isRequired,
   rooms: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
 };
