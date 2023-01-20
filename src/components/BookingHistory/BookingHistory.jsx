@@ -9,15 +9,15 @@ const BookingHistory = ({
       <img className="booking-history__img" alt="hotel" src={hotelImg} />
       <section className="booking-history__description">
         <h3>{name}</h3>
-        <p className="booking-history__description--gray"><span className="booking-history__text">Dates:</span> {checkIn} - {checkOut}</p>
-        <p className="booking-history__description--gray"><span className="booking-history__text">Price:</span> ${price}</p>
+        <p className="booking-history__description--gray">{checkIn} - {checkOut}</p>
+        <p className="booking-history__description--gray">${price}</p>
       </section>
     </section>
   </div>
 );
 
 BookingHistory.propTypes = {
-  hotelImg: PropTypes.string.isRequired,
+  hotelImg: PropTypes.isRequired,
   name: PropTypes.string.isRequired,
   checkIn: PropTypes.string.isRequired,
   checkOut: PropTypes.string.isRequired,
