@@ -1,5 +1,6 @@
-/* eslint-disable no-param-reassign */
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+/* eslint-disable  */
+
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -34,16 +35,16 @@ export const createHotel = createAsyncThunk('hotels/createHotel', async (hotel) 
 });
 
 export const deleteHotel = createAsyncThunk('hotels/deleteHotel', async (id) => {
+
   const options = {
     method: 'DELETE',
   };
 
-  const response = await fetch(`${BASE_URL}/api/hotels/${id}`, options);
-  const data = await response.json();
-  return data;
+  await fetch(`${BASE_URL}/api/hotels/${id}`, options);
+  return id;
 });
 
-export const updateHotel = createAsyncThunk('hotels/updateHotel', async (hotel, id) => {
+export const updateHotel = createAsyncThunk('hotels/updateHotel', async (hotel) => {
   const options = {
     method: 'PATCH',
     headers: {
@@ -52,7 +53,7 @@ export const updateHotel = createAsyncThunk('hotels/updateHotel', async (hotel, 
     body: JSON.stringify(hotel),
   };
 
-  const response = await fetch(`${BASE_URL}/api/hotels/${id}`, options);
+  const response = await fetch(`${BASE_URL}/api/hotels/${hotel._id}`, options);
   const data = await response.json();
   return data;
 });
@@ -71,10 +72,18 @@ const hotelsSlice = createSlice({
       state.hotels = action.payload;
     });
     builder.addCase(deleteHotel.fulfilled, (state, action) => {
-      state.hotels = action.payload;
+      const { hotels } = current(state)
+      state.hotels = hotels.filter((h)=> h._id !== action.payload)
     });
-    builder.addCase(updateHotel, (state, action) => {
-      state.hotels = action.payload;
+    builder.addCase(updateHotel.fulfilled, (state, action) => {
+      const { hotels } = current(state)
+      const hotelsUpdated = hotels.map((h) => {
+        if (h._id === action.payload._id) {
+          return {...h, ...action.payload}
+        }
+        return h
+      })
+      state.hotels = hotelsUpdated;
     });
   },
 });

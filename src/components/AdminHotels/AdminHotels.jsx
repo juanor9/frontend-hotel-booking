@@ -10,14 +10,25 @@ import AdminPagination from '../AdminPagination/AdminPagination';
 const AdminHotels = () => {
   const { hotels } = useSelector((state) => state.hotels);
   const dispatch = useDispatch();
+  const hotelsPerPage = 6;
+  const maxPages = Math.floor(hotels.length / hotelsPerPage);
+  const [items, setItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    try {
+      const localHotels = [].concat(hotels);
+      const calculateItems = localHotels.splice(0, hotelsPerPage);
+      setItems(calculateItems);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
+  }, [hotels]);
+
   useEffect(() => {
     dispatch(getHotels());
   }, []);
-
-  const hotelsPerPage = 6;
-  const maxPages = Math.floor(hotels.length / hotelsPerPage);
-  const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
-  const [currentPage, setCurrentPage] = useState(0);
 
   const handleNext = () => {
     const totalHotels = hotels.length;

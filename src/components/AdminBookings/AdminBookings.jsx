@@ -8,14 +8,25 @@ const AdminBookings = () => {
   const { bookings } = useSelector((state) => state.bookings);
   const dispatch = useDispatch();
 
+  const bookingsPerPage = 3;
+  const maxPages = Math.floor(bookings.length / bookingsPerPage);
+  const [items, setItems] = useState([]);
+  const [currentPage, setCurrentPage] = useState(0);
+
+  useEffect(() => {
+    try {
+      const localHotels = [].concat(bookings);
+      const calculateItems = localHotels.splice(0, bookingsPerPage);
+      setItems(calculateItems);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
+  }, [bookings]);
+
   useEffect(() => {
     dispatch(getBookings());
   }, []);
-
-  const bookingsPerPage = 3;
-  const maxPages = Math.floor(bookings.length / bookingsPerPage);
-  const [items, setItems] = useState([...bookings].splice(0, bookingsPerPage));
-  const [currentPage, setCurrentPage] = useState(0);
 
   const handleNext = () => {
     const totalHotels = bookings.length;
@@ -35,6 +46,9 @@ const AdminBookings = () => {
     setItems([...bookings].splice(firstIndex, bookingsPerPage));
     setCurrentPage(prevPage);
   };
+
+  // eslint-disable-next-line no-console
+  console.log(items);
 
   return (
     <div className="user-info">
