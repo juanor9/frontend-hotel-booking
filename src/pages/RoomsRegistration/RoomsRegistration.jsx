@@ -39,6 +39,7 @@ const RoomsRegistration = () => {
           <p>{city}, {country}</p>
           <p>{address}</p>
         </div>
+        <Link to="/profile"><button className="roomsReg__button" type="submit">Back</button></Link>
       </section>
       <h3 className="roomsReg__title">Rooms Registration Form</h3>
       <section className="roomsReg__form">
@@ -69,7 +70,6 @@ const RoomsRegistration = () => {
               </section>
             ) : null
       }
-      <Link to="/profile"><button type="submit">Back</button></Link>
     </div>
   );
 };

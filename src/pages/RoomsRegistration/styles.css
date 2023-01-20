@@ -45,6 +45,16 @@
   justify-content: center;
 }
 
+.roomsReg__button {
+  padding: 1em 2em 1em 2em;
+  color: white;
+  background-color: #F13F4B;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 0;
+  font-weight: bold;
+}
+
 @media (min-width: 768px) {
   .roomsReg__form {
     padding: 0 7em;
