@@ -15,7 +15,7 @@ const ActivateUser = () => {
         navigate('/');
       } catch (error) {
         // eslint-disable-next-line
-        console.log(error.message);
+        throw new Error(error);
       }
     };
     validateUserMail();

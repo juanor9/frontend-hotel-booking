@@ -8,7 +8,6 @@ import HotelContact from '../../components/HotelContact/HotelContact';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Weather from '../../components/Weather/Weather';
 import HotelGallery from '../../components/HotelGallery/HotelGallery';
 import HotelsMenu from '../../components/HotelsMenu/HotelsMenu';
 import HotelsAbout from '../../components/HotelsAbout/HotelsAbout';
@@ -119,7 +118,6 @@ const Rooms = () => {
             checkin={checkin}
             checkout={checkout}
           />
-          <Weather />
         </aside>
       </div>
     </div>
