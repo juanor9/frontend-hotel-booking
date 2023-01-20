@@ -1,14 +1,13 @@
-import './StylesPagination.css';
 import PropTypes from 'prop-types';
-import HotelCard from '../HotelCard/HotelCard';
+import HotelCardAdmin from '../HotelCardAdmin/HotelCardAdmin';
 
-const HotelsPagination = ({
+const AdminPagination = ({
   results, currentPage, maxPages, handleNext, handlePrev,
 }) => (
   <section className="pagination__card">
     <section className="page__hotelsList">
       {results.map((hotel) => (
-        <HotelCard
+        <HotelCardAdmin
           imageProfile={hotel.imageProfile}
           name={hotel.name}
           about={hotel.about}
@@ -30,7 +29,7 @@ const HotelsPagination = ({
   </section>
 );
 
-HotelsPagination.propTypes = {
+AdminPagination.propTypes = {
   results: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
   currentPage: PropTypes.number.isRequired,
   maxPages: PropTypes.number.isRequired,
@@ -38,4 +37,4 @@ HotelsPagination.propTypes = {
   handlePrev: PropTypes.func.isRequired,
 };
 
-export default HotelsPagination;
+export default AdminPagination;

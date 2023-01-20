@@ -1,4 +1,3 @@
-import './styles.css';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHotels } from '../../features/hotels/hotelsSlice';
@@ -6,6 +5,7 @@ import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import HotelFilter from '../../components/HotelFilter/HotelFilter';
 import HotelsPagination from '../../components/HotelsPagination/HotelsPagination';
+import './styles.css';
 
 const Hotels = () => {
   const { hotels } = useSelector((state) => state.hotels);
@@ -13,10 +13,10 @@ const Hotels = () => {
 
   useEffect(() => {
     dispatch(getHotels());
-  });
+  }, []);
 
   const hotelsPerPage = 9;
-  const maxPages = hotels.length / hotelsPerPage;
+  const maxPages = Math.floor(hotels.length / hotelsPerPage);
   const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
   const [currentPage, setCurrentPage] = useState(0);
 

@@ -1,24 +1,21 @@
-import './StylesPagination.css';
 import PropTypes from 'prop-types';
-import HotelCard from '../HotelCard/HotelCard';
+import BookingHistoryAdmin from '../BookingHistoryAdmin/BookingHistoryAdmin';
 
-const HotelsPagination = ({
+const BookingsPagination = ({
   results, currentPage, maxPages, handleNext, handlePrev,
 }) => (
   <section className="pagination__card">
     <section className="page__hotelsList">
-      {results.map((hotel) => (
-        <HotelCard
-          imageProfile={hotel.imageProfile}
-          name={hotel.name}
-          about={hotel.about}
-          city={hotel.city}
-          pricePerNight={hotel.pricePerNight}
-          offerPrice={hotel.offerPrice}
-          feature1={hotel.feature1}
-          feature2={hotel.feature2}
-          id={hotel._id}
-          key={hotel._id}
+      {results.map((booking) => (
+        <BookingHistoryAdmin
+          name={booking.idHotel.name}
+          hotelImg={booking.idHotel.imageProfile}
+          checkIn={booking.checkInDate ? booking.checkInDate.toString().slice(0, 10) : null}
+          checkOut={booking.checkOutDate ? booking.checkOutDate.toString().slice(0, 10) : null}
+          price={booking.offerPrice !== '0' ? booking.offerPrice : booking.pricePerNight}
+          guests={booking.guestsNumber}
+          id={booking._id}
+          key={booking._id}
         />
       ))}
     </section>
@@ -30,7 +27,7 @@ const HotelsPagination = ({
   </section>
 );
 
-HotelsPagination.propTypes = {
+BookingsPagination.propTypes = {
   results: PropTypes.arrayOf(PropTypes.objectOf).isRequired,
   currentPage: PropTypes.number.isRequired,
   maxPages: PropTypes.number.isRequired,
@@ -38,4 +35,4 @@ HotelsPagination.propTypes = {
   handlePrev: PropTypes.func.isRequired,
 };
 
-export default HotelsPagination;
+export default BookingsPagination;

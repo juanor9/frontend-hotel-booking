@@ -10,9 +10,7 @@ import useForm from '../../hooks/useForm';
 const RoomsForm = ({ hotelID }) => {
   const { uploads } = useSelector((state) => state.upload);
   const { rooms } = useSelector((state) => state.rooms);
-  const { hotels } = useSelector((state) => state.hotels);
   const { form, handleChange } = useForm({});
-  const [newArray, setNewArray] = useState(hotels.rooms);
   const [file, setFile] = useState(null);
   const dispatch = useDispatch();
 
@@ -47,9 +45,9 @@ const RoomsForm = ({ hotelID }) => {
 
   const handleClickAddRoom = () => {
     try {
-      setNewArray(hotels.rooms);
-      setNewArray(newArray.concat(rooms._id));
-      updateHotel({ rooms: newArray }, hotelID);
+      updateHotel({ rooms: rooms._id }, hotelID);
+      // eslint-disable-next-line no-restricted-globals
+      location.reload();
     } catch (error) {
       throw new Error(error);
     }

@@ -39,7 +39,7 @@
 }
 
 .card-data__btn-cont{
-  justify-content: end;
+  justify-content: flex-end;
   display: flex;
 }
 

@@ -52,6 +52,10 @@
   margin-left: 1em;
 }
 
+.hotel-card__bottom {
+  margin-top: 1em;
+}
+
 .hotel-card__description {
   margin-top: 0;
   padding-right: 1em;
@@ -59,14 +63,6 @@
 
 .hotel-card__description, .hotel-card__city {
   color: gray;
-}
-
-.hotel-card__reviews {
-  margin-right: 1em;
-}
-
-.hotel-card__raiting {
-  color: rgba(11, 9, 9, 0.655);
 }
 
 .hotel-card__prices, .hotel-card__features {

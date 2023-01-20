@@ -1,8 +1,10 @@
+/* eslint import/no-named-as-default: off */
 import {
   CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe,
 } from '@stripe/react-stripe-js';
-import { useDispatch, useSelector } from 'react-redux';
-import { createBooking } from '../../features/bookings/bookingsSlice';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import createPayment from '../../services/payments';
 import masterCard from '../../assets/master-card-r.png';
 import visa from '../../assets/visa.png';
 import americanExpress from '../../assets/american-express.png';
@@ -11,37 +13,33 @@ import cvvCard from '../../assets/cvv-card.jpg';
 import './styles.css';
 
 const PayNowForm = () => {
+  const { bookings } = useSelector((state) => state.bookings);
   const elements = useElements();
   const stripe = useStripe();
-  const dispatch = useDispatch();
-  const bookings = useSelector((state) => state.bookings);
+  const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { error, paymentMethod } = await stripe.createPaymentMethod({
+    const { paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement),
     });
-    if (error) {
+
+    try {
+      if (bookings.offerPrice !== '0') {
+        const amount = Math.floor(bookings.offerPrice * 100);
+        createPayment(paymentMethod, amount);
+        navigate('/success');
+      } else {
+        const amount = Math.floor(bookings.pricePerNight * 100);
+        createPayment(paymentMethod, amount);
+        navigate('/success');
+      }
+    } catch (error) {
       throw new Error(error);
     }
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        paymentMethod,
-        amount: Math.floor(bookings.pricePerNight * 100),
-      }),
-    };
-    const response = await fetch('http://localhost:8080/api/healthcheck', options);
-    const data = await response.json();
-    console.log(data);
   };
 
-  const makePayment = () => {
-    dispatch(createBooking(bookings));
-  };
   return (
     <form className="card-data__form" onSubmit={handleSubmit}>
       <div>
@@ -70,7 +68,7 @@ const PayNowForm = () => {
         </div>
       </div>
       <div className="card-data__btn-cont">
-        <button className="card-data__btn" onClick={makePayment} type="submit">
+        <button className="card-data__btn" type="submit">
           MAKE PAYMENT
         </button>
       </div>

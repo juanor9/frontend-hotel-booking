@@ -1,10 +1,11 @@
+/* eslint import/no-named-as-default: "off" */
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 import PayNowForm from '../PayNowForm/PayNoWForm';
 import './styles.css';
 
-const stripePromise = loadStripe('pk_test_51MF0poEjW2XUbvI3wVmCFBDPscgdUzDXONDz57bQp6GIg0YQ8d5H0c7T0415OfjiOaNXoHCkEKNiaUqguTsZdkUU00cjmEtXA7');
+const stripePromise = loadStripe('pk_test_51MF0pJIZV2oGNua8YMFqtrKl6WrulpEFmFBTVEMRpeyN2EYSeuDcA2KUzxY8v6GJFkmk9HYdMYNTGjONBM3mq9cq00xGVp3Jln');
 
 const PaymentForm = () => {
   const [toPay, setToPay] = useState(0);
@@ -36,26 +37,6 @@ const PaymentForm = () => {
             <Elements stripe={stripePromise}>
               <PayNowForm />
             </Elements>
-          )
-        }
-      </div>
-      <div className="payment__btn-container">
-        <button className="payment__btn" type="submit" onClick={() => setToPay(3)}>
-          <div className={`${toPay === 3 ? 'payment__radio-red' : 'payment__radio'}`}> </div>Net Banking
-        </button>
-        {
-          toPay === 3 && (
-            <p>We are sorry. This functionality is not yet available</p>
-          )
-        }
-      </div>
-      <div className="payment__btn-container">
-        <button className="payment__btn" type="submit" onClick={() => setToPay(4)}>
-          <div className={`${toPay === 4 ? 'payment__radio-red' : 'payment__radio'}`}> </div>My Wallet
-        </button>
-        {
-          toPay === 4 && (
-            <p>We are sorry. This functionality is not yet available</p>
           )
         }
       </div>
