@@ -22,8 +22,6 @@ const HotelCardAdmin = ({
   const handleClickDelete = async () => {
     try {
       dispatch(deleteHotel(id));
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
     } catch (error) {
       throw new Error(error);
     }
@@ -32,8 +30,6 @@ const HotelCardAdmin = ({
   const handleSubmit = async (event) => {
     event.preventDefault();
     setModal(false);
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
 
     try {
       dispatch(updateHotel(form, id));
