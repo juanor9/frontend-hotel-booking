@@ -2,23 +2,26 @@ import './styles.css';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import Modal from '../Modal/Modal';
 import { createBooking } from '../../features/bookings/bookingsSlice';
 import useForm from '../../hooks/useForm';
 
 const BookingForm = ({
   pricePerNight, offerPrice, coordinates, id, rooms,
 }) => {
-  const mapLocation = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.7759977150563!2d${coordinates[1]}!3d${coordinates[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2cd8cb481aabab3!2zMjHCsDA3JzE3LjQiTiA4NsKwNTAnMzkuNyJX!5e0!3m2!1ses-419!2sco!4v1673658020497!5m2!1ses-419!2sco`;
-  const { bookings } = useSelector((state) => state.bookings);
-  const { form, handleChange } = useForm({});
+  const [modal, setModal] = useState(false);
   const [normalPrice, setNormalPrice] = useState(pricePerNight);
   const [promoPrice, setPromoPrice] = useState(offerPrice);
   const [resetForm, setResetForm] = useState(false);
+  const { bookings } = useSelector((state) => state.bookings);
+  const { form, handleChange } = useForm({});
   const dispatch = useDispatch();
+  const mapLocation = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.7759977150563!2d${coordinates[1]}!3d${coordinates[0]}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc2cd8cb481aabab3!2zMjHCsDA3JzE3LjQiTiA4NsKwNTAnMzkuNyJX!5e0!3m2!1ses-419!2sco!4v1673658020497!5m2!1ses-419!2sco`;
   const navigate = useNavigate();
+  const user = localStorage.getItem('login-token');
 
   const handleChangeRooms = ({ target }) => {
     for (let i = 0; i < rooms.length; i += 1) {
@@ -55,6 +58,10 @@ const BookingForm = ({
     } catch (error) {
       throw new Error(error);
     }
+  };
+
+  const handleUnregisteredSubmit = () => {
+    setModal(true);
   };
 
   const handleClick = async () => {
@@ -122,9 +129,24 @@ const BookingForm = ({
         </select>
         <section className="booking-form__form-button--left">
           <button className="booking-form__form-button" type="submit" onClick={handleClick}>Reset Form</button>
-          <button className="booking-form__form-button" type="submit" onClick={handleSubmit}>Book This Know</button>
+          {user
+            ? <button className="booking-form__form-button" type="submit" onClick={handleSubmit}>Book This Know</button>
+            : <button className="booking-form__form-button" type="submit" onClick={handleUnregisteredSubmit}>Book This Know</button>}
+
         </section>
       </form>
+      {modal === true ? (
+        <Modal modalFunction={setModal}>
+          <div className="booking-form__modal">
+            <p>It seems you are not logged in. Please login or sign up to book a room.</p>
+            <div className="booking-form__modal-buttons">
+              <Link to="/login" className="booking-form__modal-button">Login</Link>
+              <Link to="/register" className="booking-form__modal-button">Sign up</Link>
+            </div>
+          </div>
+        </Modal>
+      ) : null}
+
     </div>
   );
 };
@@ -132,7 +154,6 @@ const BookingForm = ({
 BookingForm.propTypes = {
   pricePerNight: PropTypes.number.isRequired,
   offerPrice: PropTypes.number,
-  // coordinates: PropTypes.arrayOf(PropTypes.string),
   coordinates: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.number),
