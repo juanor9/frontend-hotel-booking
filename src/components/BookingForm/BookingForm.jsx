@@ -116,7 +116,7 @@ const BookingForm = ({
           <option disabled selected>Rooms Type</option>
           {
             rooms.map((room) => (
-              <option key={room.id}>{room.roomType}</option>
+              <option key={room._id}>{room.roomType}</option>
             ))
           }
         </select>

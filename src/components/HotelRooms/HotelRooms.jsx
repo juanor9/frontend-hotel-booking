@@ -4,10 +4,9 @@ import RoomCard from '../RoomCard/RoomCard';
 
 const HotelRooms = ({ rooms }) => (
   <section id="hotel-rooms" className="hotel-rooms">
-    <article id="rooms" className="hotel-rooms__list">
-      {rooms.map((e) => (
-        <><RoomCard
-          key={e._id}
+    {rooms.map((e) => (
+      <article key={e._id} id="rooms" className="hotel-rooms__list">
+        <RoomCard
           roomType={e.roomType}
           image={e.image}
           bedType={e.bedType}
@@ -18,10 +17,9 @@ const HotelRooms = ({ rooms }) => (
           pricePerNight={e.pricePerNight}
           offerPrice={e.offerPrice}
         />
-          <hr className="hotel-rooms__list-divider" />
-        </>
-      ))}
-    </article>
+        <hr className="hotel-rooms__list-divider" />
+      </article>
+    ))}
   </section>
 );
 

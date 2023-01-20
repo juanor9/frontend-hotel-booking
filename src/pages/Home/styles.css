@@ -81,6 +81,10 @@ width: 100%;
     margin-top: 10px;
   }
 
+  .popular-destination__title{
+    margin-top: 70px;
+  }
+
   .offer-view__component{
     width: 100%;
   }
