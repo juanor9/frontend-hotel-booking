@@ -1,8 +1,8 @@
 import './style.css';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar as faFullStar, faShareFromSquare } from '@fortawesome/free-solid-svg-icons';
-import { faHeart, faStar as faEmptyStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar as faFullStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faEmptyStar } from '@fortawesome/free-regular-svg-icons';
 
 const HotelInfo = (props) => {
   const {
@@ -29,12 +29,6 @@ const HotelInfo = (props) => {
             return (<FontAwesomeIcon icon={faEmptyStar} key={`empty-star${i}`} />);
           })}
         </p>
-        <button className="hotel-info__header-button" type="button">
-          <FontAwesomeIcon icon={faShareFromSquare} key="share" /> Share
-        </button>
-        <button className="hotel-info__header-button" type="button">
-          <FontAwesomeIcon icon={faHeart} key="save" /> Save
-        </button>
       </div>
       <p className="hotel-info__address">{address}</p>
       <ul className="hotel-info__features">
