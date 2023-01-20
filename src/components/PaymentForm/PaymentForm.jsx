@@ -1,4 +1,4 @@
-/* eslint import/no-named-as-default: off */
+/* eslint import/no-named-as-default: "off" */
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import React, { useState } from 'react';

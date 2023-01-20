@@ -1,12 +1,11 @@
-/* eslint-disable no-unused-vars */
 import './styles.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { getHotels } from '../../features/hotels/hotelsSlice';
-import HotelCardAdmin from '../HotelCardAdmin/HotelCardAdmin';
+import AdminPagination from '../AdminPagination/AdminPagination';
 
 const AdminHotels = () => {
   const { hotels } = useSelector((state) => state.hotels);
@@ -14,6 +13,30 @@ const AdminHotels = () => {
   useEffect(() => {
     dispatch(getHotels());
   }, []);
+
+  const hotelsPerPage = 6;
+  const maxPages = Math.floor(hotels.length / hotelsPerPage);
+  const [items, setItems] = useState([...hotels].splice(0, hotelsPerPage));
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const handleNext = () => {
+    const totalHotels = hotels.length;
+    const nextPage = currentPage + 1;
+    const firstIndex = nextPage * hotelsPerPage;
+    if (firstIndex === totalHotels) return;
+
+    setItems([...hotels].splice(firstIndex, hotelsPerPage));
+    setCurrentPage(nextPage);
+  };
+
+  const handlePrev = () => {
+    const prevPage = currentPage - 1;
+    const firstIndex = prevPage * hotelsPerPage;
+    if (prevPage < 0) return;
+
+    setItems([...hotels].splice(firstIndex, hotelsPerPage));
+    setCurrentPage(prevPage);
+  };
   return (
     <section className="admin-hotels">
       <h2 className="admin-hotels__header">Hotels Managment</h2>
@@ -24,22 +47,13 @@ const AdminHotels = () => {
         Add a hotel
       </Link>
       <div className="hotelsManagment__list">
-        {
-    hotels.map((hotel) => (
-      <HotelCardAdmin
-        imageProfile={hotel.imageProfile}
-        name={hotel.name}
-        about={hotel.about}
-        city={hotel.city}
-        pricePerNight={hotel.pricePerNight}
-        offerPrice={hotel.offerPrice}
-        feature1={hotel.feature1}
-        feature2={hotel.feature2}
-        id={hotel._id}
-        key={hotel._id}
-      />
-    ))
-  }
+        <AdminPagination
+          results={items}
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+          currentPage={currentPage}
+          maxPages={maxPages}
+        />
       </div>
     </section>
   );

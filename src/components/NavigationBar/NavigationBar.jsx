@@ -5,10 +5,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import logo from '../../assets/logo-rica.png';
+import MobileMenu from '../MobileMenu/MobileMenu';
 
 const NavigationBar = () => {
   const userToken = localStorage.getItem('login-token');
   const [userRole, SetUserRole] = useState('');
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const navigate = useNavigate();
 
@@ -18,6 +20,10 @@ const NavigationBar = () => {
       SetUserRole(role);
     }
   }, [userToken, userRole]);
+
+  const handleMenuClick = () => {
+    setMobileMenu(!mobileMenu);
+  };
   return (
     <nav className="navigation__card">
       <div className="navigation__logo">
@@ -26,9 +32,9 @@ const NavigationBar = () => {
       </div>
       <div className="navigation__icons-cont">
         <div className="navigation__icon">
-          <Link to="/">
+          <button type="button" onClick={handleMenuClick}>
             <FontAwesomeIcon icon={faBars} key="menu" />
-          </Link>
+          </button>
         </div>
         <div className="navigation__icon">
           {userToken ? (
@@ -54,6 +60,13 @@ const NavigationBar = () => {
             <FontAwesomeIcon icon={faPowerOff} key="log-out" />
           </button>
         ) : null}
+        {mobileMenu === true
+          ? (
+            <MobileMenu
+              menuFunction={setMobileMenu}
+            />
+          )
+          : null}
       </div>
       <div className="navigation__menu">
         <ul>

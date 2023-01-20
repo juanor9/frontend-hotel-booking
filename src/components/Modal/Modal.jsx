@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './Modal.css';
+import './styles.css';
 
 const Modal = ({ modalFunction, message, children }) => (
   <div className="modal-container">
