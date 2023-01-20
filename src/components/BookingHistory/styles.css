@@ -29,6 +29,10 @@
   margin-top: 0.5em;
 }
 
+.booking-history__text {
+  color: black;
+}
+
 @media(min-width:768px){
   .booking-history {
     width: 500px;
