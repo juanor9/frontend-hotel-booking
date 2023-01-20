@@ -1,7 +1,7 @@
 import './styles.css';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createRoom } from '../../features/rooms/roomsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
 import { updateHotel } from '../../features/hotels/hotelsSlice';
@@ -27,6 +27,8 @@ const RoomsForm = ({ hotelID }) => {
       throw new Error(error);
     }
   };
+
+  useEffect(() => {}, [uploads]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

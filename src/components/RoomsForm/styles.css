@@ -32,9 +32,26 @@
   background-color: rgb(255, 77, 77);
 }
 
+.roomsForm__button--disable{
+  pointer-events: none;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 0;
+  padding: 0.5em 1em 0.5em 1em;
+  width: 100px;
+  font-weight: bold;
+}
+
 .roomsForm__buttonEnv {
   display: flex;
   justify-content: flex-end;
+}
+
+.formRoom__img-preview{
+  margin: 1em;
+  margin-left: 0;
 }
 
 @media (min-width:768px){
