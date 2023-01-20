@@ -45,12 +45,19 @@ const UserLogin = () => {
         <div className="user-login__other">
           <p>
             Are you a new user?
-            <Link to="/register">Please register</Link>
+            <Link
+              to="/register"
+              className="user-login__link"
+            > Please register
+            </Link>
           </p>
           <p>
-            Did you lost your password?
-            <button type="button" onClick={handleRecoverClick}>
-              Reset your password
+            Did you lost your password?&nbsp;
+            <button
+              type="button"
+              onClick={handleRecoverClick}
+              className="user-login__link"
+            >Reset your password
             </button>
           </p>
         </div>
