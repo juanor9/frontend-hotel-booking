@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { updateHotel } from '../../services/hotels';
 import MapPoint from '../../assets/mapPoint.png';
 import Modal from '../Modal/Modal';
-import { deleteHotel } from '../../features/hotels/hotelsSlice';
+import { deleteHotel, updateHotel } from '../../features/hotels/hotelsSlice';
 import useForm from '../../hooks/useForm';
 
 const HotelCardAdmin = ({
@@ -32,7 +31,7 @@ const HotelCardAdmin = ({
     setModal(false);
 
     try {
-      dispatch(updateHotel(form, id));
+      dispatch(updateHotel({ ...form, _id: id }));
     } catch (error) {
       throw new Error(error);
     }
