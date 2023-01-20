@@ -37,28 +37,8 @@ const PayNowForm = () => {
     } catch (error) {
       throw new Error(error);
     }
-<<<<<<< HEAD
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        paymentMethod,
-        amount: Math.floor(bookings.pricePerNight * 100),
-      }),
-    };
-    const response = await fetch('http://localhost:8080/api/healthcheck', options);
-    const data = await response.json();
   };
 
-  const makePayment = () => {
-    dispatch(createBooking(bookings));
-  };
-=======
-  };
-
->>>>>>> dc3b5d99f2ebf0c540b0b85b58c770130793a5d7
   return (
     <form className="card-data__form" onSubmit={handleSubmit}>
       <div>
