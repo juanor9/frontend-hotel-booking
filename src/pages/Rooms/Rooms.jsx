@@ -9,9 +9,9 @@ import HotelGallery from '../../components/HotelGallery/HotelGallery';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
 import HotelsAbout from '../../components/HotelsAbout/HotelsAbout';
+import HotelsLocation from '../../components/HotelsLocation/HotelsLocation';
 import HotelsMenu from '../../components/HotelsMenu/HotelsMenu';
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import HotelsLocation from '../../components/HotelsLocation/HotelsLocation';
 
 const Rooms = () => {
   const { id } = useParams();

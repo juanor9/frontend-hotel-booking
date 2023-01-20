@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import HeartIcon from '../../assets/iconHeart.png';
 import MapPoint from '../../assets/mapPoint.png';
-import Star from '../../assets/star.png';
 import './styles.css';
 
 const HotelCard = ({
@@ -11,7 +9,6 @@ const HotelCard = ({
   <Link to={`/hotels/${id}`} className="hotel-card">
     <section className="hotel-card__icons">
       <img className="hotel-card__img" alt="hotel" src={imageProfile} />
-      <img className="hotel-card__icon" alt="icon" src={HeartIcon} />
     </section>
     <section className="hotel-card__header">
       <h3 className="hotel-card__name">{name}</h3>
@@ -19,18 +16,6 @@ const HotelCard = ({
     </section>
     <section className="hotel-card__caption">
       <p className="hotel-card__description">{about}</p>
-      <p className="hotel-card__raiting">
-        <img alt="stars raiting" src={Star} />
-        <img alt="stars raiting" src={Star} />
-        <img alt="stars raiting" src={Star} />
-        <img alt="stars raiting" src={Star} />
-        <img
-          alt="stars raiting"
-          src={Star}
-          className="hotel-card__reviews"
-        />
-        {122222} reviews
-      </p>
     </section>
     <section className="hotel-card__bottom">
       <div className="hotel-card__prices">

@@ -9,7 +9,6 @@ import ProfileMenu from '../../components/ProfileMenu/ProfileMenu';
 import SliderNav from '../../components/SliderNav/SliderNav';
 import UserBookings from '../../components/UserBookings/UserBookings';
 import UserInfo from '../../components/UserInfo/UserInfo';
-import UserPayments from '../../components/UserPayments/UserPayments';
 
 const UserProfile = () => {
   const [navTab, setNavTab] = useState('profile');
@@ -51,11 +50,6 @@ const UserProfile = () => {
           {navTab === 'bookings' ? (
             <div className="profile__user-info">
               <UserBookings />
-            </div>
-          ) : null}
-          {navTab === 'payments' ? (
-            <div className="profile__user-info">
-              <UserPayments />
             </div>
           ) : null}
         </div>

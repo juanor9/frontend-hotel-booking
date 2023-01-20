@@ -3,7 +3,7 @@
   text-align: center;
   font-size: 15px;
   margin: 0 auto;
-  width: 100%;
+  height: 330px;
 }
 
 .popular__img {
@@ -11,7 +11,7 @@
   object-fit: cover;
   margin-top: 15px;
   height: 30vh;
-  width: 85%;
+  width: 95%;
 }
 
 .popular__title {

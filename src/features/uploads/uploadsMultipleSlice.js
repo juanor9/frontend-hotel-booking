@@ -19,7 +19,6 @@ export const createImages = createAsyncThunk('uploads/createImages', async (file
   const response = await fetch(`${BASE_URL}/api/upload/files`, options);
   const data = await response.json();
   // eslint-disable-next-line no-console
-  console.log('data images', data);
   const url = await data.url;
   return url;
 });
