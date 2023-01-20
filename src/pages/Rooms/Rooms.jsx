@@ -5,14 +5,13 @@ import { useParams } from 'react-router-dom';
 import { getHotelById } from '../../features/hotels/hotelsSlice';
 import BookingForm from '../../components/BookingForm/BookingForm';
 import HotelContact from '../../components/HotelContact/HotelContact';
+import HotelGallery from '../../components/HotelGallery/HotelGallery';
 import HotelInfo from '../../components/HotelInfo/HotelInfo';
 import HotelRooms from '../../components/HotelRooms/HotelRooms';
-import NavigationBar from '../../components/NavigationBar/NavigationBar';
-import Weather from '../../components/Weather/Weather';
-import HotelGallery from '../../components/HotelGallery/HotelGallery';
-import HotelsMenu from '../../components/HotelsMenu/HotelsMenu';
 import HotelsAbout from '../../components/HotelsAbout/HotelsAbout';
 import HotelsLocation from '../../components/HotelsLocation/HotelsLocation';
+import HotelsMenu from '../../components/HotelsMenu/HotelsMenu';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
 
 const Rooms = () => {
   const { id } = useParams();
@@ -28,22 +27,22 @@ const Rooms = () => {
   }, [navTab]);
 
   const {
-    name,
     about,
-    country,
-    city,
     address,
-    geoLocation,
-    phone,
-    email,
-    pricePerNight,
-    offerPrice,
-    feature1,
-    feature2,
     checkin,
     checkout,
-    rooms,
+    city,
+    country,
+    email,
+    feature1,
+    feature2,
+    geoLocation,
     images,
+    name,
+    offerPrice,
+    phone,
+    pricePerNight,
+    rooms,
   } = useSelector((state) => state.hotels.hotels);
   useEffect(() => {
     if (geoLocation) {
@@ -70,7 +69,7 @@ const Rooms = () => {
       </div>
 
       <div className="hotel-details__main-container">
-        <div>
+        <div className="hotel-details__hotel-container">
           <div className="hotel-details__hotel-images">
             {images
               ? (
@@ -119,7 +118,6 @@ const Rooms = () => {
             checkin={checkin}
             checkout={checkout}
           />
-          <Weather />
         </aside>
       </div>
     </div>

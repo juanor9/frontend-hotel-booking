@@ -47,4 +47,7 @@
   .hotel-details__aside {
     width: 35%;
   }
+  .hotel-details__hotel-container{
+    width: 70%;
+  }
 }

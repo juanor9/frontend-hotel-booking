@@ -1,3 +1,4 @@
+/* eslint import/no-named-as-default: off */
 import {
   CardNumberElement, CardExpiryElement, CardCvcElement, useElements, useStripe,
 } from '@stripe/react-stripe-js';
