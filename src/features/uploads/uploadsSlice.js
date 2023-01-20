@@ -20,7 +20,6 @@ export const createImage = createAsyncThunk('uploads/createImage', async (file) 
   const data = await response.json();
   const url = await data.url;
   // eslint-disable-next-line no-console
-  console.log(url);
   return url;
 });
 
