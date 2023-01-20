@@ -9,8 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../Modal/Modal';
 import useForm from '../../hooks/useForm';
-import { deleteRoom } from '../../features/rooms/roomsSlice';
-import { updateRoom } from '../../services/rooms';
+import { deleteRoom, updateRoom } from '../../features/rooms/roomsSlice';
 
 const RoomCardAdmin = ({
   roomType, image, bedType, amenitiesPool, amenitiesShower, amenitiesTV, amenitiesCouch,
@@ -33,7 +32,7 @@ const RoomCardAdmin = ({
     setModal(false);
 
     try {
-      dispatch(updateRoom(form, id));
+      dispatch(updateRoom({ ...form, _id: id }));
     } catch (error) {
       throw new Error(error);
     }

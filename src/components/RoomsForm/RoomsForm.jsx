@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { createRoom } from '../../features/rooms/roomsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
-import { updateHotel } from '../../services/hotels';
+import { updateHotel } from '../../features/hotels/hotelsSlice';
 import useForm from '../../hooks/useForm';
 
 const RoomsForm = ({ hotelID }) => {
@@ -45,7 +45,7 @@ const RoomsForm = ({ hotelID }) => {
 
   const handleClickAddRoom = () => {
     try {
-      updateHotel({ rooms: rooms._id }, hotelID);
+      dispatch(updateHotel({ rooms: rooms._id, _id: hotelID }));
     } catch (error) {
       throw new Error(error);
     }

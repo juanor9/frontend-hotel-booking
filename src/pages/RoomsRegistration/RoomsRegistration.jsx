@@ -22,7 +22,7 @@ const RoomsRegistration = () => {
 
   useEffect(() => {
     dispatch(getHotelById(id));
-  }, []);
+  });
 
   return (
     <div className="roomsReg">
@@ -51,22 +51,22 @@ const RoomsRegistration = () => {
             ? (
               <section className="roomsReg__list">
                 {
-            rooms.map((room) => (
-              <RoomCardAdmin
-                roomType={room.roomType}
-                image={room.image}
-                bedType={room.bedType}
-                amenitiesCouch={room.amenitiesCouch}
-                amenitiesPool={room.amenitiesPool}
-                amenitiesShower={room.amenitiesShower}
-                amenitiesTV={room.amenitiesTV}
-                pricePerNight={room.pricePerNight}
-                offerPrice={room.offerPrice}
-                id={room._id}
-                key={room._id}
-              />
-            ))
-            }
+                  rooms.map((room) => (
+                    <RoomCardAdmin
+                      roomType={room.roomType}
+                      image={room.image}
+                      bedType={room.bedType}
+                      amenitiesCouch={room.amenitiesCouch}
+                      amenitiesPool={room.amenitiesPool}
+                      amenitiesShower={room.amenitiesShower}
+                      amenitiesTV={room.amenitiesTV}
+                      pricePerNight={room.pricePerNight}
+                      offerPrice={room.offerPrice}
+                      id={room._id}
+                      key={room._id}
+                    />
+                  ))
+              }
               </section>
             ) : null
       }
