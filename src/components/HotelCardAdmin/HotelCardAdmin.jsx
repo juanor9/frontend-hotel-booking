@@ -6,10 +6,9 @@ import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { updateHotel } from '../../services/hotels';
 import MapPoint from '../../assets/mapPoint.png';
 import Modal from '../Modal/Modal';
-import { deleteHotel } from '../../features/hotels/hotelsSlice';
+import { deleteHotel, updateHotel } from '../../features/hotels/hotelsSlice';
 import useForm from '../../hooks/useForm';
 
 const HotelCardAdmin = ({
@@ -22,8 +21,6 @@ const HotelCardAdmin = ({
   const handleClickDelete = async () => {
     try {
       dispatch(deleteHotel(id));
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
     } catch (error) {
       throw new Error(error);
     }
@@ -32,11 +29,9 @@ const HotelCardAdmin = ({
   const handleSubmit = async (event) => {
     event.preventDefault();
     setModal(false);
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
 
     try {
-      dispatch(updateHotel(form, id));
+      dispatch(updateHotel({ ...form, _id: id }));
     } catch (error) {
       throw new Error(error);
     }

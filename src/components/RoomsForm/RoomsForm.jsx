@@ -46,8 +46,6 @@ const RoomsForm = ({ hotelID }) => {
   const handleClickAddRoom = () => {
     try {
       updateHotel({ rooms: rooms._id }, hotelID);
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
     } catch (error) {
       throw new Error(error);
     }
