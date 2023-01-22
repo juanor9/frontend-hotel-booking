@@ -116,6 +116,12 @@
   font-weight: 800;
 }
 
+.hotelsFormEdit__features {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0 0 0;
+}
+
 .hotelsFormEdit__button {
   margin-top: 1em;
   color: white;

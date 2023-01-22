@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import './styles.css';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,6 +33,7 @@ const HotelsForm = () => {
       if (uploads) {
         dispatch(createHotel({ ...form, imageProfile: uploads }));
       }
+      document.getElementById('formHotelMain').reset();
     } catch (error) {
       throw new Error(error);
     }
@@ -86,7 +86,7 @@ const HotelsForm = () => {
         ) : null}
       </div>
 
-      <form id="formHotel" className="hotelsForm" onSubmit={handleSubmit}>
+      <form id="formHotelMain" className="hotelsForm" onSubmit={handleSubmit}>
         <p className="hotelsForm__properties">Name: </p>
         <input type="text" name="name" onChange={handleChange} />
         <p className="hotelsForm__properties">Country:</p>
@@ -96,7 +96,7 @@ const HotelsForm = () => {
         <p className="hotelsForm__properties">Address:</p>
         <input type="text" name="address" onChange={handleChange} />
         <p className="hotelsForm__properties">Phone:</p>
-        <input type="number" name="phone" onChange={handleChange} />
+        <input type="text" name="phone" onChange={handleChange} />
         <p className="hotelsForm__properties">Email:</p>
         <input type="text" name="email" onChange={handleChange} />
         <p className="hotelsForm__properties">Description:</p>
@@ -132,21 +132,20 @@ const HotelsForm = () => {
           <option value="Non Smoking Rooms">Non Smoking Rooms</option>
         </select>
         <div className="hotelsForm__buttonEnv">
-          <button
-            className="hotelsForm__button"
-            type="submit"
-            onClick={handleClick}
-          >
-            Create
-          </button>
           <Link to="/profile">
             <button
-              className="hotelsForm__button"
+              className="hotelsForm__button hotelsForm__button--back"
               type="submit"
             >
               Back
             </button>
           </Link>
+          <button
+            className="hotelsForm__button"
+            type="submit"
+          >
+            Create
+          </button>
         </div>
       </form>
     </>
