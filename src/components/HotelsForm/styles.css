@@ -26,6 +26,11 @@
   width: 100px;
   font-weight: bold;
 }
+
+.hotelsForm__button--back {
+  background-color: rgb(19, 147, 179);
+}
+
 .hotelsForm__button--disable{
   pointer-events: none;
   margin-top: 1em;
@@ -39,7 +44,11 @@
 }
 
 .hotelsForm__button:hover {
-  background-color: rgb(255, 77, 77);
+  background-color: rgb(79, 176, 137);
+}
+
+.hotelsForm__button--back:hover {
+  background-color: rgb(39, 114, 132);
 }
 
 .hotelsForm__buttonEnv {

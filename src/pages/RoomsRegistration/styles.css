@@ -48,11 +48,15 @@
 .roomsReg__button {
   padding: 1em 2em 1em 2em;
   color: white;
-  background-color: #F13F4B;
+  background-color: rgb(19, 147, 179);
   margin-top: 15px;
   margin-bottom: 15px;
   border: 0;
   font-weight: bold;
+}
+
+.roomsReg__button:hover {
+  background-color: rgb(39, 114, 132);
 }
 
 @media (min-width: 768px) {
