@@ -27,7 +27,7 @@ BookingHistory.propTypes = {
   name: PropTypes.string.isRequired,
   checkIn: PropTypes.string.isRequired,
   checkOut: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
   guests: PropTypes.number.isRequired,
 };
 

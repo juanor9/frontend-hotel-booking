@@ -1,5 +1,4 @@
-/* eslint-disable  */
-
+/* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -35,7 +34,6 @@ export const createHotel = createAsyncThunk('hotels/createHotel', async (hotel) 
 });
 
 export const deleteHotel = createAsyncThunk('hotels/deleteHotel', async (id) => {
-
   const options = {
     method: 'DELETE',
   };
@@ -45,6 +43,20 @@ export const deleteHotel = createAsyncThunk('hotels/deleteHotel', async (id) => 
 });
 
 export const updateHotel = createAsyncThunk('hotels/updateHotel', async (hotel) => {
+  const options = {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(hotel),
+  };
+
+  const response = await fetch(`${BASE_URL}/api/hotels/${hotel._id}`, options);
+  const data = await response.json();
+  return data;
+});
+
+export const updateHotelOne = createAsyncThunk('hotels/updateHotelOne', async (hotel) => {
   const options = {
     method: 'PATCH',
     headers: {
@@ -72,18 +84,28 @@ const hotelsSlice = createSlice({
       state.hotels = action.payload;
     });
     builder.addCase(deleteHotel.fulfilled, (state, action) => {
-      const { hotels } = current(state)
-      state.hotels = hotels.filter((h)=> h._id !== action.payload)
+      const { hotels } = current(state);
+      state.hotels = hotels.filter((h) => h._id !== action.payload);
     });
     builder.addCase(updateHotel.fulfilled, (state, action) => {
-      const { hotels } = current(state)
+      const { hotels } = current(state);
       const hotelsUpdated = hotels.map((h) => {
         if (h._id === action.payload._id) {
-          return {...h, ...action.payload}
+          return { ...h, ...action.payload };
         }
-        return h
-      })
+        return h;
+      });
       state.hotels = hotelsUpdated;
+    });
+    builder.addCase(updateHotelOne.fulfilled, (state, action) => {
+      const { hotels } = current(state);
+      const hotelUpdated = hotels.rooms.map((r) => {
+        if (r._id === action.payload._id) {
+          return { ...action.payload };
+        }
+        return r;
+      });
+      state.hotels = { ...hotels, rooms: hotelUpdated };
     });
   },
 });
