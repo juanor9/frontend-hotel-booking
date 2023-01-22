@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import './styles.css';
 
@@ -10,22 +11,24 @@ const BookingHistory = ({
   price,
   offerPrice,
   guests,
-}) => (
-  <Link to="/hotels">
-    <div className="booking-history">
-      <section className="booking-history__bookings">
-        <img className="booking-history__img" alt="hotel" src={image} />
-        <section className="booking-history__description">
-          <h3>{name}</h3>
-          <p className="booking-history__description--gray"><b>Guests: </b>{guests}</p>
-          <p className="booking-history__description--gray"><b>Dates: </b>{checkIn} - {checkOut}</p>
-          <p className="booking-history__description--gray"><b>Price: </b>${offerPrice || price}</p>
+}) => {
+  const { hotels } = useSelector((state) => state.hotels);
+  return (
+    <Link to={`/hotels/${hotels._id}`}>
+      <div className="booking-history">
+        <section className="booking-history__bookings">
+          <img className="booking-history__img" alt="hotel" src={image} />
+          <section className="booking-history__description">
+            <h3>{name}</h3>
+            <p className="booking-history__description--gray"><b>Guests: </b>{guests}</p>
+            <p className="booking-history__description--gray"><b>Dates: </b>{checkIn} - {checkOut}</p>
+            <p className="booking-history__description--gray"><b>Price: </b>${offerPrice || price}</p>
+          </section>
         </section>
-      </section>
-    </div>
-  </Link>
-
-);
+      </div>
+    </Link>
+  );
+};
 
 BookingHistory.propTypes = {
   image: PropTypes.string.isRequired,
