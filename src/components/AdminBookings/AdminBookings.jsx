@@ -19,8 +19,7 @@ const AdminBookings = () => {
       const calculateItems = localHotels.splice(0, bookingsPerPage);
       setItems(calculateItems);
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      throw new Error(error);
     }
   }, [bookings]);
 
@@ -46,9 +45,6 @@ const AdminBookings = () => {
     setItems([...bookings].splice(firstIndex, bookingsPerPage));
     setCurrentPage(prevPage);
   };
-
-  // eslint-disable-next-line no-console
-  console.log(items);
 
   return (
     <div className="user-info">

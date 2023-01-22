@@ -4,15 +4,22 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { createRoom } from '../../features/rooms/roomsSlice';
 import { createImage } from '../../features/uploads/uploadsSlice';
-import { updateHotel } from '../../features/hotels/hotelsSlice';
+import { updateHotelOne } from '../../features/hotels/hotelsSlice';
 import useForm from '../../hooks/useForm';
 
 const RoomsForm = ({ hotelID }) => {
   const { uploads } = useSelector((state) => state.upload);
+  const { hotels } = useSelector((state) => state.hotels);
   const { rooms } = useSelector((state) => state.rooms);
   const { form, handleChange } = useForm({});
   const [file, setFile] = useState(null);
+  const [newArray, setNewArray] = useState([]);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const localRooms = [].concat(hotels.rooms);
+    setNewArray(localRooms);
+  }, [hotels.rooms]);
 
   const handleChangeImage = ({ target }) => {
     const { files } = target;
@@ -45,9 +52,9 @@ const RoomsForm = ({ hotelID }) => {
     document.getElementById('formRoom').reset();
   };
 
-  const handleClickAddRoom = () => {
+  const handleClickAddRoom = async () => {
     try {
-      dispatch(updateHotel({ rooms: rooms._id, _id: hotelID }));
+      dispatch(updateHotelOne({ rooms: newArray.concat(rooms._id), _id: hotelID }));
     } catch (error) {
       throw new Error(error);
     }
@@ -91,11 +98,12 @@ const RoomsForm = ({ hotelID }) => {
           <input type="number" name="offerPrice" onChange={handleChange} />
         </section>
         <div className="roomsForm__buttonEnv">
-          <button className="roomsForm__button" type="submit" onClick={handleUploadImage}>Upload Image</button>
-          <button className="roomsForm__button" type="submit" onClick={handleClick}>Create</button>
-          <button className="roomsForm__button" type="submit" onClick={handleClickAddRoom}>Add Room</button>
+          <button className="roomsForm__button" type="button" onClick={handleUploadImage}>1. Upload Image</button>
+          <button className="roomsForm__button" type="submit" onClick={handleClick}>2. Create</button>
+          <button className="roomsForm__button" type="button" onClick={handleClickAddRoom}>3. Add Room</button>
         </div>
       </form>
+
     </section>
   );
 };
