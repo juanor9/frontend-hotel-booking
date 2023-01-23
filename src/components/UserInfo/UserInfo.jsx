@@ -14,14 +14,11 @@ const UserInfo = () => {
   }, []);
   const {
     name,
-    email,
     gender,
     address,
-    phone,
     birthday,
     city,
     zipCode,
-    password,
   } = useSelector((state) => state.user.userData);
   let birthdayStr = '';
   if (birthday) {
@@ -96,24 +93,6 @@ const UserInfo = () => {
           : <br />}
       </section>
 
-      <section className="user-info__login">
-        <h2 className="user-info__login-title">Login Details</h2>
-        <b className="user-info__login-info-requested">Email Address</b>
-        {email
-          ? <p className="user-info__info-user-data">{email}</p>
-          : <br />}
-        <button type="submit" className="user-info__login-edit-button">Edit</button>
-        <b className="user-info__login-info-requested">Phone No</b>
-        {phone
-          ? <p className="user-info__info-user-data">{phone}</p>
-          : <br />}
-        <button type="submit" className="user-info__login-edit-button">Edit</button>
-        <b className="user-info__login-info-requested">Password</b>
-        {password
-          ? <p className="user-info__info-user-data">******</p>
-          : <br />}
-        <button type="submit" className="user-info__login-edit-button">Edit</button>
-      </section>
       {modal === true ? (
         <Modal
           modalFunction={setModal}
