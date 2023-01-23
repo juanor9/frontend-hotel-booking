@@ -18,11 +18,13 @@ const AdminHotels = () => {
   useEffect(() => {
     try {
       const localHotels = [].concat(hotels);
+      localHotels.sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+      );
       const calculateItems = localHotels.splice(0, hotelsPerPage);
       setItems(calculateItems);
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      throw new Error(error);
     }
   }, [hotels]);
 

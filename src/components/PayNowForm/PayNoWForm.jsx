@@ -14,6 +14,8 @@ import './styles.css';
 
 const PayNowForm = () => {
   const { bookings } = useSelector((state) => state.bookings);
+  const { hotels } = useSelector((state) => state.hotels);
+  const { userData } = useSelector((state) => state.user);
   const elements = useElements();
   const stripe = useStripe();
   const navigate = useNavigate();
@@ -28,11 +30,11 @@ const PayNowForm = () => {
     try {
       if (bookings.offerPrice !== '0') {
         const amount = Math.floor(bookings.offerPrice * 100);
-        createPayment(paymentMethod, amount);
+        createPayment(paymentMethod, amount, `Hotel: ${hotels.name}, ${hotels.city} - User: ${userData.name} (${userData._id})`);
         navigate('/success');
       } else {
         const amount = Math.floor(bookings.pricePerNight * 100);
-        createPayment(paymentMethod, amount);
+        createPayment(paymentMethod, amount, `Hotel: ${hotels.name}, ${hotels.city} - User: ${userData.name} (${userData._id})`);
         navigate('/success');
       }
     } catch (error) {

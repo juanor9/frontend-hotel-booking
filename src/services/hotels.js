@@ -30,7 +30,7 @@ export const deleteHotel = async (id) => {
   return result;
 };
 
-export const updateHotel = async (hotel, id) => {
+export const updateHotel = async (hotel) => {
   const options = {
     method: 'PATCH',
     headers: {
@@ -39,7 +39,7 @@ export const updateHotel = async (hotel, id) => {
     body: JSON.stringify(hotel),
   };
 
-  const res = await fetch(`${BASE_URL}/api/hotels/${id}`, options);
+  const res = await fetch(`${BASE_URL}/api/hotels/${hotel._id}`, options);
   const result = await res.json();
   return result;
 };

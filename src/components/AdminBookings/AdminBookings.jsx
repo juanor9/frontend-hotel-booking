@@ -15,12 +15,14 @@ const AdminBookings = () => {
 
   useEffect(() => {
     try {
-      const localHotels = [].concat(bookings);
-      const calculateItems = localHotels.splice(0, bookingsPerPage);
+      const localBookings = [].concat(bookings);
+      localBookings.sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+      );
+      const calculateItems = localBookings.splice(0, bookingsPerPage);
       setItems(calculateItems);
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log(error);
+      throw new Error(error);
     }
   }, [bookings]);
 
@@ -46,9 +48,6 @@ const AdminBookings = () => {
     setItems([...bookings].splice(firstIndex, bookingsPerPage));
     setCurrentPage(prevPage);
   };
-
-  // eslint-disable-next-line no-console
-  console.log(items);
 
   return (
     <div className="user-info">

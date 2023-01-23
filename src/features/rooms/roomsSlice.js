@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -32,12 +32,11 @@ export const deleteRoom = createAsyncThunk('rooms/deleteRoom', async (id) => {
     method: 'DELETE',
   };
 
-  const response = await fetch(`${BASE_URL}/api/rooms/${id}`, options);
-  const data = await response.json();
-  return data;
+  await fetch(`${BASE_URL}/api/rooms/${id}`, options);
+  return id;
 });
 
-export const updateRoom = createAsyncThunk('rooms/updateRoom', async (room, id) => {
+export const updateRoom = createAsyncThunk('rooms/updateRoom', async (room) => {
   const options = {
     method: 'PATCH',
     headers: {
@@ -46,7 +45,7 @@ export const updateRoom = createAsyncThunk('rooms/updateRoom', async (room, id) 
     body: JSON.stringify(room),
   };
 
-  const response = await fetch(`${BASE_URL}/api/rooms/${id}`, options);
+  const response = await fetch(`${BASE_URL}/api/rooms/${room._id}`, options);
   const data = await response.json();
   return data;
 });
@@ -62,10 +61,18 @@ const roomsSlice = createSlice({
       state.rooms = action.payload;
     });
     builder.addCase(deleteRoom.fulfilled, (state, action) => {
-      state.rooms = action.payload;
+      const { rooms } = current(state);
+      state.rooms = rooms.filter((r) => r._id !== action.payload);
     });
     builder.addCase(updateRoom.fulfilled, (state, action) => {
-      state.rooms = action.payload;
+      const { rooms } = current(state);
+      const roomsUpdated = rooms.map((r) => {
+        if (r._id === action.payload._id) {
+          return { ...r, ...action.payload };
+        }
+        return r;
+      });
+      state.rooms = roomsUpdated;
     });
   },
 });

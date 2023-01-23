@@ -21,11 +21,6 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.user-info__login {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
 .user-info__info-requested, .user-info__login-info {
   width: 30%;
 }
@@ -35,7 +30,7 @@
   margin-left: 2em;
 }
 
-.user-info__info-requested-form, .user-info__login-info-requested {
+.user-info__info-requested-form {
   margin-bottom: 0.5em;
   grid-column-start: 1;
 }
@@ -44,11 +39,6 @@
   margin-bottom: 0.75em;
   color: gray;
   grid-column-start: 2;
-}
-
-.user-info__login-title {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
 }
 
 .user-info__login-user-data {
@@ -62,17 +52,7 @@
   flex-direction: column;
 }
 
-.user-info__login-edit-button {
-  margin: 0.55em 0 0 0.5em;
-  padding: 0.5em 1em 0.5em 1em;
-  border: 0;
-  color: rgb(239, 63, 63);
-  background-color: white;
-  font-weight: 700;
-  grid-column-start: 3;
-}
-
-.user-info__login-edit-button:hover, .user-info__title-button:hover {
+.user-info__title-button:hover {
   background-color: rgb(239, 63, 63);
   color: white;
 }
@@ -106,10 +86,5 @@
   .user-info__info-user-data, .user-info__login-user-data {
     margin-top: 0;
     margin-bottom: 0.5em;
-  }
-
-  .user-info__login-edit-button {
-    margin: 0 0 0 0.5em;
-    padding: 0.4em 1em 0.5em 1em;
   }
 }

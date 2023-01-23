@@ -20,12 +20,12 @@ const HotelsFiltered = () => {
 
   useEffect(() => {
     setSearch(city);
-  });
+  }, [city]);
 
   useEffect(() => {
     setResults(!search ? hotels
       : hotels.filter((hotel) => hotel.city.toLowerCase().includes(search.toLocaleLowerCase())));
-  });
+  }, [search, hotels]);
 
   return (
     <div className="pageHotelsFiltered">
