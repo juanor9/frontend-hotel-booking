@@ -28,7 +28,7 @@ const UserBookings = () => {
       booking.map(($booking) => {
         dispatch(getHotelById($booking.idHotel));
         return null;
-      });
+      }, []);
     } catch (error) {
       throw new Error(error);
     }
@@ -45,32 +45,32 @@ const UserBookings = () => {
           checkin: dateCheckin.toISOString().slice(0, 10),
           checkout: datecheckout.toISOString().slice(0, 10),
           price: $booking.pricePerNight,
+          offerPrice: $booking.offerPrice,
           guests: $booking.guestsNumber,
         },
       ]);
       return newBookings;
     });
   }, [name, imageProfile]);
-  useEffect(() => {}, [newBookings]);
+  useEffect(() => { }, [newBookings]);
 
   return (
     <div className="user-info">
-      {console.log(newBookings)}
-      <section className="user-info__title">
-        {newBookings
-          ? newBookings.map(($booking) => (
+      {newBookings
+        ? newBookings.map(($booking) => (
+          <section key={$booking._id} className="user-info__title">
             <BookingHistory
-              key={$booking._id}
               name={$booking.hotelName}
               image={$booking.hotelImage}
               checkIn={$booking.checkin}
               checkOut={$booking.checkout}
               price={$booking.price}
+              offerPrice={$booking.offerPrice}
               guests={$booking.guests}
             />
-          ))
-          : null}
-      </section>
+          </section>
+        ))
+        : null}
     </div>
   );
 };
