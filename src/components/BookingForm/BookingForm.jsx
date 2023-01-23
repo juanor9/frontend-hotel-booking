@@ -1,12 +1,15 @@
+/* eslint-disable */
 import './styles.css';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { createBooking } from '../../features/bookings/bookingsSlice';
 import useForm from '../../hooks/useForm';
+
+import Modal from '../Modal/Modal';
 
 const BookingForm = ({
   pricePerNight, offerPrice, coordinates, id, rooms,
@@ -19,6 +22,10 @@ const BookingForm = ({
   const [resetForm, setResetForm] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const user = localStorage.getItem('login-token');
+
+  const [modal, setModal] = useState(false);
 
   const handleChangeRooms = ({ target }) => {
     for (let i = 0; i < rooms.length; i += 1) {
@@ -56,7 +63,11 @@ const BookingForm = ({
       throw new Error(error);
     }
   };
-
+  const handleUnregisteredSubmit= () => {
+    event.preventDefault();
+    setModal(true)
+    window.scrollTo(0, 0);
+  }
   const handleClick = async () => {
     try {
       setResetForm(true);
@@ -122,9 +133,23 @@ const BookingForm = ({
         </select>
         <section className="booking-form__form-button--left">
           <button className="booking-form__form-button" type="submit" onClick={handleClick}>Reset Form</button>
-          <button className="booking-form__form-button" type="submit" onClick={handleSubmit}>Book This Know</button>
+          {user
+          ? <button className="booking-form__form-button" type="submit" onClick={handleSubmit}>Book This Know</button>
+          : <button className="booking-form__form-button" type="submit" onClick={handleUnregisteredSubmit}>Book This Know</button>}
+
         </section>
       </form>
+      {modal === true ? (
+        <Modal modalFunction={setModal}>
+          <div className="booking-form__modal">
+            <p>It seems you are not logged in. Please login or sign up to book a room.</p>
+            <div className="booking-form__modal-buttons">
+              <Link to="/login" className="booking-form__modal-button">Login</Link>
+              <Link to="/register" className="booking-form__modal-button">Sign up</Link>
+            </div>
+          </div>
+        </Modal>
+      ) : null}
     </div>
   );
 };
@@ -132,7 +157,6 @@ const BookingForm = ({
 BookingForm.propTypes = {
   pricePerNight: PropTypes.number.isRequired,
   offerPrice: PropTypes.number,
-  // coordinates: PropTypes.arrayOf(PropTypes.string),
   coordinates: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.string),
     PropTypes.arrayOf(PropTypes.number),

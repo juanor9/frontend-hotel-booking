@@ -91,6 +91,14 @@
   font-weight: 900;
 }
 
+.booking-form__modal-buttons{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+}
 
-
-
+.booking-form__modal-button{
+  background-color: red;
+  color: white;
+  padding: 0.5em 1em;
+}
