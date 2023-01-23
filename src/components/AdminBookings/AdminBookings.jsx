@@ -15,8 +15,11 @@ const AdminBookings = () => {
 
   useEffect(() => {
     try {
-      const localHotels = [].concat(bookings);
-      const calculateItems = localHotels.splice(0, bookingsPerPage);
+      const localBookings = [].concat(bookings);
+      localBookings.sort(
+        (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
+      );
+      const calculateItems = localBookings.splice(0, bookingsPerPage);
       setItems(calculateItems);
     } catch (error) {
       throw new Error(error);
