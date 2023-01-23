@@ -1,6 +1,6 @@
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
-const createPayment = async (paymentMethod, amount) => {
+const createPayment = async (paymentMethod, amount, description) => {
   const options = {
     method: 'POST',
     headers: {
@@ -9,6 +9,7 @@ const createPayment = async (paymentMethod, amount) => {
     body: JSON.stringify({
       paymentMethod,
       amount,
+      description,
     }),
   };
 
