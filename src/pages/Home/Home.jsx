@@ -18,12 +18,15 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getHotels());
+  }, []);
+
+  useEffect(() => {
     const handleResize = () => {
       setWidth(window.innerWidth);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, [window.innerWidth, getHotels]);
+  }, [window.innerWidth]);
 
   // eslint-disable-next-line no-shadow
   const findCheapest = (hotels) => {
