@@ -22,7 +22,7 @@ const BookingHistory = ({
             <h3>{name}</h3>
             <p className="booking-history__description--gray"><b>Guests: </b>{guests}</p>
             <p className="booking-history__description--gray"><b>Dates: </b>{checkIn} - {checkOut}</p>
-            <p className="booking-history__description--gray"><b>Price: </b>${offerPrice || price}</p>
+            <p className="booking-history__description--gray"><b>Price: </b>${offerPrice !== '0' ? offerPrice : price}</p>
           </section>
         </section>
       </div>
