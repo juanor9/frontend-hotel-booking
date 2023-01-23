@@ -39,7 +39,7 @@ const BookingForm = ({
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      if (resetForm === false) {
+      if (resetForm === false && bookings.guestsNumber) {
         dispatch(createBooking(
           {
             idHotel: id,
